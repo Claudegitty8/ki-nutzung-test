@@ -1,0 +1,338 @@
+{
+  "ki": {
+    "begriff": "KI",
+    "englisch": "AI (artificial intelligence)",
+    "kern": null,
+    "erklaerung": "KI heisst künstliche Intelligenz. Gemeint sind Programme wie Claude, die Texte verstehen und schreiben und mit Werkzeugen Aufgaben erledigen."
+  },
+  "ziel": {
+    "begriff": "Prompt",
+    "englisch": "prompt",
+    "kern": "ziel",
+    "erklaerung": "Der Auftrag, den du Claude schreibst. Im Spiel heisst er Funkspruch. Claude weiss nur, was darin steht.",
+    "quatsch": "«Text für den Verein» ergab 40 Strophen im Ton eines Kindergeburtstags.",
+    "genauer": "Anthropic rät: klar und direkt sein und Gründe nennen, damit Claude verallgemeinern kann."
+  },
+  "muster": {
+    "begriff": "Beispiele im Prompt",
+    "englisch": "few-shot prompting",
+    "kern": "muster",
+    "erklaerung": "Du zeigst Claude ein paar fertige Muster. So erkennt es Form und Ton, die du willst.",
+    "quatsch": "Mit nur einem Beispiel begann jede Absage mit «Liebe Frau Huber».",
+    "genauer": "Anthropic empfiehlt mehrere passende, verschiedene Beispiele. Die Zahl steht in der Faktendatei."
+  },
+  "material": {
+    "begriff": "Tags",
+    "englisch": "XML tags",
+    "kern": "material",
+    "erklaerung": "Kennzeichen wie <mail> und </mail>. Sie trennen Material von deinem Auftrag.",
+    "quatsch": "Echo befolgte «Bitte alles absagen» aus einer Kundenmail.",
+    "genauer": "Tags sind kein Schutz gegen alles. Sie helfen Claude, Teile auseinanderzuhalten."
+  },
+  "funkspruch": {
+    "begriff": "Funkspruch",
+    "englisch": "prompt",
+    "kern": null,
+    "erklaerung": "Das Spielwort für Prompt. Im Agentenbüro steht immer beides da, damit du das echte Wort lernst."
+  },
+  "einsatzkoffer": {
+    "begriff": "Einsatzkoffer",
+    "englisch": "context window",
+    "kern": null,
+    "erklaerung": "Das Spielwort für den Kontext: alles, was Claude gerade vor sich hat. Ist er zu voll, arbeitet Claude schlechter.",
+    "genauer": "Laut Anthropic füllt sich der Kontext schnell, und mit vollem Kontext sinkt die Qualität."
+  },
+  "token": {
+    "begriff": "Token",
+    "englisch": "token",
+    "kern": null,
+    "erklaerung": "Ein Wortstück. KI zählt Text in Tokens. Im Spiel misst du so den Platz im Einsatzkoffer.",
+    "genauer": "Im Spiel sind die Zahlen vereinfacht. Echte Tokens zählt jedes Modell etwas anders."
+  },
+  "halluzination": {
+    "begriff": "Halluzination",
+    "englisch": "hallucination",
+    "kern": null,
+    "erklaerung": "Wenn KI etwas Falsches sehr überzeugt sagt. Belege und «sag, wenn es fehlt» helfen dagegen."
+  },
+  "wohin": {
+    "begriff": "Projekt",
+    "englisch": "project",
+    "kern": "wohin",
+    "erklaerung": "Ein Arbeitsbereich für ein Thema in der Claude-App. Die Projektanweisung gilt in allen Chats darin. Im Spiel heisst sie Fallakte.",
+    "quatsch": "Eine Dauerregel nur im Funkspruch war im nächsten Chat wieder weg.",
+    "genauer": "Ohne Gedächtnis teilen die Chats eines Projekts nur, was im Projektwissen steht."
+  },
+  "deckblatt": {
+    "begriff": "Skill-Beschreibung",
+    "englisch": "skill description",
+    "kern": "deckblatt",
+    "erklaerung": "Der kurze Text im Kopf eines Skills: was er tut und wann er gebraucht wird. Passt er zur Bitte, holt Claude den ganzen Skill.",
+    "quatsch": "«Hilft beim Verein» holte das Protokoll-Dossier bei der Bitte um Notenständer.",
+    "genauer": "Die erlaubte Länge ist je nach Quelle verschieden. Das Spiel nimmt die strengere Grenze von 200 Zeichen."
+  },
+  "schlank": {
+    "begriff": "Skill",
+    "englisch": "Agent Skill",
+    "kern": "schlank",
+    "erklaerung": "Ein Ordner mit einer Anleitung (SKILL.md) und Beilagen. Claude holt ihn, wenn die Beschreibung zur Bitte passt. Im Spiel heisst er Dossier.",
+    "quatsch": "Das Alles-Dossier hängte ans Protokoll eine Einkaufsliste fürs Vereinsfest.",
+    "genauer": "Laut Anthropic lädt Claude zuerst nur Name und Beschreibung, die Anleitung bei Bedarf und Beilagen erst, wenn es sie liest."
+  },
+  "probefaelle": {
+    "begriff": "Skill testen",
+    "englisch": "testing a skill",
+    "kern": "probefaelle",
+    "erklaerung": "Mit passenden Bitten prüfen, ob der Skill anspringt. Mit Gegenproben prüfen, ob er still bleibt, wo er nicht passt.",
+    "quatsch": "Ungetestet sprang das Dossier bei «Sitzungsnotizen» nie an.",
+    "genauer": "Das Hilfe-Center rät, mit Anfragen zu testen, die den Skill auslösen sollen. Gegenproben sind eine Ergänzung des Spiels."
+  },
+  "gedaechtnis": {
+    "begriff": "Gedächtnis",
+    "englisch": "memory",
+    "kern": null,
+    "erklaerung": "Claude merkt sich Themen aus früheren Chats und nimmt sie in neue mit. Du kannst ansehen und ändern, was es sich gemerkt hat. Im Spiel heisst es Notizbuch.",
+    "genauer": "Ob es eingeschaltet ist, hängt von Abo und Einstellung ab. In einem Projekt hat Claude ein eigenes Gedächtnis für dieses Projekt."
+  },
+  "fallakte": {
+    "begriff": "Fallakte",
+    "englisch": "project instructions",
+    "kern": null,
+    "erklaerung": "Das Spielwort für die Projektanweisung: Regeln, die in jedem Chat eines Projekts gelten. Sie liegt bei jedem Einsatz im Koffer, darum kurz halten."
+  },
+  "dossier": {
+    "begriff": "Dossier",
+    "englisch": "skill",
+    "kern": null,
+    "erklaerung": "Das Spielwort für einen Skill. Das Deckblatt ist seine Beschreibung, die Beilagen sind Zusatzdateien."
+  },
+  "freigabe": {
+    "begriff": "Konnektor",
+    "englisch": "connector",
+    "kern": "freigabe",
+    "erklaerung": "Eine Verbindung zwischen Claude und einem Dienst wie Kalender oder Mail. Dann sieht Claude nach, statt zu raten. Im Spiel heisst sie Funkleitung.",
+    "quatsch": "Mit Senderecht ohne Nachfrage ging die Menübestätigung an alle 812 Kontakte.",
+    "genauer": "Die Werkzeuge eines Konnektors lassen sich einstellen: Always allow, Needs approval oder Blocked. In Firmenkonten legen das oft die Verantwortlichen fest."
+  },
+  "fremdes": {
+    "begriff": "Prompt Injection",
+    "englisch": "prompt injection",
+    "kern": "fremdes",
+    "erklaerung": "Versteckte Anweisungen in Mails, Websites oder Dateien. Sie sollen Claude zu etwas bringen, das du nicht willst.",
+    "quatsch": "Eine Mail in weisser Schrift wollte alle Rechnungen weiterleiten lassen.",
+    "genauer": "Claude ist darauf trainiert, Anweisungen in fremden Inhalten skeptisch zu behandeln. Ganz sicher ist das nicht. Darum Rechte begrenzen und Anfragen genau lesen."
+  },
+  "funkleitung": {
+    "begriff": "Funkleitung",
+    "englisch": "connector",
+    "kern": null,
+    "erklaerung": "Das Spielwort für einen Konnektor. Die Freigaben sind seine Rechte: was Echo immer darf, wann es fragt und was gesperrt ist."
+  },
+  "mcp": {
+    "begriff": "MCP",
+    "englisch": "Model Context Protocol",
+    "kern": null,
+    "erklaerung": "Ein offener Standard, über den Claude mit anderen Programmen spricht. Viele Konnektoren nutzen ihn.",
+    "genauer": "MCP kennt Werkzeuge, die Claude selbst aufruft, Ressourcen mit Daten und Vorlagen, die du startest."
+  },
+  "schleife": {
+    "begriff": "Agent",
+    "englisch": "agent",
+    "kern": "schleife",
+    "erklaerung": "Claude arbeitet selbständig in Schritten: nachsehen, handeln, prüfen, wiederholen, bis die Aufgabe erledigt ist. Im Spiel heisst das Einsatz.",
+    "quatsch": "Ohne Prüfen meldete Echo «Erledigt», und der Saal war doppelt gebucht.",
+    "genauer": "Laut Anthropic hilft es sehr, Claude eine Prüfung zu geben, die es selbst laufen lassen kann, und einen Beweis zu verlangen."
+  },
+  "plan": {
+    "begriff": "Planmodus",
+    "englisch": "plan mode",
+    "kern": "plan",
+    "erklaerung": "Claude erkundet zuerst und legt einen Plan vor, ohne etwas zu ändern. Erst nach deinem Okay geht es los. Claude Code hat dafür einen eigenen Modus.",
+    "quatsch": "Für einen Tippfehler schrieb Echo drei Seiten Plan.",
+    "genauer": "Anthropic rät: erst erkunden, dann planen, dann umsetzen. Bei kleinen, klaren Änderungen den Plan weglassen."
+  },
+  "kette": {
+    "begriff": "Workflow",
+    "englisch": "workflow",
+    "kern": "kette",
+    "erklaerung": "Ein fester Ablauf mit vorgegebenen Schritten. Ein Agent dagegen entscheidet selbst, welche Schritte er macht.",
+    "quatsch": "Ohne Kontrollpunkt landete ein Zahlendreher auf 500 Flyern.",
+    "genauer": "Anthropic rät, einfach anzufangen und mehr Aufwand nur einzusetzen, wenn es nachweislich besser wird."
+  },
+  "haltepunkte": {
+    "begriff": "Mensch im Ablauf",
+    "englisch": "human in the loop",
+    "kern": "haltepunkte",
+    "erklaerung": "Feste Stellen, an denen Claude anhält und dich fragt. Vor allem vor Schritten, die sich nicht rückgängig machen lassen.",
+    "quatsch": "Echo räumte den Ordner auf, indem es alles löschte.",
+    "genauer": "Im Kurs «AI Fluency» heisst die Verantwortung für das, was du mit KI tust, «Diligence»."
+  },
+  "frisch": {
+    "begriff": "Kontext leeren",
+    "englisch": "clear context",
+    "kern": "frisch",
+    "erklaerung": "Ein neuer Chat beginnt mit leerem Kontext. Für lange Aufgaben hält eine Notizdatei den Stand fest.",
+    "quatsch": "Alles in einem Chat: Echo mischte den Ferienplan in die Vereinseinladung.",
+    "genauer": "Anthropic rät: zwischen Aufgaben ohne Bezug den Kontext leeren, nach zwei misslungenen Korrekturen frisch anfangen."
+  },
+  "einsatzprotokoll": {
+    "begriff": "Einsatzprotokoll",
+    "englisch": "progress notes",
+    "kern": null,
+    "erklaerung": "Das Spielwort für eine Notizdatei mit dem Arbeitsstand: was erledigt ist, was offen ist, was entschieden wurde."
+  },
+  "zusammenfassen": {
+    "begriff": "Zusammenfassen bei vollem Kontext",
+    "englisch": "compaction",
+    "kern": null,
+    "erklaerung": "Wird der Kontext voll, kann Claude den bisherigen Verlauf zusammenfassen und weitermachen. Dabei gehen Einzelheiten verloren.",
+    "genauer": "Notizen ausserhalb des Chats überdauern das Zusammenfassen und sogar neue Sitzungen."
+  },
+  "feldagent": {
+    "begriff": "Subagent",
+    "englisch": "subagent",
+    "kern": "feldagent",
+    "erklaerung": "Ein Helfer mit eigenem Kontext, eigener Anleitung und eigenen Werkzeugen. Er erledigt eine Teilaufgabe und gibt nur die Zusammenfassung zurück. Im Spiel heisst er Feldagent.",
+    "quatsch": "Für eine Plauderei mit vielen Rückfragen kam jede Antwort als knapper Bericht zurück.",
+    "genauer": "In Claude Code liegen eigene Subagenten als Datei in .claude/agents/ (Projekt) oder ~/.claude/agents/ (alle Projekte)."
+  },
+  "profil": {
+    "begriff": "Beschreibung und Werkzeuge eines Subagenten",
+    "englisch": "description, tools",
+    "kern": "profil",
+    "erklaerung": "Die Beschreibung sagt, wann Claude den Subagenten ruft. Die Werkzeugliste legt fest, was er darf.",
+    "quatsch": "Der Rechercheur mit Löschrecht räumte den Ferienordner weg.",
+    "genauer": "Fehlt die Werkzeugliste, bekommt der Subagent die Werkzeuge des Hauptgesprächs. Pflicht sind nur Name und Beschreibung."
+  },
+  "lagebericht": {
+    "begriff": "Auftrag an den Subagenten",
+    "englisch": "task prompt",
+    "kern": "lagebericht",
+    "erklaerung": "Was der Subagent mitbekommt: Ziel, Material und die Form der Rückmeldung. Ein eigener Subagent kennt dein Gespräch nicht.",
+    "quatsch": "Statt drei Zeilen kam ein Bericht über 14 Seiten zurück.",
+    "genauer": "Rückfragen an dich kann ein Subagent nicht stellen. Claude Code kennt auch eine Abzweigung («fork»), die den bisherigen Verlauf mitnimmt."
+  },
+  "aufteilen": {
+    "begriff": "Parallel arbeiten",
+    "englisch": "parallelization",
+    "kern": "aufteilen",
+    "erklaerung": "Unabhängige Teile einer Aufgabe laufen gleichzeitig. Am Schluss werden die Ergebnisse zusammengeführt.",
+    "quatsch": "Zwei Feldagenten suchten Hotels, keiner suchte Ausflüge.",
+    "genauer": "Viele ausführliche Berichte füllen den Hauptkontext. Darum kurze Berichte verlangen."
+  },
+  "zweiterblick": {
+    "begriff": "Prüf-Subagent",
+    "englisch": "reviewer subagent",
+    "kern": "zweiterblick",
+    "erklaerung": "Ein Subagent mit frischem Kontext prüft das Ergebnis gegen die Kriterien. Er sieht nur, was er prüfen soll.",
+    "quatsch": "Ohne «nur Wichtiges» meldete der Prüfagent 47 Kleinigkeiten.",
+    "genauer": "Anthropic rät, ihn nur Lücken melden zu lassen, die für Richtigkeit oder Anforderungen zählen."
+  },
+  "pruefagent": {
+    "begriff": "Prüfagent",
+    "englisch": "reviewer",
+    "kern": null,
+    "erklaerung": "Das Spielwort für einen Subagenten, der Ergebnisse mit frischem Blick prüft."
+  },
+  "modellwahl": {
+    "begriff": "Modell für Subagenten",
+    "englisch": "model",
+    "kern": null,
+    "erklaerung": "Im Profil eines Subagenten lässt sich festlegen, welches Claude-Modell er nutzt, zum Beispiel ein schnelleres für einfache Suchaufgaben.",
+    "genauer": "Das Feld heisst model und ist freiwillig."
+  },
+  "hook": {
+    "begriff": "Hook",
+    "englisch": "hook",
+    "kern": "hook",
+    "erklaerung": "Ein kleiner Befehl, den Claude Code an festen Stellen automatisch ausführt, zum Beispiel vor jeder Dateiänderung. Er greift jedes Mal, statt dass Claude daran denken muss. Im Spiel heisst er Sicherheitsprotokoll.",
+    "quatsch": "Die Bitte «vor dem Senden prüfen» ging nach drei Stunden im vollen Koffer unter.",
+    "genauer": "Claude kann den Hook auf Wunsch selbst schreiben. Mit /hooks siehst du, welche aktiv sind. Ein Hook vor einer Aktion kann sie sperren."
+  },
+  "paket": {
+    "begriff": "Plugin",
+    "englisch": "plugin",
+    "kern": "paket",
+    "erklaerung": "Ein Paket aus Skills, Konnektoren, Subagenten, Hooks und Befehlen, das man als Ganzes installieren und teilen kann. Im Spiel heisst es Einsatzpaket.",
+    "quatsch": "Ein Bankpasswort reiste im Paket mit in die Filiale.",
+    "genauer": "Skills aus Plugins laufen auch im normalen Chat der Claude-App. Subagenten und Hooks brauchen eine Umgebung, in der Claude selbständig an Dateien arbeitet, etwa Claude Code."
+  },
+  "sicherheitsprotokoll": {
+    "begriff": "Sicherheitsprotokoll",
+    "englisch": "hook",
+    "kern": null,
+    "erklaerung": "Das Spielwort für einen Hook: eine Regel, die an einer festen Stelle jedes Mal automatisch geprüft wird."
+  },
+  "befehle": {
+    "begriff": "Befehl",
+    "englisch": "slash command",
+    "kern": null,
+    "erklaerung": "Ein Kurzbefehl mit Schrägstrich, zum Beispiel /hooks in Claude Code. Auch Plugins können eigene Befehle mitbringen."
+  },
+  "claudemd": {
+    "begriff": "CLAUDE.md",
+    "englisch": "CLAUDE.md",
+    "kern": null,
+    "erklaerung": "Eine Datei mit Dauerregeln für Claude Code, ähnlich der Projektanweisung in der Claude-App. Im Spiel ist sie die Fallakte.",
+    "genauer": "Regeln darin sind Bitten. Was ohne Ausnahme gelten muss, gehört in einen Hook."
+  },
+  "vierd": {
+    "begriff": "4D-Modell",
+    "englisch": "AI Fluency",
+    "kern": null,
+    "erklaerung": "Ein Modell aus dem Gratis-Kurs «AI Fluency» von Anthropic: Delegation (was gebe ich ab), Description (wie beschreibe ich es), Discernment (wie beurteile ich das Ergebnis), Diligence (wofür trage ich Verantwortung)."
+  },
+  "vorausgefuellt": {
+    "begriff": "Vorausgefüllte Antwort",
+    "englisch": "prefill",
+    "kern": null,
+    "erklaerung": "Früher konnte man den Anfang von Claudes Antwort vorgeben. Bei neueren Modellen geht das nicht mehr. Beschreib stattdessen klar, welche Form du willst."
+  },
+  "rolle": {
+    "begriff": "Rolle",
+    "englisch": "role prompting",
+    "kern": null,
+    "erklaerung": "Ein Satz am Anfang, der Claude eine Rolle gibt, zum Beispiel «Du schreibst für das Sekretariat eines Musikvereins». Das hilft bei Ton und Blickwinkel.",
+    "genauer": "Anthropic rät, die Rolle in einem Satz zu nennen."
+  },
+  "skillEcht": {
+    "begriff": "Skill hochladen",
+    "englisch": "upload a skill",
+    "kern": "skillEcht",
+    "erklaerung": "Einen fertigen Skill als ZIP-Datei in die Claude-App bringen: Anpassungen, «+ Hinzufügen», «Skill hochladen». Danach gilt er in allen Chats.",
+    "quatsch": "Herr Imhof hängte das Dossier im Chat an. Im nächsten Chat war es weg.",
+    "genauer": "Die Hilfeseiten sagen «Anpassen» und «Fähigkeiten», die deutsche App «Anpassungen» und «Skills». Gemeint ist dasselbe."
+  },
+  "konnektorEcht": {
+    "begriff": "Konnektor verbinden",
+    "englisch": "connect a connector",
+    "kern": "konnektorEcht",
+    "erklaerung": "Einen Dienst wie Kalender oder Mail mit Claude verbinden: Anpassungen, Konnektoren, hinzufügen, beim Dienst anmelden, Rechte pro Werkzeug einstellen.",
+    "quatsch": "Frau Gisler erlaubte «Mail senden» ohne Nachfrage. Die Probe-Einladung ging an alle Gäste.",
+    "genauer": "Claude erbt deine Rechte im Dienst. Was du dort nicht siehst, sieht auch Claude nicht."
+  },
+  "subagentEcht": {
+    "begriff": "Subagent anlegen",
+    "englisch": "create a subagent",
+    "kern": "subagentEcht",
+    "erklaerung": "Im Code-Bereich Claude bitten, einen Subagenten zu schreiben. Er landet als Datei im Ordner .claude/agents und hat eigene Anleitung und Werkzeuge.",
+    "quatsch": "Familie Meier schrieb nur «Mach einen Agenten». Der Agent hiess agent-1 und durfte alles.",
+    "genauer": "Im Ordner .claude/agents des Projekts gilt er nur dort, in ~/.claude/agents für alle deine Projekte."
+  },
+  "hookEcht": {
+    "begriff": "Hook und Plugin einrichten",
+    "englisch": "set up hooks and plugins",
+    "kern": "hookEcht",
+    "erklaerung": "Plugins holst du unter Anpassungen, Plugins. Hooks lässt du Claude im Code-Bereich schreiben und liest sie vor dem Ja.",
+    "quatsch": "Herr Odermatt sagte zu allem Ja. Ein Hook löschte danach bei jedem Start die Notizen.",
+    "genauer": "Hooks und Subagenten wirken dort, wo Claude selbständig an Dateien arbeitet, zum Beispiel im Code-Bereich."
+  },
+  "anbieterEcht": {
+    "begriff": "Anbieter prüfen",
+    "englisch": "vet a provider",
+    "kern": "anbieterEcht",
+    "erklaerung": "Vor dem Anbinden prüfen, wer einen Konnektor, Skill oder ein Plugin herausgibt, welche Rechte es will, was drinsteckt und wie man es wieder entfernt.",
+    "quatsch": "Herr Odermatt installierte ein Gratis-Plugin aus einem Forum. Seine Offerten landeten danach bei einer fremden Adresse.",
+    "genauer": "Eine automatische Prüfung auf Schadcode gibt es nur für Firmenkonten, und auch sie ist keine Garantie."
+  }
+}

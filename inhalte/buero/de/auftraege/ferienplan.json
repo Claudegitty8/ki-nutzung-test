@@ -1,0 +1,3213 @@
+{
+  "id": "ferienplan",
+  "kapitel": 5,
+  "titel": "Operation Ferienplan",
+  "kunde": "Familie Meier",
+  "wunsch": "Zwei Wochen Lissabon, mit Kindern und Hund, für höchstens 4000 Franken. Es gibt so viel zu suchen! Echo soll ein ganzes Team losschicken.",
+  "kundenstimme": "Lissabon mit Kindern, Hund und ohne böse Überraschung beim Budget. Der Prüfagent hat uns 600 Franken gespart.",
+  "ueberraschung": "Familie Meier hat der Schreinerei Odermatt vom Lagezentrum erzählt. Dort sollen Regeln gelten, die nie vergessen gehen.",
+  "lexikon": [
+    "pruefagent",
+    "modellwahl"
+  ],
+  "schrank": {
+    "titel": "Einsatzprofil (Subagent): Reise-Rechercheur",
+    "vorlage": "---\nname: reise-rechercheur\ndescription: Recherchiert Verbindungen, Unterkünfte und Ausflüge für eine Reise und bringt eine kurze Auswahl zurück. Verwenden, wenn für eine Reise viel gesucht oder gelesen werden muss.\ntools: WebSearch, WebFetch, Read\n---\nDu recherchierst für eine Reise. Du kennst das Gespräch nicht: Alles Nötige steht im Auftrag.\nHalte dich an die Kriterien im Auftrag.\nBericht: höchstens fünf Zeilen pro Thema, jede mit Quelle. Was du nicht findest, sagst du.",
+    "wo": "Speichere den Text in Claude Code als reise-rechercheur.md im Ordner .claude/agents/ deines Projekts oder in ~/.claude/agents/ für alle Projekte. Oder bitte Claude Code, die Datei zu schreiben.",
+    "probefahrt": {
+      "aufgabe": "sa-a",
+      "punkte": [
+        {
+          "id": "ordner",
+          "text": "Im Code-Bereich den Ordner des Projekts gewählt."
+        },
+        {
+          "id": "beschreiben",
+          "text": "Claude den Subagenten beschrieben: was, wann, welche Werkzeuge."
+        },
+        {
+          "id": "lesen",
+          "text": "Die Datei in .claude/agents gelesen."
+        },
+        {
+          "id": "testen",
+          "text": "Mit einer passenden Aufgabe ausprobiert."
+        }
+      ]
+    }
+  },
+  "runden": [
+    {
+      "id": "r1",
+      "art": "konzept",
+      "konzept": "feldagent",
+      "probieren": {
+        "aufgabe": "fa-a",
+        "nurTeile": [
+          "selbst",
+          "plaudern"
+        ]
+      },
+      "beispiel": {
+        "aufgabe": "fa-a"
+      },
+      "luecke": {
+        "aufgabe": "fa-b",
+        "vorgabe": [
+          "feldagent"
+        ]
+      },
+      "frei": [
+        "fa-c",
+        "fa-d",
+        "fa-e",
+        "fa-f"
+      ]
+    },
+    {
+      "id": "r2",
+      "art": "konzept",
+      "konzept": "profil",
+      "probieren": {
+        "aufgabe": "pr-a",
+        "nurTeile": [
+          "vage",
+          "loeschen"
+        ]
+      },
+      "beispiel": {
+        "aufgabe": "pr-a"
+      },
+      "luecke": {
+        "aufgabe": "pr-b",
+        "vorgabe": [
+          "wann"
+        ]
+      },
+      "frei": [
+        "pr-c",
+        "pr-d",
+        "pr-e",
+        "pr-f"
+      ]
+    },
+    {
+      "id": "r3",
+      "art": "konzept",
+      "konzept": "lagebericht",
+      "probieren": {
+        "aufgabe": "lb-a",
+        "nurTeile": [
+          "roman",
+          "duweisst"
+        ]
+      },
+      "beispiel": {
+        "aufgabe": "lb-a"
+      },
+      "luecke": {
+        "aufgabe": "lb-b",
+        "vorgabe": [
+          "ziel",
+          "material"
+        ]
+      },
+      "frei": [
+        "lb-c",
+        "lb-d",
+        "lb-e",
+        "lb-f"
+      ]
+    },
+    {
+      "id": "r4",
+      "art": "konzept",
+      "konzept": "aufteilen",
+      "probieren": {
+        "aufgabe": "au-a",
+        "nurTeile": [
+          "alles",
+          "zusammen"
+        ]
+      },
+      "beispiel": {
+        "aufgabe": "au-a"
+      },
+      "luecke": {
+        "aufgabe": "au-b",
+        "vorgabe": [
+          "essen",
+          "museen"
+        ]
+      },
+      "frei": [
+        "au-c",
+        "au-d",
+        "au-e",
+        "au-f"
+      ]
+    },
+    {
+      "id": "r5",
+      "art": "konzept",
+      "konzept": "zweiterblick",
+      "probieren": {
+        "aufgabe": "zb-a",
+        "nurTeile": [
+          "selbst",
+          "ganzerChat"
+        ]
+      },
+      "beispiel": {
+        "aufgabe": "zb-a"
+      },
+      "luecke": {
+        "aufgabe": "zb-b",
+        "vorgabe": [
+          "ergebnis",
+          "kriterien"
+        ]
+      },
+      "frei": [
+        "zb-c",
+        "zb-d",
+        "zb-e",
+        "zb-f"
+      ]
+    },
+    {
+      "id": "r-echt",
+      "art": "konzept",
+      "konzept": "subagentEcht",
+      "probieren": {
+        "aufgabe": "sa-a"
+      },
+      "beispiel": {
+        "aufgabe": "sa-a"
+      },
+      "luecke": {
+        "aufgabe": "sa-b",
+        "vorgabe": [
+          "modusCode",
+          "ordnerWaehlen",
+          "ordnerFerien"
+        ]
+      },
+      "frei": [
+        "sa-c",
+        "sa-d",
+        "sa-e",
+        "sa-f"
+      ]
+    },
+    {
+      "id": "r6",
+      "art": "misch",
+      "titel": "Alles zusammen",
+      "frei": [
+        "x-a",
+        "x-b"
+      ]
+    }
+  ],
+  "aufgaben": {
+    "fa-a": {
+      "wunsch": "Echo soll 40 Ferienhaus-Angebote durchlesen und die drei besten nennen. Danach will die Familie noch lange mit Echo über die Reise reden.",
+      "grundprompt": "Finde die drei besten Ferienhäuser für Familie Meier.",
+      "fenster": 800,
+      "artNamen": {
+        "tool": "Feldagenten (Subagenten)",
+        "kontext": "Selbst lesen"
+      },
+      "teile": [
+        {
+          "id": "kriterien",
+          "art": "prompt",
+          "text": "Kriterien: 4 Zimmer, nahe am Meer, unter 2000 Franken pro Woche, Hund erlaubt."
+        },
+        {
+          "id": "selbst",
+          "art": "kontext",
+          "text": "Echo liest alle 40 Angebote selbst, hier im Gespräch.",
+          "tokens": 4000
+        },
+        {
+          "id": "feldagent",
+          "art": "tool",
+          "text": "Feldagent «Rechercheur» liest die 40 Angebote im eigenen Koffer und bringt nur die drei besten zurück.",
+          "tokens": 60
+        },
+        {
+          "id": "plaudern",
+          "art": "tool",
+          "text": "Feldagent «Gesprächspartner» führt danach auch das lange Gespräch mit der Familie."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "tokensUeber": 800
+          },
+          "fehlbild": "kofferVoll"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "plaudern"
+            ]
+          },
+          "fehlbild": "gespraechStockt"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "kriterien"
+            ]
+          },
+          "fehlbild": "keineKriterien"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "feldagent"
+            ]
+          },
+          "fehlbild": "niemandLiest"
+        }
+      ],
+      "fehlbilder": {
+        "kofferVoll": {
+          "texte": [
+            "40 Angebote im Koffer. Die Kriterien gingen darin unter: Ich empfehle ein Haus, in dem Hunde verboten sind.",
+            "Mein Koffer ist voll mit Angeboten. Für das Gespräch danach bleibt kaum Platz."
+          ],
+          "hinweis": "Viel Lesestoff füllt Echos Koffer. Schick einen Feldagenten, der im eigenen Koffer liest."
+        },
+        "gespraechStockt": {
+          "texte": [
+            "Frau Meier fragt etwas, der Gesprächspartner antwortet mit einem knappen Bericht. Jede Rückfrage dauert ewig.",
+            "Das Gespräch läuft über einen Feldagenten. Jede Antwort kommt als Lagebericht zurück. Plaudern geht anders."
+          ],
+          "hinweis": "Hin und Her mit vielen Rückfragen bleibt im Hauptgespräch bei Echo."
+        },
+        "keineKriterien": {
+          "texte": [
+            "Die drei besten Häuser: die drei teuersten. Was der Familie wichtig ist, stand nirgends.",
+            "Gefunden habe ich drei Villen in den Bergen. Meer und Hund kamen nicht vor."
+          ],
+          "hinweis": "Sag, was «die besten» heisst."
+        },
+        "niemandLiest": {
+          "texte": [
+            "Wer liest die 40 Angebote? Niemand. Ich empfehle aus dem Bauch heraus.",
+            "Weder ich noch ein Feldagent hat die Angebote gelesen."
+          ],
+          "hinweis": "Jemand muss die Angebote lesen. Am besten ein Feldagent im eigenen Koffer."
+        }
+      },
+      "erfolg": [
+        "Der Rechercheur hat 40 Angebote gelesen. In meinem Koffer liegen nur seine drei Vorschläge. Viel Platz für das Gespräch mit euch.",
+        "Drei Häuser am Meer, mit Hund, unter 2000 Franken. Gelesen hat der Feldagent, geredet wird hier."
+      ],
+      "loesung": [
+        "kriterien",
+        "feldagent"
+      ]
+    },
+    "fa-b": {
+      "wunsch": "Echo soll die Hausordnungen von zwölf Campingplätzen lesen: Wo sind Hunde erlaubt?",
+      "grundprompt": "Welche Campingplätze erlauben Hunde?",
+      "fenster": 800,
+      "artNamen": {
+        "tool": "Feldagenten (Subagenten)",
+        "kontext": "Selbst lesen"
+      },
+      "teile": [
+        {
+          "id": "feldagent",
+          "art": "tool",
+          "text": "Feldagent liest die zwölf Hausordnungen im eigenen Koffer.",
+          "tokens": 40
+        },
+        {
+          "id": "selbst",
+          "art": "kontext",
+          "text": "Alle zwölf Hausordnungen hier in den Chat kopieren.",
+          "tokens": 2400
+        },
+        {
+          "id": "frage",
+          "art": "prompt",
+          "text": "Melde pro Platz: Hund erlaubt ja oder nein, mit der Stelle in der Hausordnung."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "tokensUeber": 800
+          },
+          "fehlbild": "kofferVoll"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "feldagent"
+            ]
+          },
+          "fehlbild": "niemandLiest"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "frage"
+            ]
+          },
+          "fehlbild": "keineFrage"
+        }
+      ],
+      "fehlbilder": {
+        "kofferVoll": {
+          "texte": [
+            "Zwölf Hausordnungen im Koffer. Bei Platz 9 habe ich «Hunde an der Leine» mit «keine Hunde» verwechselt.",
+            "Der Koffer ist voll mit Kleingedrucktem. Die eigentliche Frage ging fast unter."
+          ],
+          "hinweis": "Lass einen Feldagenten das Kleingedruckte lesen."
+        },
+        "niemandLiest": {
+          "texte": [
+            "Gelesen hat niemand. Ich vermute, Hunde sind überall erlaubt.",
+            "Ohne Leser keine Antwort."
+          ],
+          "hinweis": "Schick einen Feldagenten los."
+        },
+        "keineFrage": {
+          "texte": [
+            "Der Feldagent kommt zurück: «Habe alles gelesen.» Wonach er suchen sollte, wusste er nicht.",
+            "Der Bericht fasst die Ruhezeiten zusammen. Um Hunde ging es nicht."
+          ],
+          "hinweis": "Sag dem Feldagenten, was er herausfinden und melden soll."
+        }
+      },
+      "erfolg": [
+        "Bericht des Feldagenten: 7 Plätze erlauben Hunde, 5 nicht. Je mit der Stelle aus der Hausordnung. In meinem Koffer: zwölf Zeilen.",
+        "Zwölf Plätze geprüft, nur das Ergebnis kam zurück."
+      ],
+      "loesung": [
+        "feldagent",
+        "frage"
+      ]
+    },
+    "fa-c": {
+      "typ": "wahl",
+      "wunsch": "Die Familie will ausführlich mit Echo über ihre Wünsche plaudern.",
+      "frage": "Familie Meier will mit Echo lange über ihre Wünsche reden: Meer oder Stadt, wer will was. Wer übernimmt das?",
+      "optionen": [
+        {
+          "id": "feld",
+          "text": "Ein Feldagent, damit Echos Koffer leer bleibt.",
+          "hinweis": "Jede Antwort käme als knapper Bericht zurück. Das Gespräch stockt."
+        },
+        {
+          "id": "echo",
+          "text": "Echo selbst, im Hauptgespräch.",
+          "hinweis": "Genau. Hin und Her gehört ins Hauptgespräch.",
+          "richtig": true
+        },
+        {
+          "id": "drei",
+          "text": "Drei Feldagenten gleichzeitig, einer pro Familienmitglied.",
+          "hinweis": "Dann redet niemand mit allen, und nichts passt zusammen."
+        }
+      ],
+      "echo": "Echo plaudert mit der Familie. Rückfragen gehen schnell hin und her. Erst für die Recherche geht ein Feldagent los.",
+      "loesung": [
+        "echo"
+      ]
+    },
+    "fa-d": {
+      "typ": "wahl",
+      "wunsch": "Welche Aufgabe passt am besten für einen Feldagenten?",
+      "frage": "Welche dieser Aufgaben passt am besten für einen Feldagenten?",
+      "optionen": [
+        {
+          "id": "packliste",
+          "text": "Mit Frau Meier Satz für Satz die Packliste besprechen.",
+          "hinweis": "Viel Hin und Her, das bleibt im Hauptgespräch."
+        },
+        {
+          "id": "fahrplan",
+          "text": "300 Seiten Fahrpläne durchsuchen und nur die zwei besten Verbindungen melden.",
+          "hinweis": "Genau. Viel Lesestoff, kurzer Bericht.",
+          "richtig": true
+        },
+        {
+          "id": "uhrzeit",
+          "text": "Kurz sagen, wie spät es in Lissabon ist.",
+          "hinweis": "Dafür lohnt sich kein eigener Einsatz."
+        }
+      ],
+      "echo": "Der Feldagent liest die Fahrpläne. Zurück kommen zwei Zeilen.",
+      "loesung": [
+        "fahrplan"
+      ]
+    },
+    "fa-e": {
+      "wunsch": "Echo soll die Bewertungen von fünf Hotels lesen, je 200 Stück, und eine Empfehlung geben.",
+      "grundprompt": "Welches der fünf Hotels empfiehlst du?",
+      "fenster": 800,
+      "artNamen": {
+        "tool": "Feldagenten (Subagenten)",
+        "kontext": "Selbst lesen"
+      },
+      "teile": [
+        {
+          "id": "selbst",
+          "art": "kontext",
+          "text": "Echo liest alle 1000 Bewertungen hier im Gespräch.",
+          "tokens": 3000
+        },
+        {
+          "id": "feldagent",
+          "art": "tool",
+          "text": "Feldagent liest die Bewertungen im eigenen Koffer und bringt pro Hotel drei Stichworte zurück.",
+          "tokens": 50
+        },
+        {
+          "id": "kriterien",
+          "art": "prompt",
+          "text": "Wichtig sind: ruhig, kinderfreundlich, gutes Frühstück."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "tokensUeber": 800
+          },
+          "fehlbild": "kofferVoll"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "kriterien"
+            ]
+          },
+          "fehlbild": "keineKriterien"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "feldagent"
+            ]
+          },
+          "fehlbild": "niemandLiest"
+        }
+      ],
+      "fehlbilder": {
+        "kofferVoll": {
+          "texte": [
+            "1000 Bewertungen im Koffer. Ich empfehle das Hotel mit den meisten Ausrufezeichen.",
+            "Der Koffer ist voll. Die Kriterien der Familie finde ich darin nicht mehr."
+          ],
+          "hinweis": "Lass einen Feldagenten lesen und kurz berichten."
+        },
+        "keineKriterien": {
+          "texte": [
+            "Empfehlung: das Partyhotel. Es hat die besten Bewertungen von Partygästen.",
+            "Was der Familie wichtig ist, wusste niemand. Die Stichworte passen nicht."
+          ],
+          "hinweis": "Sag, worauf es der Familie ankommt."
+        },
+        "niemandLiest": {
+          "texte": [
+            "Niemand hat die Bewertungen gelesen. Ich empfehle das erste Hotel auf der Liste.",
+            "Ohne Leser keine Empfehlung."
+          ],
+          "hinweis": "Schick einen Feldagenten zum Lesen."
+        }
+      },
+      "erfolg": [
+        "Bericht: Hotel Mar ruhig, Kinderbecken, Frühstück gelobt. Die anderen vier passen schlechter. In meinem Koffer: 15 Stichworte statt 1000 Bewertungen.",
+        "Empfehlung: Hotel Mar. Der Feldagent hat gelesen, ich habe entschieden."
+      ],
+      "loesung": [
+        "feldagent",
+        "kriterien"
+      ]
+    },
+    "fa-f": {
+      "typ": "wahl",
+      "wunsch": "Was kommt vom Feldagenten zurück in Echos Koffer?",
+      "frage": "Ein Feldagent hat 200 Seiten gelesen. Was landet danach in Echos Koffer?",
+      "optionen": [
+        {
+          "id": "alles",
+          "text": "Alles, was er gelesen hat.",
+          "hinweis": "Dann wäre der Feldagent nutzlos."
+        },
+        {
+          "id": "bericht",
+          "text": "Nur sein Bericht.",
+          "hinweis": "Genau. Darum bleibt Echos Koffer frei.",
+          "richtig": true
+        },
+        {
+          "id": "nichts",
+          "text": "Gar nichts.",
+          "hinweis": "Doch, sein Bericht kommt zurück."
+        }
+      ],
+      "echo": "Der Feldagent las 200 Seiten. In Echos Koffer kommen fünf Zeilen.",
+      "loesung": [
+        "bericht"
+      ]
+    },
+    "pr-a": {
+      "wunsch": "Bau das Einsatzprofil für einen Feldagenten, der Zugverbindungen sucht.",
+      "grundprompt": "name: zug-rechercheur",
+      "nachrichtVon": "Dein Einsatzprofil (Subagent)",
+      "artNamen": {
+        "prompt": "Beschreibung",
+        "tool": "Ausrüstung (Werkzeuge)",
+        "kontext": "Anleitung"
+      },
+      "teile": [
+        {
+          "id": "wann",
+          "art": "prompt",
+          "text": "description: Sucht Zugverbindungen und vergleicht Preise. Verwenden, wenn eine Reise mit dem Zug geplant wird."
+        },
+        {
+          "id": "vage",
+          "art": "prompt",
+          "text": "description: Hilft bei Reisen."
+        },
+        {
+          "id": "suchen",
+          "art": "tool",
+          "text": "Ausrüstung: im Web suchen und Seiten lesen"
+        },
+        {
+          "id": "loeschen",
+          "art": "tool",
+          "text": "Ausrüstung: Dateien schreiben und löschen"
+        },
+        {
+          "id": "anleitung",
+          "art": "kontext",
+          "text": "Du suchst Zugverbindungen. Melde pro Verbindung: Abfahrt, Ankunft, Umsteigen, Preis."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "vage"
+            ]
+          },
+          "fehlbild": "vage"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "loeschen"
+            ]
+          },
+          "fehlbild": "zuvielAusruestung"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "wann"
+            ]
+          },
+          "fehlbild": "keinWann"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "suchen"
+            ]
+          },
+          "fehlbild": "alleWerkzeuge"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "anleitung"
+            ]
+          },
+          "fehlbild": "keineAnleitung"
+        }
+      ],
+      "fehlbilder": {
+        "vage": {
+          "texte": [
+            "«Hilft bei Reisen»: Echo ruft den Zug-Rechercheur jetzt auch für die Packliste und das Wetter.",
+            "Bei der Frage nach dem Hotel kommt der Zug-Rechercheur und sucht Züge."
+          ],
+          "hinweis": "Eine ungenaue Beschreibung lässt Echo raten, wann der Feldagent passt."
+        },
+        "zuvielAusruestung": {
+          "texte": [
+            "Der Rechercheur hat «aufgeräumt» und den Ordner «Ferien 2026» gelöscht.",
+            "Zum Suchen hätte Lesen gereicht. Er hat trotzdem eine Datei überschrieben."
+          ],
+          "hinweis": "Gib nur die Ausrüstung mit, die für die Aufgabe nötig ist."
+        },
+        "keinWann": {
+          "texte": [
+            "Echo ruft den Feldagenten nie. Wann er gebraucht wird, stand nirgends.",
+            "Der Zug-Rechercheur sitzt in der Zentrale und wartet. Vergeblich."
+          ],
+          "hinweis": "Die Beschreibung sagt, was er tut und wann er gerufen wird."
+        },
+        "alleWerkzeuge": {
+          "texte": [
+            "Ohne Ausrüstungsliste erbt der Feldagent alle Werkzeuge von Echo, auch Löschen und Senden.",
+            "Keine Liste heisst nicht keine Werkzeuge. Er bekommt alles, was Echo hat."
+          ],
+          "hinweis": "Gib eine Ausrüstungsliste an. Ohne Liste bekommt der Feldagent alles."
+        },
+        "keineAnleitung": {
+          "texte": [
+            "Er sucht fleissig, bringt aber jedes Mal etwas anderes: einmal Preise, einmal Fotos von Bahnhöfen.",
+            "Ohne Anleitung weiss er nicht, was er melden soll."
+          ],
+          "hinweis": "Schreib eine kurze Anleitung: was er tut und was er meldet."
+        }
+      },
+      "erfolg": [
+        "Profil fertig: klare Beschreibung, nur Suchen und Lesen, kurze Anleitung. Bei «Zug nach Lissabon» ruft Echo ihn sofort.",
+        "Der Zug-Rechercheur kommt genau dann, wenn es um Züge geht, und darf nur suchen."
+      ],
+      "loesung": [
+        "wann",
+        "suchen",
+        "anleitung"
+      ]
+    },
+    "pr-b": {
+      "wunsch": "Bau das Profil für einen Feldagenten, der das Wetter am Reiseziel zusammenfasst.",
+      "grundprompt": "name: wetter-bote",
+      "nachrichtVon": "Dein Einsatzprofil (Subagent)",
+      "artNamen": {
+        "prompt": "Beschreibung",
+        "tool": "Ausrüstung (Werkzeuge)",
+        "kontext": "Anleitung"
+      },
+      "teile": [
+        {
+          "id": "wann",
+          "art": "prompt",
+          "text": "description: Fasst die Wetterberichte für ein Reiseziel zusammen. Verwenden, wenn nach dem Wetter am Ferienort gefragt wird."
+        },
+        {
+          "id": "lesen",
+          "art": "tool",
+          "text": "Ausrüstung: im Web suchen und Seiten lesen"
+        },
+        {
+          "id": "senden",
+          "art": "tool",
+          "text": "Ausrüstung: Mails senden"
+        },
+        {
+          "id": "anleitung",
+          "art": "kontext",
+          "text": "Fass das Wetter der nächsten sieben Tage in fünf Zeilen zusammen. Nenne die Quelle."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "senden"
+            ]
+          },
+          "fehlbild": "zuvielAusruestung"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "wann"
+            ]
+          },
+          "fehlbild": "keinWann"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "lesen"
+            ]
+          },
+          "fehlbild": "alleWerkzeuge"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "anleitung"
+            ]
+          },
+          "fehlbild": "keineAnleitung"
+        }
+      ],
+      "fehlbilder": {
+        "zuvielAusruestung": {
+          "texte": [
+            "Der Wetter-Bote hat den Wetterbericht gleich an die ganze Verwandtschaft gemailt.",
+            "Zum Wetter-Lesen braucht es kein Senderecht. Er hat es trotzdem benutzt."
+          ],
+          "hinweis": "Nur nötige Ausrüstung."
+        },
+        "keinWann": {
+          "texte": [
+            "Die Familie fragt nach dem Wetter. Echo ruft den Wetter-Boten nicht, das Wann fehlt.",
+            "Der Wetter-Bote bleibt in der Zentrale."
+          ],
+          "hinweis": "Schreib in die Beschreibung, wann er gerufen wird."
+        },
+        "alleWerkzeuge": {
+          "texte": [
+            "Ohne Ausrüstungsliste erbt der Wetter-Bote alles, was Echo darf.",
+            "Keine Liste: Er bekommt alle Werkzeuge, auch Senden."
+          ],
+          "hinweis": "Gib eine Ausrüstungsliste an."
+        },
+        "keineAnleitung": {
+          "texte": [
+            "Er bringt 14 Seiten Klimatabellen seit 1950.",
+            "Ohne Anleitung kommt jedes Mal etwas anderes zurück."
+          ],
+          "hinweis": "Sag in der Anleitung, was und wie kurz er berichtet."
+        }
+      },
+      "erfolg": [
+        "Wetter-Bote fertig. Bei «Wie wird das Wetter in Lissabon?» kommen fünf Zeilen mit Quelle.",
+        "Klare Beschreibung, nur Lesen, kurze Anleitung."
+      ],
+      "loesung": [
+        "wann",
+        "lesen",
+        "anleitung"
+      ]
+    },
+    "pr-c": {
+      "wunsch": "Bau das Profil für einen Feldagenten, der Packlisten auf Vergessenes prüft.",
+      "grundprompt": "name: packlisten-pruefer",
+      "nachrichtVon": "Dein Einsatzprofil (Subagent)",
+      "artNamen": {
+        "prompt": "Beschreibung",
+        "tool": "Ausrüstung (Werkzeuge)",
+        "kontext": "Anleitung"
+      },
+      "teile": [
+        {
+          "id": "wann",
+          "art": "prompt",
+          "text": "description: Prüft Packlisten auf Vergessenes. Verwenden, wenn eine Packliste fertig ist."
+        },
+        {
+          "id": "breit",
+          "art": "prompt",
+          "text": "description: Verwenden bei allem."
+        },
+        {
+          "id": "lesen",
+          "art": "tool",
+          "text": "Ausrüstung: Dateien lesen"
+        },
+        {
+          "id": "schreiben",
+          "art": "tool",
+          "text": "Ausrüstung: Dateien schreiben und löschen"
+        },
+        {
+          "id": "anleitung",
+          "art": "kontext",
+          "text": "Vergleiche die Packliste mit der Checkliste. Melde nur, was fehlt."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "breit"
+            ]
+          },
+          "fehlbild": "zuBreit"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "schreiben"
+            ]
+          },
+          "fehlbild": "zuvielAusruestung"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "wann"
+            ]
+          },
+          "fehlbild": "keinWann"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "lesen"
+            ]
+          },
+          "fehlbild": "alleWerkzeuge"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "anleitung"
+            ]
+          },
+          "fehlbild": "keineAnleitung"
+        }
+      ],
+      "fehlbilder": {
+        "zuBreit": {
+          "texte": [
+            "Der Packlisten-Prüfer wird jetzt bei jeder Frage gerufen. Auch beim Wetter meldet er: «Regenschirm fehlt.»",
+            "«Bei allem»: Er mischt sich überall ein."
+          ],
+          "hinweis": "Zu breit. Nenne nur die Bitten, bei denen er passt."
+        },
+        "zuvielAusruestung": {
+          "texte": [
+            "Er hat Dinge, die ihm unnötig schienen, gleich von der Liste gestrichen: die Medikamente.",
+            "Prüfen hätte Lesen gebraucht. Er hat die Liste umgeschrieben."
+          ],
+          "hinweis": "Ein Prüfer liest nur."
+        },
+        "keinWann": {
+          "texte": [
+            "Die Packliste ist fertig. Echo ruft den Prüfer nicht. Wann, stand nirgends.",
+            "Der Prüfer wartet, die Koffer gehen ungeprüft zu."
+          ],
+          "hinweis": "Schreib, wann er gerufen wird."
+        },
+        "alleWerkzeuge": {
+          "texte": [
+            "Ohne Ausrüstungsliste darf der Prüfer alles, was Echo darf. Auch löschen.",
+            "Keine Liste heisst: alle Werkzeuge."
+          ],
+          "hinweis": "Gib eine Ausrüstungsliste an."
+        },
+        "keineAnleitung": {
+          "texte": [
+            "Er meldet, was alles auf der Liste steht. Was fehlt, sagt er nicht.",
+            "Ohne Anleitung prüft er die Rechtschreibung."
+          ],
+          "hinweis": "Sag ihm, womit er vergleicht und was er meldet."
+        }
+      },
+      "erfolg": [
+        "Packlisten-Prüfer fertig. Er meldet: «Hundepass fehlt.» Sonst nichts.",
+        "Gerufen bei fertigen Packlisten, darf nur lesen, meldet nur, was fehlt."
+      ],
+      "loesung": [
+        "wann",
+        "lesen",
+        "anleitung"
+      ]
+    },
+    "pr-d": {
+      "typ": "wahl",
+      "wunsch": "Was passiert, wenn im Einsatzprofil keine Ausrüstung steht?",
+      "frage": "Du schreibst ein Einsatzprofil ohne Ausrüstungsliste. Was darf der Feldagent dann?",
+      "optionen": [
+        {
+          "id": "nichts",
+          "text": "Gar nichts, er hat keine Werkzeuge.",
+          "hinweis": "Nein, genau umgekehrt."
+        },
+        {
+          "id": "alles",
+          "text": "Alles, was Echo auch darf.",
+          "hinweis": "Genau. Darum gibst du eine Liste an.",
+          "richtig": true
+        },
+        {
+          "id": "fragen",
+          "text": "Er fragt jedes Mal nach, was er darf.",
+          "hinweis": "Nein. Ohne Liste erbt er die Werkzeuge."
+        }
+      ],
+      "echo": "Familie Meier ergänzt die Liste: nur Suchen und Lesen. Jetzt kann der Rechercheur nichts mehr löschen.",
+      "loesung": [
+        "alles"
+      ]
+    },
+    "pr-e": {
+      "typ": "wahl",
+      "wunsch": "Wo legst du ein Einsatzprofil für alle Projekte ab?",
+      "frage": "In Claude Code soll ein Einsatzprofil in all deinen Projekten gelten. Wohin damit?",
+      "optionen": [
+        {
+          "id": "projekt",
+          "text": "In den Ordner .claude/agents/ im Projekt.",
+          "hinweis": "Das gilt nur für dieses eine Projekt."
+        },
+        {
+          "id": "benutzer",
+          "text": "In den Ordner ~/.claude/agents/ in deinem Benutzerordner.",
+          "hinweis": "Genau. Das gilt für alle deine Projekte.",
+          "richtig": true
+        },
+        {
+          "id": "app",
+          "text": "In die Projektanweisung der Claude-App.",
+          "hinweis": "Dort liegen Dauerregeln, keine Einsatzprofile."
+        }
+      ],
+      "echo": "Der Reise-Rechercheur liegt jetzt im Benutzerordner. Jedes Projekt kann ihn rufen.",
+      "loesung": [
+        "benutzer"
+      ]
+    },
+    "pr-f": {
+      "typ": "wahl",
+      "wunsch": "Wie baust du am einfachsten ein Einsatzprofil?",
+      "frage": "Familie Meier hat noch nie ein Einsatzprofil geschrieben. Wie geht es am einfachsten?",
+      "optionen": [
+        {
+          "id": "claude",
+          "text": "Claude beschreiben, was der Feldagent tun soll, die Datei schreiben lassen und durchlesen.",
+          "hinweis": "Genau. So empfiehlt es auch die Anleitung von Claude Code.",
+          "richtig": true
+        },
+        {
+          "id": "forum",
+          "text": "Ein Profil aus einem Forum kopieren und ungelesen verwenden.",
+          "hinweis": "Fremdes nie ungelesen. Du weisst nicht, was drinsteht."
+        },
+        {
+          "id": "lernen",
+          "text": "Zuerst ein Jahr programmieren lernen.",
+          "hinweis": "Nicht nötig. Es ist eine Textdatei."
+        }
+      ],
+      "echo": "Echo schreibt das Profil nach der Beschreibung der Familie. Herr Meier liest es und streicht das Löschrecht.",
+      "loesung": [
+        "claude"
+      ]
+    },
+    "lb-a": {
+      "wunsch": "Echo schickt einen Feldagenten los, der Zugverbindungen nach Lissabon sucht. Er kennt das Gespräch mit der Familie nicht.",
+      "grundprompt": "Feldagent «zug-rechercheur», dein Auftrag:",
+      "nachrichtVon": "Echos Einsatzbefehl an den Feldagenten",
+      "artNamen": {
+        "prompt": "Auftrag",
+        "kontext": "Mitgegeben",
+        "absicherung": "Form des Lageberichts"
+      },
+      "teile": [
+        {
+          "id": "ziel",
+          "art": "prompt",
+          "text": "Suche Zugverbindungen von Zürich nach Lissabon für den 12. Juli."
+        },
+        {
+          "id": "duweisst",
+          "art": "prompt",
+          "text": "Du weisst ja, worum es geht."
+        },
+        {
+          "id": "material",
+          "art": "kontext",
+          "text": "Familie: 2 Erwachsene, 2 Kinder, 1 Hund. Höchstens zweimal umsteigen. Budget 1200 Franken."
+        },
+        {
+          "id": "form",
+          "art": "absicherung",
+          "text": "Bericht: die drei besten Verbindungen, je eine Zeile mit Abfahrt, Ankunft, Umsteigen, Preis."
+        },
+        {
+          "id": "roman",
+          "art": "absicherung",
+          "text": "Erzähl mir alles, was du findest."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "duweisst"
+            ]
+          },
+          "fehlbild": "weissNichts"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "roman"
+            ]
+          },
+          "fehlbild": "roman"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "ziel"
+            ]
+          },
+          "fehlbild": "keinZiel"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "material"
+            ]
+          },
+          "fehlbild": "keinMaterial"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "form"
+            ]
+          },
+          "fehlbild": "keineForm"
+        }
+      ],
+      "fehlbilder": {
+        "weissNichts": {
+          "texte": [
+            "«Du weisst ja»: Nein. Ich arbeite in meinem eigenen Koffer und kenne euer Gespräch nicht.",
+            "Worum es geht? Ich habe nur diesen einen Satz bekommen."
+          ],
+          "hinweis": "Der Feldagent kennt das Gespräch nicht. Gib ihm alles Nötige mit."
+        },
+        "roman": {
+          "texte": [
+            "Bericht über 14 Seiten, mit der Geschichte der Eisenbahn. Echos Koffer ist danach voll.",
+            "Ich erzähle alles: 63 Verbindungen, Speisewagen, Bahnhofsarchitektur."
+          ],
+          "hinweis": "Leg fest, wie kurz und in welcher Form der Bericht zurückkommt."
+        },
+        "keinZiel": {
+          "texte": [
+            "Ich soll etwas tun. Was genau?",
+            "Ohne Auftrag kehre ich mit leeren Händen zurück."
+          ],
+          "hinweis": "Sag dem Feldagenten, was er suchen soll."
+        },
+        "keinMaterial": {
+          "texte": [
+            "Die schnellste Verbindung: viermal umsteigen, Hunde verboten, 2400 Franken.",
+            "Ich habe die Verbindung für eine Person gesucht. Von Kindern und Hund wusste ich nichts."
+          ],
+          "hinweis": "Gib dem Feldagenten mit, was er wissen muss: wer reist, was gilt."
+        },
+        "keineForm": {
+          "texte": [
+            "Mein Bericht ist ein Durcheinander aus Links, Preisen und Notizen. Echo muss alles selbst ordnen.",
+            "Ich bringe 30 Verbindungen in zufälliger Reihenfolge."
+          ],
+          "hinweis": "Sag, in welcher Form der Bericht zurückkommen soll."
+        }
+      },
+      "erfolg": [
+        "Lagebericht: 1. Zürich 7.02, Lissabon 22.15, 2× umsteigen, 980 Franken. 2. … 3. … Hund überall erlaubt.",
+        "Drei Zeilen, genau wie bestellt. Echos Koffer bleibt leicht."
+      ],
+      "loesung": [
+        "ziel",
+        "material",
+        "form"
+      ]
+    },
+    "lb-b": {
+      "wunsch": "Ein Feldagent soll Unterkünfte in Lissabon suchen und für Echo zusammenfassen.",
+      "grundprompt": "Feldagent «unterkunft-sucher», dein Auftrag:",
+      "nachrichtVon": "Echos Einsatzbefehl an den Feldagenten",
+      "artNamen": {
+        "prompt": "Auftrag",
+        "kontext": "Mitgegeben",
+        "absicherung": "Form des Lageberichts"
+      },
+      "teile": [
+        {
+          "id": "ziel",
+          "art": "prompt",
+          "text": "Suche Unterkünfte in Lissabon vom 12. bis 26. Juli."
+        },
+        {
+          "id": "material",
+          "art": "kontext",
+          "text": "2 Erwachsene, 2 Kinder, 1 Hund. Höchstens 2000 Franken für zwei Wochen. Nahe am Tram."
+        },
+        {
+          "id": "form",
+          "art": "absicherung",
+          "text": "Bericht: fünf Unterkünfte, je eine Zeile mit Preis, Lage und Hund ja oder nein."
+        },
+        {
+          "id": "roman",
+          "art": "absicherung",
+          "text": "Beschreib jede Unterkunft ausführlich."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "roman"
+            ]
+          },
+          "fehlbild": "roman"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "ziel"
+            ]
+          },
+          "fehlbild": "keinZiel"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "material"
+            ]
+          },
+          "fehlbild": "keinMaterial"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "form"
+            ]
+          },
+          "fehlbild": "keineForm"
+        }
+      ],
+      "fehlbilder": {
+        "roman": {
+          "texte": [
+            "Bericht: 22 Seiten über Fliesen, Aussicht und Bettwäsche. Echos Koffer platzt.",
+            "Jede Unterkunft auf zwei Seiten. Echo muss alles selbst kürzen."
+          ],
+          "hinweis": "Leg eine kurze Form fest."
+        },
+        "keinZiel": {
+          "texte": [
+            "Ich habe Daten zur Familie, aber keinen Auftrag.",
+            "Was soll ich tun?"
+          ],
+          "hinweis": "Sag, was gesucht wird."
+        },
+        "keinMaterial": {
+          "texte": [
+            "Gefunden: fünf Einzelzimmer ohne Hund, eines davon für 900 Franken pro Nacht.",
+            "Für wen? Wie viel? Ich habe geraten."
+          ],
+          "hinweis": "Gib die Angaben zur Familie und zum Budget mit."
+        },
+        "keineForm": {
+          "texte": [
+            "Ich bringe eine lose Sammlung aus Links und Notizen.",
+            "Mein Bericht hat keine Ordnung. Echo sortiert ihn mühsam."
+          ],
+          "hinweis": "Sag, in welcher Form der Bericht zurückkommen soll."
+        }
+      },
+      "erfolg": [
+        "Lagebericht: fünf Unterkünfte, je eine Zeile. Drei erlauben Hunde, zwei liegen am Tram 28.",
+        "Kurz, vollständig, passend. Genau wie bestellt."
+      ],
+      "loesung": [
+        "ziel",
+        "material",
+        "form"
+      ]
+    },
+    "lb-c": {
+      "wunsch": "Ein Feldagent soll nachlesen, was der Hund für die Reise nach Portugal braucht.",
+      "grundprompt": "Feldagent «papier-pruefer», dein Auftrag:",
+      "nachrichtVon": "Echos Einsatzbefehl an den Feldagenten",
+      "artNamen": {
+        "prompt": "Auftrag",
+        "kontext": "Mitgegeben",
+        "absicherung": "Form des Lageberichts"
+      },
+      "teile": [
+        {
+          "id": "ziel",
+          "art": "prompt",
+          "text": "Lies nach, was ein Hund für die Reise von der Schweiz nach Portugal braucht."
+        },
+        {
+          "id": "material",
+          "art": "kontext",
+          "text": "Hund: Labrador, 4 Jahre, mit Chip und Heimtierausweis."
+        },
+        {
+          "id": "form",
+          "art": "absicherung",
+          "text": "Bericht: was nötig ist, was schon da ist, was fehlt. Mit Quelle und Datum der Quelle."
+        },
+        {
+          "id": "quelleEgal",
+          "art": "absicherung",
+          "text": "Quellen sind egal, Hauptsache schnell."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "quelleEgal"
+            ]
+          },
+          "fehlbild": "alteQuelle"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "ziel"
+            ]
+          },
+          "fehlbild": "keinZiel"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "material"
+            ]
+          },
+          "fehlbild": "keinMaterial"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "form"
+            ]
+          },
+          "fehlbild": "keineForm"
+        }
+      ],
+      "fehlbilder": {
+        "alteQuelle": {
+          "texte": [
+            "Schnell gefunden: ein Forumsbeitrag von 2015. Ob er noch stimmt, weiss niemand.",
+            "Ohne Quelle kann niemand prüfen, ob das stimmt."
+          ],
+          "hinweis": "Verlang Quellen mit Datum. Regeln für Reisen ändern sich."
+        },
+        "keinZiel": {
+          "texte": [
+            "Ich habe Angaben zum Hund. Und jetzt?",
+            "Ein Auftrag fehlt."
+          ],
+          "hinweis": "Sag, was der Feldagent herausfinden soll."
+        },
+        "keinMaterial": {
+          "texte": [
+            "Was dein Hund schon hat, weiss ich nicht. Meine Liste ist zur Hälfte überflüssig.",
+            "Ich empfehle einen Chip. Er hat schon einen."
+          ],
+          "hinweis": "Gib mit, was über den Hund schon bekannt ist."
+        },
+        "keineForm": {
+          "texte": [
+            "Ich bringe fünf Seiten Gesetzestext. Was davon für euch gilt, steht nirgends.",
+            "Mein Bericht ist lang und ohne Ordnung."
+          ],
+          "hinweis": "Leg die Form fest: nötig, vorhanden, fehlt."
+        }
+      },
+      "erfolg": [
+        "Lagebericht in drei Spalten: nötig, vorhanden, fehlt. Jeder Punkt mit amtlicher Quelle und Datum. Offen ist ein Punkt für den Tierarzt.",
+        "Drei Spalten, Quellen mit Datum. Die Familie weiss, was zu tun ist."
+      ],
+      "loesung": [
+        "ziel",
+        "material",
+        "form"
+      ]
+    },
+    "lb-d": {
+      "typ": "wahl",
+      "wunsch": "Warum muss Echo dem Feldagenten alles Nötige mitgeben?",
+      "frage": "Warum muss Echo einem eigenen Feldagenten alles Nötige im Einsatzbefehl mitgeben?",
+      "optionen": [
+        {
+          "id": "beleidigt",
+          "text": "Weil der Feldagent sonst beleidigt ist.",
+          "hinweis": "Feldagenten sind nicht beleidigt. Sie wissen nur nichts."
+        },
+        {
+          "id": "koffer",
+          "text": "Weil er in seinem eigenen Koffer arbeitet und das Gespräch nicht kennt.",
+          "hinweis": "Genau. Er weiss nur, was im Einsatzbefehl steht.",
+          "richtig": true
+        },
+        {
+          "id": "muss",
+          "text": "Muss er nicht, der Feldagent liest automatisch alles mit.",
+          "hinweis": "Ein eigener Feldagent startet ohne den bisherigen Chat."
+        }
+      ],
+      "echo": "Echo schreibt Reisedaten, Familie, Hund und Budget in den Einsatzbefehl. Der Feldagent findet auf Anhieb Passendes.",
+      "loesung": [
+        "koffer"
+      ]
+    },
+    "lb-e": {
+      "typ": "wahl",
+      "wunsch": "Der Feldagent bringt einen 14-seitigen Bericht. Was hätte Echo besser gemacht?",
+      "frage": "Der Feldagent bringt einen Bericht über 14 Seiten. Echos Koffer ist voll. Was hätte Echo besser gemacht?",
+      "optionen": [
+        {
+          "id": "nochmals",
+          "text": "Ihn nochmals losschicken mit «mach es besser».",
+          "hinweis": "Was «besser» heisst, weiss er immer noch nicht."
+        },
+        {
+          "id": "form",
+          "text": "Im Einsatzbefehl die Form des Berichts festlegen, zum Beispiel drei Zeilen.",
+          "hinweis": "Genau. Die Form gehört in den Einsatzbefehl.",
+          "richtig": true
+        },
+        {
+          "id": "uebernehmen",
+          "text": "Den Bericht ungelesen übernehmen.",
+          "hinweis": "Dann bleibt der Koffer voll, und niemand weiss, was drinsteht."
+        }
+      ],
+      "echo": "Im nächsten Einsatzbefehl steht: «Bericht: drei Zeilen.» Zurück kommen drei Zeilen.",
+      "loesung": [
+        "form"
+      ]
+    },
+    "lb-f": {
+      "wunsch": "Ein Feldagent soll die Preise von drei Mietautos am Flughafen Lissabon vergleichen.",
+      "grundprompt": "Feldagent «auto-vergleicher», dein Auftrag:",
+      "nachrichtVon": "Echos Einsatzbefehl an den Feldagenten",
+      "artNamen": {
+        "prompt": "Auftrag",
+        "kontext": "Mitgegeben",
+        "absicherung": "Form des Lageberichts"
+      },
+      "teile": [
+        {
+          "id": "ziel",
+          "art": "prompt",
+          "text": "Vergleiche drei Mietautos am Flughafen Lissabon."
+        },
+        {
+          "id": "duweisst",
+          "art": "prompt",
+          "text": "Die Details kennst du ja."
+        },
+        {
+          "id": "material",
+          "art": "kontext",
+          "text": "Abholung 12. Juli, Rückgabe 26. Juli. Platz für 4 Personen, Gepäck und Hund."
+        },
+        {
+          "id": "form",
+          "art": "absicherung",
+          "text": "Bericht: Tabelle mit Anbieter, Preis, Platz für Hund ja oder nein."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "duweisst"
+            ]
+          },
+          "fehlbild": "weissNichts"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "ziel"
+            ]
+          },
+          "fehlbild": "keinZiel"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "material"
+            ]
+          },
+          "fehlbild": "keinMaterial"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "form"
+            ]
+          },
+          "fehlbild": "keineForm"
+        }
+      ],
+      "fehlbilder": {
+        "weissNichts": {
+          "texte": [
+            "Die Details kenne ich nicht. Ich habe nur diesen Einsatzbefehl.",
+            "«Kennst du ja»: Nein, ich war beim Gespräch nicht dabei."
+          ],
+          "hinweis": "Schreib die Details in den Einsatzbefehl."
+        },
+        "keinZiel": {
+          "texte": [
+            "Daten zur Reise habe ich. Was soll ich damit?",
+            "Ein Auftrag fehlt."
+          ],
+          "hinweis": "Sag, was verglichen werden soll."
+        },
+        "keinMaterial": {
+          "texte": [
+            "Drei günstige Zweisitzer verglichen. Für vier Personen und einen Hund zu klein.",
+            "Für welche Tage? Ich habe einen Tag gerechnet."
+          ],
+          "hinweis": "Gib Daten, Personen und Hund mit."
+        },
+        "keineForm": {
+          "texte": [
+            "Drei lange Absätze. Vergleichen muss Echo selbst.",
+            "Mein Bericht nennt Preise, aber nicht, ob der Hund mitdarf."
+          ],
+          "hinweis": "Leg die Form fest, zum Beispiel eine Tabelle."
+        }
+      },
+      "erfolg": [
+        "Tabelle: drei Anbieter, Preise für 14 Tage, zwei erlauben Hunde. Der günstigste davon kostet 610 Franken.",
+        "Kurze Tabelle, alles drin, was die Familie braucht."
+      ],
+      "loesung": [
+        "ziel",
+        "material",
+        "form"
+      ]
+    },
+    "au-a": {
+      "wunsch": "Zug, Unterkunft und Ausflüge müssen gesucht werden. Echo schickt drei Feldagenten gleichzeitig los.",
+      "grundprompt": "Verteile die Recherche auf drei Feldagenten.",
+      "nachrichtVon": "Echos Aufteilung",
+      "artNamen": {
+        "prompt": "Aufträge an die Feldagenten",
+        "absicherung": "Zusammenführen"
+      },
+      "teile": [
+        {
+          "id": "zug",
+          "art": "prompt",
+          "text": "Feldagent 1: nur Zugverbindungen."
+        },
+        {
+          "id": "haus",
+          "art": "prompt",
+          "text": "Feldagent 2: nur Unterkünfte."
+        },
+        {
+          "id": "ausfluege",
+          "art": "prompt",
+          "text": "Feldagent 3: nur Ausflüge mit Kindern."
+        },
+        {
+          "id": "alles",
+          "art": "prompt",
+          "text": "Alle drei: Sucht einfach alles zur Reise."
+        },
+        {
+          "id": "zusammen",
+          "art": "absicherung",
+          "text": "Echo fügt die drei Berichte zu einem Plan zusammen und prüft, ob sie zusammenpassen."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "alles"
+            ]
+          },
+          "fehlbild": "doppelt"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "zug",
+              "haus",
+              "ausfluege"
+            ]
+          },
+          "fehlbild": "luecke"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "zusammen"
+            ]
+          },
+          "fehlbild": "nichtZusammen"
+        }
+      ],
+      "fehlbilder": {
+        "doppelt": {
+          "texte": [
+            "Alle drei haben Züge gesucht. Unterkünfte hat niemand gesucht.",
+            "Drei Feldagenten, dreimal dieselbe Arbeit, und ein Teil fehlt ganz."
+          ],
+          "hinweis": "Gib jedem Feldagenten genau einen Teil, ohne Überschneidung."
+        },
+        "luecke": {
+          "texte": [
+            "Ein Teil hat keinen Feldagenten. Niemand sucht ihn.",
+            "Zwei Berichte kommen zurück. Der dritte Teil der Reise fehlt."
+          ],
+          "hinweis": "Jeder Teil braucht einen Feldagenten."
+        },
+        "nichtZusammen": {
+          "texte": [
+            "Drei Berichte liegen nebeneinander. Die Unterkunft ist in Porto, der Zug fährt nach Lissabon.",
+            "Niemand hat geprüft, ob die Teile zusammenpassen. Der Ausflug ist am Abreisetag."
+          ],
+          "hinweis": "Am Schluss fügt Echo die Berichte zusammen und prüft, ob sie passen."
+        }
+      },
+      "erfolg": [
+        "Drei Feldagenten, drei Teile, gleichzeitig. Echo fügt zusammen: Zug am 12., Unterkunft am Tram 28, Aquarium am 15. Alles passt.",
+        "Getrennte Teile, ein gemeinsamer Plan."
+      ],
+      "loesung": [
+        "zug",
+        "haus",
+        "ausfluege",
+        "zusammen"
+      ]
+    },
+    "au-b": {
+      "wunsch": "Zwei Feldagenten sollen gleichzeitig suchen: einer Restaurants, einer Museen in Lissabon.",
+      "grundprompt": "Verteile die Suche auf zwei Feldagenten.",
+      "nachrichtVon": "Echos Aufteilung",
+      "artNamen": {
+        "prompt": "Aufträge an die Feldagenten",
+        "absicherung": "Zusammenführen"
+      },
+      "teile": [
+        {
+          "id": "essen",
+          "art": "prompt",
+          "text": "Feldagent 1: nur kinderfreundliche Restaurants."
+        },
+        {
+          "id": "museen",
+          "art": "prompt",
+          "text": "Feldagent 2: nur Museen mit Kinderprogramm."
+        },
+        {
+          "id": "beide",
+          "art": "prompt",
+          "text": "Beide: Sucht alles in Lissabon."
+        },
+        {
+          "id": "zusammen",
+          "art": "absicherung",
+          "text": "Echo legt die Ergebnisse zu einem Tagesplan zusammen: Museum und Restaurant nahe beieinander."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "beide"
+            ]
+          },
+          "fehlbild": "doppelt"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "essen",
+              "museen"
+            ]
+          },
+          "fehlbild": "luecke"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "zusammen"
+            ]
+          },
+          "fehlbild": "nichtZusammen"
+        }
+      ],
+      "fehlbilder": {
+        "doppelt": {
+          "texte": [
+            "Beide haben Museen gesucht. Zum Essen gibt es nichts.",
+            "Zweimal dieselben Ergebnisse."
+          ],
+          "hinweis": "Trenn die Teile klar."
+        },
+        "luecke": {
+          "texte": [
+            "Ein Teil hat keinen Feldagenten.",
+            "Nur ein Bericht kommt zurück."
+          ],
+          "hinweis": "Jeder Teil braucht einen Feldagenten."
+        },
+        "nichtZusammen": {
+          "texte": [
+            "Das Museum liegt im Osten, das Restaurant im Westen. Zwischen beiden: 50 Minuten Tram mit müden Kindern.",
+            "Zwei Listen, kein Plan."
+          ],
+          "hinweis": "Lass Echo die Ergebnisse zusammenführen."
+        }
+      },
+      "erfolg": [
+        "Tagesplan: Morgens Aquarium, mittags das Restaurant fünf Minuten daneben. Die Kinder sind begeistert.",
+        "Zwei Feldagenten, ein Plan."
+      ],
+      "loesung": [
+        "essen",
+        "museen",
+        "zusammen"
+      ]
+    },
+    "au-c": {
+      "typ": "reihe",
+      "wunsch": "In welcher Reihenfolge läuft das Aufteilen?",
+      "frage": "Bring die Schritte beim Aufteilen in die richtige Reihenfolge.",
+      "schritte": [
+        {
+          "id": "sammeln",
+          "text": "Berichte einsammeln"
+        },
+        {
+          "id": "zerlegen",
+          "text": "Aufgabe in unabhängige Teile zerlegen"
+        },
+        {
+          "id": "zusammen",
+          "text": "Zusammenfügen und prüfen, ob alles passt"
+        },
+        {
+          "id": "verteilen",
+          "text": "Jedem Feldagenten genau einen Teil geben"
+        },
+        {
+          "id": "arbeiten",
+          "text": "Feldagenten arbeiten gleichzeitig"
+        }
+      ],
+      "loesung": [
+        "zerlegen",
+        "verteilen",
+        "arbeiten",
+        "sammeln",
+        "zusammen"
+      ],
+      "echo": "Zerlegen, verteilen, gleichzeitig arbeiten, einsammeln, zusammenfügen. So geht es schnell und passt trotzdem.",
+      "daneben": {
+        "texte": [
+          "Die Feldagenten legen los, bevor die Teile verteilt sind. Alle suchen dasselbe.",
+          "Echo fügt zusammen, bevor die Berichte da sind."
+        ],
+        "hinweis": "Zuerst zerlegen und verteilen, am Schluss zusammenfügen."
+      }
+    },
+    "au-d": {
+      "typ": "wahl",
+      "wunsch": "Welche Aufgaben lassen sich gut gleichzeitig verteilen?",
+      "frage": "Welche Aufgaben können Feldagenten gut gleichzeitig erledigen?",
+      "optionen": [
+        {
+          "id": "abhaengig",
+          "text": "Zuerst das Reiseziel wählen, dann dort ein Hotel suchen.",
+          "hinweis": "Das zweite hängt vom ersten ab. Das geht nur nacheinander."
+        },
+        {
+          "id": "unabhaengig",
+          "text": "Wetter, Zugverbindung und Museen für das schon gewählte Reiseziel suchen.",
+          "hinweis": "Genau. Unabhängige Teile können gleichzeitig laufen.",
+          "richtig": true
+        },
+        {
+          "id": "gespraech",
+          "text": "Mit der Familie besprechen, wer welches Zimmer bekommt.",
+          "hinweis": "Ein Gespräch lässt sich nicht aufteilen."
+        }
+      ],
+      "echo": "Drei Feldagenten suchen gleichzeitig. Nach wenigen Minuten liegen drei kurze Berichte da.",
+      "loesung": [
+        "unabhaengig"
+      ]
+    },
+    "au-e": {
+      "wunsch": "Die Familie will drei Reiseziele vergleichen: Lissabon, Kopenhagen und Wien.",
+      "grundprompt": "Vergleiche drei Reiseziele mit drei Feldagenten.",
+      "nachrichtVon": "Echos Aufteilung",
+      "artNamen": {
+        "prompt": "Aufträge an die Feldagenten",
+        "absicherung": "Zusammenführen"
+      },
+      "teile": [
+        {
+          "id": "l",
+          "art": "prompt",
+          "text": "Feldagent 1: alles zu Lissabon."
+        },
+        {
+          "id": "k",
+          "art": "prompt",
+          "text": "Feldagent 2: alles zu Kopenhagen."
+        },
+        {
+          "id": "w",
+          "art": "prompt",
+          "text": "Feldagent 3: alles zu Wien."
+        },
+        {
+          "id": "gleich",
+          "art": "absicherung",
+          "text": "Alle melden in derselben Form: Anreise, Kosten, Kinderprogramm, Hund."
+        },
+        {
+          "id": "zusammen",
+          "art": "absicherung",
+          "text": "Echo stellt die drei Berichte in einer Tabelle nebeneinander."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "fehlt": [
+              "l",
+              "k",
+              "w"
+            ]
+          },
+          "fehlbild": "luecke"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "gleich"
+            ]
+          },
+          "fehlbild": "nichtVergleichbar"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "zusammen"
+            ]
+          },
+          "fehlbild": "nichtZusammen"
+        }
+      ],
+      "fehlbilder": {
+        "luecke": {
+          "texte": [
+            "Ein Reiseziel hat keinen Feldagenten. Verglichen werden nur zwei.",
+            "Eine Stadt fehlt im Vergleich."
+          ],
+          "hinweis": "Jedes Reiseziel braucht einen Feldagenten."
+        },
+        "nichtVergleichbar": {
+          "texte": [
+            "Lissabon kommt als Gedicht, Kopenhagen als Tabelle, Wien als Preisliste. Vergleichen geht nicht.",
+            "Jeder Bericht ist anders aufgebaut. Äpfel und Birnen."
+          ],
+          "hinweis": "Gib allen dieselbe Berichtsform."
+        },
+        "nichtZusammen": {
+          "texte": [
+            "Drei gute Berichte, aber nebeneinander gestellt hat sie niemand.",
+            "Die Familie liest drei Berichte und verliert den Überblick."
+          ],
+          "hinweis": "Lass Echo die Berichte nebeneinanderstellen."
+        }
+      },
+      "erfolg": [
+        "Tabelle: Lissabon am günstigsten, Kopenhagen am kürzesten, Wien mit dem besten Kinderprogramm. Hund überall möglich.",
+        "Gleiche Form, eine Tabelle, schneller Entscheid."
+      ],
+      "loesung": [
+        "l",
+        "k",
+        "w",
+        "gleich",
+        "zusammen"
+      ]
+    },
+    "au-f": {
+      "typ": "wahl",
+      "wunsch": "Zwei Feldagenten suchten dasselbe, keiner das andere. Was lief schief?",
+      "frage": "Zwei Feldagenten haben beide Hotels gesucht. Ausflüge hat keiner gesucht. Was lief schief?",
+      "optionen": [
+        {
+          "id": "wenig",
+          "text": "Es waren zu wenige Feldagenten.",
+          "hinweis": "Mehr Feldagenten mit unklaren Teilen machen es nicht besser."
+        },
+        {
+          "id": "getrennt",
+          "text": "Die Teile waren nicht klar getrennt.",
+          "hinweis": "Genau. Jeder braucht einen eigenen, klar abgegrenzten Teil.",
+          "richtig": true
+        },
+        {
+          "id": "faul",
+          "text": "Die Feldagenten waren faul.",
+          "hinweis": "Sie haben genau das getan, was ihr Auftrag erlaubte."
+        }
+      ],
+      "echo": "Echo verteilt neu: einer Hotels, einer Ausflüge. Nichts doppelt, nichts fehlt.",
+      "loesung": [
+        "getrennt"
+      ]
+    },
+    "zb-a": {
+      "wunsch": "Der Ferienplan ist fertig. Bevor die Familie bucht, soll ein Prüfagent ihn ansehen.",
+      "grundprompt": "Prüfagent, prüfe den Ferienplan.",
+      "nachrichtVon": "Echos Auftrag an den Prüfagenten",
+      "artNamen": {
+        "kontext": "Mitgegeben",
+        "absicherung": "Wie prüfen"
+      },
+      "teile": [
+        {
+          "id": "ergebnis",
+          "art": "kontext",
+          "text": "<plan>Der fertige Ferienplan</plan>"
+        },
+        {
+          "id": "kriterien",
+          "art": "kontext",
+          "text": "<kriterien>Budget 4000 Franken, Hund überall erlaubt, höchstens zweimal umsteigen.</kriterien>"
+        },
+        {
+          "id": "ganzerChat",
+          "art": "kontext",
+          "text": "Dazu der ganze Chat mit allen Überlegungen von Echo."
+        },
+        {
+          "id": "wichtiges",
+          "art": "absicherung",
+          "text": "Melde nur Lücken, die für Budget, Hund oder Umsteigen zählen."
+        },
+        {
+          "id": "selbst",
+          "art": "absicherung",
+          "text": "Statt eines Prüfagenten prüft Echo den Plan selbst, im gleichen Koffer."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "selbst"
+            ]
+          },
+          "fehlbild": "selbstGeprueft"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "ganzerChat"
+            ]
+          },
+          "fehlbild": "nichtFrisch"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "ergebnis"
+            ]
+          },
+          "fehlbild": "nichtsZuPruefen"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "kriterien"
+            ]
+          },
+          "fehlbild": "ohneKriterien"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "wichtiges"
+            ]
+          },
+          "fehlbild": "zuViel"
+        }
+      ],
+      "fehlbilder": {
+        "selbstGeprueft": {
+          "texte": [
+            "Echo prüft sich selbst: alles perfekt! Das Hotel in Porto erlaubt keine Hunde.",
+            "Selbst geprüft, nichts gefunden. Wer sein eigenes Werk prüft, übersieht die eigenen Fehler."
+          ],
+          "hinweis": "Ein Prüfagent mit frischem Koffer sieht, was Echo übersieht."
+        },
+        "nichtFrisch": {
+          "texte": [
+            "Der Prüfagent liest Echos Überlegungen mit und findet alles logisch. Den Hund-Fehler übernimmt er.",
+            "Mit dem ganzen Chat denkt der Prüfagent wie Echo. Frisch ist sein Blick nicht mehr."
+          ],
+          "hinweis": "Der Prüfagent bekommt nur Ergebnis und Kriterien, nicht Echos Gedankengang."
+        },
+        "nichtsZuPruefen": {
+          "texte": [
+            "Was soll ich prüfen? Ich habe nur Kriterien.",
+            "Kein Plan, keine Prüfung."
+          ],
+          "hinweis": "Gib dem Prüfagenten das Ergebnis mit."
+        },
+        "ohneKriterien": {
+          "texte": [
+            "Der Prüfagent meldet: «Schöner Plan.» Woran er messen soll, wusste er nicht.",
+            "Ohne Kriterien prüft er die Schriftart."
+          ],
+          "hinweis": "Gib die Kriterien mit, gegen die geprüft wird."
+        },
+        "zuViel": {
+          "texte": [
+            "47 Anmerkungen: Kommas, Schriftart, ein Gedankenstrich. Die Familie baut alles um. Der Hund-Fehler geht unter.",
+            "Der Prüfagent findet an allem etwas. Was wirklich zählt, sieht niemand mehr."
+          ],
+          "hinweis": "Lass ihn nur melden, was für die Kriterien wirklich zählt."
+        }
+      },
+      "erfolg": [
+        "Prüfagent meldet zwei Dinge: Das Hotel in Porto erlaubt keine Hunde. Der Zug am 26. hat drei Umstiege. Sonst passt alles.",
+        "Frischer Blick, klare Kriterien, nur Wichtiges. Zwei echte Fehler gefunden."
+      ],
+      "loesung": [
+        "ergebnis",
+        "kriterien",
+        "wichtiges"
+      ]
+    },
+    "zb-b": {
+      "wunsch": "Ein Prüfagent soll die Packliste gegenprüfen, bevor die Koffer zugehen.",
+      "grundprompt": "Prüfagent, prüfe die Packliste.",
+      "nachrichtVon": "Echos Auftrag an den Prüfagenten",
+      "artNamen": {
+        "kontext": "Mitgegeben",
+        "absicherung": "Wie prüfen"
+      },
+      "teile": [
+        {
+          "id": "ergebnis",
+          "art": "kontext",
+          "text": "<packliste>Die fertige Packliste der Familie</packliste>"
+        },
+        {
+          "id": "kriterien",
+          "art": "kontext",
+          "text": "<kriterien>Pässe, Medikamente, Heimtierausweis, Ladekabel, Sonnencreme.</kriterien>"
+        },
+        {
+          "id": "wichtiges",
+          "art": "absicherung",
+          "text": "Melde nur, was von den Kriterien fehlt."
+        },
+        {
+          "id": "selbst",
+          "art": "absicherung",
+          "text": "Echo, das die Liste geschrieben hat, prüft sie gleich selbst."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "selbst"
+            ]
+          },
+          "fehlbild": "selbstGeprueft"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "ergebnis"
+            ]
+          },
+          "fehlbild": "nichtsZuPruefen"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "kriterien"
+            ]
+          },
+          "fehlbild": "ohneKriterien"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "wichtiges"
+            ]
+          },
+          "fehlbild": "zuViel"
+        }
+      ],
+      "fehlbilder": {
+        "selbstGeprueft": {
+          "texte": [
+            "Echo prüft seine eigene Liste: vollständig! Der Heimtierausweis fehlt trotzdem.",
+            "Wer die Liste geschrieben hat, sieht die eigene Lücke nicht."
+          ],
+          "hinweis": "Lass einen frischen Prüfagenten ran."
+        },
+        "nichtsZuPruefen": {
+          "texte": [
+            "Welche Packliste?",
+            "Ohne Liste gibt es nichts zu prüfen."
+          ],
+          "hinweis": "Gib die Packliste mit."
+        },
+        "ohneKriterien": {
+          "texte": [
+            "Der Prüfer meldet: «Viele Socken.» Was wichtig ist, wusste er nicht.",
+            "Ohne Kriterien prüft er nach Gefühl."
+          ],
+          "hinweis": "Gib die Kriterien mit."
+        },
+        "zuViel": {
+          "texte": [
+            "32 Hinweise: Socken nach Farbe sortieren, Liste alphabetisch. Der fehlende Ausweis steht auf Platz 29.",
+            "Lauter Kleinigkeiten. Das Wichtige geht unter."
+          ],
+          "hinweis": "Lass nur melden, was zählt."
+        }
+      },
+      "erfolg": [
+        "Prüfagent meldet: «Heimtierausweis fehlt.» Sonst nichts. Herr Meier packt ihn ein.",
+        "Ein Hinweis, der zählt."
+      ],
+      "loesung": [
+        "ergebnis",
+        "kriterien",
+        "wichtiges"
+      ]
+    },
+    "zb-c": {
+      "typ": "wahl",
+      "wunsch": "Echo prüft seinen eigenen Plan. Was ist das Problem?",
+      "frage": "Echo hat den Reiseplan geschrieben und prüft ihn jetzt selbst. Was ist das Problem dabei?",
+      "optionen": [
+        {
+          "id": "langsam",
+          "text": "Es dauert länger.",
+          "hinweis": "Nicht das Tempo ist das Problem."
+        },
+        {
+          "id": "blind",
+          "text": "Wer sein eigenes Werk prüft, übersieht leicht die eigenen Fehler.",
+          "hinweis": "Genau. Ein frischer Blick sieht mehr.",
+          "richtig": true
+        },
+        {
+          "id": "keins",
+          "text": "Es gibt keins, Echo ist objektiv.",
+          "hinweis": "Auch Echo ist betriebsblind."
+        }
+      ],
+      "echo": "Ein Prüfagent mit frischem Koffer findet sofort das Hotel ohne Hunde.",
+      "loesung": [
+        "blind"
+      ]
+    },
+    "zb-d": {
+      "typ": "wahl",
+      "wunsch": "Der Prüfagent meldet 47 Kleinigkeiten. Was tust du?",
+      "frage": "Der Prüfagent meldet 47 Kleinigkeiten zum Ferienplan. Was tust du?",
+      "optionen": [
+        {
+          "id": "umbauen",
+          "text": "Alles umbauen, was er meldet.",
+          "hinweis": "Dann baust du einen guten Plan kaputt."
+        },
+        {
+          "id": "wichtig",
+          "text": "Ihn nur melden lassen, was für die Kriterien wirklich zählt.",
+          "hinweis": "Genau. Sonst gehen die wichtigen Fehler unter.",
+          "richtig": true
+        },
+        {
+          "id": "nie",
+          "text": "Nie mehr einen Prüfagenten verwenden.",
+          "hinweis": "Er hilft, wenn du ihm sagst, was zählt."
+        }
+      ],
+      "echo": "Mit «nur Wichtiges» meldet der Prüfagent zwei Punkte. Beide stimmen.",
+      "loesung": [
+        "wichtig"
+      ]
+    },
+    "zb-e": {
+      "wunsch": "Ein Prüfagent soll das Budget der Reise nachrechnen, bevor die Familie bucht.",
+      "grundprompt": "Prüfagent, rechne das Budget nach.",
+      "nachrichtVon": "Echos Auftrag an den Prüfagenten",
+      "artNamen": {
+        "kontext": "Mitgegeben",
+        "absicherung": "Wie prüfen"
+      },
+      "teile": [
+        {
+          "id": "ergebnis",
+          "art": "kontext",
+          "text": "<budget>Die Budgetliste der Reise</budget>"
+        },
+        {
+          "id": "kriterien",
+          "art": "kontext",
+          "text": "<kriterien>Gesamt höchstens 4000 Franken. Jeder Posten hat einen Preis aus einer Quelle.</kriterien>"
+        },
+        {
+          "id": "ganzerChat",
+          "art": "kontext",
+          "text": "Dazu der ganze Chat mit Echos Rechenwegen."
+        },
+        {
+          "id": "wichtiges",
+          "art": "absicherung",
+          "text": "Melde nur Fehler, die das Budget sprengen oder einen Preis ohne Quelle betreffen."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "ganzerChat"
+            ]
+          },
+          "fehlbild": "nichtFrisch"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "ergebnis"
+            ]
+          },
+          "fehlbild": "nichtsZuPruefen"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "kriterien"
+            ]
+          },
+          "fehlbild": "ohneKriterien"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "wichtiges"
+            ]
+          },
+          "fehlbild": "zuViel"
+        }
+      ],
+      "fehlbilder": {
+        "nichtFrisch": {
+          "texte": [
+            "Der Prüfagent folgt Echos Rechenweg und macht denselben Fehler: Die Mietauto-Kosten fehlen.",
+            "Mit Echos Gedankengang im Koffer rechnet er genauso falsch."
+          ],
+          "hinweis": "Nur Ergebnis und Kriterien mitgeben."
+        },
+        "nichtsZuPruefen": {
+          "texte": [
+            "Welches Budget?",
+            "Ohne Budgetliste gibt es nichts nachzurechnen."
+          ],
+          "hinweis": "Gib die Budgetliste mit."
+        },
+        "ohneKriterien": {
+          "texte": [
+            "Gerechnet: 4600 Franken. Ob das zu viel ist, wusste der Prüfagent nicht.",
+            "Er rechnet, aber woran er misst, weiss er nicht."
+          ],
+          "hinweis": "Gib die Kriterien mit."
+        },
+        "zuViel": {
+          "texte": [
+            "21 Hinweise zu Rundungen auf 5 Rappen. Dass 600 Franken fehlen, steht auf Seite 3.",
+            "Lauter Kleinigkeiten, das Wichtige geht unter."
+          ],
+          "hinweis": "Lass nur melden, was zählt."
+        }
+      },
+      "erfolg": [
+        "Prüfagent meldet: Mietauto fehlt im Budget, 610 Franken. Damit 4610 Franken, über dem Ziel. Sonst stimmt alles.",
+        "Ein Fehler, der zählt. Die Familie wählt ein günstigeres Hotel."
+      ],
+      "loesung": [
+        "ergebnis",
+        "kriterien",
+        "wichtiges"
+      ]
+    },
+    "zb-f": {
+      "typ": "wahl",
+      "wunsch": "Was bekommt ein Prüfagent mit auf den Weg?",
+      "frage": "Was gibt Echo einem Prüfagenten mit?",
+      "optionen": [
+        {
+          "id": "chat",
+          "text": "Den ganzen Chat, damit er alles versteht.",
+          "hinweis": "Dann übernimmt er Echos Denkfehler."
+        },
+        {
+          "id": "ergebnis",
+          "text": "Das Ergebnis und die Kriterien.",
+          "hinweis": "Genau. Mehr braucht er nicht für einen frischen Blick.",
+          "richtig": true
+        },
+        {
+          "id": "nichts",
+          "text": "Gar nichts, er soll selbst suchen.",
+          "hinweis": "Dann weiss er nicht, was er prüfen soll."
+        }
+      ],
+      "echo": "Der Prüfagent bekommt Plan und Kriterien. Er sieht sofort, was Echo übersehen hat.",
+      "loesung": [
+        "ergebnis"
+      ]
+    },
+    "x-a": {
+      "wunsch": "Familie Meier will die ganze Reise geplant haben: Recherche, Plan, Prüfung.",
+      "grundprompt": "Plane die Reise nach Lissabon.",
+      "fenster": 800,
+      "artNamen": {
+        "tool": "Feldagenten (Subagenten)",
+        "kontext": "Selbst lesen"
+      },
+      "teile": [
+        {
+          "id": "feld",
+          "art": "tool",
+          "text": "Drei Feldagenten recherchieren Zug, Unterkunft und Ausflüge, jeder einen Teil, im eigenen Koffer.",
+          "tokens": 80
+        },
+        {
+          "id": "selbst",
+          "art": "kontext",
+          "text": "Echo liest alle 300 Seiten selbst.",
+          "tokens": 4000
+        },
+        {
+          "id": "befehl",
+          "art": "prompt",
+          "text": "Jeder bekommt Reisedaten, Familie, Hund, Budget und die Berichtsform: drei Zeilen."
+        },
+        {
+          "id": "pruef",
+          "art": "absicherung",
+          "text": "Ein Prüfagent sieht nur Plan und Kriterien und meldet nur Wichtiges."
+        },
+        {
+          "id": "selbstPruef",
+          "art": "absicherung",
+          "text": "Echo prüft am Schluss selbst."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "tokensUeber": 800
+          },
+          "fehlbild": "kofferVoll"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "selbstPruef"
+            ]
+          },
+          "fehlbild": "selbstGeprueft"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "feld"
+            ]
+          },
+          "fehlbild": "niemandLiest"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "befehl"
+            ]
+          },
+          "fehlbild": "weissNichts"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "pruef"
+            ]
+          },
+          "fehlbild": "ungeprueft"
+        }
+      ],
+      "fehlbilder": {
+        "kofferVoll": {
+          "texte": [
+            "300 Seiten in Echos Koffer. Für die Planung bleibt kaum Platz, das Budget geht vergessen.",
+            "Der Koffer ist voll, bevor der Plan beginnt."
+          ],
+          "hinweis": "Viel Lesestoff gehört zu Feldagenten."
+        },
+        "selbstGeprueft": {
+          "texte": [
+            "Echo prüft sich selbst: perfekt! Das Hotel ohne Hunde bleibt im Plan.",
+            "Selbst geprüft, nichts gefunden."
+          ],
+          "hinweis": "Ein frischer Prüfagent sieht mehr."
+        },
+        "niemandLiest": {
+          "texte": [
+            "Niemand recherchiert. Der Plan beruht auf Vermutungen.",
+            "Ohne Recherche kein Plan."
+          ],
+          "hinweis": "Schick Feldagenten zum Recherchieren."
+        },
+        "weissNichts": {
+          "texte": [
+            "Die Feldagenten kennen weder Datum noch Hund. Zurück kommen Vorschläge für den Winter.",
+            "Ohne Einsatzbefehl suchen die Feldagenten ins Blaue."
+          ],
+          "hinweis": "Gib den Feldagenten alles Nötige und die Berichtsform mit."
+        },
+        "ungeprueft": {
+          "texte": [
+            "Plan fertig, ungeprüft. Beim Buchen merkt die Familie: 600 Franken über Budget.",
+            "Niemand hat den Plan gegengelesen."
+          ],
+          "hinweis": "Lass einen Prüfagenten mit frischem Blick ran."
+        }
+      },
+      "erfolg": [
+        "Drei Feldagenten haben recherchiert, Echo hat geplant, der Prüfagent fand zwei Fehler. Echos Koffer blieb leicht.",
+        "Recherche verteilt, klare Einsatzbefehle, frische Prüfung. Die Familie kann buchen."
+      ],
+      "loesung": [
+        "feld",
+        "befehl",
+        "pruef"
+      ]
+    },
+    "x-b": {
+      "wunsch": "Bau einen Feldagenten, der künftig jeden Reiseplan der Familie auf die Kosten prüft.",
+      "grundprompt": "name: kosten-pruefer",
+      "nachrichtVon": "Dein Einsatzprofil (Subagent)",
+      "artNamen": {
+        "prompt": "Beschreibung",
+        "tool": "Ausrüstung (Werkzeuge)",
+        "kontext": "Anleitung"
+      },
+      "teile": [
+        {
+          "id": "wann",
+          "art": "prompt",
+          "text": "description: Prüft Reisepläne auf die Kosten. Verwenden, wenn ein Reiseplan fertig ist."
+        },
+        {
+          "id": "vage",
+          "art": "prompt",
+          "text": "description: Für Reisen."
+        },
+        {
+          "id": "lesen",
+          "art": "tool",
+          "text": "Ausrüstung: Dateien lesen"
+        },
+        {
+          "id": "alles",
+          "art": "tool",
+          "text": "Ausrüstung: alles, was Echo auch darf"
+        },
+        {
+          "id": "anleitung",
+          "art": "kontext",
+          "text": "Du bekommst Plan und Budget. Melde nur Posten, die das Budget sprengen oder keine Quelle haben."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "vage"
+            ]
+          },
+          "fehlbild": "vage"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "alles"
+            ]
+          },
+          "fehlbild": "zuvielAusruestung"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "wann"
+            ]
+          },
+          "fehlbild": "keinWann"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "lesen"
+            ]
+          },
+          "fehlbild": "alleWerkzeuge"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "anleitung"
+            ]
+          },
+          "fehlbild": "keineAnleitung"
+        }
+      ],
+      "fehlbilder": {
+        "vage": {
+          "texte": [
+            "«Für Reisen»: Der Kosten-Prüfer kommt jetzt auch bei der Frage nach dem Wetter.",
+            "Er wird bei jeder Reisefrage gerufen und prüft Kosten, die es nicht gibt."
+          ],
+          "hinweis": "Die Beschreibung sagt genau, wann er gerufen wird."
+        },
+        "zuvielAusruestung": {
+          "texte": [
+            "Der Kosten-Prüfer hat das teure Hotel gleich storniert. Er durfte ja alles.",
+            "Zum Prüfen hätte Lesen gereicht."
+          ],
+          "hinweis": "Ein Prüfer braucht nur Lesen."
+        },
+        "keinWann": {
+          "texte": [
+            "Der Plan ist fertig, der Kosten-Prüfer wird nie gerufen.",
+            "Wann er kommen soll, steht nirgends."
+          ],
+          "hinweis": "Schreib das Wann in die Beschreibung."
+        },
+        "alleWerkzeuge": {
+          "texte": [
+            "Ohne Ausrüstungsliste darf er alles, was Echo darf. Auch buchen und stornieren.",
+            "Keine Liste heisst: alle Werkzeuge."
+          ],
+          "hinweis": "Gib eine Ausrüstungsliste an."
+        },
+        "keineAnleitung": {
+          "texte": [
+            "Er prüft und prüft und meldet alles, auch Rundungen auf 5 Rappen.",
+            "Ohne Anleitung weiss er nicht, was zählt."
+          ],
+          "hinweis": "Sag in der Anleitung, was er meldet."
+        }
+      },
+      "erfolg": [
+        "Kosten-Prüfer fertig. Bei jedem fertigen Reiseplan meldet er nur, was das Budget sprengt. Er darf nur lesen.",
+        "Klare Beschreibung, nur Lesen, kurze Anleitung. Ein Prüfer für alle künftigen Reisen."
+      ],
+      "loesung": [
+        "wann",
+        "lesen",
+        "anleitung"
+      ]
+    },
+    "sa-a": {
+      "typ": "klick",
+      "wunsch": "Wir wollen den Reise-Rechercheur wirklich in Claude haben. Wie legen wir ihn an?",
+      "frage": "Leg für Familie Meier den Subagenten reise-rechercheur an. Tippe dich durch.",
+      "schritte": [
+        {
+          "schirm": "app",
+          "ziel": "modusCode",
+          "text": "Tippe oben auf «{ziel}».",
+          "falsch": {
+            "eingabe": "chatStattCode",
+            "anpassungen": "anpassungenStatt"
+          },
+          "sonst": "codeDaneben"
+        },
+        {
+          "schirm": "code-start",
+          "ziel": "ordnerWaehlen",
+          "text": "Tippe auf «{ziel}».",
+          "falsch": {
+            "umgebung": "umgebungZuerst",
+            "codeEingabe": "ohneOrdner",
+            "anpassungen": "anpassungenStatt"
+          },
+          "sonst": "codeDaneben2"
+        },
+        {
+          "schirm": "ordner-dialog",
+          "ziel": "ordnerFerien",
+          "text": "Wähle den Ordner «{ziel}».",
+          "falsch": {
+            "ordnerVerein": "falscherOrdner",
+            "ordnerOdermatt": "falscherOrdner",
+            "abbrechenOrdner": "ordnerAbgebrochen"
+          },
+          "sonst": "ordnerAbgebrochen"
+        },
+        {
+          "schirm": "code-ferien",
+          "ziel": "codeEingabe",
+          "text": "Tippe ins Eingabefeld.",
+          "falsch": {
+            "codePlus": "plusStatt"
+          },
+          "sonst": "codeDaneben3"
+        },
+        {
+          "schirm": "code-ferien-agent",
+          "ziel": "nachrichtGut",
+          "text": "Wähle die Nachricht, die Was, Wann und Werkzeuge nennt.",
+          "falsch": {
+            "nachrichtVage": "vage",
+            "nachrichtAlles": "darfAlles"
+          },
+          "sonst": "codeDaneben3"
+        }
+      ],
+      "nachher": "code-ferien-agent-fertig",
+      "erfolg": [
+        "Angelegt. Der Rechercheur steht in .claude/agents und darf nur lesen und suchen.",
+        "Geschafft. Ab jetzt schickt Claude ihn, wenn Unterkünfte oder Züge gesucht sind."
+      ],
+      "fehlbilder": {
+        "codeDaneben": {
+          "texte": [
+            "Echo landet woanders. Den Code-Bereich gibt es hier nicht.",
+            "Falsche Tür. Hier arbeitet Claude nicht in deinen Ordnern."
+          ],
+          "hinweis": "Oben links geht es mit «</> Code» in den Code-Bereich."
+        },
+        "chatStattCode": {
+          "texte": [
+            "Echo schreibt im Chat. Dort arbeitet Claude nicht in deinen Ordnern, ein Subagent entsteht so nicht.",
+            "Im Chat bleibt der Subagent ein Gespräch. Eine Datei dafür legt Claude im Code-Bereich an."
+          ],
+          "hinweis": "Einen Subagent legst du im Code-Bereich an: oben links «</> Code»."
+        },
+        "anpassungenStatt": {
+          "texte": [
+            "Echo öffnet die Anpassungen. Dort holst du fertige Skills, Konnektoren und Plugins. Einen eigenen Subagent schreibt Claude im Code-Bereich.",
+            "Fertiges aus dem Verzeichnis statt etwas Eigenes für dein Projekt."
+          ],
+          "hinweis": "Einen eigenen Subagent schreibt Claude im Code-Bereich: oben links «</> Code»."
+        },
+        "umgebungZuerst": {
+          "texte": [
+            "Echo öffnet die Umgebung. Der Ordner, in dem Claude arbeiten soll, fehlt aber noch.",
+            "Erst wählen, wo gearbeitet wird. Dann loslegen."
+          ],
+          "hinweis": "Wähle zuerst «Ordner zum Arbeiten auswählen»."
+        },
+        "ohneOrdner": {
+          "texte": [
+            "Echo schreibt los, aber es ist noch kein Ordner gewählt. Wohin soll der Subagent?",
+            "Ohne Ordner fehlt der Platz für den Subagent."
+          ],
+          "hinweis": "Wähle zuerst «Ordner zum Arbeiten auswählen»."
+        },
+        "codeDaneben2": {
+          "texte": [
+            "Hier passiert nichts mit dem Ordner.",
+            "Echo wartet. Noch ist kein Ordner gewählt."
+          ],
+          "hinweis": "Wähle zuerst «Ordner zum Arbeiten auswählen»."
+        },
+        "falscherOrdner": {
+          "texte": [
+            "Echo arbeitet im falschen Ordner. Der Subagent gälte dort und nicht bei Familie Meier.",
+            "Falscher Ordner: Bei Familie Meier fehlt der Subagent weiter."
+          ],
+          "hinweis": "Wähle den Ordner, um den es geht: Familie Meier."
+        },
+        "ordnerAbgebrochen": {
+          "texte": [
+            "Abgebrochen. Kein Ordner ist gewählt.",
+            "Das Fenster ist zu. Claude weiss nicht, wo es arbeiten soll."
+          ],
+          "hinweis": "Wähle den Ordner Familie Meier."
+        },
+        "plusStatt": {
+          "texte": [
+            "Echo öffnet das Plus. Anhängen musst du nichts, schreiben reicht.",
+            "Eine Datei mehr hilft hier nicht."
+          ],
+          "hinweis": "Tippe ins Eingabefeld und beschreib den Subagent."
+        },
+        "codeDaneben3": {
+          "texte": [
+            "Hier schreibst du Claude nichts.",
+            "Echo wartet auf deine Nachricht."
+          ],
+          "hinweis": "Tippe ins Eingabefeld und beschreib den Subagent."
+        },
+        "vage": {
+          "texte": [
+            "Claude legt agent-1 an. Wann er gerufen wird und was er darf, steht nirgends.",
+            "Ein Agent ohne Beschreibung: Echo weiss nie, wann es ihn schicken soll."
+          ],
+          "hinweis": "Beschreib dem Subagenten: was er tut, wann er gebraucht wird, welche Werkzeuge er bekommt."
+        },
+        "darfAlles": {
+          "texte": [
+            "Der Rechercheur darf alles. Beim Aufräumen seiner Notizen löscht er den Ferienplan.",
+            "Ohne Werkzeugliste bekommt er alles, auch Schreiben und Löschen."
+          ],
+          "hinweis": "Gib nur die Werkzeuge mit, die er braucht: hier Lesen und Websuche."
+        }
+      }
+    },
+    "sa-b": {
+      "typ": "klick",
+      "wunsch": "Bevor wir buchen, soll jemand mit frischem Blick den ganzen Plan prüfen.",
+      "frage": "Leg den Subagenten plan-pruefer an. Der Ordner ist schon gewählt.",
+      "schritte": [
+        {
+          "schirm": "app",
+          "ziel": "modusCode",
+          "text": "Tippe oben auf «{ziel}».",
+          "falsch": {
+            "eingabe": "chatStattCode",
+            "anpassungen": "anpassungenStatt"
+          },
+          "sonst": "codeDaneben"
+        },
+        {
+          "schirm": "code-start",
+          "ziel": "ordnerWaehlen",
+          "text": "Tippe auf «{ziel}».",
+          "falsch": {
+            "umgebung": "umgebungZuerst",
+            "codeEingabe": "ohneOrdner",
+            "anpassungen": "anpassungenStatt"
+          },
+          "sonst": "codeDaneben2"
+        },
+        {
+          "schirm": "ordner-dialog",
+          "ziel": "ordnerFerien",
+          "text": "Wähle den Ordner «{ziel}».",
+          "falsch": {
+            "ordnerVerein": "falscherOrdner",
+            "ordnerOdermatt": "falscherOrdner",
+            "abbrechenOrdner": "ordnerAbgebrochen"
+          },
+          "sonst": "ordnerAbgebrochen"
+        },
+        {
+          "schirm": "code-ferien",
+          "ziel": "codeEingabe",
+          "text": "Tippe ins Eingabefeld.",
+          "falsch": {
+            "codePlus": "plusStatt"
+          },
+          "sonst": "codeDaneben3"
+        },
+        {
+          "schirm": "code-ferien-pruefer",
+          "ziel": "prueferGut",
+          "text": "Wähle die Nachricht mit Prüfliste und «nur lesen».",
+          "falsch": {
+            "prueferVage": "prueferVage",
+            "prueferUmbau": "prueferBaut"
+          },
+          "sonst": "codeDaneben3"
+        }
+      ],
+      "nachher": "code-ferien-pruefer-fertig",
+      "erfolg": [
+        "Angelegt. Der Prüfer liest nur und meldet wichtige Lücken.",
+        "Geschafft. Der zweite Blick ist eingerichtet."
+      ],
+      "fehlbilder": {
+        "codeDaneben": {
+          "texte": [
+            "Echo landet woanders. Den Code-Bereich gibt es hier nicht.",
+            "Falsche Tür. Hier arbeitet Claude nicht in deinen Ordnern."
+          ],
+          "hinweis": "Oben links geht es mit «</> Code» in den Code-Bereich."
+        },
+        "chatStattCode": {
+          "texte": [
+            "Echo schreibt im Chat. Dort arbeitet Claude nicht in deinen Ordnern, ein Subagent entsteht so nicht.",
+            "Im Chat bleibt der Subagent ein Gespräch. Eine Datei dafür legt Claude im Code-Bereich an."
+          ],
+          "hinweis": "Einen Subagent legst du im Code-Bereich an: oben links «</> Code»."
+        },
+        "anpassungenStatt": {
+          "texte": [
+            "Echo öffnet die Anpassungen. Dort holst du fertige Skills, Konnektoren und Plugins. Einen eigenen Subagent schreibt Claude im Code-Bereich.",
+            "Fertiges aus dem Verzeichnis statt etwas Eigenes für dein Projekt."
+          ],
+          "hinweis": "Einen eigenen Subagent schreibt Claude im Code-Bereich: oben links «</> Code»."
+        },
+        "umgebungZuerst": {
+          "texte": [
+            "Echo öffnet die Umgebung. Der Ordner, in dem Claude arbeiten soll, fehlt aber noch.",
+            "Erst wählen, wo gearbeitet wird. Dann loslegen."
+          ],
+          "hinweis": "Wähle zuerst «Ordner zum Arbeiten auswählen»."
+        },
+        "ohneOrdner": {
+          "texte": [
+            "Echo schreibt los, aber es ist noch kein Ordner gewählt. Wohin soll der Subagent?",
+            "Ohne Ordner fehlt der Platz für den Subagent."
+          ],
+          "hinweis": "Wähle zuerst «Ordner zum Arbeiten auswählen»."
+        },
+        "codeDaneben2": {
+          "texte": [
+            "Hier passiert nichts mit dem Ordner.",
+            "Echo wartet. Noch ist kein Ordner gewählt."
+          ],
+          "hinweis": "Wähle zuerst «Ordner zum Arbeiten auswählen»."
+        },
+        "falscherOrdner": {
+          "texte": [
+            "Echo arbeitet im falschen Ordner. Der Subagent gälte dort und nicht bei Familie Meier.",
+            "Falscher Ordner: Bei Familie Meier fehlt der Subagent weiter."
+          ],
+          "hinweis": "Wähle den Ordner, um den es geht: Familie Meier."
+        },
+        "ordnerAbgebrochen": {
+          "texte": [
+            "Abgebrochen. Kein Ordner ist gewählt.",
+            "Das Fenster ist zu. Claude weiss nicht, wo es arbeiten soll."
+          ],
+          "hinweis": "Wähle den Ordner Familie Meier."
+        },
+        "plusStatt": {
+          "texte": [
+            "Echo öffnet das Plus. Anhängen musst du nichts, schreiben reicht.",
+            "Eine Datei mehr hilft hier nicht."
+          ],
+          "hinweis": "Tippe ins Eingabefeld und beschreib den Subagent."
+        },
+        "codeDaneben3": {
+          "texte": [
+            "Hier schreibst du Claude nichts.",
+            "Echo wartet auf deine Nachricht."
+          ],
+          "hinweis": "Tippe ins Eingabefeld und beschreib den Subagent."
+        },
+        "prueferVage": {
+          "texte": [
+            "Claude legt einen Prüfer ohne Prüfliste an. Er findet alles «gut».",
+            "Ein Prüfer, der nicht weiss, wogegen er prüft."
+          ],
+          "hinweis": "Sag dem Prüfer, was er liest, wogegen er prüft und was er meldet."
+        },
+        "prueferBaut": {
+          "texte": [
+            "Der Prüfer baut den Ferienplan um, statt Lücken zu melden. 47 Änderungen, keiner weiss warum.",
+            "Ein Prüfer, der selbst schreibt, ist kein zweiter Blick mehr."
+          ],
+          "hinweis": "Der Prüfer liest nur und meldet wichtige Lücken. Ändern tut er nichts."
+        }
+      }
+    },
+    "sa-c": {
+      "typ": "wahl",
+      "wunsch": "Der Rechercheur soll nur bei unserem Ferienplan helfen, nicht in anderen Projekten.",
+      "frage": "Wo muss die Datei des Subagenten liegen, damit er nur im Ferienplan-Ordner gilt?",
+      "optionen": [
+        {
+          "id": "projekt",
+          "text": "Im Ordner .claude/agents im Ferienplan-Ordner.",
+          "richtig": true,
+          "hinweis": "Genau. Im Ordner .claude/agents eines Projekts gilt er nur dort."
+        },
+        {
+          "id": "alle",
+          "text": "Im Ordner ~/.claude/agents im eigenen Benutzerordner.",
+          "hinweis": "Dort gilt er in allen deinen Projekten. Familie Meier wollte ihn nur beim Ferienplan."
+        },
+        {
+          "id": "skills",
+          "text": "Als Skill unter «Anpassungen» hochladen.",
+          "hinweis": "Ein Skill ist eine Anleitung, kein Subagent mit eigenem Arbeitsbereich."
+        }
+      ],
+      "echo": "Echo legt die Datei in .claude/agents im Ferienplan-Ordner. In anderen Projekten taucht der Rechercheur nicht auf.",
+      "loesung": [
+        "projekt"
+      ]
+    },
+    "sa-d": {
+      "typ": "reihe",
+      "wunsch": "Was ist die richtige Reihenfolge, wenn wir einen Subagenten in echt anlegen?",
+      "frage": "Bring die Schritte zum Anlegen eines Subagenten in die richtige Reihenfolge.",
+      "schritte": [
+        {
+          "id": "lesen",
+          "text": "Die angelegte Datei lesen: Beschreibung und Werkzeuge"
+        },
+        {
+          "id": "code",
+          "text": "Oben auf «</> Code» tippen",
+          "schirm": "app",
+          "ziel": "modusCode"
+        },
+        {
+          "id": "testen",
+          "text": "Mit einer passenden Aufgabe ausprobieren"
+        },
+        {
+          "id": "beschreiben",
+          "text": "Claude den Subagenten beschreiben: was, wann, welche Werkzeuge"
+        },
+        {
+          "id": "ordner",
+          "text": "Den Ordner des Projekts wählen",
+          "schirm": "code-start",
+          "ziel": "ordnerWaehlen"
+        }
+      ],
+      "loesung": [
+        "code",
+        "ordner",
+        "beschreiben",
+        "lesen",
+        "testen"
+      ],
+      "echo": "Code-Bereich, Ordner, beschreiben, Datei lesen, ausprobieren. Der Rechercheur tut, was er soll, und nicht mehr.",
+      "daneben": {
+        "texte": [
+          "Claude schreibt den Subagenten, aber in keinen Ordner. Er ist nirgends zu finden.",
+          "Familie Meier probiert den Rechercheur aus, bevor jemand seine Werkzeuge gelesen hat. Er darf alles."
+        ],
+        "hinweis": "Erst Code-Bereich und Ordner, dann beschreiben. Lesen vor dem Ausprobieren."
+      }
+    },
+    "sa-e": {
+      "typ": "einstellen",
+      "wunsch": "Claude fragt, welche Werkzeuge der Rechercheur bekommt. Was sagen wir?",
+      "frage": "Stell ein, welche Werkzeuge der Reise-Rechercheur bekommt.",
+      "schirm": "code-ferien-werkzeuge",
+      "zeilen": [
+        {
+          "id": "lesen",
+          "text": "Dateien lesen",
+          "start": "lesenNein",
+          "optionen": [
+            {
+              "id": "lesenJa",
+              "text": "Ja"
+            },
+            {
+              "id": "lesenNein",
+              "text": "Nein"
+            }
+          ]
+        },
+        {
+          "id": "web",
+          "text": "Im Web suchen",
+          "start": "webNein",
+          "optionen": [
+            {
+              "id": "webJa",
+              "text": "Ja"
+            },
+            {
+              "id": "webNein",
+              "text": "Nein"
+            }
+          ]
+        },
+        {
+          "id": "aendern",
+          "text": "Dateien ändern",
+          "start": "aendernJa",
+          "optionen": [
+            {
+              "id": "aendernJa",
+              "text": "Ja"
+            },
+            {
+              "id": "aendernNein",
+              "text": "Nein"
+            }
+          ]
+        },
+        {
+          "id": "befehle",
+          "text": "Befehle ausführen",
+          "start": "befehleJa",
+          "optionen": [
+            {
+              "id": "befehleJa",
+              "text": "Ja"
+            },
+            {
+              "id": "befehleNein",
+              "text": "Nein"
+            }
+          ]
+        }
+      ],
+      "loesung": [
+        "lesenJa",
+        "webJa",
+        "aendernNein",
+        "befehleNein"
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "aendernJa"
+            ]
+          },
+          "fehlbild": "darfAendern"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "befehleJa"
+            ]
+          },
+          "fehlbild": "darfBefehle"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "webNein"
+            ]
+          },
+          "fehlbild": "keinWeb"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "lesenNein"
+            ]
+          },
+          "fehlbild": "keinLesen"
+        }
+      ],
+      "erfolg": [
+        "Richtig ausgerüstet: lesen und suchen, sonst nichts.",
+        "So kann der Rechercheur suchen, aber nichts kaputt machen."
+      ],
+      "fehlbilder": {
+        "darfAendern": {
+          "texte": [
+            "Der Rechercheur schreibt seine Funde gleich in den Ferienplan und überschreibt dabei die Zugzeiten.",
+            "Ein Sucher mit Schreibrecht: Plötzlich ist der Plan anders."
+          ],
+          "hinweis": "Ein Rechercheur ändert nichts. «Dateien ändern»: Nein."
+        },
+        "darfBefehle": {
+          "texte": [
+            "Der Rechercheur führt Befehle aus und räumt «zur Sicherheit» den Ordner auf.",
+            "Befehle braucht er zum Suchen nicht. Er hat sie trotzdem benutzt."
+          ],
+          "hinweis": "Zum Suchen braucht es keine Befehle. «Befehle ausführen»: Nein."
+        },
+        "keinWeb": {
+          "texte": [
+            "Ohne Websuche findet der Rechercheur keine einzige Unterkunft.",
+            "Er sucht nur in alten Dateien. Die Preise sind vom letzten Jahr."
+          ],
+          "hinweis": "Ein Rechercheur muss im Web suchen dürfen."
+        },
+        "keinLesen": {
+          "texte": [
+            "Ohne Lesen kennt der Rechercheur die Wunschliste der Familie nicht.",
+            "Er sucht Hotels für vier, die Familie ist zu fünft."
+          ],
+          "hinweis": "Lesen schadet nicht. Er muss die Wunschliste lesen dürfen."
+        }
+      }
+    },
+    "sa-f": {
+      "typ": "klick",
+      "wunsch": "Kannst du den Prüfer auch von Anfang an einrichten? Ich will den ganzen Weg sehen.",
+      "frage": "Richte den Subagenten plan-pruefer von Anfang an ein. Tippe dich durch.",
+      "schritte": [
+        {
+          "schirm": "app",
+          "ziel": "modusCode",
+          "text": "Tippe oben auf «{ziel}».",
+          "falsch": {
+            "eingabe": "chatStattCode",
+            "anpassungen": "anpassungenStatt"
+          },
+          "sonst": "codeDaneben"
+        },
+        {
+          "schirm": "code-start",
+          "ziel": "ordnerWaehlen",
+          "text": "Tippe auf «{ziel}».",
+          "falsch": {
+            "umgebung": "umgebungZuerst",
+            "codeEingabe": "ohneOrdner",
+            "anpassungen": "anpassungenStatt"
+          },
+          "sonst": "codeDaneben2"
+        },
+        {
+          "schirm": "ordner-dialog",
+          "ziel": "ordnerFerien",
+          "text": "Wähle den Ordner «{ziel}».",
+          "falsch": {
+            "ordnerVerein": "falscherOrdner",
+            "ordnerOdermatt": "falscherOrdner",
+            "abbrechenOrdner": "ordnerAbgebrochen"
+          },
+          "sonst": "ordnerAbgebrochen"
+        },
+        {
+          "schirm": "code-ferien",
+          "ziel": "codeEingabe",
+          "text": "Tippe ins Eingabefeld.",
+          "falsch": {
+            "codePlus": "plusStatt"
+          },
+          "sonst": "codeDaneben3"
+        },
+        {
+          "schirm": "code-ferien-pruefer",
+          "ziel": "prueferGut",
+          "text": "Wähle die Nachricht mit Prüfliste und «nur lesen».",
+          "falsch": {
+            "prueferVage": "prueferVage",
+            "prueferUmbau": "prueferBaut"
+          },
+          "sonst": "codeDaneben3"
+        }
+      ],
+      "nachher": "code-ferien-pruefer-fertig",
+      "erfolg": [
+        "Angelegt, von Anfang bis Ende. Der Prüfer liest nur und meldet Wichtiges.",
+        "Geschafft. Den Weg kennst du jetzt ganz."
+      ],
+      "fehlbilder": {
+        "codeDaneben": {
+          "texte": [
+            "Echo landet woanders. Den Code-Bereich gibt es hier nicht.",
+            "Falsche Tür. Hier arbeitet Claude nicht in deinen Ordnern."
+          ],
+          "hinweis": "Oben links geht es mit «</> Code» in den Code-Bereich."
+        },
+        "chatStattCode": {
+          "texte": [
+            "Echo schreibt im Chat. Dort arbeitet Claude nicht in deinen Ordnern, ein Subagent entsteht so nicht.",
+            "Im Chat bleibt der Subagent ein Gespräch. Eine Datei dafür legt Claude im Code-Bereich an."
+          ],
+          "hinweis": "Einen Subagent legst du im Code-Bereich an: oben links «</> Code»."
+        },
+        "anpassungenStatt": {
+          "texte": [
+            "Echo öffnet die Anpassungen. Dort holst du fertige Skills, Konnektoren und Plugins. Einen eigenen Subagent schreibt Claude im Code-Bereich.",
+            "Fertiges aus dem Verzeichnis statt etwas Eigenes für dein Projekt."
+          ],
+          "hinweis": "Einen eigenen Subagent schreibt Claude im Code-Bereich: oben links «</> Code»."
+        },
+        "umgebungZuerst": {
+          "texte": [
+            "Echo öffnet die Umgebung. Der Ordner, in dem Claude arbeiten soll, fehlt aber noch.",
+            "Erst wählen, wo gearbeitet wird. Dann loslegen."
+          ],
+          "hinweis": "Wähle zuerst «Ordner zum Arbeiten auswählen»."
+        },
+        "ohneOrdner": {
+          "texte": [
+            "Echo schreibt los, aber es ist noch kein Ordner gewählt. Wohin soll der Subagent?",
+            "Ohne Ordner fehlt der Platz für den Subagent."
+          ],
+          "hinweis": "Wähle zuerst «Ordner zum Arbeiten auswählen»."
+        },
+        "codeDaneben2": {
+          "texte": [
+            "Hier passiert nichts mit dem Ordner.",
+            "Echo wartet. Noch ist kein Ordner gewählt."
+          ],
+          "hinweis": "Wähle zuerst «Ordner zum Arbeiten auswählen»."
+        },
+        "falscherOrdner": {
+          "texte": [
+            "Echo arbeitet im falschen Ordner. Der Subagent gälte dort und nicht bei Familie Meier.",
+            "Falscher Ordner: Bei Familie Meier fehlt der Subagent weiter."
+          ],
+          "hinweis": "Wähle den Ordner, um den es geht: Familie Meier."
+        },
+        "ordnerAbgebrochen": {
+          "texte": [
+            "Abgebrochen. Kein Ordner ist gewählt.",
+            "Das Fenster ist zu. Claude weiss nicht, wo es arbeiten soll."
+          ],
+          "hinweis": "Wähle den Ordner Familie Meier."
+        },
+        "plusStatt": {
+          "texte": [
+            "Echo öffnet das Plus. Anhängen musst du nichts, schreiben reicht.",
+            "Eine Datei mehr hilft hier nicht."
+          ],
+          "hinweis": "Tippe ins Eingabefeld und beschreib den Subagent."
+        },
+        "codeDaneben3": {
+          "texte": [
+            "Hier schreibst du Claude nichts.",
+            "Echo wartet auf deine Nachricht."
+          ],
+          "hinweis": "Tippe ins Eingabefeld und beschreib den Subagent."
+        },
+        "prueferVage": {
+          "texte": [
+            "Claude legt einen Prüfer ohne Prüfliste an. Er findet alles «gut».",
+            "Ein Prüfer, der nicht weiss, wogegen er prüft."
+          ],
+          "hinweis": "Sag dem Prüfer, was er liest, wogegen er prüft und was er meldet."
+        },
+        "prueferBaut": {
+          "texte": [
+            "Der Prüfer baut den Ferienplan um, statt Lücken zu melden. 47 Änderungen, keiner weiss warum.",
+            "Ein Prüfer, der selbst schreibt, ist kein zweiter Blick mehr."
+          ],
+          "hinweis": "Der Prüfer liest nur und meldet wichtige Lücken. Ändern tut er nichts."
+        }
+      }
+    }
+  },
+  "anleitungen": {
+    "konzept": "subagentEcht",
+    "wege": [
+      {
+        "aufgabe": "sa-a",
+        "titel": "Einen Subagenten anlegen"
+      },
+      {
+        "aufgabe": "sa-e",
+        "titel": "Werkzeuge eines Subagenten wählen"
+      }
+    ]
+  }
+}

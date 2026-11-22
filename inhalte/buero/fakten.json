@@ -1,0 +1,149 @@
+{
+  "hinweis": "Alle Angaben, die schnell veralten. Im Spiel werden Prinzipien gelehrt. Jeder Eintrag braucht eine offizielle Quelle und ein Prüfdatum.",
+  "fakten": [
+    {
+      "id": "beispiele-anzahl",
+      "aussage": "Anthropic empfiehlt 3 bis 5 passende, verschiedene Beispiele.",
+      "quelle": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "geprueft": "2026-11-16"
+    },
+    {
+      "id": "format-positiv",
+      "aussage": "Anthropic empfiehlt, zu sagen, was Claude tun soll, statt was es nicht tun soll.",
+      "quelle": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "geprueft": "2026-11-16"
+    },
+    {
+      "id": "unterlagen-oben",
+      "aussage": "Lange Unterlagen gehören nach oben, vor die Frage. Claude soll zuerst die passenden Stellen zitieren.",
+      "quelle": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "geprueft": "2026-11-16"
+    },
+    {
+      "id": "tags",
+      "aussage": "Anweisungen, Material und Beispiele lassen sich mit Tags wie <mail> und </mail> trennen.",
+      "quelle": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "geprueft": "2026-11-16"
+    },
+    {
+      "id": "befragen",
+      "aussage": "Bei grösseren Vorhaben kann man Claude bitten, einen zuerst zu befragen.",
+      "quelle": "https://code.claude.com/docs/en/best-practices",
+      "geprueft": "2026-11-16"
+    },
+    {
+      "id": "kontext-fuellt-sich",
+      "aussage": "Der Kontext füllt sich schnell. Mit vollem Kontext arbeitet Claude schlechter.",
+      "quelle": "https://code.claude.com/docs/en/best-practices",
+      "geprueft": "2026-11-16"
+    },
+    {
+      "id": "skill-beschreibung",
+      "aussage": "Skill-Beschreibung: laut Hilfe-Center höchstens 200 Zeichen, laut Plattform-Doku höchstens 1024. Das Spiel nimmt 200.",
+      "quelle": "https://support.claude.com/en/articles/12512198-use-custom-skills",
+      "geprueft": "2026-11-16"
+    },
+    {
+      "id": "skill-laden",
+      "aussage": "Von einem Skill liegen zuerst nur Name und Beschreibung im Kontext. Die Anleitung lädt Claude bei Bedarf, Zusatzdateien erst, wenn es sie liest.",
+      "quelle": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview",
+      "geprueft": "2026-11-16"
+    },
+    {
+      "id": "skill-creator",
+      "aussage": "In der Claude-App kann man mit dem «skill-creator» im Gespräch einen Skill bauen lassen.",
+      "quelle": "https://support.claude.com/en/articles/12599426",
+      "geprueft": "2026-11-16"
+    },
+    {
+      "id": "konnektor-vertrauen",
+      "aussage": "Nur Server von vertrauenswürdigen Anbietern verbinden, verlangte Rechte prüfen, Anfragen um Erlaubnis genau lesen und «Allow always» nur für Werkzeuge wählen, denen man ohne Aufsicht traut.",
+      "quelle": "https://support.claude.com/en/articles/11175166",
+      "geprueft": "2026-11-16"
+    },
+    {
+      "id": "prompt-injection",
+      "aussage": "Versteckte Anweisungen in Websites, Mails und Dokumenten können Claude zu ungewollten Handlungen verleiten. Verlangt Claude plötzlich heikle Angaben, den Auftrag sofort stoppen.",
+      "quelle": "https://support.claude.com/en/articles/12902428",
+      "geprueft": "2026-11-16"
+    },
+    {
+      "id": "subagent-grundlagen",
+      "aussage": "Ein Subagent hat eigenen Kontext, eigene Anleitung und eigene Werkzeuge und gibt nur eine Zusammenfassung zurück. Ohne Werkzeugliste erbt er die Werkzeuge des Hauptgesprächs. Rückfragen an dich kann er nicht stellen. Dateien liegen in .claude/agents/ oder ~/.claude/agents/.",
+      "quelle": "https://code.claude.com/docs/en/sub-agents",
+      "geprueft": "2026-11-16"
+    },
+    {
+      "id": "hooks",
+      "aussage": "Hooks laufen an festen Stellen jedes Mal, zum Beispiel vor einer Werkzeug-Nutzung, und können sie sperren. Claude kann einen Hook auf Wunsch schreiben, /hooks zeigt die aktiven.",
+      "quelle": "https://code.claude.com/docs/en/hooks-guide",
+      "geprueft": "2026-11-16"
+    },
+    {
+      "id": "plugins",
+      "aussage": "Ein Plugin bündelt Skills, Konnektoren, Befehle, Subagenten und Hooks. Skills aus Plugins laufen auch im Chat der Claude-App, Subagenten und Hooks nur dort, wo Claude selbständig an Dateien arbeitet.",
+      "quelle": "https://support.claude.com/en/articles/13837440",
+      "geprueft": "2026-11-16"
+    },
+    {
+      "id": "skill-hochladen",
+      "aussage": "Eigene Skills lädt man als ZIP-Datei hoch: Anpassen, «+», «Fähigkeit hochladen». In der deutschen Desktop-App: Anpassungen, Skills, «+ Hinzufügen», «Skill hochladen» (Bildschirmfoto des Besitzers).",
+      "quelle": "https://support.claude.com/de/articles/12512180-skills-in-claude-verwenden",
+      "geprueft": "2026-11-17"
+    },
+    {
+      "id": "code-ausfuehrung",
+      "aussage": "Skills brauchen die Code-Ausführung, sonst bleiben sie grau. In der deutschen Desktop-App: Einstellungen, Funktionen, «Code in der Cloud ausführen» mit dem Hinweis «Erforderlich für Skills» (Bildschirmfoto des Besitzers).",
+      "quelle": "https://support.claude.com/de/articles/12512180-skills-in-claude-verwenden",
+      "geprueft": "2026-11-17"
+    },
+    {
+      "id": "konnektor-rechte",
+      "aussage": "Die Werkzeuge eines Konnektors lassen sich nach Gruppen (schreibgeschützt, schreiben und löschen) oder einzeln auf «Immer zulassen», «Genehmigung erforderlich» oder «Blockiert» stellen. In Team- und Enterprise-Konten legen das die Verantwortlichen fest. Deutsche Namen aus der Hilfeseite, in der App nicht geprüft.",
+      "quelle": "https://support.claude.com/de/articles/11176164-verwenden-sie-konnektoren-um-die-fahigkeiten-von-claude-zu-erweitern",
+      "geprueft": "2026-11-17"
+    },
+    {
+      "id": "konnektor-verbinden",
+      "aussage": "Konnektoren fügt man unter Anpassen, Konnektoren mit «+» hinzu, dann «Verbinden» und beim Dienst anmelden. Claude erbt die Berechtigungen der Person im Dienst. Im Chat schaltet man sie unter «+», «Konnektoren» für das Gespräch ein oder aus.",
+      "quelle": "https://support.claude.com/de/articles/11176164-verwenden-sie-konnektoren-um-die-fahigkeiten-von-claude-zu-erweitern",
+      "geprueft": "2026-11-17"
+    },
+    {
+      "id": "code-bereich",
+      "aussage": "Claude Code läuft auch in der Desktop-App, im Bereich «Code». Dort wählt man den Ordner, in dem Claude arbeitet. Subagenten und Hooks legt Claude auf Wunsch selbst an.",
+      "quelle": "https://code.claude.com/docs/en/desktop",
+      "geprueft": "2026-11-17"
+    },
+    {
+      "id": "plugins-holen",
+      "aussage": "Plugins holt man in der Claude-App unter Anpassen, Plugins aus dem Verzeichnis. Die deutsche Desktop-App zeigt dort die Reiter «Meine» und «Entdecken» (Bildschirmfoto des Besitzers).",
+      "quelle": "https://support.claude.com/en/articles/13837440",
+      "geprueft": "2026-11-17"
+    },
+    {
+      "id": "plugin-sicherheit",
+      "aussage": "Ein Plugin in Claude Code kann beliebigen Code mit den Rechten des Benutzers ausführen. Der Name eines Marktplatzes sagt, wer den Katalog herausgibt, nicht was jedes Plugin darin tut. Darum vor dem Installieren prüfen.",
+      "quelle": "https://code.claude.com/docs/en/plugins/security",
+      "geprueft": "2026-11-18"
+    },
+    {
+      "id": "eigene-konnektoren",
+      "aussage": "Eigene Konnektoren verbinden mit Diensten, die Anthropic nicht geprüft hat. Rechte genau ansehen, nur Server von vertrauenswürdigen Organisationen verbinden, auf unerwartetes Verhalten achten.",
+      "quelle": "https://claude.com/docs/connectors/policies",
+      "geprueft": "2026-11-18"
+    },
+    {
+      "id": "skill-code",
+      "aussage": "Skills können neben der Anleitung ausführbare Code-Dateien enthalten.",
+      "quelle": "https://support.claude.com/de/articles/12512198-benutzerdefinierte-skills-erstellen",
+      "geprueft": "2026-11-18"
+    },
+    {
+      "id": "skill-scan",
+      "aussage": "Skills und Plugins nur aus vertrauenswürdigen Quellen installieren. Eine automatische Prüfung auf Schadcode gibt es für Organisationen, sie ist keine Garantie.",
+      "quelle": "https://support.claude.com/de/articles/15927065-erste-schritte-mit-skill-und-plugin-scanning",
+      "geprueft": "2026-11-18"
+    }
+  ]
+}

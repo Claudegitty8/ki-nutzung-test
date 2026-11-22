@@ -1,0 +1,591 @@
+{
+  "app": {
+    "titel": "Agentenbüro",
+    "zentraleName": "Die Zentrale",
+    "echoName": "Echo, der Einsatzroboter der Zentrale",
+    "echoNeu": "Einsatzroboter Echo meldet sich. Ich führe jeden Funkspruch aus. Genau so, wie er ankommt. Wirklich genau so.",
+    "echoLaeuft": "Unser Auftrag wartet. Weiter im Einsatz?",
+    "echoFertig": "Alle Aufträge erledigt. Ganz Zwirbelwil funkt jetzt mit uns.",
+    "auftragEtikett": "Auftrag",
+    "auftragAnnehmen": "Auftrag annehmen",
+    "weiterBauen": "Weiter im Einsatz",
+    "mehrFolgt": "Alle Aufträge sind erledigt. Im Einsatzschrank liegt, was du gebaut hast. Probier es in echt mit Claude aus.",
+    "rundeEtikett": "Runde {nr} von {anzahl}",
+    "meisterschaftEtikett": "Deine Meisterschaft",
+    "punkteLabel": "{erfolge} von {noetig} gemeistert",
+    "wandEtikett": "Erledigte Aufträge",
+    "wandLeer": "Hier hängen bald deine erledigten Aufträge.",
+    "lexikonKnopf": "Lexikon ({anzahl})",
+    "einstellungenKnopf": "Einstellungen",
+    "zurueck": "‹ Zentrale",
+    "schritt": {
+      "probieren": "Probieren",
+      "aha": "Aha!",
+      "beispiel": "Beispiel",
+      "luecke": "Lücke",
+      "frei": "Frei",
+      "wiederholung": "Übrigens …",
+      "misch": "Alles zusammen"
+    },
+    "schrittHilfe": {
+      "probieren": "Stell einen Funkspruch zusammen und schau, was Echo daraus macht. Hier kann nichts schiefgehen.",
+      "beispiel": "So sieht ein guter Funkspruch aus. Drück auf «Echo, los!».",
+      "luecke": "Ein Teil steht schon. Ergänze, was noch fehlt.",
+      "frei": "Jetzt allein. {anzahl} Situationen beim ersten Versuch richtig, dann geht es weiter.",
+      "misch": "Hier brauchst du alles, was du gelernt hast.",
+      "wiederholung": "Eine Frage zu früher. Du hast einen Versuch."
+    },
+    "promptEtikett": "Dein Funkspruch (Prompt)",
+    "teileHilfe": "Tippe Textteile an, um sie anzustecken oder wegzunehmen.",
+    "art": {
+      "prompt": "Ziel und Form",
+      "kontext": "Leser, Grund und Material",
+      "beispiel": "Beispiele",
+      "rolle": "Rolle und Dauerregeln",
+      "absicherung": "Sicherungen",
+      "zettel": "Fallakte (Projektanweisung)",
+      "tool": "Ausrüstung (Werkzeuge)",
+      "stecker": "Funkleitungen (Konnektoren)",
+      "karte": "Dossiers (Skills)",
+      "recht": "Freigaben (Rechte)",
+      "feld": "Felder der Anfrage"
+    },
+    "beispielVorsatz": "Beispiele:",
+    "los": "Echo, los!",
+    "echoBereit": "Ich bin bereit.",
+    "gelungen": "Genau so. Echo wusste alles, was nötig war.",
+    "wasPassiert": "Was ist da passiert?",
+    "ahaWeiter": "Zeig mir ein Beispiel",
+    "beispielWeiter": "Jetzt du",
+    "weiter": "Weiter",
+    "naechste": "Nächste Situation",
+    "andere": "Andere Situation",
+    "gezaehlt": "Das zählt für die Meisterschaft!",
+    "nichtGezaehlt": "Gelöst! Für die Meisterschaft zählt nur der erste Versuch ohne Hilfe. Diese Situation kommt später nochmals.",
+    "nochmal": "Ändere deinen Funkspruch und versuch es nochmals. Oder nimm eine andere Situation.",
+    "nochmalMisch": "Ändere deinen Funkspruch und versuch es nochmals.",
+    "hilfe": [
+      "Tipp",
+      "Zeig mir, wo",
+      "Lösung zeigen"
+    ],
+    "hilfeAngebot": "Zweimal daneben ist ganz normal. Magst du einen Tipp?",
+    "hilfeZuviel": "Brauchst du diesen Teil wirklich?",
+    "hilfeFehlt": "Schau dir diesen Teil an.",
+    "hilfeAllesDa": "Hier fehlt nichts, und nichts ist zu viel. Schick Echo los.",
+    "hilfeLoesung": "Das ist eine mögliche Lösung. Sie zählt nicht für die Meisterschaft.",
+    "hilfeRegel": "Ein Tipp ist erlaubt. Mit «{zeig}» oder «{loesung}» zählt die Situation nicht.",
+    "schonGesehen": "Die kennst du schon. Löse sie jetzt allein, dann zählt sie.",
+    "auswegText": "Diese Runde ist zäh. Du kannst weiter üben oder weitergehen. «{konzept}» kommt dann später als Wiederholung.",
+    "auswegKnopf": "Weitergehen und später üben",
+    "verschobenTitel": "Weiter geht's!",
+    "verschobenText": "«{konzept}» üben wir später nochmals. Jede richtige Wiederholung zählt dann für die Meisterschaft.",
+    "tippMisch": "Geh die Gruppen einzeln durch. Was braucht Echo aus jeder Gruppe, und was schadet?",
+    "ahaAnalogie": "Merkbild",
+    "ahaLexikon": "Neu im Lexikon: {begriff}",
+    "wiederholungGut": "Du hast es noch drauf!",
+    "wiederholungSchlecht": "Kein Problem. Das üben wir bald nochmals.",
+    "rundeFertigTitel": "Gemeistert: {konzept}",
+    "rundeFertigText": "Dreimal ohne Hilfe richtig. Das sitzt.",
+    "pause": "Gute Stelle für eine Pause. Dein Stand ist gespeichert.",
+    "zurZentrale": "Zurück in die Zentrale",
+    "auftragFertigTitel": "Auftrag erledigt!",
+    "kundenstimmeEtikett": "Rückmeldung",
+    "ueberraschungEtikett": "Überraschung",
+    "situationZaehler": "Aufgabe {nr} von {anzahl}",
+    "lexikonTitel": "Lexikon",
+    "lexikonOffen": "Noch {anzahl} Kernbegriffe zu entdecken.",
+    "lexEnglisch": "Englisch",
+    "lexAnalogie": "Merkbild",
+    "lexQuatsch": "Echos Quatsch dazu",
+    "lexGenauer": "Genauer gesagt",
+    "einstellungenTitel": "Einstellungen",
+    "schriftEtikett": "Schriftgrösse",
+    "schrift": {
+      "normal": "Normal",
+      "gross": "Gross",
+      "sehrgross": "Sehr gross"
+    },
+    "standEtikett": "Spielstand",
+    "standInfo": "Dein Spielstand bleibt auf diesem Gerät. Es gibt kein Konto.",
+    "standInfoAus": "Dieses Gerät erlaubt kein Speichern. Dein Fortschritt gilt nur, solange die Seite offen ist.",
+    "loeschen": "Spielstand löschen",
+    "loeschenFrage": "Wirklich alles löschen? Das lässt sich nicht rückgängig machen.",
+    "loeschenJa": "Ja, löschen",
+    "loeschenNein": "Abbrechen",
+    "kiEtikett": "KI im Spiel",
+    "kiInfo": "Echo ist eine nachgemachte KI. Sie braucht kein Konto, kostet nichts und antwortet nach festen Regeln. Echt ausprobieren kannst du im Einsatzschrank.",
+    "ueberEtikett": "Über dieses Spiel",
+    "ueberDatenEtikett": "Deine Daten",
+    "ueberDaten": "Dein Spielstand bleibt auf diesem Gerät. Das Spiel schickt nichts von dir weg. Es gibt kein Konto und keine Cookies. Das Spiel liegt bei GitHub. GitHub speichert dabei zur Sicherheit die Internet-Adresse deines Geräts.",
+    "ueberGithubLink": "Datenschutz bei GitHub (auf Englisch, neues Fenster)",
+    "ueberGithubAdresse": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+    "ueberInoffiziellEtikett": "Inoffiziell",
+    "ueberInoffiziell": "Das Agentenbüro ist ein inoffizielles Lernspiel. Es ist kein Angebot von Anthropic und nicht mit Anthropic verbunden. Claude und Claude Code sind Marken von Anthropic.",
+    "ueberKontaktEtikett": "Kontakt",
+    "ueberKontakt": "Fragen oder einen Fehler gefunden? Schreib an:",
+    "ueberKontaktAdresse": "",
+    "fuss": "Agentenbüro, Version 0.12",
+    "echoNaechster": "Der Funk knackt. Ein neuer Auftrag kommt herein!",
+    "systemEtikett": "Rolle (gilt für jede Nachricht)",
+    "systemLeer": "(noch leer)",
+    "frageEtikett": "Die Frage",
+    "antworten": "Antwort prüfen",
+    "waehleZuerst": "Wähle zuerst eine Antwort.",
+    "hilfeFalscheWahl": "Diese Antwort ist es nicht.",
+    "nochmalWahl": "Überleg nochmals und wähle neu. Oder nimm eine andere Situation.",
+    "sichtfenster": "Blick in Echos Kopf: Wie oft passt welches Wort?",
+    "stufe": {
+      "3": "sehr oft",
+      "2": "manchmal",
+      "1": "fast nie"
+    },
+    "schrittHilfeWahl": {
+      "beispiel": "Schau zu, wie Echo ein Wort wählt. Drück auf «Antwort prüfen».",
+      "luecke": "Überleg zuerst selbst. Die Hilfe ist da, wenn du sie brauchst.",
+      "frei": "Jetzt allein. {anzahl} Antworten beim ersten Versuch richtig, dann geht es weiter.",
+      "wiederholung": "Eine Frage zu früher. Du hast einen Versuch."
+    },
+    "tokenZeile": "Dein Funkspruch braucht {anzahl} Platz im Koffer (Tokens).",
+    "tokenZeileBudget": "Dein Funkspruch braucht {anzahl} von höchstens {budget} Platz (Tokens).",
+    "tischEtikett": "Echos Einsatzkoffer (Kontext)",
+    "tisch": {
+      "frei": "{anzahl} von {platz} Platz belegt. Viel Platz.",
+      "eng": "{anzahl} von {platz} Platz belegt. Es wird eng.",
+      "voll": "{anzahl} Platz gebraucht, aber nur {platz} passen hinein. Etwas fällt heraus."
+    },
+    "budgetStand": "Budget {anzahl}",
+    "testKosten": "Dieser Test hat {anzahl} Tokens gekostet. Im Budget bleiben {rest}.",
+    "budgetLeer": "Das Budget war leer und wurde nachgefüllt. Du kannst normal weiterspielen. Für diesen Auftrag gibt es nur keinen Sparbonus.",
+    "gespart": "Gespart: {anzahl} Tokens",
+    "nichtGespart": "Diesmal nichts gespart. Das Budget musste nachgefüllt werden.",
+    "zettelEtikett": "Fallakte (liest Echo bei jedem Einsatz)",
+    "zettelLeer": "(Fallakte leer)",
+    "etappeFertigTitel": "Etappe geschafft: {titel}",
+    "etappeFertigText": "Wieder ein Stück näher am Ziel.",
+    "schnelltestKnopf": "Das kann ich schon",
+    "schnelltestTitel": "Schnelltest",
+    "schnelltestInfo": "Pro Konzept drei Aufgaben, je ein Versuch, ohne Hilfe. Schaffst du alle drei, überspringst du die Einführung. Wenn nicht, passiert nichts: Du spielst die Runde einfach normal.",
+    "schnelltestStart": "Schnelltest starten",
+    "schnelltestZaehler": "Schnelltest · Aufgabe {nr} von {anzahl}",
+    "schnelltestRichtig": "Richtig.",
+    "schnelltestFalsch": "Das war es nicht. Kein Problem: Dieses Konzept spielst du einfach normal.",
+    "schnelltestErgebnis": "Dein Ergebnis",
+    "schnelltestBestanden": "kannst du schon. Die Einführung wird übersprungen.",
+    "schnelltestOffen": "spielst du normal.",
+    "pruefen": "Prüfen",
+    "umfrageVorherTitel": "Freiwillig: Was weisst du schon?",
+    "umfrageVorherText": "Ein paar kurze Fragen vor dem Start. Am Schluss siehst du, was du dazugelernt hast. Die Antworten bleiben auf diesem Gerät.",
+    "umfrageNachherTitel": "Was weisst du jetzt?",
+    "umfrageNachherText": "Zum Abschluss dieselben Fragen nochmals.",
+    "umfrageStart": "Fragen beantworten",
+    "umfrageZaehler": "Frage {nr} von {anzahl}",
+    "umfrageWeissNicht": "Weiss ich nicht",
+    "umfrageDanke": "Danke! Was richtig war, erfährst du im Spiel.",
+    "umfrageErgebnis": "Vor dem Spiel: {vorher} von {anzahl} richtig. Jetzt: {nachher} von {anzahl}.",
+    "umfrageNurNachher": "Jetzt: {nachher} von {anzahl} richtig.",
+    "daumenFrage": "Hat dir dieser Auftrag Spass gemacht?",
+    "daumenHoch": "👍 Ja",
+    "daumenRunter": "👎 Nein",
+    "daumenDanke": "Danke! Deine Antwort bleibt auf diesem Gerät.",
+    "einrichtungEtikett": "Zentrale einrichten",
+    "einrichtungGuthaben": "Gespart und noch nicht ausgegeben: {anzahl}.",
+    "einrichtungInfo": "Reine Zierde. Sie macht nichts leichter.",
+    "einrichtungKaufen": "{name} · {preis}",
+    "einrichtungDa": "In der Zentrale stehen schon:",
+    "einrichtung": {},
+    "standSichern": "Spielstand als Datei sichern",
+    "standLaden": "Spielstand aus Datei laden",
+    "standGeladen": "Spielstand geladen.",
+    "standUngueltig": "Diese Datei ist kein gültiger Spielstand.",
+    "iphoneInfo": "Auf dem iPhone: Leg das Spiel auf den Home-Bildschirm. Sonst löscht Safari deinen Stand, wenn du die Seite etwa eine Woche lang nicht öffnest.",
+    "sprungEtikett": "Springen",
+    "sprungHinweis": "Schon weiter gewesen? Zu deinem Auftrag springen",
+    "sprungInfo": "Schon auf einem anderen Gerät gespielt? Dann spring direkt zu deinem Auftrag. Alles davor gilt als erledigt und gelernt. Echo fragt es später als Wiederholung ab.",
+    "sprungWaehlen": "Auftrag wählen",
+    "sprungZiel": "{nr}. {kunde}",
+    "sprungErledigt": "erledigt",
+    "sprungDran": "ist gerade dran",
+    "sprungOffen": "noch offen",
+    "sprungFrage": "Zu «{kunde}» springen? Alle Aufträge davor gelten dann als erledigt. Du kannst den Sprung hier wieder rückgängig machen.",
+    "sprungJa": "Ja, springen",
+    "sprungNein": "Abbrechen",
+    "sprungGemacht": "Gesprungen! Jetzt ist {kunde} dran.",
+    "sprungNichts": "Hier gibt es nichts mehr zu überspringen.",
+    "sprungZurueck": "Letzten Sprung rückgängig machen",
+    "sprungZurueckFrage": "Zurück zum Stand vor dem Sprung? Was du seither gespielt hast, geht dabei verloren.",
+    "sprungZurueckJa": "Ja, zurück",
+    "sprungZurueckGemacht": "Erledigt. Du bist wieder dort, wo du vor dem Sprung warst.",
+    "offlineInfo": "Nach dem ersten Laden läuft das Spiel auch ohne Internet, wenn dein Gerät das erlaubt.",
+    "reiheHoch": "«{text}» nach oben schieben",
+    "reiheRunter": "«{text}» nach unten schieben",
+    "reiheHilfe": "Schieb die Schritte mit den Pfeilen an ihren Platz.",
+    "hilfePlatz": "Dieser Schritt gehört weiter nach vorn.",
+    "nochmalReihe": "Ordne neu und versuch es nochmals. Oder nimm eine andere Situation.",
+    "stationenWieder": "… und wieder von vorn, bis es stimmt.",
+    "zentraleBild": "So sieht deine Zentrale aus: {dinge}",
+    "schrankKnopf": "Einsatzschrank ({anzahl})",
+    "schrankTitel": "Einsatzschrank",
+    "schrankInfo": "Hier liegt, was du gebaut hast. Kopier es und füge es in echt bei Claude ein. Das Spiel schickt nichts weg.",
+    "schrankLeer": "Noch leer. Nach jedem erledigten Auftrag kommt ein Bauteil dazu.",
+    "schrankVorlage": "Vorlage zum Anpassen",
+    "schrankWo": "So geht es in echt:",
+    "schrankKopieren": "In Claude ausprobieren: kopieren",
+    "schrankKopiert": "Kopiert. Öffne jetzt Claude und füge den Text ein.",
+    "schrankKopierenNicht": "Kopieren ging nicht. Der Text ist markiert: Halte ihn gedrückt und wähle «Kopieren».",
+    "schrankNeu": "Neu im Einsatzschrank: {titel}",
+    "schrankOeffnen": "Zum Einsatzschrank",
+    "schirmLabel": "Nachgebauter Bildschirm: {name}",
+    "schirmStand": "Nachbau zum Üben, vereinfacht, Stand {datum}. Die echte App kann etwas anders aussehen.",
+    "schirmNachbau": "Nachbau zum Üben, vereinfacht. Die echte App kann etwas anders aussehen.",
+    "schirmNachbauKurz": "Nachbau zum Üben",
+    "schirmHier": "hier tippen",
+    "schirmHierAusschnitt": "hier tippt man in der App",
+    "schirmAn": "eingeschaltet",
+    "schirmAus": "ausgeschaltet",
+    "streckeSchritt": "Schritt {nr}:",
+    "streckeEnde": "Danach sieht es so aus:",
+    "streckeHilfe": "So geht es Schritt für Schritt. Die hervorgehobene Stelle ist die richtige.",
+    "klickEtikett": "In echt: Tippe die richtige Stelle",
+    "klickFortschritt": "Bild {nr} von {anzahl}",
+    "klickRichtig": "Richtig. Weiter mit Bild {nr} von {anzahl}.",
+    "klickDaneben": "Das war nicht die richtige Stelle. Echos Antwort steht unten.",
+    "klickGeschafft": "Geschafft. Alle Schritte stimmen.",
+    "klickBisher": "Bisher getippt: {weg}",
+    "einstellenEtikett": "In echt: Stell es richtig ein",
+    "einstellenHilfe": "Tippe in jeder Zeile die passende Einstellung an.",
+    "einstellenPruefen": "Einstellung prüfen",
+    "schrittHilfeKlick": {
+      "probieren": "Tippe im Bild dort, wo du es versuchen würdest. Hier kann nichts schiefgehen.",
+      "beispiel": "So kommst du hin. Schau die Bilder durch und drück dann auf «Echo, los!».",
+      "luecke": "Die ersten Schritte sind schon getippt. Tippe den Rest.",
+      "frei": "Jetzt allein. {anzahl} Wege ohne Fehltipp, dann geht es weiter.",
+      "wiederholung": "Eine Frage zu früher. Du hast einen Versuch."
+    },
+    "schrittHilfeEinstellen": {
+      "probieren": "Stell ein, wie du es machen würdest. Hier kann nichts schiefgehen.",
+      "beispiel": "So ist es gut eingestellt. Drück auf «Einstellung prüfen».",
+      "luecke": "Eine Zeile ist schon eingestellt. Stell den Rest ein.",
+      "frei": "Jetzt allein. {anzahl} Situationen beim ersten Versuch richtig, dann geht es weiter.",
+      "wiederholung": "Eine Frage zu früher. Du hast einen Versuch."
+    },
+    "nochmalKlick": "Tippe im selben Bild nochmals. Oder nimm eine andere Situation.",
+    "nochmalEinstellen": "Stell neu ein und prüf nochmals. Oder nimm eine andere Situation.",
+    "hilfeTippen": "Hier geht es weiter.",
+    "hilfeEinstellen": "Diese Einstellung passt hier besser.",
+    "hilfeLoesungKlick": "So ist der ganze Weg. Echo prüft ihn gleich. Das zählt nicht für die Meisterschaft.",
+    "schrankProbefahrt": "Probefahrt in echt",
+    "schrankProbefahrtInfo": "Freiwillig: Mach es einmal in deiner Claude-App und hake ab, was geklappt hat.",
+    "schrankWegZeigen": "Den Weg nochmals ansehen",
+    "anleitungenTitel": "So geht es in echt (Anleitungen)",
+    "anleitungenInfo": "Hier findest du jederzeit wieder, wie es in der echten Claude-App geht. Tippe auf eine Anleitung, um sie aufzuklappen.",
+    "anleitungZu": "Öffnet sich im Auftrag «{auftrag}».",
+    "anleitungEingestellt": "So ist es gut eingestellt:",
+    "wahlhilfeTitel": "Was nehme ich wann? (Wahlhilfe)",
+    "wahlhilfeInfo": "Für jedes Bauteil kurz: wann es passt, warum, und Beispiele.",
+    "wahlhilfeWann": "Wann",
+    "wahlhilfeWarum": "Warum",
+    "wahlhilfeBeispiele": "Beispiele",
+    "wahlhilfeMehr": "{anzahl} weitere Bauteile lernst du in den nächsten Aufträgen kennen."
+  },
+  "kapitel": {
+    "1": {
+      "name": "Der Funkspruch",
+      "thema": "Gute Aufträge (Prompten)",
+      "ort": "Die Besenkammer",
+      "deko": "🧹 📻"
+    },
+    "2": {
+      "name": "Das Archiv",
+      "thema": "Projekte, Gedächtnis, Skills",
+      "ort": "Besenkammer mit Archiv",
+      "deko": "🧹 📻 🗄️"
+    },
+    "3": {
+      "name": "Die Funkleitungen",
+      "thema": "Konnektoren",
+      "ort": "Der Funkraum",
+      "deko": "📻 🗄️ 📡"
+    },
+    "4": {
+      "name": "Der Einsatz",
+      "thema": "Agenten",
+      "ort": "Der Einsatzraum",
+      "deko": "📻 🗄️ 📡 🗺️"
+    },
+    "5": {
+      "name": "Agenten im Feld",
+      "thema": "Subagenten",
+      "ort": "Die Agentenwand",
+      "deko": "📻 🗄️ 📡 🗺️ 🛰️"
+    },
+    "6": {
+      "name": "Die Technikabteilung",
+      "thema": "Hooks und Plugins",
+      "ort": "Das Lagezentrum",
+      "deko": "📻 🗄️ 📡 🗺️ 🛰️ 🔒"
+    }
+  },
+  "konzepte": {
+    "ziel": {
+      "name": "Ziel, Leser, Grund",
+      "analogie": "Bestellung beim Bäcker: «etwas Süsses» oder «6 Nussgipfel bis 7 Uhr».",
+      "aha": [
+        "Echo weiss nur, was im Funkspruch steht.",
+        "Sag das Ziel, für wen es ist und warum.",
+        "Fehlt dir selbst etwas, lass Echo zuerst fragen."
+      ],
+      "tipp": "Nenne genau, was herauskommen soll, wer es liest und warum. Lass Ungefähres weg."
+    },
+    "muster": {
+      "name": "Muster zeigen",
+      "analogie": "Ein Schnittmuster: Wer drei verschiedene sieht, erkennt, worauf es ankommt.",
+      "aha": [
+        "Mit einem Beispiel kopiert Echo es fast wörtlich.",
+        "Drei verschiedene Beispiele zeigen, was gleich bleiben soll.",
+        "Sag, wie es sein soll, nicht nur, wie nicht."
+      ],
+      "tipp": "Gib mehrere verschiedene Beispiele und beschreib die Form, die du willst."
+    },
+    "material": {
+      "name": "Material trennen und belegen",
+      "analogie": "Beschriftete Ablagefächer: Briefe hier, Aufträge dort.",
+      "aha": [
+        "Material ist kein Befehl. Trenn es mit Tags.",
+        "Lass Echo zuerst die passende Stelle zitieren.",
+        "Bitte Echo, Lücken zu melden statt zu raten."
+      ],
+      "tipp": "Leg das Material in ein eigenes Fach, lass zuerst zitieren und Lücken melden."
+    },
+    "wohin": {
+      "name": "Wohin gehört es?",
+      "analogie": "Einkaufszettel, Familienordner, Rezeptbuch.",
+      "aha": [
+        "Was nur heute gilt, gehört in den Funkspruch.",
+        "Was in jedem Chat eines Themas gilt, gehört in die Fallakte (Projektanweisung).",
+        "Einen Ablauf, den du immer wieder brauchst, legst du als Dossier (Skill) ab."
+      ],
+      "tipp": "Frag dich: Gilt das nur heute, immer bei diesem Thema, oder ist es ein Ablauf?"
+    },
+    "deckblatt": {
+      "name": "Das Deckblatt",
+      "analogie": "Das Etikett auf dem Ordnerrücken.",
+      "aha": [
+        "Echo sieht von jedem Dossier zuerst nur das Deckblatt.",
+        "Darauf steht, was das Dossier tut und wann es gebraucht wird.",
+        "Zu ungenau: Es bleibt liegen. Zu breit: Es springt überall an."
+      ],
+      "tipp": "Schreib aufs Deckblatt beides: was das Dossier tut und bei welchen Bitten es gebraucht wird."
+    },
+    "schlank": {
+      "name": "Schlankes Dossier",
+      "analogie": "Ein Kochbuch mit Inhaltsverzeichnis.",
+      "aha": [
+        "Ein Dossier, ein Ablauf.",
+        "Die Hauptanleitung bleibt kurz. Lange Listen und Beispiele kommen in Beilagen.",
+        "Beilagen liest Echo nur, wenn sie gebraucht werden."
+      ],
+      "tipp": "Kurze Hauptanleitung, Einzelheiten als Beilage, nichts Fremdes im Dossier."
+    },
+    "probefaelle": {
+      "name": "Probefälle",
+      "analogie": "Eine Probefahrt vor der Lieferung.",
+      "aha": [
+        "Teste ein Dossier, bevor andere es benutzen.",
+        "Probe: Springt es bei passenden Bitten an? Gegenprobe: Bleibt es still, wo es nicht passt?",
+        "Klappt etwas nicht: Deckblatt verbessern und nochmals testen."
+      ],
+      "tipp": "Nimm mehrere Proben mit verschiedenen Wörtern und mindestens eine Gegenprobe."
+    },
+    "freigabe": {
+      "name": "Leitung mit passender Freigabe",
+      "analogie": "Eine Vollmacht: nur für das, was nötig ist.",
+      "aha": [
+        "Mit einer Funkleitung sieht Echo nach, statt zu raten.",
+        "Steck nur ein, was die Aufgabe braucht. Lesen darf oft immer, Senden und Löschen erst nach Nachfrage.",
+        "Lies jede Anfrage um Erlaubnis genau, bevor du Ja sagst."
+      ],
+      "tipp": "Nötige Leitung einstecken, nur nötige Rechte geben, Senden und Löschen mit Nachfrage."
+    },
+    "fremdes": {
+      "name": "Abgefangene Nachrichten",
+      "analogie": "Der Briefträger befolgt keine Briefe.",
+      "aha": [
+        "Mails, Websites und fremde Dossiers können versteckte Anweisungen enthalten.",
+        "Für Echo sind sie Material, keine Befehle. Sag das in einer Schutzregel.",
+        "Verbinde und installiere nur, was aus vertrauenswürdiger Quelle kommt."
+      ],
+      "tipp": "Schutzregel setzen, nur vertrauenswürdige Quellen, und bei seltsamem Verhalten abbrechen."
+    },
+    "schleife": {
+      "name": "Die Einsatzschleife",
+      "analogie": "Kochen mit Abschmecken.",
+      "aha": [
+        "Ein Einsatz läuft in Schritten: nachsehen, handeln, prüfen.",
+        "Gib klare Kriterien und lass dir einen Beweis zeigen, statt «Erledigt» zu glauben.",
+        "Soll Echo handeln, schreib eine Anweisung. Auf eine Frage gibt es oft nur Vorschläge."
+      ],
+      "tipp": "Anweisung statt Frage, zuerst nachsehen lassen, danach mit Kriterien prüfen und den Beweis zeigen lassen."
+    },
+    "plan": {
+      "name": "Plan vorlegen lassen",
+      "analogie": "Zuerst die Wanderkarte, dann los.",
+      "aha": [
+        "Bei grossen oder unklaren Aufgaben: zuerst den Plan zeigen lassen.",
+        "Lies den Plan, korrigiere ihn und gib ihn frei. Erst dann legt Echo los.",
+        "Kleine, klare Aufgaben erledigt Echo direkt."
+      ],
+      "tipp": "Gross oder unklar: zuerst den Plan. Klein und klar: direkt."
+    },
+    "kette": {
+      "name": "Feste Kette oder freier Einsatz",
+      "analogie": "Fliessband oder Handwerker.",
+      "aha": [
+        "Was jedes Mal gleich abläuft, legst du als feste Kette fest.",
+        "Kontrollpunkte halten Fehler auf, bevor sie weiterwandern.",
+        "Offene Fragen passen zu einem freien Einsatz. Fang einfach an."
+      ],
+      "tipp": "Planbares als Kette mit Kontrollpunkt, Offenes als freier Einsatz, und klein anfangen."
+    },
+    "haltepunkte": {
+      "name": "Haltepunkte und Verantwortung",
+      "analogie": "Notbremse und Unterschrift.",
+      "aha": [
+        "Vor Löschen, Senden und Bestellen fragt Echo zuerst.",
+        "Begrenze die Versuche, damit nichts endlos läuft.",
+        "Was in deinem Namen hinausgeht, liest du selbst."
+      ],
+      "tipp": "Frag vor Unumkehrbarem, höchstens drei Versuche, und lies gegen, was in deinem Namen hinausgeht."
+    },
+    "frisch": {
+      "name": "Koffer frisch halten",
+      "analogie": "Logbuch und aufgeräumter Arbeitstisch.",
+      "aha": [
+        "Bei langen Aufgaben hält ein Einsatzprotokoll fest, was erledigt und was offen ist.",
+        "Neues Thema: neuer Chat.",
+        "Nach zwei misslungenen Korrekturen: neu anfangen mit besserem Auftrag."
+      ],
+      "tipp": "Stand in einer Datei festhalten, neues Thema im neuen Chat, nach zwei Fehlversuchen frisch starten."
+    },
+    "feldagent": {
+      "name": "Wann ein Feldagent?",
+      "analogie": "Den Praktikanten in die Bibliothek schicken.",
+      "aha": [
+        "Ein Feldagent arbeitet in seinem eigenen Koffer.",
+        "Viel Lesestoff schickst du mit ihm weg. Zurück kommt nur sein Bericht.",
+        "Hin und Her mit vielen Rückfragen bleibt bei Echo im Hauptgespräch."
+      ],
+      "tipp": "Viel lesen: Feldagent schicken. Viel reden: selbst im Hauptgespräch."
+    },
+    "profil": {
+      "name": "Einsatzprofil",
+      "analogie": "Stellenbeschrieb und Schlüsselbund.",
+      "aha": [
+        "Die Beschreibung sagt, wann Echo den Feldagenten ruft.",
+        "Die Ausrüstungsliste sagt, was er darf. Ohne Liste bekommt er alles.",
+        "Gib nur mit, was er für seine Aufgabe braucht."
+      ],
+      "tipp": "Beschreibung mit Was und Wann, nur nötige Ausrüstung, kurze Anleitung."
+    },
+    "lagebericht": {
+      "name": "Einsatzbefehl und Lagebericht",
+      "analogie": "Ein Laufzettel.",
+      "aha": [
+        "Ein eigener Feldagent kennt euer Gespräch nicht.",
+        "Gib ihm Ziel und alles nötige Material mit.",
+        "Leg fest, in welcher Form der Bericht zurückkommt."
+      ],
+      "tipp": "Ziel, Material und Form des Berichts gehören in den Einsatzbefehl."
+    },
+    "aufteilen": {
+      "name": "Aufteilen",
+      "analogie": "Zügeln mit Freunden: Jeder nimmt ein Zimmer.",
+      "aha": [
+        "Unabhängige Teile können gleichzeitig laufen.",
+        "Jeder Feldagent bekommt genau einen Teil, ohne Überschneidung.",
+        "Echo fügt die Berichte zusammen und prüft, ob sie zusammenpassen."
+      ],
+      "tipp": "Klar getrennte Teile, gleiche Berichtsform, am Schluss zusammenführen."
+    },
+    "zweiterblick": {
+      "name": "Zweiter Blick",
+      "analogie": "Das Vier-Augen-Prinzip.",
+      "aha": [
+        "Wer sich selbst prüft, findet alles perfekt.",
+        "Ein Prüfagent sieht nur das Ergebnis und die Kriterien.",
+        "Er meldet nur, was wirklich zählt."
+      ],
+      "tipp": "Frischer Prüfagent, nur Ergebnis und Kriterien mitgeben, nur Wichtiges melden lassen."
+    },
+    "hook": {
+      "name": "Sicherheitsprotokoll",
+      "analogie": "Ein Rauchmelder statt «denk dran».",
+      "aha": [
+        "Eine Bitte kann im langen Einsatz untergehen.",
+        "Ein Sicherheitsprotokoll (Hook) läuft an einer festen Stelle jedes Mal, zum Beispiel vor jeder Änderung.",
+        "Es braucht einen Zeitpunkt und eine Regel. Claude kann es für dich schreiben."
+      ],
+      "tipp": "Was ohne Ausnahme gelten muss: Hook mit passendem Zeitpunkt und enger Regel."
+    },
+    "paket": {
+      "name": "Einsatzpaket",
+      "analogie": "Eine beschriftete Umzugskiste.",
+      "aha": [
+        "Ein Einsatzpaket (Plugin) bündelt Dossiers, Funkleitungen, Feldagenten und Sicherheitsprotokolle.",
+        "Pack alles hinein, was zusammen gebraucht wird, und leg eine kurze Anleitung bei.",
+        "Passwörter und Privates gehören nie hinein. Teste, bevor du teilst."
+      ],
+      "tipp": "Alles, was zusammengehört, getestet, mit Anleitung, ohne Geheimnisse."
+    },
+    "skillEcht": {
+      "name": "In echt: Skill hochladen",
+      "analogie": "Das Dossier ins Archiv der Zentrale stellen.",
+      "aha": [
+        "Ein Dossier (Skill) ist ein Ordner mit der Datei SKILL.md. Zum Hochladen packst du den Ordner als ZIP.",
+        "In der Claude-App: links «Anpassungen», oben «+ Hinzufügen», dann «Skill hochladen». So gilt er in allen Chats.",
+        "Bleibt der Skill grau: In den Einstellungen unter «Funktionen» muss «Code in der Cloud ausführen» an sein."
+      ],
+      "tipp": "Anpassungen, «+ Hinzufügen», «Skill hochladen», ZIP wählen. Ohne fertige Datei: «Mit Claude erstellen»."
+    },
+    "konnektorEcht": {
+      "name": "In echt: Konnektor verbinden",
+      "analogie": "Der Funkleitung einen Schlüssel geben, aber nur für die richtigen Türen.",
+      "aha": [
+        "Unter «Anpassungen» im Reiter «Konnektoren» fügst du einen Dienst hinzu und meldest dich dort an.",
+        "Claude sieht danach nur, was du in diesem Dienst auch sehen darfst.",
+        "Pro Werkzeug stellst du ein: immer erlaubt, mit Nachfrage oder blockiert. Lesen darf oft immer, Senden nur mit Nachfrage."
+      ],
+      "tipp": "Nur nötige Konnektoren verbinden. Lesen erlauben, Senden und Löschen mit Nachfrage oder blockiert."
+    },
+    "subagentEcht": {
+      "name": "In echt: Subagent anlegen",
+      "analogie": "Den Feldagenten mit Ausweis und Schlüsselbund ins Büro holen.",
+      "aha": [
+        "Subagenten gibt es in Claude Code. In der Desktop-App ist das der Bereich «</> Code».",
+        "Ein Subagent ist eine Datei im Ordner .claude/agents. Am einfachsten bittest du Claude, sie zu schreiben.",
+        "Lies vor dem Ja, welche Datei Claude anlegt und welche Werkzeuge der Feldagent bekommt."
+      ],
+      "tipp": "Im Code-Bereich Claude um den Subagenten bitten: was er tut, wann, welche Werkzeuge. Datei prüfen, dann erlauben."
+    },
+    "hookEcht": {
+      "name": "In echt: Hook und Plugin",
+      "analogie": "Den Rauchmelder montieren und die fertige Kiste ins Regal stellen.",
+      "aha": [
+        "Ein Plugin holst du unter «Anpassungen» im Reiter «Plugins». Unter «Meine» siehst du, was du schon hast.",
+        "Einen Hook schreibt dir Claude im Code-Bereich. Er steht dann in der Einstellungsdatei deines Projekts.",
+        "Lies vor dem Ja genau, wann der Hook läuft und was er tut."
+      ],
+      "tipp": "Plugins unter Anpassungen holen. Hooks von Claude im Code-Bereich schreiben lassen und vor dem Ja lesen."
+    },
+    "anbieterEcht": {
+      "name": "In echt: Anbieter prüfen",
+      "analogie": "Den Handwerker erst ausweisen lassen, bevor er den Hausschlüssel bekommt.",
+      "aha": [
+        "Ein eigener Konnektor, ein fremder Skill oder ein Plugin kommt nicht von selbst von Anthropic. Prüf zuerst, wer es herausgibt.",
+        "Ein Plugin kann Programme mit deinen Rechten ausführen, ein Skill kann Code enthalten. Schau hinein, bevor du es einschaltest.",
+        "Gib nur die nötigen Rechte. Verhält es sich seltsam: stoppen und sofort trennen."
+      ],
+      "tipp": "Wer gibt es heraus? Was will es dürfen? Was steckt drin? Wie werde ich es wieder los?"
+    }
+  }
+}

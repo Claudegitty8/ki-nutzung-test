@@ -1,0 +1,42 @@
+{
+  "hinweis": "Verzeichnis der Teile. Reihenfolge = Spielreihenfolge. Die Inhalte jedes Teils liegen unverändert in seinem Ordner (E-004).",
+  "teile": [
+    {
+      "id": "studio",
+      "ordner": "studio/",
+      "auftraege": [
+        "baeckerei", "turnverein", "dorfmuseum", "dorfzeitung",
+        "jassclub", "schuelerband", "veloladen", "blumenladen",
+        "kinderzirkus", "bibliothek", "gemeinde", "dorffest"
+      ],
+      "zusatz": { "abkuerzungen": "de/abkuerzungen.json" },
+      "figur": "kiwi",
+      "pruefAusnahmen": [
+        "de/auftraege/gemeinde.json Aufgabe pi-e: Lösung ohne «lesen» gilt auch als richtig",
+        "de/auftraege/gemeinde.json Aufgabe m11-a: Lösung ohne «weiss» gilt auch als richtig",
+        "de/auftraege/schuelerband.json Aufgabe be-a: Lösung ohne «lesen» gilt auch als richtig",
+        "de/auftraege/veloladen.json Aufgabe sc-f: Lösung ohne «fehler» gilt auch als richtig"
+      ],
+      "alterSchluessel": "ki-studio-stand",
+      "textAlias": {
+        "figurName": "kiwiName", "figurNeu": "kiwiNeu", "figurLaeuft": "kiwiLaeuft", "figurFertig": "kiwiFertig",
+        "figurBereit": "kiwiBereit", "figurNaechster": "kiwiNaechster",
+        "heimName": "studioName", "heimBild": "studioBild", "zumHeim": "zumStudio"
+      }
+    },
+    {
+      "id": "buero",
+      "ordner": "buero/",
+      "auftraege": ["nussgipfel", "notenstaender", "ochsen", "generalversammlung", "ferienplan", "odermatt", "dorffest"],
+      "zusatz": { "schirme": "de/schirme.json", "wahlhilfe": "de/wahlhilfe.json" },
+      "auszug": true,
+      "figur": "echo",
+      "alterSchluessel": "agentenbuero-stand",
+      "textAlias": {
+        "figurName": "echoName", "figurNeu": "echoNeu", "figurLaeuft": "echoLaeuft", "figurFertig": "echoFertig",
+        "figurBereit": "echoBereit", "figurNaechster": "echoNaechster",
+        "heimName": "zentraleName", "heimBild": "zentraleBild", "zumHeim": "zurZentrale"
+      }
+    }
+  ]
+}

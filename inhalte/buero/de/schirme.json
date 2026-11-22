@@ -1,0 +1,1654 @@
+{
+  "hinweis": "Vereinfachte Nachzeichnungen der Claude-Desktop-App (Deutsch, Windows). Vorlage: Bildschirmfotos des Besitzers vom 17.11.2026. Was darauf nicht zu sehen war, stammt aus den deutschen Hilfeseiten und ist in docs/RECHERCHE.md als «nicht geprüft» aufgeführt. Keine privaten Chattitel, keine Mailadressen, keine echten Namen, keine fremden Marken.",
+  "schirme": {
+    "app": {
+      "stand": "17.11.2026",
+      "fenster": "Claude",
+      "kopfleiste": [
+        {
+          "id": "modusChat",
+          "text": "Chat"
+        },
+        {
+          "id": "modusCode",
+          "text": "</> Code"
+        }
+      ],
+      "seitenleiste": [
+        {
+          "id": "neu",
+          "text": "+ Neu"
+        },
+        {
+          "id": "suchen",
+          "text": "Suchen"
+        },
+        {
+          "id": "projekte",
+          "text": "Projekte"
+        },
+        {
+          "id": "artefakte",
+          "text": "Artefakte"
+        },
+        {
+          "id": "geplant",
+          "text": "Geplant"
+        },
+        {
+          "id": "design",
+          "text": "Design"
+        },
+        {
+          "id": "anpassungen",
+          "text": "Anpassungen"
+        },
+        {
+          "text": "Deine Chats …",
+          "leise": true
+        },
+        {
+          "id": "profil",
+          "text": "Dein Name ▾"
+        }
+      ],
+      "aktiv": [
+        "modusChat"
+      ],
+      "inhalt": [
+        {
+          "art": "titel",
+          "text": "Wie kann ich helfen?"
+        },
+        {
+          "art": "eingabe",
+          "id": "eingabe",
+          "text": "Schreib Claude eine Nachricht …",
+          "knoepfe": [
+            {
+              "id": "plus",
+              "text": "+"
+            }
+          ]
+        }
+      ]
+    },
+    "app-profilmenue": {
+      "basis": "app",
+      "aktiv": [
+        "modusChat",
+        "profil"
+      ],
+      "inhalt": [
+        {
+          "art": "titel",
+          "text": "Wie kann ich helfen?"
+        },
+        {
+          "art": "menue",
+          "titel": "Menü unter deinem Namen (unten links)",
+          "eintraege": [
+            {
+              "id": "einstellungen",
+              "text": "Einstellungen"
+            },
+            {
+              "id": "nutzung",
+              "text": "Nutzung"
+            },
+            {
+              "id": "sprache",
+              "text": "Sprache"
+            },
+            {
+              "id": "hilfe",
+              "text": "Hilfe"
+            },
+            {
+              "id": "plaene",
+              "text": "Alle Pläne anzeigen"
+            },
+            {
+              "id": "abmelden",
+              "text": "Abmelden"
+            }
+          ]
+        }
+      ]
+    },
+    "anpassungen": {
+      "basis": "app",
+      "aktiv": [
+        "modusChat",
+        "anpassungen",
+        "reiterSkills",
+        "entdecken"
+      ],
+      "inhalt": [
+        {
+          "art": "titel",
+          "text": "Anpassungen"
+        },
+        {
+          "art": "reiter",
+          "eintraege": [
+            {
+              "id": "reiterSkills",
+              "text": "Skills"
+            },
+            {
+              "id": "reiterKonnektoren",
+              "text": "Konnektoren"
+            },
+            {
+              "id": "reiterPlugins",
+              "text": "Plugins"
+            }
+          ]
+        },
+        {
+          "art": "reiter",
+          "eintraege": [
+            {
+              "id": "meine",
+              "text": "Meine"
+            },
+            {
+              "id": "entdecken",
+              "text": "Entdecken"
+            }
+          ]
+        },
+        {
+          "art": "knoepfe",
+          "eintraege": [
+            {
+              "id": "anpSuchen",
+              "text": "Suchen"
+            },
+            {
+              "id": "filter",
+              "text": "Filter"
+            },
+            {
+              "id": "hinzufuegen",
+              "text": "+ Hinzufügen ▾",
+              "haupt": true
+            }
+          ]
+        }
+      ]
+    },
+    "skills-entdecken": {
+      "basis": "anpassungen",
+      "einschub": {
+        "nach": "hinzufuegen",
+        "inhalt": [
+          {
+            "art": "text",
+            "text": "Neue Skills"
+          },
+          {
+            "art": "karten",
+            "eintraege": [
+              {
+                "titel": "sitzungs-notizen",
+                "text": "Fasst Sitzungen kurz zusammen.",
+                "knoepfe": [
+                  {
+                    "id": "ausprobieren1",
+                    "text": "Ausprobieren"
+                  },
+                  {
+                    "id": "plusKarte1",
+                    "text": "+"
+                  }
+                ]
+              },
+              {
+                "titel": "budget-rechner",
+                "text": "Rechnet Budgets für Anlässe.",
+                "knoepfe": [
+                  {
+                    "id": "ausprobieren2",
+                    "text": "Ausprobieren"
+                  },
+                  {
+                    "id": "plusKarte2",
+                    "text": "+"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "skills-menue": {
+      "basis": "skills-entdecken",
+      "aktiv": [
+        "modusChat",
+        "anpassungen",
+        "reiterSkills",
+        "entdecken",
+        "hinzufuegen"
+      ],
+      "einschub": {
+        "nach": "hinzufuegen",
+        "inhalt": [
+          {
+            "art": "menue",
+            "eintraege": [
+              {
+                "id": "hochladen",
+                "text": "Skill hochladen"
+              },
+              {
+                "id": "selbst",
+                "text": "Einen Skill erstellen"
+              },
+              {
+                "id": "mitClaude",
+                "text": "Mit Claude erstellen"
+              },
+              {
+                "id": "aufnehmen",
+                "text": "Bildschirm aufnehmen"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "datei-oeffnen": {
+      "stand": "17.11.2026",
+      "fenster": "Datei öffnen",
+      "inhalt": [
+        {
+          "art": "text",
+          "text": "Ordner: Downloads"
+        },
+        {
+          "art": "dateien",
+          "eintraege": [
+            {
+              "id": "ordnerProtokoll",
+              "text": "protokoll-verein (Ordner)"
+            },
+            {
+              "id": "zipProtokoll",
+              "text": "protokoll-verein.zip"
+            },
+            {
+              "id": "zipKasse",
+              "text": "vereinskasse.zip"
+            },
+            {
+              "id": "docxProtokoll",
+              "text": "Protokoll-Mai.docx"
+            }
+          ]
+        },
+        {
+          "art": "knoepfe",
+          "eintraege": [
+            {
+              "id": "abbrechen",
+              "text": "Abbrechen"
+            }
+          ]
+        }
+      ]
+    },
+    "skills-meine-protokoll": {
+      "basis": "anpassungen",
+      "aktiv": [
+        "modusChat",
+        "anpassungen",
+        "reiterSkills",
+        "meine"
+      ],
+      "einschub": {
+        "nach": "hinzufuegen",
+        "inhalt": [
+          {
+            "art": "text",
+            "text": "Von dir erstellt"
+          },
+          {
+            "art": "liste",
+            "eintraege": [
+              {
+                "text": "protokoll-verein",
+                "unter": "von dir · Neu · Schreibt Protokolle im Stil des Musikvereins."
+              }
+            ]
+          },
+          {
+            "art": "text",
+            "text": "Von Anthropic & Partnern"
+          },
+          {
+            "art": "liste",
+            "eintraege": [
+              {
+                "text": "skill-creator",
+                "unter": "von Anthropic · Erstellt und verbessert Skills."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "skills-meine-kasse": {
+      "basis": "anpassungen",
+      "aktiv": [
+        "modusChat",
+        "anpassungen",
+        "reiterSkills",
+        "meine"
+      ],
+      "einschub": {
+        "nach": "hinzufuegen",
+        "inhalt": [
+          {
+            "art": "text",
+            "text": "Von dir erstellt"
+          },
+          {
+            "art": "liste",
+            "eintraege": [
+              {
+                "text": "vereinskasse",
+                "unter": "von dir · Neu · Prüft Belege und macht die Jahresrechnung."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "einstellungen": {
+      "stand": "17.11.2026",
+      "fenster": "Einstellungen",
+      "kopfleiste": [
+        {
+          "id": "schliessen",
+          "text": "Schliessen"
+        }
+      ],
+      "seitenleiste": [
+        {
+          "text": "Präferenzen",
+          "leise": true
+        },
+        {
+          "id": "allgemein",
+          "text": "Allgemein"
+        },
+        {
+          "id": "konto",
+          "text": "Konto"
+        },
+        {
+          "id": "datenschutz",
+          "text": "Datenschutz"
+        },
+        {
+          "id": "nutzungEinst",
+          "text": "Nutzung"
+        },
+        {
+          "id": "funktionen",
+          "text": "Funktionen"
+        },
+        {
+          "id": "gedaechtnis",
+          "text": "Gedächtnis"
+        },
+        {
+          "id": "einstClaudeCode",
+          "text": "Claude Code"
+        },
+        {
+          "text": "Dieser Computer",
+          "leise": true
+        },
+        {
+          "id": "system",
+          "text": "System"
+        },
+        {
+          "text": "Anpassungen",
+          "leise": true
+        },
+        {
+          "id": "einstSkills",
+          "text": "Skills"
+        },
+        {
+          "id": "einstKonnektoren",
+          "text": "Konnektoren"
+        },
+        {
+          "id": "einstPlugins",
+          "text": "Plugins"
+        }
+      ],
+      "aktiv": [
+        "allgemein"
+      ],
+      "inhalt": [
+        {
+          "art": "titel",
+          "text": "Allgemein"
+        }
+      ]
+    },
+    "einstellungen-funktionen": {
+      "basis": "einstellungen",
+      "aktiv": [
+        "funktionen"
+      ],
+      "inhalt": [
+        {
+          "art": "titel",
+          "text": "Funktionen"
+        },
+        {
+          "art": "text",
+          "text": "Allgemein"
+        },
+        {
+          "art": "schalter",
+          "text": "Konnektor-Suche",
+          "an": true,
+          "id": "konnektorSuche"
+        },
+        {
+          "art": "text",
+          "text": "Visuelle Inhalte"
+        },
+        {
+          "art": "schalter",
+          "text": "Artefakte",
+          "an": true,
+          "id": "artefakteSchalter",
+          "unter": "Erforderlich für Codeausführung und Dateierstellung"
+        },
+        {
+          "art": "text",
+          "text": "Codeausführung und Dateierstellung"
+        },
+        {
+          "art": "schalter",
+          "text": "Code in der Cloud ausführen",
+          "an": false,
+          "id": "codeCloud",
+          "unter": "Erforderlich für Skills."
+        },
+        {
+          "art": "schalter",
+          "text": "Ausgehenden Netzwerkverkehr erlauben",
+          "an": false,
+          "id": "netzwerk"
+        }
+      ]
+    },
+    "einstellungen-funktionen-an": {
+      "basis": "einstellungen",
+      "aktiv": [
+        "funktionen"
+      ],
+      "inhalt": [
+        {
+          "art": "titel",
+          "text": "Funktionen"
+        },
+        {
+          "art": "text",
+          "text": "Allgemein"
+        },
+        {
+          "art": "schalter",
+          "text": "Konnektor-Suche",
+          "an": true
+        },
+        {
+          "art": "text",
+          "text": "Visuelle Inhalte"
+        },
+        {
+          "art": "schalter",
+          "text": "Artefakte",
+          "an": true,
+          "unter": "Erforderlich für Codeausführung und Dateierstellung"
+        },
+        {
+          "art": "text",
+          "text": "Codeausführung und Dateierstellung"
+        },
+        {
+          "art": "schalter",
+          "text": "Code in der Cloud ausführen",
+          "an": true,
+          "unter": "Erforderlich für Skills."
+        },
+        {
+          "art": "schalter",
+          "text": "Ausgehenden Netzwerkverkehr erlauben",
+          "an": false
+        }
+      ]
+    },
+    "chat-plus": {
+      "basis": "app",
+      "aktiv": [
+        "modusChat",
+        "plus"
+      ],
+      "einschub": {
+        "nach": "plus",
+        "inhalt": [
+          {
+            "art": "menue",
+            "titel": "Menü unter «+» im Chat",
+            "eintraege": [
+              {
+                "id": "dateienHochladen",
+                "text": "Dateien hochladen oder hinzufügen …"
+              },
+              {
+                "id": "ordnerHinzu",
+                "text": "Ordner hinzufügen"
+              },
+              {
+                "id": "skillAufnehmen",
+                "text": "Einen Skill aufnehmen"
+              },
+              {
+                "id": "menuSkills",
+                "text": "Skills ›"
+              },
+              {
+                "id": "menuKonnektoren",
+                "text": "Konnektoren ›"
+              },
+              {
+                "id": "menuDesign",
+                "text": "Designsystem ›"
+              },
+              {
+                "id": "menuPlugins",
+                "text": "Plugins ›"
+              },
+              {
+                "id": "recherche",
+                "text": "Recherche"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "chat-konnektoren": {
+      "basis": "chat-plus",
+      "aktiv": [
+        "modusChat",
+        "plus",
+        "menuKonnektoren"
+      ],
+      "einschub": {
+        "nach": "menuKonnektoren",
+        "inhalt": [
+          {
+            "art": "text",
+            "text": "Konnektoren in diesem Chat"
+          },
+          {
+            "art": "schalter",
+            "text": "Zwirbel-Kalender",
+            "an": true,
+            "id": "schalterKalender"
+          },
+          {
+            "art": "schalter",
+            "text": "Zwirbel-Mail",
+            "an": true,
+            "id": "schalterMail"
+          },
+          {
+            "art": "knoepfe",
+            "eintraege": [
+              {
+                "id": "verwalten",
+                "text": "Konnektoren verwalten"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "chat-konnektoren-aus": {
+      "basis": "chat-plus",
+      "aktiv": [
+        "modusChat",
+        "plus",
+        "menuKonnektoren"
+      ],
+      "einschub": {
+        "nach": "menuKonnektoren",
+        "inhalt": [
+          {
+            "art": "text",
+            "text": "Konnektoren in diesem Chat"
+          },
+          {
+            "art": "schalter",
+            "text": "Zwirbel-Kalender",
+            "an": true
+          },
+          {
+            "art": "schalter",
+            "text": "Zwirbel-Mail",
+            "an": false
+          },
+          {
+            "art": "knoepfe",
+            "eintraege": [
+              {
+                "text": "Konnektoren verwalten"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "konnektoren-entdecken": {
+      "basis": "anpassungen",
+      "aktiv": [
+        "modusChat",
+        "anpassungen",
+        "reiterKonnektoren",
+        "entdecken"
+      ],
+      "einschub": {
+        "nach": "hinzufuegen",
+        "inhalt": [
+          {
+            "art": "text",
+            "text": "Beliebteste Konnektoren"
+          },
+          {
+            "art": "karten",
+            "eintraege": [
+              {
+                "titel": "Zwirbel-Kalender",
+                "text": "Termine ansehen und eintragen.",
+                "knoepfe": [
+                  {
+                    "id": "plusKalender",
+                    "text": "+"
+                  }
+                ]
+              },
+              {
+                "titel": "Zwirbel-Mail",
+                "text": "Mails suchen, entwerfen und senden.",
+                "knoepfe": [
+                  {
+                    "id": "plusMail",
+                    "text": "+"
+                  }
+                ]
+              },
+              {
+                "titel": "Dorf-Ablage",
+                "text": "Dateien suchen und lesen.",
+                "knoepfe": [
+                  {
+                    "id": "plusAblage",
+                    "text": "+"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "konnektor-kalender": {
+      "basis": "anpassungen",
+      "aktiv": [
+        "modusChat",
+        "anpassungen"
+      ],
+      "inhalt": [
+        {
+          "art": "knoepfe",
+          "eintraege": [
+            {
+              "id": "zurueckKonn",
+              "text": "← Deine Konnektoren"
+            }
+          ]
+        },
+        {
+          "art": "titel",
+          "text": "Zwirbel-Kalender"
+        },
+        {
+          "art": "text",
+          "text": "Termine ansehen und eintragen."
+        },
+        {
+          "art": "knoepfe",
+          "eintraege": [
+            {
+              "id": "verbinden",
+              "text": "Verbinden",
+              "haupt": true
+            },
+            {
+              "id": "abbrechenK",
+              "text": "Abbrechen"
+            }
+          ]
+        }
+      ]
+    },
+    "konnektor-mail": {
+      "basis": "anpassungen",
+      "aktiv": [
+        "modusChat",
+        "anpassungen"
+      ],
+      "inhalt": [
+        {
+          "art": "knoepfe",
+          "eintraege": [
+            {
+              "id": "zurueckKonn",
+              "text": "← Deine Konnektoren"
+            }
+          ]
+        },
+        {
+          "art": "titel",
+          "text": "Zwirbel-Mail"
+        },
+        {
+          "art": "text",
+          "text": "Mails suchen, entwerfen und senden."
+        },
+        {
+          "art": "knoepfe",
+          "eintraege": [
+            {
+              "id": "verbinden",
+              "text": "Verbinden",
+              "haupt": true
+            },
+            {
+              "id": "abbrechenK",
+              "text": "Abbrechen"
+            }
+          ]
+        }
+      ]
+    },
+    "dienst-kalender": {
+      "stand": "17.11.2026",
+      "fenster": "Zwirbel-Kalender: Anmeldung",
+      "inhalt": [
+        {
+          "art": "titel",
+          "text": "Claude möchte auf dein Konto bei Zwirbel-Kalender zugreifen"
+        },
+        {
+          "art": "text",
+          "text": "Termine lesen und Termine eintragen."
+        },
+        {
+          "art": "knoepfe",
+          "eintraege": [
+            {
+              "id": "erlauben",
+              "text": "Zugriff erlauben",
+              "haupt": true
+            },
+            {
+              "id": "ablehnen",
+              "text": "Ablehnen"
+            }
+          ]
+        }
+      ]
+    },
+    "dienst-mail": {
+      "stand": "17.11.2026",
+      "fenster": "Zwirbel-Mail: Anmeldung",
+      "inhalt": [
+        {
+          "art": "titel",
+          "text": "Claude möchte auf dein Konto bei Zwirbel-Mail zugreifen"
+        },
+        {
+          "art": "text",
+          "text": "Mails lesen, Entwürfe schreiben und Mails senden."
+        },
+        {
+          "art": "knoepfe",
+          "eintraege": [
+            {
+              "id": "erlauben",
+              "text": "Zugriff erlauben",
+              "haupt": true
+            },
+            {
+              "id": "ablehnen",
+              "text": "Ablehnen"
+            }
+          ]
+        }
+      ]
+    },
+    "konnektoren-meine-kalender": {
+      "basis": "anpassungen",
+      "aktiv": [
+        "modusChat",
+        "anpassungen",
+        "reiterKonnektoren",
+        "meine"
+      ],
+      "einschub": {
+        "nach": "hinzufuegen",
+        "inhalt": [
+          {
+            "art": "text",
+            "text": "Konnektor · Typ · Status"
+          },
+          {
+            "art": "liste",
+            "eintraege": [
+              {
+                "text": "Zwirbel-Kalender",
+                "unter": "Web · verbunden"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "konnektoren-meine-mail": {
+      "basis": "anpassungen",
+      "aktiv": [
+        "modusChat",
+        "anpassungen",
+        "reiterKonnektoren",
+        "meine"
+      ],
+      "einschub": {
+        "nach": "hinzufuegen",
+        "inhalt": [
+          {
+            "art": "text",
+            "text": "Konnektor · Typ · Status"
+          },
+          {
+            "art": "liste",
+            "eintraege": [
+              {
+                "text": "Zwirbel-Mail",
+                "unter": "Web · verbunden"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "konnektor-rechte-mail": {
+      "basis": "anpassungen",
+      "aktiv": [
+        "modusChat",
+        "anpassungen"
+      ],
+      "inhalt": [
+        {
+          "art": "knoepfe",
+          "eintraege": [
+            {
+              "id": "zurueckKonn",
+              "text": "← Deine Konnektoren"
+            }
+          ]
+        },
+        {
+          "art": "titel",
+          "text": "Zwirbel-Mail"
+        },
+        {
+          "art": "text",
+          "text": "Werkzeugberechtigungen"
+        },
+        {
+          "art": "einstellungen"
+        }
+      ]
+    },
+    "konnektor-rechte-kalender": {
+      "basis": "anpassungen",
+      "aktiv": [
+        "modusChat",
+        "anpassungen"
+      ],
+      "inhalt": [
+        {
+          "art": "knoepfe",
+          "eintraege": [
+            {
+              "id": "zurueckKonn",
+              "text": "← Deine Konnektoren"
+            }
+          ]
+        },
+        {
+          "art": "titel",
+          "text": "Zwirbel-Kalender"
+        },
+        {
+          "art": "text",
+          "text": "Werkzeugberechtigungen"
+        },
+        {
+          "art": "einstellungen"
+        }
+      ]
+    },
+    "plugins-entdecken": {
+      "basis": "anpassungen",
+      "aktiv": [
+        "modusChat",
+        "anpassungen",
+        "reiterPlugins",
+        "entdecken"
+      ],
+      "einschub": {
+        "nach": "hinzufuegen",
+        "inhalt": [
+          {
+            "art": "text",
+            "text": "Neue Plugins"
+          },
+          {
+            "art": "karten",
+            "eintraege": [
+              {
+                "titel": "schreinerei-offerten",
+                "text": "Offerten, Materiallisten und Termine für Schreinereien.",
+                "knoepfe": [
+                  {
+                    "id": "ausprobierenOfferten",
+                    "text": "Ausprobieren"
+                  },
+                  {
+                    "id": "plusOfferten",
+                    "text": "+"
+                  }
+                ]
+              },
+              {
+                "titel": "vereins-helfer",
+                "text": "Einladungen und Protokolle für Vereine.",
+                "knoepfe": [
+                  {
+                    "id": "ausprobierenVerein",
+                    "text": "Ausprobieren"
+                  },
+                  {
+                    "id": "plusVerein",
+                    "text": "+"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "plugins-meine-odermatt": {
+      "basis": "anpassungen",
+      "aktiv": [
+        "modusChat",
+        "anpassungen",
+        "reiterPlugins",
+        "meine"
+      ],
+      "einschub": {
+        "nach": "hinzufuegen",
+        "inhalt": [
+          {
+            "art": "liste",
+            "eintraege": [
+              {
+                "text": "schreinerei-offerten",
+                "unter": "Offerten, Materiallisten und Termine für Schreinereien."
+              },
+              {
+                "text": "Productivity",
+                "unter": "von Anthropic · Aufgaben und Tagesplanung."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "code-start": {
+      "stand": "17.11.2026",
+      "fenster": "Claude",
+      "kopfleiste": [
+        {
+          "id": "modusChat",
+          "text": "Chat"
+        },
+        {
+          "id": "modusCode",
+          "text": "</> Code"
+        }
+      ],
+      "seitenleiste": [
+        {
+          "id": "neu",
+          "text": "+ Neu"
+        },
+        {
+          "id": "suchen",
+          "text": "Suchen"
+        },
+        {
+          "id": "artefakte",
+          "text": "Artefakte"
+        },
+        {
+          "id": "geplant",
+          "text": "Geplant"
+        },
+        {
+          "id": "anpassungen",
+          "text": "Anpassungen"
+        },
+        {
+          "text": "Sitzungen, die du startest, werden hier angezeigt",
+          "leise": true
+        },
+        {
+          "id": "profil",
+          "text": "Dein Name ▾"
+        }
+      ],
+      "aktiv": [
+        "modusCode",
+        "neu"
+      ],
+      "inhalt": [
+        {
+          "art": "titel",
+          "text": "Neue Sitzung"
+        },
+        {
+          "art": "knoepfe",
+          "eintraege": [
+            {
+              "id": "umgebung",
+              "text": "Umgebung auswählen ▾"
+            },
+            {
+              "id": "ordnerWaehlen",
+              "text": "Ordner zum Arbeiten auswählen"
+            }
+          ]
+        },
+        {
+          "art": "eingabe",
+          "id": "codeEingabe",
+          "text": "Beschreibe etwas, das du bauen, ändern oder reparieren möchtest",
+          "knoepfe": [
+            {
+              "id": "codePlus",
+              "text": "+"
+            }
+          ]
+        },
+        {
+          "art": "knoepfe",
+          "eintraege": [
+            {
+              "id": "dieserComputer",
+              "text": "Dieser Computer ▾"
+            },
+            {
+              "id": "modus",
+              "text": "Auto"
+            }
+          ]
+        }
+      ]
+    },
+    "ordner-dialog": {
+      "stand": "17.11.2026",
+      "fenster": "Ordner auswählen",
+      "inhalt": [
+        {
+          "art": "text",
+          "text": "Ordner: Dokumente"
+        },
+        {
+          "art": "dateien",
+          "eintraege": [
+            {
+              "id": "ordnerFerien",
+              "text": "Ferienplan Meier"
+            },
+            {
+              "id": "ordnerVerein",
+              "text": "Musikverein"
+            },
+            {
+              "id": "ordnerOdermatt",
+              "text": "Schreinerei Odermatt"
+            }
+          ]
+        },
+        {
+          "art": "knoepfe",
+          "eintraege": [
+            {
+              "id": "abbrechenOrdner",
+              "text": "Abbrechen"
+            }
+          ]
+        }
+      ]
+    },
+    "code-ferien": {
+      "basis": "code-start",
+      "aktiv": [
+        "modusCode"
+      ],
+      "inhalt": [
+        {
+          "art": "titel",
+          "text": "Ferienplan Meier"
+        },
+        {
+          "art": "eingabe",
+          "id": "codeEingabe",
+          "text": "Beschreibe etwas, das du bauen, ändern oder reparieren möchtest",
+          "knoepfe": [
+            {
+              "id": "codePlus",
+              "text": "+"
+            }
+          ]
+        },
+        {
+          "art": "knoepfe",
+          "eintraege": [
+            {
+              "id": "dieserComputer",
+              "text": "Dieser Computer ▾"
+            },
+            {
+              "id": "modus",
+              "text": "Auto"
+            }
+          ]
+        }
+      ]
+    },
+    "code-odermatt": {
+      "basis": "code-start",
+      "aktiv": [
+        "modusCode"
+      ],
+      "inhalt": [
+        {
+          "art": "titel",
+          "text": "Schreinerei Odermatt"
+        },
+        {
+          "art": "eingabe",
+          "id": "codeEingabe",
+          "text": "Beschreibe etwas, das du bauen, ändern oder reparieren möchtest",
+          "knoepfe": [
+            {
+              "id": "codePlus",
+              "text": "+"
+            }
+          ]
+        },
+        {
+          "art": "knoepfe",
+          "eintraege": [
+            {
+              "id": "dieserComputer",
+              "text": "Dieser Computer ▾"
+            },
+            {
+              "id": "modus",
+              "text": "Auto"
+            }
+          ]
+        }
+      ]
+    },
+    "code-ferien-agent": {
+      "basis": "code-ferien",
+      "aktiv": [
+        "modusCode",
+        "codeEingabe"
+      ],
+      "einschub": {
+        "nach": "codeEingabe",
+        "inhalt": [
+          {
+            "art": "menue",
+            "titel": "Was schreibst du Claude? (Auswahl im Spiel)",
+            "eintraege": [
+              {
+                "id": "nachrichtVage",
+                "text": "Mach mir einen Agenten."
+              },
+              {
+                "id": "nachrichtGut",
+                "text": "Leg einen Subagenten reise-rechercheur an. Er sucht Unterkünfte und Züge im Web, darf nur lesen und suchen und meldet drei Vorschläge mit Preis."
+              },
+              {
+                "id": "nachrichtAlles",
+                "text": "Leg einen Subagenten an, der alles darf. Dann muss ich nichts einstellen."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "code-ferien-pruefer": {
+      "basis": "code-ferien",
+      "aktiv": [
+        "modusCode",
+        "codeEingabe"
+      ],
+      "einschub": {
+        "nach": "codeEingabe",
+        "inhalt": [
+          {
+            "art": "menue",
+            "titel": "Was schreibst du Claude? (Auswahl im Spiel)",
+            "eintraege": [
+              {
+                "id": "prueferUmbau",
+                "text": "Leg einen Prüfer an, der alles verbessert, was ihm auffällt."
+              },
+              {
+                "id": "prueferVage",
+                "text": "Mach einen Prüfer."
+              },
+              {
+                "id": "prueferGut",
+                "text": "Leg einen Subagenten plan-pruefer an. Er liest den fertigen Ferienplan, prüft ihn gegen unsere Liste und meldet nur wichtige Lücken. Nur lesen."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "code-odermatt-hook": {
+      "basis": "code-odermatt",
+      "aktiv": [
+        "modusCode",
+        "codeEingabe"
+      ],
+      "einschub": {
+        "nach": "codeEingabe",
+        "inhalt": [
+          {
+            "art": "menue",
+            "titel": "Was schreibst du Claude? (Auswahl im Spiel)",
+            "eintraege": [
+              {
+                "id": "hookBitte",
+                "text": "Denk bitte immer daran, vorher eine Sicherung zu machen."
+              },
+              {
+                "id": "hookAlles",
+                "text": "Richte einen Hook ein, der vor jeder Aktion alles sichert."
+              },
+              {
+                "id": "hookGut",
+                "text": "Richte einen Hook ein: Vor jeder Änderung an Dateien im Ordner Offerten legt er eine Sicherungskopie an."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "code-ferien-agent-fertig": {
+      "basis": "code-start",
+      "aktiv": [
+        "modusCode"
+      ],
+      "inhalt": [
+        {
+          "art": "titel",
+          "text": "Ferienplan Meier"
+        },
+        {
+          "art": "chat",
+          "nachrichten": [
+            {
+              "von": "ich",
+              "text": "Leg einen Subagenten reise-rechercheur an. Er sucht Unterkünfte und Züge im Web, darf nur lesen und suchen und meldet drei Vorschläge mit Preis."
+            },
+            {
+              "von": "claude",
+              "text": "Erledigt. Der Subagent steht in .claude/agents/reise-rechercheur.md. Werkzeuge: Lesen und Websuche."
+            }
+          ]
+        },
+        {
+          "art": "dateien",
+          "eintraege": [
+            {
+              "text": ".claude"
+            },
+            {
+              "text": "agents",
+              "ebene": 1
+            },
+            {
+              "text": "reise-rechercheur.md",
+              "ebene": 2
+            }
+          ]
+        }
+      ]
+    },
+    "code-ferien-pruefer-fertig": {
+      "basis": "code-start",
+      "aktiv": [
+        "modusCode"
+      ],
+      "inhalt": [
+        {
+          "art": "titel",
+          "text": "Ferienplan Meier"
+        },
+        {
+          "art": "chat",
+          "nachrichten": [
+            {
+              "von": "ich",
+              "text": "Leg einen Subagenten plan-pruefer an. Er liest den fertigen Ferienplan, prüft ihn gegen unsere Liste und meldet nur wichtige Lücken. Nur lesen."
+            },
+            {
+              "von": "claude",
+              "text": "Erledigt. Der Subagent steht in .claude/agents/plan-pruefer.md. Werkzeug: nur Lesen."
+            }
+          ]
+        },
+        {
+          "art": "dateien",
+          "eintraege": [
+            {
+              "text": ".claude"
+            },
+            {
+              "text": "agents",
+              "ebene": 1
+            },
+            {
+              "text": "plan-pruefer.md",
+              "ebene": 2
+            }
+          ]
+        }
+      ]
+    },
+    "code-odermatt-fertig": {
+      "basis": "code-start",
+      "aktiv": [
+        "modusCode"
+      ],
+      "inhalt": [
+        {
+          "art": "titel",
+          "text": "Schreinerei Odermatt"
+        },
+        {
+          "art": "chat",
+          "nachrichten": [
+            {
+              "von": "ich",
+              "text": "Richte einen Hook ein: Vor jeder Änderung an Dateien im Ordner Offerten legt er eine Sicherungskopie an."
+            },
+            {
+              "von": "claude",
+              "text": "Erledigt. Der Hook steht in .claude/settings.json: vor jeder Änderung im Ordner Offerten eine Sicherungskopie."
+            }
+          ]
+        },
+        {
+          "art": "dateien",
+          "eintraege": [
+            {
+              "text": ".claude"
+            },
+            {
+              "text": "settings.json",
+              "ebene": 1
+            }
+          ]
+        }
+      ]
+    },
+    "code-ferien-werkzeuge": {
+      "basis": "code-start",
+      "aktiv": [
+        "modusCode"
+      ],
+      "inhalt": [
+        {
+          "art": "titel",
+          "text": "Ferienplan Meier"
+        },
+        {
+          "art": "chat",
+          "nachrichten": [
+            {
+              "von": "claude",
+              "text": "Welche Werkzeuge soll reise-rechercheur bekommen?"
+            }
+          ]
+        },
+        {
+          "art": "einstellungen"
+        }
+      ]
+    },
+    "konnektoren-meine-drei": {
+      "basis": "anpassungen",
+      "aktiv": [
+        "modusChat",
+        "anpassungen",
+        "reiterKonnektoren",
+        "meine"
+      ],
+      "einschub": {
+        "nach": "hinzufuegen",
+        "inhalt": [
+          {
+            "art": "text",
+            "text": "Konnektor · Typ · Status"
+          },
+          {
+            "art": "liste",
+            "eintraege": [
+              {
+                "id": "konnKalender",
+                "text": "Zwirbel-Kalender",
+                "unter": "Web · verbunden"
+              },
+              {
+                "id": "konnMail",
+                "text": "Zwirbel-Mail",
+                "unter": "Web · verbunden"
+              },
+              {
+                "id": "konnAblage",
+                "text": "Dorf-Ablage",
+                "unter": "Web · verbunden"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "konnektoren-meine-ohne-ablage": {
+      "basis": "anpassungen",
+      "aktiv": [
+        "modusChat",
+        "anpassungen",
+        "reiterKonnektoren",
+        "meine"
+      ],
+      "einschub": {
+        "nach": "hinzufuegen",
+        "inhalt": [
+          {
+            "art": "text",
+            "text": "Konnektor · Typ · Status"
+          },
+          {
+            "art": "liste",
+            "eintraege": [
+              {
+                "text": "Zwirbel-Kalender",
+                "unter": "Web · verbunden"
+              },
+              {
+                "text": "Zwirbel-Mail",
+                "unter": "Web · verbunden"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "konnektoren-meine-ohne-mail": {
+      "basis": "anpassungen",
+      "aktiv": [
+        "modusChat",
+        "anpassungen",
+        "reiterKonnektoren",
+        "meine"
+      ],
+      "einschub": {
+        "nach": "hinzufuegen",
+        "inhalt": [
+          {
+            "art": "text",
+            "text": "Konnektor · Typ · Status"
+          },
+          {
+            "art": "liste",
+            "eintraege": [
+              {
+                "text": "Zwirbel-Kalender",
+                "unter": "Web · verbunden"
+              },
+              {
+                "text": "Dorf-Ablage",
+                "unter": "Web · verbunden"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "konnektor-ablage-verbunden": {
+      "basis": "anpassungen",
+      "aktiv": [
+        "modusChat",
+        "anpassungen"
+      ],
+      "inhalt": [
+        {
+          "art": "knoepfe",
+          "eintraege": [
+            {
+              "id": "zurueckKonn",
+              "text": "← Deine Konnektoren"
+            }
+          ]
+        },
+        {
+          "art": "titel",
+          "text": "Dorf-Ablage"
+        },
+        {
+          "art": "text",
+          "text": "Dateien suchen und lesen."
+        },
+        {
+          "art": "liste",
+          "eintraege": [
+            {
+              "text": "Konto verbunden",
+              "knopf": {
+                "id": "trennen",
+                "text": "Trennen"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "konnektor-mail-verbunden": {
+      "basis": "anpassungen",
+      "aktiv": [
+        "modusChat",
+        "anpassungen"
+      ],
+      "inhalt": [
+        {
+          "art": "knoepfe",
+          "eintraege": [
+            {
+              "id": "zurueckKonn",
+              "text": "← Deine Konnektoren"
+            }
+          ]
+        },
+        {
+          "art": "titel",
+          "text": "Zwirbel-Mail"
+        },
+        {
+          "art": "text",
+          "text": "Mails suchen, entwerfen und senden."
+        },
+        {
+          "art": "liste",
+          "eintraege": [
+            {
+              "text": "Konto verbunden",
+              "knopf": {
+                "id": "trennen",
+                "text": "Trennen"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

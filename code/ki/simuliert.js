@@ -1,0 +1,81 @@
+// Simulierte KI (Kiwi oder Echo): antwortet nach festen Regeln aus den Lerninhalten.
+// Braucht kein Konto, kostet nichts und läuft ohne Internet.
+import { bewerte } from '../logik/bewertung.js';
+import { figurText } from '../logik/figur.js';
+import { schaetzeSpielTokens, zaehleTokens } from '../logik/prompt.js';
+
+// Manche Fehlbilder zitieren das eine gewählte Beispiel: Platzhalter {teil}.
+function setzeTeilEin(text, aufgabe, auswahl, pruefung) {
+  if (!text.includes('{teil}')) return text;
+  const quelle = pruefung?.wenn.aus ?? [];
+  const teil = aufgabe.teile.find((t) => quelle.includes(t.id) && auswahl.includes(t.id));
+  const wort = (teil?.text ?? '').replace(/[«»]/g, '').replace(/[.!?]$/, '');
+  return text.replaceAll('{teil}', wort);
+}
+
+export function erstelleSimulierteKi() {
+  return {
+    modus: 'simuliert',
+    async antworte({ aufgabe, auswahl = [], versuch = 0 }) {
+      const urteil = bewerte(aufgabe, auswahl);
+      if (aufgabe.typ === 'wahl') {
+        // Echo tut immer dasselbe. Der Hinweis erklärt, warum die gewählte Antwort stimmt oder nicht.
+        return {
+          text: figurText(aufgabe),
+          ok: urteil.ok,
+          fehlbild: urteil.fehlbild,
+          hinweis: urteil.option?.hinweis ?? null,
+          tokens: { eingabe: schaetzeSpielTokens(aufgabe.frage), ausgabe: schaetzeSpielTokens(figurText(aufgabe)) },
+          modus: 'simuliert',
+        };
+      }
+      if (aufgabe.typ === 'reihe') {
+        // Stimmt die Reihenfolge, läuft alles rund. Sonst zeigt Echo, was bei falscher Reihenfolge passiert.
+        const text = urteil.ok ? figurText(aufgabe) : aufgabe.daneben.texte[versuch % aufgabe.daneben.texte.length];
+        return {
+          text,
+          ok: urteil.ok,
+          fehlbild: urteil.fehlbild,
+          hinweis: urteil.ok ? null : aufgabe.daneben.hinweis,
+          tokens: { eingabe: schaetzeSpielTokens(aufgabe.frage), ausgabe: schaetzeSpielTokens(text) },
+          modus: 'simuliert',
+        };
+      }
+      if (aufgabe.typ === 'zuordnen' || aufgabe.typ === 'schleife') {
+        // Verbinden und Schleife: Kiwi zeigt die Folge der ersten falschen Wahl.
+        // Beim Verbinden hängt die Folge davon ab, wo das Teil steckt («offen» heisst: noch nirgends).
+        const falsch = urteil.teil ?? urteil.option;
+        const folge = urteil.teil ? urteil.teil.folgen[urteil.ziel ?? 'offen'] : falsch?.folge;
+        const text = urteil.ok ? figurText(aufgabe) : folge ?? urteil.station?.leer;
+        const hinweis = urteil.ok ? null : falsch?.hinweis ?? urteil.station?.hinweis;
+        return {
+          text,
+          ok: urteil.ok,
+          fehlbild: urteil.fehlbild,
+          hinweis,
+          station: urteil.station?.id ?? null,
+          tokens: { eingabe: schaetzeSpielTokens(aufgabe.frage), ausgabe: schaetzeSpielTokens(text) },
+          modus: 'simuliert',
+        };
+      }
+      const fehlbild = urteil.ok ? null : aufgabe.fehlbilder[urteil.fehlbild];
+      const varianten = urteil.ok ? aufgabe.erfolg : fehlbild.texte;
+      const variante = versuch % varianten.length;
+      const text = setzeTeilEin(varianten[variante], aufgabe, auswahl, urteil.pruefung);
+      return {
+        text,
+        ok: urteil.ok,
+        fehlbild: urteil.fehlbild,
+        hinweis: fehlbild?.hinweis ?? null,
+        // Ergebnis als Bild: Was Kiwi gebaut hat, als kleiner gezeichneter Bildschirm (falls vorhanden).
+        bild: (urteil.ok ? aufgabe.erfolgBild : fehlbild?.bilder?.[variante]) ?? null,
+        tokens: {
+          eingabe: zaehleTokens(aufgabe, auswahl),
+          // Lange Antworten werden im Text nur angedeutet. Ihr Preis steht beim Fehlbild.
+          ausgabe: fehlbild?.ausgabeTokens ?? schaetzeSpielTokens(text),
+        },
+        modus: 'simuliert',
+      };
+    },
+  };
+}

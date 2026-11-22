@@ -1,0 +1,212 @@
+{
+  "hinweis": "Reihenfolge der Liste = Lernreihenfolge. braucht: Konzepte, die vorher eingeführt sein müssen.",
+  "kapitel": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    }
+  ],
+  "konzepte": [
+    {
+      "id": "ziel",
+      "kapitel": 1,
+      "braucht": []
+    },
+    {
+      "id": "muster",
+      "kapitel": 1,
+      "braucht": [
+        "ziel"
+      ]
+    },
+    {
+      "id": "material",
+      "kapitel": 1,
+      "braucht": [
+        "ziel"
+      ]
+    },
+    {
+      "id": "wohin",
+      "kapitel": 2,
+      "braucht": [
+        "ziel"
+      ]
+    },
+    {
+      "id": "deckblatt",
+      "kapitel": 2,
+      "braucht": [
+        "wohin"
+      ]
+    },
+    {
+      "id": "schlank",
+      "kapitel": 2,
+      "braucht": [
+        "deckblatt"
+      ]
+    },
+    {
+      "id": "probefaelle",
+      "kapitel": 2,
+      "braucht": [
+        "deckblatt"
+      ]
+    },
+    {
+      "id": "skillEcht",
+      "kapitel": 2,
+      "braucht": [
+        "deckblatt"
+      ]
+    },
+    {
+      "id": "freigabe",
+      "kapitel": 3,
+      "braucht": [
+        "ziel"
+      ]
+    },
+    {
+      "id": "fremdes",
+      "kapitel": 3,
+      "braucht": [
+        "material",
+        "freigabe"
+      ]
+    },
+    {
+      "id": "konnektorEcht",
+      "kapitel": 3,
+      "braucht": [
+        "freigabe"
+      ]
+    },
+    {
+      "id": "anbieterEcht",
+      "kapitel": 3,
+      "braucht": [
+        "fremdes",
+        "konnektorEcht"
+      ]
+    },
+    {
+      "id": "schleife",
+      "kapitel": 4,
+      "braucht": [
+        "ziel"
+      ]
+    },
+    {
+      "id": "plan",
+      "kapitel": 4,
+      "braucht": [
+        "schleife"
+      ]
+    },
+    {
+      "id": "kette",
+      "kapitel": 4,
+      "braucht": [
+        "schleife"
+      ]
+    },
+    {
+      "id": "haltepunkte",
+      "kapitel": 4,
+      "braucht": [
+        "freigabe"
+      ]
+    },
+    {
+      "id": "frisch",
+      "kapitel": 4,
+      "braucht": [
+        "schleife"
+      ]
+    },
+    {
+      "id": "feldagent",
+      "kapitel": 5,
+      "braucht": [
+        "frisch"
+      ]
+    },
+    {
+      "id": "profil",
+      "kapitel": 5,
+      "braucht": [
+        "feldagent",
+        "deckblatt"
+      ]
+    },
+    {
+      "id": "lagebericht",
+      "kapitel": 5,
+      "braucht": [
+        "feldagent"
+      ]
+    },
+    {
+      "id": "aufteilen",
+      "kapitel": 5,
+      "braucht": [
+        "feldagent"
+      ]
+    },
+    {
+      "id": "zweiterblick",
+      "kapitel": 5,
+      "braucht": [
+        "feldagent",
+        "schleife"
+      ]
+    },
+    {
+      "id": "subagentEcht",
+      "kapitel": 5,
+      "braucht": [
+        "profil"
+      ]
+    },
+    {
+      "id": "hook",
+      "kapitel": 6,
+      "braucht": [
+        "haltepunkte"
+      ]
+    },
+    {
+      "id": "paket",
+      "kapitel": 6,
+      "braucht": [
+        "deckblatt",
+        "freigabe",
+        "profil"
+      ]
+    },
+    {
+      "id": "hookEcht",
+      "kapitel": 6,
+      "braucht": [
+        "hook",
+        "paket"
+      ]
+    }
+  ]
+}

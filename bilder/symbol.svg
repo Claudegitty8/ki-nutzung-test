@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="KI-Nutzung leicht gemacht">
+  <!-- Grund wie in beiden alten Spielen. Alle Formen liegen im sicheren Kreis (Radius 205) fuer runde App-Symbole. -->
+  <rect width="512" height="512" fill="#f6f4ee"/>
+  <!-- Boden: links Gruen (KI-Studio), rechts Petrol (Agentenbuero) -->
+  <rect x="112" y="378" width="148" height="16" rx="8" fill="#3f6a12"/>
+  <rect x="252" y="378" width="148" height="16" rx="8" fill="#155e6d"/>
+  <!-- Echo: eckiger Kopf mit Antenne -->
+  <line x1="338" y1="196" x2="338" y2="160" stroke="#155e6d" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="338" cy="150" r="17" fill="#3a9bb0" stroke="#155e6d" stroke-width="8"/>
+  <rect x="262" y="196" width="152" height="170" rx="40" fill="#3a9bb0"/>
+  <circle cx="312" cy="266" r="16" fill="#1d2420"/>
+  <circle cx="366" cy="266" r="16" fill="#1d2420"/>
+  <rect x="314" y="306" width="50" height="11" rx="5.5" fill="#1d2420"/>
+  <!-- Kiwi: runde Form, etwas vor Echo -->
+  <ellipse cx="190" cy="278" rx="92" ry="86" fill="#6aa52a" stroke="#f6f4ee" stroke-width="10"/>
+  <circle cx="160" cy="272" r="16" fill="#1d2420"/>
+  <circle cx="216" cy="272" r="16" fill="#1d2420"/>
+</svg>

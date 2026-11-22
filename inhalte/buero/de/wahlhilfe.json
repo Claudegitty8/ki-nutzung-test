@@ -1,0 +1,129 @@
+{
+  "hinweis": "Wahlhilfe «Was nehme ich wann?» im Lexikon (E-034). Ein Eintrag erscheint, sobald sein Konzept im Lexikon offen ist.",
+  "eintraege": [
+    {
+      "id": "prompt",
+      "bauteil": "Funkspruch (Prompt)",
+      "konzept": "ziel",
+      "wann": "Für diese eine Aufgabe, heute.",
+      "warum": "Echo weiss nur, was im Funkspruch steht. Ziel, Leser und Grund gehören hinein.",
+      "beispiele": [
+        "Einladung zur Probe am Donnerstag",
+        "Antwort an einen Gast",
+        "Kurzer Text für die Website"
+      ]
+    },
+    {
+      "id": "projekt",
+      "bauteil": "Fallakte (Projekt und Projektanweisung)",
+      "konzept": "wohin",
+      "wann": "Was in jedem Chat zu einem Thema gilt.",
+      "warum": "Dauerregeln und Unterlagen schreibst du einmal hin statt in jeden Funkspruch.",
+      "beispiele": [
+        "Du-Form und Gruss des Vereins",
+        "Öffnungszeiten und Menü des Gasthofs"
+      ]
+    },
+    {
+      "id": "gedaechtnis",
+      "bauteil": "Notizbuch (Gedächtnis)",
+      "konzept": "wohin",
+      "wann": "Was Claude über dich in allen Chats wissen soll.",
+      "warum": "Claude merkt es sich selbst. Du kannst nachsehen und korrigieren, was drinsteht.",
+      "beispiele": [
+        "Dein Beruf und deine Rolle im Verein",
+        "Du magst kurze Antworten"
+      ]
+    },
+    {
+      "id": "skill",
+      "bauteil": "Dossier (Skill)",
+      "konzept": "deckblatt",
+      "wann": "Ein Ablauf, den du immer wieder gleich brauchst.",
+      "warum": "Claude holt den Skill nur, wenn er passt. So bleibt der Einsatzkoffer frei.",
+      "beispiele": [
+        "Protokoll nach Vereinsvorlage",
+        "Offerte im Stil der Firma",
+        "Belege für die Jahresrechnung prüfen"
+      ]
+    },
+    {
+      "id": "konnektor",
+      "bauteil": "Funkleitung (Konnektor)",
+      "konzept": "freigabe",
+      "wann": "Claude soll in einem Dienst nachsehen oder dort etwas tun.",
+      "warum": "Dann sieht Claude nach, statt zu raten. Gib nur die nötigen Rechte.",
+      "beispiele": [
+        "Freie Termine im Kalender finden",
+        "Mails zu einer Reservation suchen"
+      ]
+    },
+    {
+      "id": "plan",
+      "bauteil": "Einsatzplan (Planmodus)",
+      "konzept": "plan",
+      "wann": "Eine grosse oder unklare Aufgabe.",
+      "warum": "Du prüfst den Weg, bevor etwas passiert. Kleine, klare Aufgaben erledigt Echo direkt.",
+      "beispiele": [
+        "Ein ganzes Fest organisieren",
+        "Viele Dateien umbauen"
+      ]
+    },
+    {
+      "id": "kette",
+      "bauteil": "Feste Kette (Workflow)",
+      "konzept": "kette",
+      "wann": "Ein Ablauf, der jedes Mal gleich geht.",
+      "warum": "Kontrollpunkte halten Fehler auf, bevor sie weiterwandern.",
+      "beispiele": [
+        "Flyer: Text schreiben, prüfen, gestalten",
+        "Monatsbericht aus denselben Zahlen"
+      ]
+    },
+    {
+      "id": "neuerchat",
+      "bauteil": "Frischer Koffer (neuer Chat)",
+      "konzept": "frisch",
+      "wann": "Eine neue Aufgabe ohne Bezug zur alten, oder nach zwei misslungenen Korrekturen.",
+      "warum": "Alter Ballast im Kontext verwirrt Echo. Ein frischer Start mit besserem Auftrag hilft.",
+      "beispiele": [
+        "Nach dem Ferienplan die Vereinseinladung",
+        "Dritter Versuch am selben Text"
+      ]
+    },
+    {
+      "id": "subagent",
+      "bauteil": "Feldagent (Subagent)",
+      "konzept": "feldagent",
+      "wann": "Viel lesen oder suchen, und nur das Ergebnis zählt.",
+      "warum": "Der Lesestoff bleibt beim Feldagenten. Echo bekommt nur den Bericht.",
+      "beispiele": [
+        "120 Angebote durchsehen",
+        "Unterkünfte vergleichen",
+        "Den fertigen Plan mit frischem Blick prüfen"
+      ]
+    },
+    {
+      "id": "hook",
+      "bauteil": "Sicherheitsprotokoll (Hook)",
+      "konzept": "hook",
+      "wann": "Eine Regel muss jedes Mal gelten, ohne Ausnahme.",
+      "warum": "Eine Bitte kann im langen Einsatz untergehen. Ein Hook läuft an seiner Stelle immer.",
+      "beispiele": [
+        "Vor jeder Änderung eine Sicherung",
+        "Vor dem Senden das Datum prüfen"
+      ]
+    },
+    {
+      "id": "plugin",
+      "bauteil": "Einsatzpaket (Plugin)",
+      "konzept": "paket",
+      "wann": "Mehrere Bauteile gehören zusammen und sollen geteilt werden.",
+      "warum": "Alles kommt in einem Stück, mit Anleitung. Nur aus vertrauenswürdiger Quelle installieren.",
+      "beispiele": [
+        "Werkzeugkiste für die Schreinerei",
+        "Vereinspaket für den ganzen Vorstand"
+      ]
+    }
+  ]
+}

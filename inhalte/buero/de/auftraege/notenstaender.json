@@ -1,0 +1,2736 @@
+{
+  "id": "notenstaender",
+  "kapitel": 2,
+  "titel": "Operation Notenständer",
+  "kunde": "Herr Imhof, Musikverein Zwirbelwil",
+  "wunsch": "Jeden Montag schreibe ich das Protokoll, dazu Einladungen und Rundbriefe. Echo soll sich unseren Stil endlich merken!",
+  "kundenstimme": "Das Protokoll klingt jetzt jedes Mal nach uns. Ich spare jeden Montag eine Stunde.",
+  "ueberraschung": "Herr Imhof hat im Gasthof Ochsen davon erzählt. Dort klingelt das Telefon pausenlos.",
+  "lexikon": [
+    "gedaechtnis",
+    "fallakte",
+    "dossier"
+  ],
+  "schrank": {
+    "titel": "Dossier (Skill): Protokoll im Vereinsstil",
+    "vorlage": "---\nname: protokoll-verein\ndescription: Schreibt Protokolle der Vereinssitzungen im Stil unseres Vereins. Verwenden, wenn ein Protokoll, Sitzungsnotizen oder eine Traktandenliste gewünscht sind.\n---\n# Protokoll im Vereinsstil\n1. Kopf: Datum, Ort, Anwesende, Entschuldigte.\n2. Pro Traktandum: kurz, was besprochen und was beschlossen wurde.\n3. Pendenzen mit Name und Termin.\n4. Schluss: nächste Sitzung.\nTon: sachlich, per Du, kurze Sätze. Beispiele stehen in beispiele.md.",
+    "wo": "Speichere den Text als SKILL.md in einem Ordner namens protokoll-verein. Packe den Ordner als ZIP und lade ihn in der Claude-App bei den Skills hoch. Oder bitte Claude mit dem «skill-creator», daraus einen Skill zu bauen.",
+    "probefahrt": {
+      "aufgabe": "se-a",
+      "punkte": [
+        {
+          "id": "code",
+          "text": "In den Einstellungen unter «Funktionen» ist «Code in der Cloud ausführen» an."
+        },
+        {
+          "id": "zip",
+          "text": "Der Ordner protokoll-verein ist als ZIP gepackt."
+        },
+        {
+          "id": "hoch",
+          "text": "Hochgeladen über Anpassungen, «+ Hinzufügen», «Skill hochladen»."
+        },
+        {
+          "id": "test",
+          "text": "Mit einer Protokoll-Bitte ausprobiert."
+        }
+      ]
+    }
+  },
+  "runden": [
+    {
+      "id": "r1",
+      "art": "konzept",
+      "konzept": "wohin",
+      "probieren": {
+        "aufgabe": "w-a",
+        "nurTeile": [
+          "heuteAkte",
+          "regelFunk"
+        ]
+      },
+      "beispiel": {
+        "aufgabe": "w-a"
+      },
+      "luecke": {
+        "aufgabe": "w-b",
+        "vorgabe": [
+          "heuteFunk"
+        ]
+      },
+      "frei": [
+        "w-c",
+        "w-d",
+        "w-e",
+        "w-f"
+      ]
+    },
+    {
+      "id": "r2",
+      "art": "konzept",
+      "konzept": "deckblatt",
+      "probieren": {
+        "aufgabe": "d-a",
+        "nurTeile": [
+          "vage",
+          "breit"
+        ]
+      },
+      "beispiel": {
+        "aufgabe": "d-a"
+      },
+      "luecke": {
+        "aufgabe": "d-b",
+        "vorgabe": [
+          "tut"
+        ]
+      },
+      "frei": [
+        "d-c",
+        "d-d",
+        "d-e",
+        "d-f"
+      ]
+    },
+    {
+      "id": "r3",
+      "art": "konzept",
+      "konzept": "schlank",
+      "probieren": {
+        "aufgabe": "l-a",
+        "nurTeile": [
+          "allesKern",
+          "fremd"
+        ]
+      },
+      "beispiel": {
+        "aufgabe": "l-a"
+      },
+      "luecke": {
+        "aufgabe": "l-b",
+        "vorgabe": [
+          "kern"
+        ]
+      },
+      "frei": [
+        "l-c",
+        "l-d",
+        "l-e",
+        "l-f"
+      ]
+    },
+    {
+      "id": "r4",
+      "art": "konzept",
+      "konzept": "probefaelle",
+      "probieren": {
+        "aufgabe": "p-a",
+        "nurTeile": [
+          "ohne",
+          "soll1"
+        ]
+      },
+      "beispiel": {
+        "aufgabe": "p-a"
+      },
+      "luecke": {
+        "aufgabe": "p-b",
+        "vorgabe": [
+          "soll1"
+        ]
+      },
+      "frei": [
+        "p-c",
+        "p-d",
+        "p-e",
+        "p-f"
+      ]
+    },
+    {
+      "id": "r-echt",
+      "art": "konzept",
+      "konzept": "skillEcht",
+      "probieren": {
+        "aufgabe": "se-a"
+      },
+      "beispiel": {
+        "aufgabe": "se-a"
+      },
+      "luecke": {
+        "aufgabe": "se-b",
+        "vorgabe": [
+          "anpassungen",
+          "hinzufuegen"
+        ]
+      },
+      "frei": [
+        "se-c",
+        "se-d",
+        "se-e",
+        "se-f"
+      ]
+    },
+    {
+      "id": "r5",
+      "art": "misch",
+      "titel": "Alles zusammen",
+      "frei": [
+        "x-a",
+        "x-b"
+      ]
+    }
+  ],
+  "aufgaben": {
+    "w-a": {
+      "wunsch": "Für alle Texte des Vereins gilt: per Du und Gruss «Musikalische Grüsse». Heute brauche ich die Einladung zur Probe.",
+      "grundprompt": "Schreib die Einladung.",
+      "artNamen": {
+        "zettel": "Fallakte (gilt in jedem Chat dieses Projekts)",
+        "prompt": "Funkspruch (nur für diesen Auftrag)"
+      },
+      "teile": [
+        {
+          "id": "regelAkte",
+          "art": "zettel",
+          "text": "Wir duzen alle. Gruss immer: «Musikalische Grüsse»."
+        },
+        {
+          "id": "heuteAkte",
+          "art": "zettel",
+          "text": "Probe am Donnerstag, 19.30 Uhr, im Schulhaus."
+        },
+        {
+          "id": "heuteFunk",
+          "art": "prompt",
+          "text": "Lade zur Probe am Donnerstag, 19.30 Uhr, im Schulhaus ein."
+        },
+        {
+          "id": "regelFunk",
+          "art": "prompt",
+          "text": "Wir duzen alle. Gruss immer: «Musikalische Grüsse»."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "heuteAkte"
+            ]
+          },
+          "fehlbild": "einmaligInAkte"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "heuteFunk"
+            ]
+          },
+          "fehlbild": "keinAuftrag"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "regelAkte"
+            ]
+          },
+          "fehlbild": "regelVergessen"
+        }
+      ],
+      "fehlbilder": {
+        "einmaligInAkte": {
+          "texte": [
+            "Ausgeführt! Und ab jetzt steht in jedem Text: «Probe am Donnerstag, 19.30 Uhr». Auch im Weihnachtsgruss.",
+            "Ausgeführt! Die Probe vom Donnerstag liegt jetzt dauerhaft in der Fallakte. Ich erwähne sie überall, sicher ist sicher."
+          ],
+          "hinweis": "Was nur einmal gilt, gehört in den Funkspruch. Die Fallakte liest Echo bei jedem Auftrag."
+        },
+        "keinAuftrag": {
+          "texte": [
+            "Ausgeführt! Eine Einladung. Wozu, wann und wo, stand nirgends. Ich habe zum Grillieren eingeladen.",
+            "Ausgeführt! «Liebe Mitglieder, ihr seid eingeladen.» Mehr wusste ich nicht."
+          ],
+          "hinweis": "Was heute zu tun ist, gehört in den Funkspruch."
+        },
+        "regelVergessen": {
+          "texte": [
+            "Ausgeführt! Heute klappt es. Im nächsten Chat sieze ich aber wieder alle und grüsse «Hochachtungsvoll».",
+            "Ausgeführt! Für diesen Text gilt das Du. Morgen weiss ich davon nichts mehr."
+          ],
+          "hinweis": "Was immer gilt, gehört in die Fallakte (Projektanweisung). Sonst musst du es jedes Mal neu sagen."
+        }
+      },
+      "erfolg": [
+        "Ausgeführt! «Hoi zäme, Probe am Donnerstag um 19.30 Uhr im Schulhaus. Musikalische Grüsse.» Und die Regeln gelten auch morgen.",
+        "Ausgeführt! Einladung per Du, mit dem Vereinsgruss. Die Dauerregel liegt in der Fallakte, die Probe nur in diesem Auftrag."
+      ],
+      "loesung": [
+        "regelAkte",
+        "heuteFunk"
+      ]
+    },
+    "w-b": {
+      "wunsch": "Alle Mails des Vereins enden mit dem Hinweis auf die Website. Heute: Absage des Ständchens am Samstag.",
+      "grundprompt": "Schreib die Mail.",
+      "artNamen": {
+        "zettel": "Fallakte (gilt in jedem Chat dieses Projekts)",
+        "prompt": "Funkspruch (nur für diesen Auftrag)"
+      },
+      "teile": [
+        {
+          "id": "regelAkte",
+          "art": "zettel",
+          "text": "Jede Mail endet mit: «Mehr auf mv-zwirbelwil.ch»."
+        },
+        {
+          "id": "heuteAkte",
+          "art": "zettel",
+          "text": "Das Ständchen am Samstag fällt aus."
+        },
+        {
+          "id": "heuteFunk",
+          "art": "prompt",
+          "text": "Sag das Ständchen am Samstag ab, wegen Regen."
+        },
+        {
+          "id": "regelFunk",
+          "art": "prompt",
+          "text": "Ende mit: «Mehr auf mv-zwirbelwil.ch»."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "heuteAkte"
+            ]
+          },
+          "fehlbild": "einmaligInAkte"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "heuteFunk"
+            ]
+          },
+          "fehlbild": "keinAuftrag"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "regelAkte"
+            ]
+          },
+          "fehlbild": "regelVergessen"
+        }
+      ],
+      "fehlbilder": {
+        "einmaligInAkte": {
+          "texte": [
+            "Ausgeführt! Seither sage ich in jeder Mail das Ständchen ab. Auch das vom nächsten Jahr.",
+            "Ausgeführt! «Ständchen fällt aus» steht jetzt in der Fallakte. Die Leute fragen, ob der Verein aufgelöst ist."
+          ],
+          "hinweis": "Eine einmalige Nachricht gehört in den Funkspruch, nicht in die Fallakte."
+        },
+        "regelVergessen": {
+          "texte": [
+            "Ausgeführt! Diesmal mit Website. In der nächsten Mail fehlt sie wieder.",
+            "Ausgeführt! Der Hinweis gilt nur für diese Mail. Morgen weiss ich davon nichts."
+          ],
+          "hinweis": "Eine Dauerregel gehört in die Fallakte. Dann gilt sie in jedem Chat des Projekts."
+        },
+        "keinAuftrag": {
+          "texte": [
+            "Ausgeführt! Eine Mail mit dem Hinweis auf die Website. Worum es geht, stand nirgends.",
+            "Ausgeführt! «Mehr auf mv-zwirbelwil.ch.» Mehr wusste ich nicht."
+          ],
+          "hinweis": "Was heute zu tun ist, gehört in den Funkspruch."
+        }
+      },
+      "erfolg": [
+        "Ausgeführt! «Das Ständchen am Samstag fällt wegen Regen aus. Mehr auf mv-zwirbelwil.ch.»",
+        "Ausgeführt! Kurze Absage mit Grund, dazu der Hinweis auf die Website. Der gilt jetzt immer."
+      ],
+      "loesung": [
+        "regelAkte",
+        "heuteFunk"
+      ]
+    },
+    "w-c": {
+      "typ": "wahl",
+      "wunsch": "Wohin gehört ein Ablauf, den man jede Woche gleich macht?",
+      "frage": "Herr Imhof schreibt jeden Montag das Protokoll nach demselben Muster. Wohin gehört dieses Muster?",
+      "optionen": [
+        {
+          "id": "funk",
+          "text": "In jeden Funkspruch neu hineinschreiben.",
+          "hinweis": "Das geht, aber du tippst es jede Woche neu und vergisst sicher einmal etwas."
+        },
+        {
+          "id": "dossier",
+          "text": "In ein Dossier (Skill), das Echo bei Protokollen holt.",
+          "hinweis": "Genau. Ein wiederkehrender Ablauf gehört in einen Skill.",
+          "richtig": true
+        },
+        {
+          "id": "notiz",
+          "text": "Ins Notizbuch (Gedächtnis), Echo merkt es sich schon.",
+          "hinweis": "Was Claude sich merkt, wählt Claude selbst und fasst es zusammen. Ein genauer Ablauf gehört in einen Skill."
+        }
+      ],
+      "echo": "Echo legt das Protokoll-Muster als Dossier ins Archiv. Bei jedem Protokoll holt Echo es hervor.",
+      "loesung": [
+        "dossier"
+      ]
+    },
+    "w-d": {
+      "typ": "wahl",
+      "wunsch": "Seit gestern sind alle Texte nur drei Zeilen lang. Woran liegt es?",
+      "frage": "Herr Imhof hat einmal gesagt: «Diesmal bitte ganz kurz.» Seither sind alle Texte drei Zeilen lang. Was tut er am besten?",
+      "optionen": [
+        {
+          "id": "jedesmal",
+          "text": "Ab jetzt in jeden Funkspruch «bitte lang» schreiben.",
+          "hinweis": "Das kämpft gegen den falschen Eintrag, statt ihn zu beheben."
+        },
+        {
+          "id": "loeschen",
+          "text": "Alle Projekte löschen und neu anfangen.",
+          "hinweis": "Viel zu viel. Dabei ginge alles andere verloren."
+        },
+        {
+          "id": "notiz",
+          "text": "Im Notizbuch (Gedächtnis) nachsehen und den Eintrag korrigieren.",
+          "hinweis": "Genau. Was Claude sich merkt, kann man ansehen und ändern.",
+          "richtig": true
+        }
+      ],
+      "echo": "Im Notizbuch steht: «Möchte Texte ganz kurz.» Herr Imhof löscht den Eintrag. Die Texte haben wieder die richtige Länge.",
+      "loesung": [
+        "notiz"
+      ]
+    },
+    "w-e": {
+      "wunsch": "In allen Chats zum Vereinsjubiläum gilt: Jubiläum heisst «100 Jahre MV Zwirbelwil». Heute: Brief an die Gemeinde.",
+      "grundprompt": "Schreib den Brief.",
+      "artNamen": {
+        "zettel": "Fallakte (gilt in jedem Chat dieses Projekts)",
+        "prompt": "Funkspruch (nur für diesen Auftrag)"
+      },
+      "teile": [
+        {
+          "id": "regelAkte",
+          "art": "zettel",
+          "text": "Das Jubiläum heisst immer «100 Jahre MV Zwirbelwil»."
+        },
+        {
+          "id": "heuteFunk",
+          "art": "prompt",
+          "text": "Bitte die Gemeinde um den Platz vor dem Schulhaus für den 21. Juni."
+        },
+        {
+          "id": "heuteAkte",
+          "art": "zettel",
+          "text": "Bitte die Gemeinde um den Platz vor dem Schulhaus."
+        },
+        {
+          "id": "privat",
+          "art": "zettel",
+          "text": "Mein Passwort fürs Vereinskonto ist Tuba2026."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "privat"
+            ]
+          },
+          "fehlbild": "geheimnis"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "heuteAkte"
+            ]
+          },
+          "fehlbild": "einmaligInAkte"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "heuteFunk"
+            ]
+          },
+          "fehlbild": "keinAuftrag"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "regelAkte"
+            ]
+          },
+          "fehlbild": "regelVergessen"
+        }
+      ],
+      "fehlbilder": {
+        "geheimnis": {
+          "texte": [
+            "Ausgeführt! Das Passwort liegt jetzt in der Fallakte. Alle, mit denen du das Projekt teilst, können es lesen.",
+            "Ausgeführt! Ich habe das Passwort brav abgelegt. Es hat in einer Fallakte nichts zu suchen."
+          ],
+          "hinweis": "Passwörter gehören nie in Anweisungen, Fallakten oder Skills."
+        },
+        "einmaligInAkte": {
+          "texte": [
+            "Ausgeführt! Ab jetzt bitte ich in jedem Brief um den Platz vor dem Schulhaus. Auch im Dankesbrief.",
+            "Ausgeführt! Die Bitte um den Platz steht jetzt dauerhaft in der Fallakte. Die Gemeinde bekommt sie wöchentlich."
+          ],
+          "hinweis": "Eine einmalige Bitte gehört in den Funkspruch."
+        },
+        "keinAuftrag": {
+          "texte": [
+            "Ausgeführt! Ein Brief an die Gemeinde: «Wir feiern 100 Jahre MV Zwirbelwil.» Worum es geht, wusste ich nicht.",
+            "Ausgeführt! Ich habe der Gemeinde zum Jubiläum gratuliert. Sie hat aber kein Jubiläum."
+          ],
+          "hinweis": "Was heute zu tun ist, gehört in den Funkspruch."
+        },
+        "regelVergessen": {
+          "texte": [
+            "Ausgeführt! Im Brief steht «Musikfest». Wie das Jubiläum heisst, wusste ich nicht.",
+            "Ausgeführt! Diesmal «Hundertjahrfeier», nächstes Mal vielleicht «Jubeljahr». Einheitlich ist es nicht."
+          ],
+          "hinweis": "Eine Regel für alle Chats gehört in die Fallakte."
+        }
+      },
+      "erfolg": [
+        "Ausgeführt! «Für 100 Jahre MV Zwirbelwil bitten wir um den Platz vor dem Schulhaus am 21. Juni.»",
+        "Ausgeführt! Die Bitte an die Gemeinde, mit dem richtigen Namen des Jubiläums. Das Passwort bleibt, wo es hingehört: bei dir."
+      ],
+      "loesung": [
+        "regelAkte",
+        "heuteFunk"
+      ]
+    },
+    "w-f": {
+      "wunsch": "Für die Programmhefte gilt immer derselbe Ablauf mit fünf Schritten. Heute: das Heft fürs Herbstkonzert.",
+      "grundprompt": "Mach das Programmheft fürs Herbstkonzert.",
+      "artNamen": {
+        "karte": "Dossiers (Skills im Archiv)",
+        "prompt": "Funkspruch (nur für diesen Auftrag)"
+      },
+      "teile": [
+        {
+          "id": "dossier",
+          "art": "karte",
+          "text": "Dossier «programmheft»: der Ablauf mit fünf Schritten"
+        },
+        {
+          "id": "heute",
+          "art": "prompt",
+          "text": "Stücke: Böhmischer Traum, Highland Cathedral, Alte Kameraden."
+        },
+        {
+          "id": "ablaufFunk",
+          "art": "prompt",
+          "text": "Und hier nochmals der ganze Ablauf mit allen fünf Schritten, wie jedes Mal."
+        },
+        {
+          "id": "rezept",
+          "art": "karte",
+          "text": "Dossier «zopfrezept» der Bäckerei"
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "rezept"
+            ]
+          },
+          "fehlbild": "falschesDossier"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "dossier"
+            ]
+          },
+          "fehlbild": "keinDossier"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "ablaufFunk"
+            ]
+          },
+          "fehlbild": "doppelt"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "heute"
+            ]
+          },
+          "fehlbild": "keineStuecke"
+        }
+      ],
+      "fehlbilder": {
+        "falschesDossier": {
+          "texte": [
+            "Ausgeführt! Das Programmheft hat jetzt eine Zutatenliste: 500 g Mehl, 1 Ei. Das Zopf-Dossier lag auch im Archiv.",
+            "Ausgeführt! Zwischen den Stücken steht: «45 Minuten gehen lassen.»"
+          ],
+          "hinweis": "Ins Archiv gehören nur Dossiers, die zum Auftrag passen."
+        },
+        "keinDossier": {
+          "texte": [
+            "Ausgeführt! Ein Heft ohne Titelseite und ohne Besetzung. Den Ablauf kannte ich nicht.",
+            "Ausgeführt! Ich habe ein Heft gestaltet, wie es mir gefällt. Es sieht anders aus als alle früheren."
+          ],
+          "hinweis": "Der Ablauf liegt im Dossier. Ohne Dossier kennt Echo ihn nicht."
+        },
+        "doppelt": {
+          "texte": [
+            "Ausgeführt! Der Ablauf stand doppelt da, einmal im Dossier und einmal im Funkspruch. Sie widersprechen sich bei Schritt 4.",
+            "Ausgeführt! Du hast alles nochmals abgetippt. Genau das sollte das Dossier dir ersparen."
+          ],
+          "hinweis": "Was im Dossier steht, musst du nicht nochmals schreiben. Sonst gibt es zwei Fassungen."
+        },
+        "keineStuecke": {
+          "texte": [
+            "Ausgeführt! Das Heft ist perfekt aufgebaut. Gespielt werden laut Heft «Stück 1, Stück 2, Stück 3».",
+            "Ausgeführt! Ablauf korrekt, Inhalt leer: Welche Stücke, wusste ich nicht."
+          ],
+          "hinweis": "Was nur für heute gilt, gehört in den Funkspruch."
+        }
+      },
+      "erfolg": [
+        "Ausgeführt! Programmheft fürs Herbstkonzert nach dem gewohnten Ablauf, mit allen drei Stücken.",
+        "Ausgeführt! Titelseite, Besetzung, drei Stücke, Dank, Spendenhinweis. Wie immer, nur mit neuem Inhalt."
+      ],
+      "loesung": [
+        "dossier",
+        "heute"
+      ]
+    },
+    "d-a": {
+      "wunsch": "Schreib das Deckblatt für das Protokoll-Dossier, damit Echo es im richtigen Moment holt.",
+      "grundprompt": "name: protokoll-verein",
+      "nachrichtVon": "Dein Dossier (Skill): das Deckblatt",
+      "artNamen": {
+        "prompt": "Was es tut",
+        "kontext": "Wann es gebraucht wird"
+      },
+      "teile": [
+        {
+          "id": "tut",
+          "art": "prompt",
+          "text": "description: Schreibt Protokolle der Vereinssitzungen im Stil des Musikvereins."
+        },
+        {
+          "id": "wann",
+          "art": "kontext",
+          "text": "Verwenden, wenn ein Protokoll, Sitzungsnotizen oder eine Traktandenliste gewünscht sind."
+        },
+        {
+          "id": "vage",
+          "art": "prompt",
+          "text": "description: Hilft beim Verein."
+        },
+        {
+          "id": "breit",
+          "art": "kontext",
+          "text": "Verwenden bei allem, was mit Text zu tun hat."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "vage"
+            ]
+          },
+          "fehlbild": "vage"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "breit"
+            ]
+          },
+          "fehlbild": "zuBreit"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "tut"
+            ]
+          },
+          "fehlbild": "keinWas"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "wann"
+            ]
+          },
+          "fehlbild": "keinWann"
+        }
+      ],
+      "fehlbilder": {
+        "vage": {
+          "texte": [
+            "Du bittest um das Protokoll. «Hilft beim Verein» klingt nicht nach Protokoll. Das Dossier bleibt im Archiv.",
+            "Bei der Bitte um Notenständer hole ich das Dossier. Es hilft ja beim Verein."
+          ],
+          "hinweis": "Ein ungenaues Deckblatt sagt Echo nicht, wofür das Dossier ist."
+        },
+        "zuBreit": {
+          "texte": [
+            "Du willst einen Einkaufszettel fürs Vereinsfest. Ich hole das Protokoll-Dossier: Der Zettel hat jetzt Traktanden und eine Präsenzliste.",
+            "Dein Geburtstagsgruss an die Tante beginnt mit «Traktandum 1: Begrüssung»."
+          ],
+          "hinweis": "«Bei allem» ist zu breit. Das Dossier springt dann auch dort an, wo es nicht passt."
+        },
+        "keinWas": {
+          "texte": [
+            "Ein Deckblatt nur mit «Verwenden, wenn …». Was im Dossier steckt, steht nirgends.",
+            "Ich weiss, wann ich es holen soll, aber nicht, wofür es gut ist."
+          ],
+          "hinweis": "Das Deckblatt sagt beides: was das Dossier tut und wann es gebraucht wird."
+        },
+        "keinWann": {
+          "texte": [
+            "Du bittest um die Sitzungsnotizen von gestern. Das Dossier bleibt im Archiv: Wann es gebraucht wird, stand nirgends.",
+            "Ich weiss, was das Dossier tut. Dass «Traktandenliste» dazugehört, wusste ich nicht."
+          ],
+          "hinweis": "Schreib auf das Deckblatt, bei welchen Bitten das Dossier gebraucht wird."
+        }
+      },
+      "erfolg": [
+        "Du bittest um das Protokoll vom Montag. Echo holt sofort das richtige Dossier. Beim Einkaufszettel bleibt es im Archiv.",
+        "Deckblatt mit Was und Wann. Protokoll, Sitzungsnotizen und Traktanden holen das Dossier zuverlässig."
+      ],
+      "loesung": [
+        "tut",
+        "wann"
+      ]
+    },
+    "d-b": {
+      "wunsch": "Schreib das Deckblatt für das Dossier, das Einladungen zur Probe schreibt.",
+      "grundprompt": "name: einladung-probe",
+      "nachrichtVon": "Dein Dossier (Skill): das Deckblatt",
+      "artNamen": {
+        "prompt": "Was es tut",
+        "kontext": "Wann es gebraucht wird"
+      },
+      "teile": [
+        {
+          "id": "tut",
+          "art": "prompt",
+          "text": "description: Schreibt Einladungen zu Proben und Auftritten des Musikvereins."
+        },
+        {
+          "id": "wann",
+          "art": "kontext",
+          "text": "Verwenden, wenn zu einer Probe, einem Auftritt oder einem Ständchen eingeladen wird."
+        },
+        {
+          "id": "breit",
+          "art": "kontext",
+          "text": "Verwenden für alle Nachrichten."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "breit"
+            ]
+          },
+          "fehlbild": "zuBreit"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "tut"
+            ]
+          },
+          "fehlbild": "keinWas"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "wann"
+            ]
+          },
+          "fehlbild": "keinWann"
+        }
+      ],
+      "fehlbilder": {
+        "zuBreit": {
+          "texte": [
+            "Du schreibst dem Dirigenten gute Besserung. Ich mache eine Einladung daraus: «Gute Besserung am Donnerstag, 19.30 Uhr».",
+            "Jede Nachricht wird jetzt eine Einladung. Auch die Kündigung des Proberaums."
+          ],
+          "hinweis": "Zu breit: Das Dossier springt bei allem an. Nenne nur die passenden Bitten."
+        },
+        "keinWann": {
+          "texte": [
+            "Du willst zum Ständchen einladen. Das Dossier bleibt im Archiv, weil auf dem Deckblatt kein «Wann» steht.",
+            "Ich weiss, was das Dossier kann. Wann ich es holen soll, weiss ich nicht."
+          ],
+          "hinweis": "Schreib, bei welchen Bitten das Dossier gebraucht wird."
+        },
+        "keinWas": {
+          "texte": [
+            "Ich weiss, wann ich das Dossier holen soll, aber nicht, wofür es gut ist.",
+            "Ein Deckblatt nur mit «Verwenden, wenn …». Was im Dossier steckt, steht nirgends."
+          ],
+          "hinweis": "Das Deckblatt sagt beides: was das Dossier tut und wann es gebraucht wird."
+        }
+      },
+      "erfolg": [
+        "Du lädst zum Ständchen ein: Echo holt das Einladungs-Dossier. Bei der Gute-Besserung-Karte bleibt es im Archiv.",
+        "Was und Wann stehen auf dem Deckblatt. Proben, Auftritte und Ständchen holen das Dossier."
+      ],
+      "loesung": [
+        "tut",
+        "wann"
+      ]
+    },
+    "d-c": {
+      "wunsch": "Schreib das Deckblatt für ein Dossier, das Dankesbriefe an Spender schreibt.",
+      "grundprompt": "name: dank-spender",
+      "nachrichtVon": "Dein Dossier (Skill): das Deckblatt",
+      "artNamen": {
+        "prompt": "Was es tut",
+        "kontext": "Wann es gebraucht wird"
+      },
+      "teile": [
+        {
+          "id": "tut",
+          "art": "prompt",
+          "text": "description: Schreibt persönliche Dankesbriefe an Spenderinnen und Spender des Vereins."
+        },
+        {
+          "id": "wann",
+          "art": "kontext",
+          "text": "Verwenden, wenn eine Spende verdankt oder ein Dankesbrief gewünscht wird."
+        },
+        {
+          "id": "lang",
+          "art": "prompt",
+          "text": "description: Für Dankesbriefe aller Art, ob gross oder klein, einmalig oder regelmässig, von Firmen, Familien oder Gönnern, immer herzlich und persönlich, mit Namen, Betrag und Ausblick aufs nächste Konzert, ausserdem …"
+        },
+        {
+          "id": "vage",
+          "art": "prompt",
+          "text": "description: Für Briefe."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "lang"
+            ]
+          },
+          "fehlbild": "zuLang"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "vage"
+            ]
+          },
+          "fehlbild": "vage"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "tut"
+            ]
+          },
+          "fehlbild": "keinWas"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "wann"
+            ]
+          },
+          "fehlbild": "keinWann"
+        }
+      ],
+      "fehlbilder": {
+        "zuLang": {
+          "texte": [
+            "Das Deckblatt ist viel zu lang. Im Spiel gilt: unter 200 Zeichen. Die Einzelheiten gehören ins Dossier selbst.",
+            "So viel Text auf dem Deckblatt? Das Wichtigste, das «Wann», fehlt ganz."
+          ],
+          "hinweis": "Das Deckblatt ist kurz: was und wann. Einzelheiten stehen im Dossier."
+        },
+        "vage": {
+          "texte": [
+            "«Für Briefe»: Ich hole das Dossier jetzt auch für die Mahnung an säumige Mitglieder. Mit herzlichem Dank.",
+            "Du willst einen Brief an die Versicherung. Ich bedanke mich darin für die grosszügige Spende."
+          ],
+          "hinweis": "Ein ungenaues Deckblatt lässt Echo raten."
+        },
+        "keinWas": {
+          "texte": [
+            "Ich weiss, wann ich es holen soll, aber nicht, was es kann.",
+            "Ein Deckblatt nur mit «Verwenden, wenn …». Was drin ist, steht nirgends."
+          ],
+          "hinweis": "Das Deckblatt sagt, was das Dossier tut."
+        },
+        "keinWann": {
+          "texte": [
+            "Du bittest, die Spende der Bäckerei zu verdanken. Das Dossier bleibt im Archiv.",
+            "Ohne «Wann» erkenne ich nicht, dass «verdanken» dazugehört."
+          ],
+          "hinweis": "Schreib, bei welchen Bitten das Dossier gebraucht wird."
+        }
+      },
+      "erfolg": [
+        "Du bittest, die Spende der Bäckerei zu verdanken: Echo holt das richtige Dossier. Kurzes Deckblatt, klares Was und Wann.",
+        "Deckblatt unter 200 Zeichen, mit Was und Wann. Dankesbriefe gelingen jetzt zuverlässig."
+      ],
+      "loesung": [
+        "tut",
+        "wann"
+      ]
+    },
+    "d-d": {
+      "typ": "wahl",
+      "wunsch": "Welches Deckblatt holt das Dossier im richtigen Moment?",
+      "frage": "Welches Deckblatt sorgt am ehesten dafür, dass Echo das Probenplan-Dossier im richtigen Moment holt?",
+      "optionen": [
+        {
+          "id": "kurz",
+          "text": "«Probenplan.»",
+          "hinweis": "Zu knapp: Es fehlt, was es tut und wann es gebraucht wird."
+        },
+        {
+          "id": "allem",
+          "text": "«Hilft bei allem rund um Musik.»",
+          "hinweis": "Zu breit: Das Dossier würde auch beim Konzertbericht anspringen."
+        },
+        {
+          "id": "beides",
+          "text": "«Erstellt den Probenplan. Verwenden, wenn Probentermine geplant oder verschoben werden.»",
+          "hinweis": "Genau: was es tut und wann.",
+          "richtig": true
+        }
+      ],
+      "echo": "Mit «Was» und «Wann» auf dem Deckblatt holt Echo das Dossier bei «Probe verschieben». Beim Konzertbericht bleibt es liegen.",
+      "loesung": [
+        "beides"
+      ]
+    },
+    "d-e": {
+      "typ": "wahl",
+      "wunsch": "Was liest Echo von einem Dossier immer, auch wenn es nicht gebraucht wird?",
+      "frage": "Im Archiv liegen zehn Dossiers. Was davon hat Echo bei jedem Auftrag im Kopf?",
+      "optionen": [
+        {
+          "id": "alles",
+          "text": "Alle zehn Dossiers vollständig.",
+          "hinweis": "Dann wäre der Einsatzkoffer sofort voll."
+        },
+        {
+          "id": "deckblatt",
+          "text": "Nur die Deckblätter, also Name und Beschreibung.",
+          "hinweis": "Genau. Den Rest holt Echo erst, wenn ein Dossier passt.",
+          "richtig": true
+        },
+        {
+          "id": "nichts",
+          "text": "Gar nichts, Echo muss jedes Mal danach gefragt werden.",
+          "hinweis": "Nein. Echo schaut selbst, ob ein Deckblatt passt."
+        }
+      ],
+      "echo": "Echo hat die zehn Deckblätter im Koffer. Passt eines, holt Echo das ganze Dossier.",
+      "loesung": [
+        "deckblatt"
+      ]
+    },
+    "d-f": {
+      "wunsch": "Schreib das Deckblatt für ein Dossier, das Konzertberichte für die Dorfzeitung schreibt.",
+      "grundprompt": "name: konzertbericht",
+      "nachrichtVon": "Dein Dossier (Skill): das Deckblatt",
+      "artNamen": {
+        "prompt": "Was es tut",
+        "kontext": "Wann es gebraucht wird"
+      },
+      "teile": [
+        {
+          "id": "tut",
+          "art": "prompt",
+          "text": "description: Schreibt Konzertberichte für die Dorfzeitung im Stil des Vereins."
+        },
+        {
+          "id": "wann",
+          "art": "kontext",
+          "text": "Verwenden, wenn über ein Konzert, einen Auftritt oder ein Fest des Vereins berichtet wird."
+        },
+        {
+          "id": "breit",
+          "art": "kontext",
+          "text": "Verwenden, wenn irgendwo Musik vorkommt."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "breit"
+            ]
+          },
+          "fehlbild": "zuBreit"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "tut"
+            ]
+          },
+          "fehlbild": "keinWas"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "wann"
+            ]
+          },
+          "fehlbild": "keinWann"
+        }
+      ],
+      "fehlbilder": {
+        "zuBreit": {
+          "texte": [
+            "Du willst eine Playlist fürs Vereinsfest. Ich schreibe einen Konzertbericht über die Playlist.",
+            "Beim Einkaufszettel steht Musik? Nein, aber «Brezel» klingt nach Fest. Konzertbericht!"
+          ],
+          "hinweis": "Zu breit. Nenne die Bitten, bei denen das Dossier wirklich passt."
+        },
+        "keinWas": {
+          "texte": [
+            "Ich weiss, wann ich es holen soll. Was es tun soll, weiss ich nicht.",
+            "Nur das «Wann» steht da. Das «Was» fehlt."
+          ],
+          "hinweis": "Das Deckblatt sagt, was das Dossier tut."
+        },
+        "keinWann": {
+          "texte": [
+            "Du bittest um einen Bericht vom Frühlingskonzert. Das Dossier bleibt im Archiv.",
+            "Ohne «Wann» erkenne ich nicht, dass «Bericht vom Konzert» dazugehört."
+          ],
+          "hinweis": "Schreib, wann das Dossier gebraucht wird."
+        }
+      },
+      "erfolg": [
+        "Du bittest um den Bericht vom Frühlingskonzert: Echo holt das richtige Dossier. Bei der Playlist bleibt es liegen.",
+        "Was und Wann stimmen. Konzertberichte gelingen im Vereinsstil."
+      ],
+      "loesung": [
+        "tut",
+        "wann"
+      ]
+    },
+    "l-a": {
+      "wunsch": "Pack das Protokoll-Dossier so, dass Echos Einsatzkoffer nicht überläuft.",
+      "grundprompt": "Dossier «protokoll-verein» packen.",
+      "nachrichtVon": "Dein Dossier (Skill): der Inhalt",
+      "artNamen": {
+        "prompt": "Hauptanleitung (SKILL.md)",
+        "kontext": "Beilagen und Zusätze"
+      },
+      "fenster": 600,
+      "teile": [
+        {
+          "id": "kern",
+          "art": "prompt",
+          "text": "Ablauf: 1. Datum und Anwesende. 2. Beschlüsse pro Traktandum. 3. Pendenzen mit Name. 4. Nächste Sitzung."
+        },
+        {
+          "id": "beilage",
+          "art": "kontext",
+          "text": "Beilage beispiele.md: drei frühere Protokolle, nur lesen, wenn nötig.",
+          "tokens": 30
+        },
+        {
+          "id": "allesKern",
+          "art": "kontext",
+          "text": "In der Hauptanleitung: alle 85 Protokolle seit 2001.",
+          "tokens": 2500
+        },
+        {
+          "id": "fremd",
+          "art": "kontext",
+          "text": "Ausserdem: So planst du das Vereinsfest. So schreibst du Spendenbriefe."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "tokensUeber": 600
+          },
+          "fehlbild": "kofferVoll"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "fremd"
+            ]
+          },
+          "fehlbild": "allesDossier"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "kern"
+            ]
+          },
+          "fehlbild": "keinKern"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "beilage"
+            ]
+          },
+          "fehlbild": "keineBeispiele"
+        }
+      ],
+      "fehlbilder": {
+        "kofferVoll": {
+          "texte": [
+            "Ausgeführt! Der Koffer war so voll, dass ich die wichtigste Regel übersehen habe: Die Pendenzen fehlen im Protokoll.",
+            "Ausgeführt! 85 alte Protokolle im Koffer. Ich habe das von 2004 abgeschrieben, samt alten Namen."
+          ],
+          "hinweis": "Alles in die Hauptanleitung füllt den Koffer. Lange Teile gehören in Beilagen, die Echo nur bei Bedarf liest."
+        },
+        "allesDossier": {
+          "texte": [
+            "Ausgeführt! Das Protokoll endet mit einer Einkaufsliste fürs Vereinsfest. Das stand ja auch im Dossier.",
+            "Ausgeführt! Nach Traktandum 3 folgt ein Spendenaufruf. Ein Dossier, viele Aufgaben, alles durcheinander."
+          ],
+          "hinweis": "Ein Dossier, ein Ablauf. Fest und Spenden gehören in eigene Dossiers."
+        },
+        "keinKern": {
+          "texte": [
+            "Ausgeführt! Ich hatte nur Beispiele, keinen Ablauf. Das Protokoll sieht jedes Mal anders aus.",
+            "Ausgeführt! Ohne Hauptanleitung habe ich das Protokoll frei gestaltet. Mit Reimen."
+          ],
+          "hinweis": "Die Hauptanleitung beschreibt den Ablauf. Die Beilagen ergänzen ihn."
+        },
+        "keineBeispiele": {
+          "texte": [
+            "Ausgeführt! Ohne frühere Protokolle als Vorlage treffe ich den Vereinston nicht. Das Protokoll klingt wie von einer Bank.",
+            "Ausgeführt! Ich kenne den Ablauf, aber kein einziges Beispiel. Die Pendenzen stehen anders als sonst."
+          ],
+          "hinweis": "Beispiele gehören dazu, aber als Beilage. Echo liest sie nur, wenn sie gebraucht werden."
+        }
+      },
+      "erfolg": [
+        "Ausgeführt! Kurze Hauptanleitung, Beispiele als Beilage. Viel Platz im Koffer, und das Protokoll hat alle vier Teile.",
+        "Ausgeführt! Das Dossier ist schlank. Die alten Protokolle liest Echo nur, wenn ein Beispiel nötig ist."
+      ],
+      "loesung": [
+        "kern",
+        "beilage"
+      ]
+    },
+    "l-b": {
+      "wunsch": "Pack das Dossier für Einladungen schlank. Die Adressliste hat 300 Einträge.",
+      "grundprompt": "Dossier «einladung-probe» packen.",
+      "nachrichtVon": "Dein Dossier (Skill): der Inhalt",
+      "artNamen": {
+        "prompt": "Hauptanleitung (SKILL.md)",
+        "kontext": "Beilagen und Zusätze"
+      },
+      "fenster": 600,
+      "teile": [
+        {
+          "id": "kern",
+          "art": "prompt",
+          "text": "Ablauf: Anlass, Datum, Zeit, Ort, was mitbringen. Ton: per Du, kurz."
+        },
+        {
+          "id": "beilage",
+          "art": "kontext",
+          "text": "Beilage adressen.md: alle Mitglieder, nur lesen, wenn eine Adresse gebraucht wird.",
+          "tokens": 30
+        },
+        {
+          "id": "allesKern",
+          "art": "kontext",
+          "text": "In der Hauptanleitung: alle 300 Adressen.",
+          "tokens": 1800
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "tokensUeber": 600
+          },
+          "fehlbild": "kofferVoll"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "beilage"
+            ]
+          },
+          "fehlbild": "keineAdressen"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "kern"
+            ]
+          },
+          "fehlbild": "keinKern"
+        }
+      ],
+      "fehlbilder": {
+        "kofferVoll": {
+          "texte": [
+            "Ausgeführt! 300 Adressen im Koffer. Dafür habe ich vergessen, den Ort der Probe zu nennen.",
+            "Ausgeführt! Der Koffer ist voll mit Adressen. Die Einladung ist an Herrn Aebi adressiert, gemeint waren alle."
+          ],
+          "hinweis": "Lange Listen gehören in eine Beilage. Echo liest sie nur, wenn sie gebraucht wird."
+        },
+        "keineAdressen": {
+          "texte": [
+            "Ausgeführt! Die Einladung ist schön. An wen sie geht, weiss ich nicht. Die Adressen fehlen.",
+            "Ausgeführt! «Liebe [Name]». Ohne Adressliste bleibt die Lücke."
+          ],
+          "hinweis": "Die Adressliste gehört dazu, aber als Beilage, nicht in die Hauptanleitung."
+        },
+        "keinKern": {
+          "texte": [
+            "Ausgeführt! Ich hatte nur die Adressen, keinen Ablauf. Die Einladung nennt weder Zeit noch Ort.",
+            "Ausgeführt! 300 Adressen, aber was in die Einladung gehört, stand nirgends."
+          ],
+          "hinweis": "Die Hauptanleitung beschreibt den Ablauf. Die Beilagen ergänzen ihn."
+        }
+      },
+      "erfolg": [
+        "Ausgeführt! Schlanke Anleitung, Adressen als Beilage. Die Einladung nennt Ort und Zeit, und die Adressen stimmen.",
+        "Ausgeführt! Koffer fast leer, Einladung vollständig. Die Adressliste holt Echo erst beim Versand."
+      ],
+      "loesung": [
+        "kern",
+        "beilage"
+      ]
+    },
+    "l-c": {
+      "wunsch": "Pack ein Dossier für Konzertberichte. Bisher stand alles in einem einzigen Riesen-Dossier.",
+      "grundprompt": "Dossier «konzertbericht» packen.",
+      "nachrichtVon": "Dein Dossier (Skill): der Inhalt",
+      "artNamen": {
+        "prompt": "Hauptanleitung (SKILL.md)",
+        "kontext": "Beilagen und Zusätze"
+      },
+      "fenster": 600,
+      "teile": [
+        {
+          "id": "kern",
+          "art": "prompt",
+          "text": "Ablauf: Titel, wer spielte, Höhepunkt, Dank. Höchstens 200 Wörter."
+        },
+        {
+          "id": "beilage",
+          "art": "kontext",
+          "text": "Beilage zeitung.md: Vorgaben der Dorfzeitung, nur lesen, wenn nötig.",
+          "tokens": 30
+        },
+        {
+          "id": "fremd",
+          "art": "kontext",
+          "text": "Ausserdem: Protokolle, Einladungen, Spendenbriefe und die Probenplanung."
+        },
+        {
+          "id": "allesKern",
+          "art": "kontext",
+          "text": "In der Hauptanleitung: alle Berichte seit 1990.",
+          "tokens": 2200
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "tokensUeber": 600
+          },
+          "fehlbild": "kofferVoll"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "fremd"
+            ]
+          },
+          "fehlbild": "allesDossier"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "kern"
+            ]
+          },
+          "fehlbild": "keinKern"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "beilage"
+            ]
+          },
+          "fehlbild": "keineVorgaben"
+        }
+      ],
+      "fehlbilder": {
+        "kofferVoll": {
+          "texte": [
+            "Ausgeführt! 35 Jahre Berichte im Koffer. Der neue Bericht erwähnt den Dirigenten von 1990.",
+            "Ausgeführt! Im vollen Koffer habe ich die 200-Wörter-Grenze übersehen. Der Bericht hat 900 Wörter."
+          ],
+          "hinweis": "Alte Berichte gehören höchstens als kurze Beilage dazu."
+        },
+        "allesDossier": {
+          "texte": [
+            "Ausgeführt! Der Konzertbericht hat eine Traktandenliste und einen Einzahlungsschein.",
+            "Ausgeführt! Mitten im Bericht steht: «Nächste Probe am Donnerstag.»"
+          ],
+          "hinweis": "Ein Dossier für einen Ablauf. Teile das Riesen-Dossier auf."
+        },
+        "keinKern": {
+          "texte": [
+            "Ausgeführt! Ohne Ablauf habe ich einen Bericht in Gedichtform geschrieben.",
+            "Ausgeführt! Der Bericht beginnt mit dem Dank und hört mit dem Titel auf."
+          ],
+          "hinweis": "Die Hauptanleitung beschreibt den Ablauf."
+        },
+        "keineVorgaben": {
+          "texte": [
+            "Ausgeführt! Die Vorgaben der Dorfzeitung fehlten. Der Bericht kommt ohne Bildlegende und mit falschem Titel.",
+            "Ausgeführt! Die Zeitung schickt den Bericht zurück: Ihre Vorgaben kannte ich nicht."
+          ],
+          "hinweis": "Die Vorgaben der Zeitung gehören dazu, als kurze Beilage."
+        }
+      },
+      "erfolg": [
+        "Ausgeführt! Ein schlankes Dossier nur für Berichte. 180 Wörter, mit Höhepunkt und Dank.",
+        "Ausgeführt! Ein Ablauf, eine Beilage, viel Platz im Koffer. Der Bericht passt auf die Zeitungsseite."
+      ],
+      "loesung": [
+        "kern",
+        "beilage"
+      ]
+    },
+    "l-d": {
+      "typ": "wahl",
+      "wunsch": "Wohin gehört die lange Liste aller Vereinsstücke?",
+      "frage": "Das Dossier «programmheft» braucht manchmal die Liste aller 400 Stücke des Vereins. Wohin damit?",
+      "optionen": [
+        {
+          "id": "kern",
+          "text": "In die Hauptanleitung, damit Echo sie sicher sieht.",
+          "hinweis": "Dann ist sie bei jedem Einsatz im Koffer, auch wenn niemand sie braucht."
+        },
+        {
+          "id": "beilage",
+          "text": "In eine Beilage, auf die die Hauptanleitung verweist.",
+          "hinweis": "Genau. Echo liest sie nur, wenn sie gebraucht wird.",
+          "richtig": true
+        },
+        {
+          "id": "deckblatt",
+          "text": "Aufs Deckblatt, dann ist sie immer dabei.",
+          "hinweis": "Das Deckblatt ist kurz und sagt nur, was und wann."
+        }
+      ],
+      "echo": "Die Stückliste liegt als Beilage im Dossier. Echo öffnet sie nur, wenn ein Stück nachgeschlagen werden muss.",
+      "loesung": [
+        "beilage"
+      ]
+    },
+    "l-e": {
+      "typ": "wahl",
+      "wunsch": "Ein Dossier oder mehrere für Protokoll, Einladung und Spendenbrief?",
+      "frage": "Herr Imhof will Protokolle, Einladungen und Spendenbriefe. Wie packt er das am besten?",
+      "optionen": [
+        {
+          "id": "eins",
+          "text": "Ein grosses Dossier für alles, dann ist es übersichtlich.",
+          "hinweis": "Ein Alles-Dossier mischt die Abläufe und springt überall an."
+        },
+        {
+          "id": "drei",
+          "text": "Drei Dossiers, jedes mit einem Ablauf und eigenem Deckblatt.",
+          "hinweis": "Genau. Ein Dossier, ein Ablauf.",
+          "richtig": true
+        },
+        {
+          "id": "keins",
+          "text": "Kein Dossier, er schreibt jedes Mal alles in den Funkspruch.",
+          "hinweis": "Das geht, aber er wiederholt sich jede Woche."
+        }
+      ],
+      "echo": "Drei schlanke Dossiers. Beim Protokoll holt Echo nur das Protokoll-Dossier.",
+      "loesung": [
+        "drei"
+      ]
+    },
+    "l-f": {
+      "wunsch": "Pack ein Dossier für Spendenbriefe. Dazu gehören zwei Vorlagen und die Liste der Gönner.",
+      "grundprompt": "Dossier «spendenbrief» packen.",
+      "nachrichtVon": "Dein Dossier (Skill): der Inhalt",
+      "artNamen": {
+        "prompt": "Hauptanleitung (SKILL.md)",
+        "kontext": "Beilagen und Zusätze"
+      },
+      "fenster": 600,
+      "teile": [
+        {
+          "id": "kern",
+          "art": "prompt",
+          "text": "Ablauf: persönliche Anrede, Anlass, Bitte mit Betrag, Dank. Vorlagen in vorlagen.md."
+        },
+        {
+          "id": "beilage",
+          "art": "kontext",
+          "text": "Beilage vorlagen.md und goenner.md, nur lesen, wenn nötig.",
+          "tokens": 40
+        },
+        {
+          "id": "allesKern",
+          "art": "kontext",
+          "text": "In der Hauptanleitung: beide Vorlagen und alle 120 Gönner.",
+          "tokens": 1400
+        },
+        {
+          "id": "fremd",
+          "art": "kontext",
+          "text": "Ausserdem: So schreibst du Protokolle."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "tokensUeber": 600
+          },
+          "fehlbild": "kofferVoll"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "fremd"
+            ]
+          },
+          "fehlbild": "allesDossier"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "beilage"
+            ]
+          },
+          "fehlbild": "keineBeilage"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "kern"
+            ]
+          },
+          "fehlbild": "keinKern"
+        }
+      ],
+      "fehlbilder": {
+        "kofferVoll": {
+          "texte": [
+            "Ausgeführt! Im vollen Koffer habe ich den Betrag übersehen. Der Brief bittet um «einen Beitrag».",
+            "Ausgeführt! 120 Gönner im Koffer, und der Brief beginnt mit «Liebe Gönnerinnen und Gönner 1 bis 120»."
+          ],
+          "hinweis": "Vorlagen und Listen gehören in Beilagen."
+        },
+        "allesDossier": {
+          "texte": [
+            "Ausgeführt! Der Spendenbrief hat eine Präsenzliste.",
+            "Ausgeführt! «Traktandum 2: Bitte um Spende.» Das Protokoll-Wissen hat abgefärbt."
+          ],
+          "hinweis": "Ein Dossier, ein Ablauf. Protokolle haben ihr eigenes Dossier."
+        },
+        "keineBeilage": {
+          "texte": [
+            "Ausgeführt! Laut Anleitung gibt es Vorlagen in vorlagen.md. Die Datei fehlt aber im Dossier.",
+            "Ausgeführt! Ich habe eine eigene Vorlage erfunden, weil die erwähnte nicht da war."
+          ],
+          "hinweis": "Prüfe, ob alle Dateien, auf die die Anleitung verweist, wirklich im Dossier liegen."
+        },
+        "keinKern": {
+          "texte": [
+            "Ausgeführt! Ich hatte Vorlagen und Gönner, aber keinen Ablauf. Der Brief vergisst die Bitte.",
+            "Ausgeführt! Ohne Hauptanleitung habe ich einfach die erste Vorlage kopiert, samt altem Datum."
+          ],
+          "hinweis": "Die Hauptanleitung beschreibt den Ablauf. Die Beilagen ergänzen ihn."
+        }
+      },
+      "erfolg": [
+        "Ausgeführt! Kurze Anleitung, Vorlagen und Gönner als Beilagen. Der Brief nennt Anlass und Betrag.",
+        "Ausgeführt! Schlankes Dossier mit allen Dateien, auf die es verweist."
+      ],
+      "loesung": [
+        "kern",
+        "beilage"
+      ]
+    },
+    "p-a": {
+      "wunsch": "Teste das Protokoll-Dossier, bevor es alle im Verein benutzen.",
+      "grundprompt": "Testplan für das Dossier «protokoll-verein».",
+      "nachrichtVon": "Dein Testplan",
+      "artNamen": {
+        "prompt": "Probe-Anfragen",
+        "absicherung": "Abkürzungen"
+      },
+      "teile": [
+        {
+          "id": "soll1",
+          "art": "prompt",
+          "text": "Probe: «Schreib das Protokoll vom Montag.» Soll anspringen."
+        },
+        {
+          "id": "soll2",
+          "art": "prompt",
+          "text": "Probe: «Fass die Sitzung von gestern zusammen.» Soll anspringen."
+        },
+        {
+          "id": "gegen",
+          "art": "prompt",
+          "text": "Gegenprobe: «Schreib einen Einkaufszettel fürs Fest.» Soll nicht anspringen."
+        },
+        {
+          "id": "ohne",
+          "art": "absicherung",
+          "text": "Kein Test. Sieht doch gut aus."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "ohne"
+            ]
+          },
+          "fehlbild": "ungetestet"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "soll1"
+            ]
+          },
+          "fehlbild": "keineProbe"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "soll2"
+            ]
+          },
+          "fehlbild": "zuWenig"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "gegen"
+            ]
+          },
+          "fehlbild": "keineGegenprobe"
+        }
+      ],
+      "fehlbilder": {
+        "ungetestet": {
+          "texte": [
+            "Ungetestet im Archiv. Eine Woche später: Bei «Sitzungsnotizen» springt es nie an. Niemand hat es gemerkt.",
+            "Ungetestet freigegeben. Jetzt beginnt auch der Einkaufszettel mit «Traktandum 1»."
+          ],
+          "hinweis": "Ohne Test merkst du Fehler erst, wenn andere sie finden."
+        },
+        "keineProbe": {
+          "texte": [
+            "Getestet wurde nur, ob es beim Einkaufszettel still bleibt. Ob es beim Protokoll anspringt, weiss niemand.",
+            "Nur eine Gegenprobe. Die Hauptsache ist ungetestet."
+          ],
+          "hinweis": "Teste zuerst die Bitten, bei denen das Dossier anspringen soll."
+        },
+        "zuWenig": {
+          "texte": [
+            "Die Probe «Protokoll vom Montag» klappt. «Fass die Sitzung zusammen» hast du nicht getestet. Dort springt es nicht an.",
+            "Eine einzige Probe ist kein Test. Andere Wörter für dieselbe Bitte bleiben ungeprüft."
+          ],
+          "hinweis": "Teste mit verschiedenen Wörtern für dieselbe Bitte."
+        },
+        "keineGegenprobe": {
+          "texte": [
+            "Alles springt an, auch der Einkaufszettel fürs Fest. Ohne Gegenprobe hast du es nicht gemerkt.",
+            "Die Proben klappen. Dass das Dossier auch bei Geburtstagskarten anspringt, zeigt erst die Gegenprobe."
+          ],
+          "hinweis": "Eine Gegenprobe zeigt, ob das Deckblatt zu breit ist."
+        }
+      },
+      "erfolg": [
+        "Getestet: Protokoll und Zusammenfassung holen das Dossier, der Einkaufszettel nicht. Bereit für den ganzen Verein.",
+        "Zwei Proben und eine Gegenprobe bestanden. Das Deckblatt passt."
+      ],
+      "loesung": [
+        "soll1",
+        "soll2",
+        "gegen"
+      ]
+    },
+    "p-b": {
+      "wunsch": "Teste das Einladungs-Dossier mit Probe und Gegenprobe.",
+      "grundprompt": "Testplan für das Dossier «einladung-probe».",
+      "nachrichtVon": "Dein Testplan",
+      "artNamen": {
+        "prompt": "Probe-Anfragen",
+        "absicherung": "Abkürzungen"
+      },
+      "teile": [
+        {
+          "id": "soll1",
+          "art": "prompt",
+          "text": "Probe: «Lade zur Probe am Donnerstag ein.» Soll anspringen."
+        },
+        {
+          "id": "soll2",
+          "art": "prompt",
+          "text": "Probe: «Schreib allen wegen dem Ständchen am Samstag.» Soll anspringen."
+        },
+        {
+          "id": "gegen",
+          "art": "prompt",
+          "text": "Gegenprobe: «Wünsch dem Dirigenten gute Besserung.» Soll nicht anspringen."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "fehlt": [
+              "soll1"
+            ]
+          },
+          "fehlbild": "keineProbe"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "soll2"
+            ]
+          },
+          "fehlbild": "zuWenig"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "gegen"
+            ]
+          },
+          "fehlbild": "keineGegenprobe"
+        }
+      ],
+      "fehlbilder": {
+        "zuWenig": {
+          "texte": [
+            "Die Probe klappt. Beim Ständchen springt das Dossier nicht an. Getestet hast du es nicht.",
+            "Nur eine Probe. «Schreib allen wegen …» bleibt ungeprüft und geht schief."
+          ],
+          "hinweis": "Teste auch andere Wörter für dieselbe Bitte."
+        },
+        "keineGegenprobe": {
+          "texte": [
+            "Ohne Gegenprobe: Die Gute-Besserung-Karte wird zur Einladung, «Donnerstag, 19.30 Uhr».",
+            "Alles springt an. Ob das Dossier auch still bleiben kann, weiss niemand."
+          ],
+          "hinweis": "Prüfe mit einer Gegenprobe, ob das Dossier still bleibt, wo es nicht passt."
+        },
+        "keineProbe": {
+          "texte": [
+            "Getestet wurde nur mit Nebenbitten. Ob das Dossier bei der Hauptbitte anspringt, weiss niemand.",
+            "Die wichtigste Probe fehlt. Die Hauptsache ist ungetestet."
+          ],
+          "hinweis": "Teste zuerst die Bitte, für die das Dossier gemacht ist."
+        }
+      },
+      "erfolg": [
+        "Getestet: Probe und Ständchen holen das Dossier, die Gute-Besserung-Karte nicht.",
+        "Zwei Proben, eine Gegenprobe, alles bestanden."
+      ],
+      "loesung": [
+        "soll1",
+        "soll2",
+        "gegen"
+      ]
+    },
+    "p-c": {
+      "typ": "wahl",
+      "wunsch": "Was tun, wenn eine Probe-Anfrage das Dossier nicht holt?",
+      "frage": "Die Probe «Notizen zur Sitzung von gestern» holt das Protokoll-Dossier nicht. Was tust du?",
+      "optionen": [
+        {
+          "id": "deckblatt",
+          "text": "Das Deckblatt schärfen: «Sitzungsnotizen» beim Wann aufnehmen, dann nochmals testen.",
+          "hinweis": "Genau. Deckblatt verbessern und erneut prüfen.",
+          "richtig": true
+        },
+        {
+          "id": "ignorieren",
+          "text": "Nichts. Die anderen Proben haben ja geklappt.",
+          "hinweis": "Dann bleibt der Fehler für alle im Verein."
+        },
+        {
+          "id": "allem",
+          "text": "Aufs Deckblatt «bei allem verwenden» schreiben.",
+          "hinweis": "Das macht es zu breit. Dann springt es überall an."
+        }
+      ],
+      "echo": "Herr Imhof ergänzt «Sitzungsnotizen» auf dem Deckblatt. Die Probe klappt jetzt, die Gegenprobe bleibt still.",
+      "loesung": [
+        "deckblatt"
+      ]
+    },
+    "p-d": {
+      "typ": "reihe",
+      "wunsch": "In welcher Reihenfolge testet man ein neues Dossier?",
+      "frage": "Bring die Schritte zum Testen eines neuen Dossiers in die richtige Reihenfolge.",
+      "schritte": [
+        {
+          "id": "verbessern",
+          "text": "Deckblatt verbessern, wo etwas nicht passt."
+        },
+        {
+          "id": "proben",
+          "text": "Probe-Anfragen und Gegenproben ausprobieren."
+        },
+        {
+          "id": "schreiben",
+          "text": "Dossier mit Deckblatt schreiben."
+        },
+        {
+          "id": "nochmals",
+          "text": "Nochmals testen."
+        },
+        {
+          "id": "ansehen",
+          "text": "Ansehen, wo es angesprungen ist und wo nicht."
+        }
+      ],
+      "loesung": [
+        "schreiben",
+        "proben",
+        "ansehen",
+        "verbessern",
+        "nochmals"
+      ],
+      "echo": "Schreiben, ausprobieren, ansehen, verbessern, nochmals testen. Erst dann bekommt der Verein das Dossier.",
+      "daneben": {
+        "texte": [
+          "Echo verbessert das Deckblatt, bevor überhaupt getestet wurde. Was verbessert werden muss, weiss noch niemand.",
+          "Nach dem Verbessern wird nicht mehr getestet. Ob es jetzt klappt, bleibt offen."
+        ],
+        "hinweis": "Erst testen und ansehen, dann verbessern, dann nochmals testen."
+      }
+    },
+    "p-e": {
+      "wunsch": "Teste das Dossier für Konzertberichte, bevor die Dorfzeitung damit arbeitet.",
+      "grundprompt": "Testplan für das Dossier «konzertbericht».",
+      "nachrichtVon": "Dein Testplan",
+      "artNamen": {
+        "prompt": "Probe-Anfragen",
+        "absicherung": "Abkürzungen"
+      },
+      "teile": [
+        {
+          "id": "soll1",
+          "art": "prompt",
+          "text": "Probe: «Schreib einen Bericht vom Frühlingskonzert.» Soll anspringen."
+        },
+        {
+          "id": "soll2",
+          "art": "prompt",
+          "text": "Probe: «Was schreiben wir über unseren Auftritt am Dorffest?» Soll anspringen."
+        },
+        {
+          "id": "gegen",
+          "art": "prompt",
+          "text": "Gegenprobe: «Mach eine Playlist fürs Fest.» Soll nicht anspringen."
+        },
+        {
+          "id": "einmal",
+          "art": "absicherung",
+          "text": "Eine Probe genügt."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "fehlt": [
+              "soll1"
+            ]
+          },
+          "fehlbild": "keineProbe"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "einmal"
+            ]
+          },
+          "fehlbild": "zuWenig"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "soll2"
+            ]
+          },
+          "fehlbild": "zuWenig"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "gegen"
+            ]
+          },
+          "fehlbild": "keineGegenprobe"
+        }
+      ],
+      "fehlbilder": {
+        "zuWenig": {
+          "texte": [
+            "Eine Probe klappt. Bei «Was schreiben wir über den Auftritt?» springt das Dossier nicht an.",
+            "Nur eine Probe. Die Dorfzeitung findet den Fehler beim ersten Auftritt."
+          ],
+          "hinweis": "Mehrere Proben mit verschiedenen Wörtern zeigen, ob das Deckblatt reicht."
+        },
+        "keineGegenprobe": {
+          "texte": [
+            "Ohne Gegenprobe: Die Playlist fürs Fest wird ein Konzertbericht.",
+            "Alles springt an. Ob das Dossier still bleibt, wo es nicht passt, weiss niemand."
+          ],
+          "hinweis": "Eine Gegenprobe zeigt, ob das Deckblatt zu breit ist."
+        },
+        "keineProbe": {
+          "texte": [
+            "Getestet wurde nur mit Nebenbitten. Ob das Dossier bei der Hauptbitte anspringt, weiss niemand.",
+            "Die wichtigste Probe fehlt. Die Hauptsache ist ungetestet."
+          ],
+          "hinweis": "Teste zuerst die Bitte, für die das Dossier gemacht ist."
+        }
+      },
+      "erfolg": [
+        "Getestet: Beide Berichte holen das Dossier, die Playlist nicht. Bereit für die Dorfzeitung.",
+        "Zwei Proben, eine Gegenprobe, alles bestanden."
+      ],
+      "loesung": [
+        "soll1",
+        "soll2",
+        "gegen"
+      ]
+    },
+    "p-f": {
+      "typ": "wahl",
+      "wunsch": "Wozu dient eine Gegenprobe beim Testen?",
+      "frage": "Wozu testet man ein Dossier mit einer Bitte, bei der es nicht anspringen soll?",
+      "optionen": [
+        {
+          "id": "zeit",
+          "text": "Damit der Test länger dauert und gründlicher wirkt.",
+          "hinweis": "Es geht nicht um die Dauer, sondern um eine bestimmte Art Fehler."
+        },
+        {
+          "id": "breit",
+          "text": "Um zu sehen, ob das Deckblatt zu breit ist.",
+          "hinweis": "Genau. Ein zu breites Deckblatt holt das Dossier auch, wo es nicht passt.",
+          "richtig": true
+        },
+        {
+          "id": "loeschen",
+          "text": "Um das Dossier danach zu löschen.",
+          "hinweis": "Nein, die Gegenprobe verbessert das Dossier."
+        }
+      ],
+      "echo": "Die Gegenprobe «Einkaufszettel» bleibt still. Das Deckblatt ist also nicht zu breit.",
+      "loesung": [
+        "breit"
+      ]
+    },
+    "x-a": {
+      "wunsch": "Richte für den Verein alles ein: Dauerregeln, ein Dossier fürs Protokoll, und heute das Protokoll vom Montag.",
+      "grundprompt": "Schreib das Protokoll der Sitzung vom Montag.",
+      "artNamen": {
+        "zettel": "Fallakte (gilt in jedem Chat dieses Projekts)",
+        "karte": "Dossiers (Skills im Archiv)",
+        "prompt": "Funkspruch (nur für diesen Auftrag)"
+      },
+      "teile": [
+        {
+          "id": "akte",
+          "art": "zettel",
+          "text": "Wir duzen alle. Gruss: «Musikalische Grüsse»."
+        },
+        {
+          "id": "dossier",
+          "art": "karte",
+          "text": "Dossier «protokoll-verein»: Deckblatt mit Was und Wann, getestet"
+        },
+        {
+          "id": "dossierUngetestet",
+          "art": "karte",
+          "text": "Dossier «alles-verein»: Protokolle, Feste, Spenden, ungetestet"
+        },
+        {
+          "id": "notizen",
+          "art": "prompt",
+          "text": "<notizen>Anwesend 18. Beschluss: neue Uniformen. Pendenz: Offerte bis 30.4., Sandra.</notizen>"
+        },
+        {
+          "id": "heuteAkte",
+          "art": "zettel",
+          "text": "Sitzung vom Montag: neue Uniformen beschlossen."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "dossierUngetestet"
+            ]
+          },
+          "fehlbild": "allesDossier"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "heuteAkte"
+            ]
+          },
+          "fehlbild": "einmaligInAkte"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "dossier"
+            ]
+          },
+          "fehlbild": "keinDossier"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "notizen"
+            ]
+          },
+          "fehlbild": "keineNotizen"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "akte"
+            ]
+          },
+          "fehlbild": "regelVergessen"
+        }
+      ],
+      "fehlbilder": {
+        "allesDossier": {
+          "texte": [
+            "Ausgeführt! Das Alles-Dossier hat gesprochen: Das Protokoll endet mit einem Spendenaufruf und einer Festplanung.",
+            "Ausgeführt! Ungetestet und zu breit: Das Protokoll hat eine Zutatenliste für 18 Personen."
+          ],
+          "hinweis": "Ein Dossier, ein Ablauf, und vorher testen."
+        },
+        "einmaligInAkte": {
+          "texte": [
+            "Ausgeführt! Ab jetzt beginnt jeder Text mit «Neue Uniformen beschlossen». Auch die Einladung zum Grillfest.",
+            "Ausgeführt! Der Beschluss liegt in der Fallakte. Ich erwähne ihn jetzt überall."
+          ],
+          "hinweis": "Einmaliges gehört in den Funkspruch, nicht in die Fallakte."
+        },
+        "keinDossier": {
+          "texte": [
+            "Ausgeführt! Ein Protokoll ohne Pendenzen und ohne nächste Sitzung. Den Ablauf kannte ich nicht.",
+            "Ausgeführt! Ohne Dossier sieht das Protokoll anders aus als alle früheren."
+          ],
+          "hinweis": "Der Ablauf liegt im Dossier."
+        },
+        "keineNotizen": {
+          "texte": [
+            "Ausgeführt! Ein schönes Protokoll. Was beschlossen wurde, wusste ich nicht. Ich habe «[Beschluss]» geschrieben.",
+            "Ausgeführt! Ablauf perfekt, Inhalt leer. Die Notizen fehlten."
+          ],
+          "hinweis": "Das Material von heute gehört in den Funkspruch."
+        },
+        "regelVergessen": {
+          "texte": [
+            "Ausgeführt! Das Protokoll siezt alle. Die Dauerregel war nicht da.",
+            "Ausgeführt! Gruss: «Hochachtungsvoll». Im Verein lachen sie."
+          ],
+          "hinweis": "Dauerregeln gehören in die Fallakte."
+        }
+      },
+      "erfolg": [
+        "Ausgeführt! Protokoll per Du, mit Beschluss «neue Uniformen» und der Pendenz für Sandra bis 30.4. Gruss: «Musikalische Grüsse».",
+        "Ausgeführt! Fallakte, Dossier und Funkspruch arbeiten zusammen. Jedes Teil am richtigen Ort."
+      ],
+      "loesung": [
+        "akte",
+        "dossier",
+        "notizen"
+      ]
+    },
+    "x-b": {
+      "wunsch": "Herr Imhof will ein neues Dossier für die Probenplanung. Pack es schlank und teste es.",
+      "grundprompt": "Dossier «probenplan» bereitmachen.",
+      "nachrichtVon": "Dein Dossier mit Testplan",
+      "artNamen": {
+        "prompt": "Deckblatt und Hauptanleitung",
+        "kontext": "Beilagen und Zusätze",
+        "absicherung": "Test"
+      },
+      "fenster": 600,
+      "teile": [
+        {
+          "id": "deckblatt",
+          "art": "prompt",
+          "text": "description: Erstellt den Probenplan. Verwenden, wenn Proben geplant oder verschoben werden."
+        },
+        {
+          "id": "kern",
+          "art": "prompt",
+          "text": "Ablauf: Termine prüfen, Saal prüfen, Plan schreiben, Mitglieder informieren."
+        },
+        {
+          "id": "beilage",
+          "art": "kontext",
+          "text": "Beilage saalplan.md, nur lesen, wenn nötig.",
+          "tokens": 30
+        },
+        {
+          "id": "allesKern",
+          "art": "kontext",
+          "text": "In der Hauptanleitung: alle Proben der letzten zehn Jahre.",
+          "tokens": 2000
+        },
+        {
+          "id": "test",
+          "art": "absicherung",
+          "text": "Testen mit zwei Proben und einer Gegenprobe."
+        },
+        {
+          "id": "vage",
+          "art": "prompt",
+          "text": "description: Für Termine."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "tokensUeber": 600
+          },
+          "fehlbild": "kofferVoll"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "vage"
+            ]
+          },
+          "fehlbild": "vage"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "deckblatt"
+            ]
+          },
+          "fehlbild": "keinDeckblatt"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "kern"
+            ]
+          },
+          "fehlbild": "keinKern"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "beilage"
+            ]
+          },
+          "fehlbild": "keinSaalplan"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "test"
+            ]
+          },
+          "fehlbild": "ungetestet"
+        }
+      ],
+      "fehlbilder": {
+        "kofferVoll": {
+          "texte": [
+            "Zehn Jahre Proben im Koffer. Der neue Plan legt eine Probe auf den 24. Dezember, wie 2017.",
+            "Im vollen Koffer habe ich den Saalplan übersehen. Zwei Proben finden gleichzeitig statt."
+          ],
+          "hinweis": "Alte Pläne gehören nicht in die Hauptanleitung."
+        },
+        "vage": {
+          "texte": [
+            "«Für Termine»: Das Dossier springt jetzt auch beim Zahnarzttermin an.",
+            "Ich plane Proben, wenn jemand einen Coiffeurtermin erwähnt."
+          ],
+          "hinweis": "Ein ungenaues Deckblatt lässt Echo raten."
+        },
+        "keinDeckblatt": {
+          "texte": [
+            "Ein Dossier ohne Deckblatt. Ich weiss nicht, wann ich es holen soll. Es bleibt liegen.",
+            "Ohne Name und Beschreibung lässt sich das Dossier nicht einmal ablegen."
+          ],
+          "hinweis": "Jedes Dossier braucht ein Deckblatt mit Was und Wann."
+        },
+        "ungetestet": {
+          "texte": [
+            "Ungetestet freigegeben. Bei «Probe verschieben» springt es nicht an. Herr Imhof merkt es am Donnerstag.",
+            "Ohne Test weiss niemand, ob das Dossier im richtigen Moment kommt."
+          ],
+          "hinweis": "Vor dem Freigeben testen: Proben und Gegenprobe."
+        },
+        "keinKern": {
+          "texte": [
+            "Ein Deckblatt ohne Anleitung. Ich hole das Dossier, finde darin aber keinen Ablauf.",
+            "Das Dossier ist leer bis aufs Deckblatt. Der Probenplan sieht jedes Mal anders aus."
+          ],
+          "hinweis": "Unter das Deckblatt gehört die Hauptanleitung mit dem Ablauf."
+        },
+        "keinSaalplan": {
+          "texte": [
+            "Der Ablauf sagt «Saal prüfen», aber der Saalplan fehlt. Zwei Proben finden gleichzeitig statt.",
+            "Ohne Saalplan habe ich angenommen, der Saal sei immer frei. Er ist es am Mittwoch nicht."
+          ],
+          "hinweis": "Der Saalplan gehört als Beilage ins Dossier."
+        }
+      },
+      "erfolg": [
+        "Dossier «probenplan»: klares Deckblatt, schlanke Anleitung, Saalplan als Beilage, getestet. Bereit.",
+        "Schlank gepackt und geprüft. Bei «Probe verschieben» holt Echo das Dossier, beim Zahnarzt nicht."
+      ],
+      "loesung": [
+        "deckblatt",
+        "kern",
+        "beilage",
+        "test"
+      ]
+    },
+    "se-a": {
+      "typ": "klick",
+      "wunsch": "Das Dossier für die Protokolle liegt als ZIP auf meinem Computer. Wie kommt es in meine Claude-App?",
+      "frage": "Lade den Skill «protokoll-verein» in der Claude-App hoch. Tippe dich durch.",
+      "schritte": [
+        {
+          "schirm": "app",
+          "ziel": "anpassungen",
+          "text": "Tippe links auf «{ziel}».",
+          "falsch": {
+            "plus": "anhang",
+            "projekte": "projekt"
+          },
+          "sonst": "daneben1"
+        },
+        {
+          "schirm": "skills-entdecken",
+          "ziel": "hinzufuegen",
+          "text": "Tippe oben rechts auf «{ziel}».",
+          "falsch": {
+            "ausprobieren1": "verzeichnis",
+            "plusKarte1": "verzeichnis",
+            "ausprobieren2": "verzeichnis",
+            "plusKarte2": "verzeichnis",
+            "reiterKonnektoren": "konnektorReiter"
+          },
+          "sonst": "daneben2"
+        },
+        {
+          "schirm": "skills-menue",
+          "ziel": "hochladen",
+          "text": "Wähle im Menü «{ziel}».",
+          "falsch": {
+            "mitClaude": "mitClaude",
+            "selbst": "selbst",
+            "aufnehmen": "aufnehmen"
+          },
+          "sonst": "daneben2"
+        },
+        {
+          "schirm": "datei-oeffnen",
+          "ziel": "zipProtokoll",
+          "text": "Wähle die Datei «{ziel}».",
+          "falsch": {
+            "ordnerProtokoll": "keinZip",
+            "docxProtokoll": "wordDatei",
+            "abbrechen": "abbrechen",
+            "zipKasse": "kasseStattProtokoll"
+          },
+          "sonst": "abbrechen"
+        }
+      ],
+      "nachher": "skills-meine-protokoll",
+      "erfolg": [
+        "Hochgeladen. «protokoll-verein» steht jetzt bei «Von dir erstellt». Probier es gleich mit einer Protokoll-Bitte aus.",
+        "Geschafft. Das Dossier ist in der App und gilt in allen Chats."
+      ],
+      "fehlbilder": {
+        "anhang": {
+          "texte": [
+            "Echo hängt die ZIP-Datei an diese eine Nachricht. Im nächsten Chat ist sie weg.",
+            "Die Datei liegt jetzt nur in diesem Chat. Morgen fragt Echo wieder nach dem Protokoll-Muster."
+          ],
+          "hinweis": "Das Plus im Chat gilt nur für diese Nachricht. Skills gehören links unter «Anpassungen»."
+        },
+        "projekt": {
+          "texte": [
+            "Echo öffnet die Projekte. Dort liegen Unterlagen und Anweisungen, aber keine Skills.",
+            "Im Projekt wäre die Datei nur ein Dokument unter vielen, kein Skill."
+          ],
+          "hinweis": "Projekte haben Unterlagen und Anweisungen. Skills lädst du unter «Anpassungen» hoch."
+        },
+        "daneben1": {
+          "texte": [
+            "Echo landet woanders. Von Skills ist hier nichts zu sehen.",
+            "Falsche Tür. Hier gibt es keinen Platz für Skills."
+          ],
+          "hinweis": "Skills findest du links unter «Anpassungen»."
+        },
+        "verzeichnis": {
+          "texte": [
+            "Echo holt einen fremden Skill aus dem Verzeichnis. Der eigene liegt immer noch auf dem Computer.",
+            "Jetzt ist ein fertiger Skill von jemand anderem da. Der eigene fehlt weiter."
+          ],
+          "hinweis": "«Ausprobieren» und «+» auf einer Karte holen fertige Skills. Eigene kommen über «+ Hinzufügen»."
+        },
+        "konnektorReiter": {
+          "texte": [
+            "Echo öffnet die Konnektoren. Dort verbindet man Dienste wie Kalender oder Mail, keine Skills.",
+            "Konnektoren sind Funkleitungen zu anderen Diensten. Ein Dossier gehört nicht dorthin."
+          ],
+          "hinweis": "Konnektoren verbinden Dienste. Ein Skill bleibt im Reiter «Skills»."
+        },
+        "daneben2": {
+          "texte": [
+            "Echo sucht und filtert, aber hochladen geht so nicht.",
+            "Hier passiert nichts mit der ZIP-Datei."
+          ],
+          "hinweis": "Neue Skills kommen über oben rechts «+ Hinzufügen»."
+        },
+        "mitClaude": {
+          "texte": [
+            "Echo beginnt ein Gespräch, um einen neuen Skill zu bauen. Der fertige liegt unbenutzt im Download-Ordner.",
+            "Doppelte Arbeit: Claude baut neu, was es schon gibt."
+          ],
+          "hinweis": "«Mit Claude erstellen» baut einen neuen Skill. Für eine fertige ZIP-Datei: «Skill hochladen»."
+        },
+        "selbst": {
+          "texte": [
+            "Echo öffnet ein leeres Blatt für einen neuen Skill. Der fertige bleibt liegen.",
+            "Jetzt schreibst du alles nochmals von Hand ab."
+          ],
+          "hinweis": "«Einen Skill erstellen» heisst: neu schreiben. Für eine fertige ZIP-Datei: «Skill hochladen»."
+        },
+        "aufnehmen": {
+          "texte": [
+            "Echo nimmt den Bildschirm auf. Die ZIP-Datei bleibt, wo sie ist.",
+            "Eine Aufnahme statt eines Uploads. Der Skill ist immer noch nicht da."
+          ],
+          "hinweis": "«Bildschirm aufnehmen» lädt nichts hoch. Für eine fertige ZIP-Datei: «Skill hochladen»."
+        },
+        "keinZip": {
+          "texte": [
+            "Echo will den Ordner nehmen. Erwartet wird aber die ZIP-Datei, in der der Ordner steckt.",
+            "Der Ordner passt hier nicht. Zuerst als ZIP packen."
+          ],
+          "hinweis": "Hochgeladen wird die ZIP-Datei, die den Skill-Ordner enthält."
+        },
+        "wordDatei": {
+          "texte": [
+            "Echo nimmt das Word-Protokoll. Das ist ein Text, kein Skill. Die Datei SKILL.md fehlt.",
+            "Ein altes Protokoll ist kein Skill. Hochladen klappt nur mit der ZIP-Datei."
+          ],
+          "hinweis": "Ein Skill ist ein Ordner mit SKILL.md, gepackt als ZIP."
+        },
+        "abbrechen": {
+          "texte": [
+            "Abgebrochen. Nichts ist hochgeladen.",
+            "Das Fenster ist zu. Der Skill fehlt weiter."
+          ],
+          "hinweis": "Wähle die richtige ZIP-Datei, statt abzubrechen."
+        },
+        "kasseStattProtokoll": {
+          "texte": [
+            "Echo lädt den Kassen-Skill hoch. Herr Imhof wollte aber das Protokoll.",
+            "Falsche Datei: Jetzt kann Echo Jahresrechnungen, aber keine Protokolle."
+          ],
+          "hinweis": "Schau genau auf den Dateinamen: protokoll-verein.zip."
+        }
+      }
+    },
+    "se-b": {
+      "typ": "klick",
+      "wunsch": "Ich bin die Kassierin. Der Verein hat mir den Skill für die Kasse als ZIP geschickt. Bitte bring ihn in meine App.",
+      "frage": "Frau Imhof will den Skill «vereinskasse» hochladen. Die ersten Schritte sind gemacht.",
+      "schritte": [
+        {
+          "schirm": "app",
+          "ziel": "anpassungen",
+          "text": "Tippe links auf «{ziel}».",
+          "falsch": {
+            "plus": "anhang",
+            "projekte": "projekt"
+          },
+          "sonst": "daneben1"
+        },
+        {
+          "schirm": "skills-entdecken",
+          "ziel": "hinzufuegen",
+          "text": "Tippe oben rechts auf «{ziel}».",
+          "falsch": {
+            "ausprobieren1": "verzeichnis",
+            "plusKarte1": "verzeichnis",
+            "ausprobieren2": "verzeichnis",
+            "plusKarte2": "verzeichnis",
+            "reiterKonnektoren": "konnektorReiter"
+          },
+          "sonst": "daneben2"
+        },
+        {
+          "schirm": "skills-menue",
+          "ziel": "hochladen",
+          "text": "Wähle im Menü «{ziel}».",
+          "falsch": {
+            "mitClaude": "mitClaude",
+            "selbst": "selbst",
+            "aufnehmen": "aufnehmen"
+          },
+          "sonst": "daneben2"
+        },
+        {
+          "schirm": "datei-oeffnen",
+          "ziel": "zipKasse",
+          "text": "Wähle die Datei «{ziel}».",
+          "falsch": {
+            "ordnerProtokoll": "keinZip",
+            "docxProtokoll": "wordDatei",
+            "abbrechen": "abbrechen",
+            "zipProtokoll": "protokollStattKasse"
+          },
+          "sonst": "abbrechen"
+        }
+      ],
+      "nachher": "skills-meine-kasse",
+      "erfolg": [
+        "Hochgeladen. «vereinskasse» steht bei «Von dir erstellt». Jetzt kann Frau Imhof ihn ausprobieren.",
+        "Geschafft. Der Kassen-Skill ist in der App."
+      ],
+      "fehlbilder": {
+        "anhang": {
+          "texte": [
+            "Echo hängt die ZIP-Datei an diese eine Nachricht. Im nächsten Chat ist sie weg.",
+            "Die Datei liegt jetzt nur in diesem Chat. Morgen fragt Echo wieder nach dem Protokoll-Muster."
+          ],
+          "hinweis": "Das Plus im Chat gilt nur für diese Nachricht. Skills gehören links unter «Anpassungen»."
+        },
+        "projekt": {
+          "texte": [
+            "Echo öffnet die Projekte. Dort liegen Unterlagen und Anweisungen, aber keine Skills.",
+            "Im Projekt wäre die Datei nur ein Dokument unter vielen, kein Skill."
+          ],
+          "hinweis": "Projekte haben Unterlagen und Anweisungen. Skills lädst du unter «Anpassungen» hoch."
+        },
+        "daneben1": {
+          "texte": [
+            "Echo landet woanders. Von Skills ist hier nichts zu sehen.",
+            "Falsche Tür. Hier gibt es keinen Platz für Skills."
+          ],
+          "hinweis": "Skills findest du links unter «Anpassungen»."
+        },
+        "verzeichnis": {
+          "texte": [
+            "Echo holt einen fremden Skill aus dem Verzeichnis. Der eigene liegt immer noch auf dem Computer.",
+            "Jetzt ist ein fertiger Skill von jemand anderem da. Der eigene fehlt weiter."
+          ],
+          "hinweis": "«Ausprobieren» und «+» auf einer Karte holen fertige Skills. Eigene kommen über «+ Hinzufügen»."
+        },
+        "konnektorReiter": {
+          "texte": [
+            "Echo öffnet die Konnektoren. Dort verbindet man Dienste wie Kalender oder Mail, keine Skills.",
+            "Konnektoren sind Funkleitungen zu anderen Diensten. Ein Dossier gehört nicht dorthin."
+          ],
+          "hinweis": "Konnektoren verbinden Dienste. Ein Skill bleibt im Reiter «Skills»."
+        },
+        "daneben2": {
+          "texte": [
+            "Echo sucht und filtert, aber hochladen geht so nicht.",
+            "Hier passiert nichts mit der ZIP-Datei."
+          ],
+          "hinweis": "Neue Skills kommen über oben rechts «+ Hinzufügen»."
+        },
+        "mitClaude": {
+          "texte": [
+            "Echo beginnt ein Gespräch, um einen neuen Skill zu bauen. Der fertige liegt unbenutzt im Download-Ordner.",
+            "Doppelte Arbeit: Claude baut neu, was es schon gibt."
+          ],
+          "hinweis": "«Mit Claude erstellen» baut einen neuen Skill. Für eine fertige ZIP-Datei: «Skill hochladen»."
+        },
+        "selbst": {
+          "texte": [
+            "Echo öffnet ein leeres Blatt für einen neuen Skill. Der fertige bleibt liegen.",
+            "Jetzt schreibst du alles nochmals von Hand ab."
+          ],
+          "hinweis": "«Einen Skill erstellen» heisst: neu schreiben. Für eine fertige ZIP-Datei: «Skill hochladen»."
+        },
+        "aufnehmen": {
+          "texte": [
+            "Echo nimmt den Bildschirm auf. Die ZIP-Datei bleibt, wo sie ist.",
+            "Eine Aufnahme statt eines Uploads. Der Skill ist immer noch nicht da."
+          ],
+          "hinweis": "«Bildschirm aufnehmen» lädt nichts hoch. Für eine fertige ZIP-Datei: «Skill hochladen»."
+        },
+        "keinZip": {
+          "texte": [
+            "Echo will den Ordner nehmen. Erwartet wird aber die ZIP-Datei, in der der Ordner steckt.",
+            "Der Ordner passt hier nicht. Zuerst als ZIP packen."
+          ],
+          "hinweis": "Hochgeladen wird die ZIP-Datei, die den Skill-Ordner enthält."
+        },
+        "wordDatei": {
+          "texte": [
+            "Echo nimmt das Word-Protokoll. Das ist ein Text, kein Skill. Die Datei SKILL.md fehlt.",
+            "Ein altes Protokoll ist kein Skill. Hochladen klappt nur mit der ZIP-Datei."
+          ],
+          "hinweis": "Ein Skill ist ein Ordner mit SKILL.md, gepackt als ZIP."
+        },
+        "abbrechen": {
+          "texte": [
+            "Abgebrochen. Nichts ist hochgeladen.",
+            "Das Fenster ist zu. Der Skill fehlt weiter."
+          ],
+          "hinweis": "Wähle die richtige ZIP-Datei, statt abzubrechen."
+        },
+        "protokollStattKasse": {
+          "texte": [
+            "Echo lädt den Protokoll-Skill hoch. Frau Imhof wollte die Kasse.",
+            "Falsche Datei: Der Kassen-Skill liegt weiter im Download-Ordner."
+          ],
+          "hinweis": "Schau genau auf den Dateinamen: vereinskasse.zip."
+        }
+      }
+    },
+    "se-c": {
+      "typ": "klick",
+      "wunsch": "Ich habe noch gar keinen Skill. Kann Claude mir einen für die Probenpläne bauen?",
+      "frage": "Frau Kessler ist schon bei den Skills. Sie hat keine Datei, Claude soll den Skill mit ihr bauen.",
+      "schritte": [
+        {
+          "schirm": "skills-entdecken",
+          "ziel": "hinzufuegen",
+          "text": "Tippe oben rechts auf «{ziel}».",
+          "falsch": {
+            "ausprobieren1": "verzeichnis",
+            "plusKarte1": "verzeichnis",
+            "ausprobieren2": "verzeichnis",
+            "plusKarte2": "verzeichnis",
+            "reiterKonnektoren": "konnektorReiter"
+          },
+          "sonst": "daneben2"
+        },
+        {
+          "schirm": "skills-menue",
+          "ziel": "mitClaude",
+          "text": "Wähle «{ziel}».",
+          "falsch": {
+            "hochladen": "hochladenOhneDatei",
+            "selbst": "selbstStattClaude",
+            "aufnehmen": "aufnehmen"
+          },
+          "sonst": "daneben2"
+        }
+      ],
+      "erfolg": [
+        "Richtig. Hier baut Claude den Skill im Gespräch mit Frau Kessler.",
+        "Genau. Ohne fertige Datei hilft «Mit Claude erstellen»."
+      ],
+      "fehlbilder": {
+        "verzeichnis": {
+          "texte": [
+            "Echo holt einen fremden Skill aus dem Verzeichnis. Der eigene liegt immer noch auf dem Computer.",
+            "Jetzt ist ein fertiger Skill von jemand anderem da. Der eigene fehlt weiter."
+          ],
+          "hinweis": "«Ausprobieren» und «+» auf einer Karte holen fertige Skills. Eigene kommen über «+ Hinzufügen»."
+        },
+        "konnektorReiter": {
+          "texte": [
+            "Echo öffnet die Konnektoren. Dort verbindet man Dienste wie Kalender oder Mail, keine Skills.",
+            "Konnektoren sind Funkleitungen zu anderen Diensten. Ein Dossier gehört nicht dorthin."
+          ],
+          "hinweis": "Konnektoren verbinden Dienste. Ein Skill bleibt im Reiter «Skills»."
+        },
+        "daneben2": {
+          "texte": [
+            "Echo sucht und filtert, aber hochladen geht so nicht.",
+            "Hier passiert nichts mit der ZIP-Datei."
+          ],
+          "hinweis": "Neue Skills kommen über oben rechts «+ Hinzufügen»."
+        },
+        "hochladenOhneDatei": {
+          "texte": [
+            "Echo öffnet die Dateiauswahl. Aber Frau Kessler hat ja noch gar keine Skill-Datei.",
+            "Hochladen ohne Datei: Das Fenster bleibt leer."
+          ],
+          "hinweis": "«Skill hochladen» braucht eine fertige ZIP-Datei. Ohne Datei: «Mit Claude erstellen»."
+        },
+        "selbstStattClaude": {
+          "texte": [
+            "Echo öffnet ein leeres Blatt. Frau Kessler müsste alles selbst schreiben.",
+            "Jetzt schreibt Frau Kessler von Hand, obwohl Claude helfen könnte."
+          ],
+          "hinweis": "Soll Claude den Skill mit dir bauen: «Mit Claude erstellen»."
+        },
+        "aufnehmen": {
+          "texte": [
+            "Echo nimmt den Bildschirm auf. Die ZIP-Datei bleibt, wo sie ist.",
+            "Eine Aufnahme statt eines Uploads. Der Skill ist immer noch nicht da."
+          ],
+          "hinweis": "«Bildschirm aufnehmen» lädt nichts hoch. Für eine fertige ZIP-Datei: «Skill hochladen»."
+        }
+      }
+    },
+    "se-d": {
+      "typ": "reihe",
+      "wunsch": "In welcher Reihenfolge bringe ich einen fertigen Skill in die App?",
+      "frage": "Bring die Schritte zum Hochladen in die richtige Reihenfolge.",
+      "schritte": [
+        {
+          "id": "testen",
+          "text": "Mit einer Protokoll-Bitte ausprobieren"
+        },
+        {
+          "id": "hinzu",
+          "text": "Unter «Anpassungen» oben rechts «+ Hinzufügen» öffnen",
+          "schirm": "skills-entdecken",
+          "ziel": "hinzufuegen"
+        },
+        {
+          "id": "zip",
+          "text": "Den Ordner protokoll-verein als ZIP packen"
+        },
+        {
+          "id": "datei",
+          "text": "Die ZIP-Datei wählen"
+        },
+        {
+          "id": "hoch",
+          "text": "Im Menü «Skill hochladen» wählen",
+          "schirm": "skills-menue",
+          "ziel": "hochladen"
+        }
+      ],
+      "loesung": [
+        "zip",
+        "hinzu",
+        "hoch",
+        "datei",
+        "testen"
+      ],
+      "echo": "Packen, «+ Hinzufügen», «Skill hochladen», Datei wählen, ausprobieren. Der Skill ist da und tut, was er soll.",
+      "daneben": {
+        "texte": [
+          "Echo will die ZIP-Datei wählen, aber es gibt noch keine. Der Ordner ist nicht gepackt.",
+          "Echo probiert den Skill aus, bevor er hochgeladen ist. Claude kennt ihn noch nicht."
+        ],
+        "hinweis": "Zuerst packen, dann «+ Hinzufügen», «Skill hochladen», Datei wählen. Ausprobieren zum Schluss."
+      }
+    },
+    "se-e": {
+      "typ": "wahl",
+      "wunsch": "Der Skill ist hochgeladen, aber grau. Ich kann ihn nicht benutzen. Was ist los?",
+      "frage": "Herr Imhofs Skill ist hochgeladen, aber grau. Woran liegt es am ehesten?",
+      "optionen": [
+        {
+          "id": "codeAus",
+          "text": "In den Einstellungen ist «Code in der Cloud ausführen» aus.",
+          "richtig": true,
+          "hinweis": "Genau. Dieser Schalter unter «Funktionen» ist für Skills nötig. Ohne ihn bleiben sie grau."
+        },
+        {
+          "id": "nurProjekt",
+          "text": "Skills funktionieren nur in Projekten.",
+          "hinweis": "Nein. Ein hochgeladener Skill gilt in allen Chats, nicht nur in Projekten."
+        },
+        {
+          "id": "name",
+          "text": "Der Ordnername ist falsch.",
+          "hinweis": "Ein falscher Name fällt schon beim Hochladen auf. Dann erscheint der Skill gar nicht in der Liste."
+        }
+      ],
+      "echo": "Echo schaut unter «Funktionen» nach: «Code in der Cloud ausführen» ist aus. Eingeschaltet, und der Skill ist nicht mehr grau.",
+      "loesung": [
+        "codeAus"
+      ]
+    },
+    "se-f": {
+      "typ": "klick",
+      "wunsch": "Schalt bitte ein, was mein Skill braucht. Ich finde den Schalter nicht.",
+      "frage": "Schalte für Herrn Imhof ein, was Skills brauchen. Tippe dich durch.",
+      "schritte": [
+        {
+          "schirm": "app",
+          "ziel": "profil",
+          "text": "Tippe unten links auf deinen Namen.",
+          "falsch": {
+            "anpassungen": "anpassungenStattEinst"
+          },
+          "sonst": "daneben3"
+        },
+        {
+          "schirm": "app-profilmenue",
+          "ziel": "einstellungen",
+          "text": "Wähle «{ziel}».",
+          "falsch": {
+            "hilfe": "hilfeSeite",
+            "abmelden": "abgemeldet",
+            "anpassungen": "anpassungenStattEinst"
+          },
+          "sonst": "daneben3"
+        },
+        {
+          "schirm": "einstellungen",
+          "ziel": "funktionen",
+          "text": "Tippe links auf «{ziel}».",
+          "falsch": {
+            "einstSkills": "einstSkills",
+            "schliessen": "zugemacht"
+          },
+          "sonst": "daneben4"
+        },
+        {
+          "schirm": "einstellungen-funktionen",
+          "ziel": "codeCloud",
+          "text": "Schalte «{ziel}» ein.",
+          "falsch": {
+            "netzwerk": "netzwerk",
+            "artefakteSchalter": "schonAn",
+            "konnektorSuche": "schonAn",
+            "schliessen": "zugemacht",
+            "einstSkills": "einstSkills"
+          },
+          "sonst": "daneben4"
+        }
+      ],
+      "nachher": "einstellungen-funktionen-an",
+      "erfolg": [
+        "Eingeschaltet. Jetzt ist der Skill nicht mehr grau.",
+        "Geschafft. «Code in der Cloud ausführen» ist an, Skills laufen."
+      ],
+      "fehlbilder": {
+        "anpassungenStattEinst": {
+          "texte": [
+            "Echo öffnet die Anpassungen. Dort sind die Skills, aber nicht der Schalter für die Code-Ausführung.",
+            "Hier liegt der Skill. Grau bleibt er trotzdem."
+          ],
+          "hinweis": "Die Einstellungen öffnest du unten links über deinen Namen."
+        },
+        "daneben3": {
+          "texte": [
+            "Hier gibt es keine Einstellungen.",
+            "Echo sucht den Schalter am falschen Ort."
+          ],
+          "hinweis": "Die Einstellungen öffnest du unten links über deinen Namen."
+        },
+        "hilfeSeite": {
+          "texte": [
+            "Echo öffnet die Hilfe. Dort steht, wo der Schalter ist. Umgelegt ist er damit nicht.",
+            "Lesen hilft, aber der Skill ist immer noch grau."
+          ],
+          "hinweis": "Im Menü unter deinem Namen führt «Einstellungen» zum Schalter."
+        },
+        "abgemeldet": {
+          "texte": [
+            "Echo meldet dich ab. Jetzt musst du dich zuerst wieder anmelden.",
+            "Abgemeldet. Der Schalter ist so nicht näher gekommen."
+          ],
+          "hinweis": "Im Menü unter deinem Namen führt «Einstellungen» zum Schalter."
+        },
+        "einstSkills": {
+          "texte": [
+            "Echo öffnet die Skills in den Einstellungen. Der Schalter für die Code-Ausführung ist woanders.",
+            "Die Skills sind hier, aber grau bleiben sie."
+          ],
+          "hinweis": "Der Schalter für Skills steht unter «Funktionen»."
+        },
+        "daneben4": {
+          "texte": [
+            "Hier ist der Schalter nicht.",
+            "Echo blättert, findet aber keine Code-Ausführung."
+          ],
+          "hinweis": "Unter «Funktionen» steht der Schalter «Code in der Cloud ausführen»."
+        },
+        "zugemacht": {
+          "texte": [
+            "Echo schliesst die Einstellungen. Der Schalter ist noch aus.",
+            "Fenster zu, Schalter aus. Der Skill bleibt grau."
+          ],
+          "hinweis": "Leg zuerst «Code in der Cloud ausführen» um."
+        },
+        "netzwerk": {
+          "texte": [
+            "Echo erlaubt den Netzwerkverkehr. Der Skill bleibt grau, «Code in der Cloud ausführen» ist noch aus.",
+            "Jetzt darf Claude ins Internet. Für den Skill fehlt aber immer noch der richtige Schalter."
+          ],
+          "hinweis": "Für Skills nötig: «Code in der Cloud ausführen»."
+        },
+        "schonAn": {
+          "texte": [
+            "Echo schaltet etwas aus, das schon an war. Der Skill bleibt grau.",
+            "Falscher Schalter. «Code in der Cloud ausführen» ist noch aus."
+          ],
+          "hinweis": "Für Skills nötig: «Code in der Cloud ausführen»."
+        }
+      }
+    }
+  },
+  "anleitungen": {
+    "konzept": "skillEcht",
+    "wege": [
+      {
+        "aufgabe": "se-a",
+        "titel": "Einen fertigen Skill hochladen"
+      },
+      {
+        "aufgabe": "se-c",
+        "titel": "Einen Skill mit Claude bauen"
+      },
+      {
+        "aufgabe": "se-f",
+        "titel": "Code-Ausführung einschalten (für Skills nötig)"
+      }
+    ]
+  }
+}

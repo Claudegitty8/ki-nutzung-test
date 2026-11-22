@@ -1,0 +1,2311 @@
+{
+  "id": "generalversammlung",
+  "kapitel": 4,
+  "titel": "Operation Generalversammlung",
+  "kunde": "Herr Fässler, Gewerbeverein Zwirbelwil",
+  "wunsch": "Saal, Einladungen, Anmeldungen, Apéro: Die Generalversammlung hat hundert Schritte. Echo soll sie selbständig erledigen. Aber bitte ohne Überraschungen!",
+  "kundenstimme": "Die GV lief wie am Schnürchen. Und zum ersten Mal hatte niemand drei Namensschilder.",
+  "ueberraschung": "Herr Fässler hat Familie Meier vom Einsatzraum erzählt. Sie planen die Sommerferien und brauchen ein ganzes Team.",
+  "lexikon": [
+    "einsatzprotokoll",
+    "zusammenfassen"
+  ],
+  "schrank": {
+    "titel": "Einsatzbefehl für grosse Aufträge",
+    "vorlage": "Erledige: [Aufgabe]. Ergebnis: [was am Schluss da sein soll], für [wen], weil [Grund].\nSchau zuerst nach, was schon da ist. Zeig mir dann einen Plan mit allen Schritten. Leg erst nach meinem Okay los.\nPrüf danach mit diesen Kriterien: [Kriterien]. Zeig mir den Beweis, zum Beispiel Zahlen vorher und nachher.\nFrag mich vor jedem Löschen, Senden, Bestellen oder Veröffentlichen. Höchstens 3 Versuche pro Schritt, dann halt an und melde dich.\nFühre die Datei stand.md: was erledigt ist, was offen ist, was entschieden wurde. Lies sie zu Beginn jedes Einsatzes.",
+    "wo": "Für Aufträge mit vielen Schritten in Claude Code oder in der Claude-App mit Zugriff auf deine Dateien. Ersetze alles in eckigen Klammern."
+  },
+  "runden": [
+    {
+      "id": "r1",
+      "art": "konzept",
+      "konzept": "schleife",
+      "probieren": {
+        "aufgabe": "s-a",
+        "nurTeile": [
+          "frage",
+          "erledigt"
+        ]
+      },
+      "beispiel": {
+        "aufgabe": "s-a"
+      },
+      "luecke": {
+        "aufgabe": "s-b",
+        "vorgabe": [
+          "anweisung"
+        ]
+      },
+      "frei": [
+        "s-c",
+        "s-d",
+        "s-e",
+        "s-f"
+      ]
+    },
+    {
+      "id": "r2",
+      "art": "konzept",
+      "konzept": "plan",
+      "probieren": {
+        "aufgabe": "p-a",
+        "nurTeile": [
+          "direkt",
+          "ziel"
+        ]
+      },
+      "beispiel": {
+        "aufgabe": "p-a"
+      },
+      "luecke": {
+        "aufgabe": "p-b",
+        "vorgabe": [
+          "ziel"
+        ]
+      },
+      "frei": [
+        "p-c",
+        "p-d",
+        "p-e",
+        "p-f"
+      ]
+    },
+    {
+      "id": "r3",
+      "art": "konzept",
+      "konzept": "kette",
+      "probieren": {
+        "aufgabe": "k-a",
+        "nurTeile": [
+          "frei",
+          "ohne"
+        ]
+      },
+      "beispiel": {
+        "aufgabe": "k-a"
+      },
+      "luecke": {
+        "aufgabe": "k-b",
+        "vorgabe": [
+          "s1",
+          "s2"
+        ]
+      },
+      "frei": [
+        "k-c",
+        "k-d",
+        "k-e",
+        "k-f"
+      ]
+    },
+    {
+      "id": "r4",
+      "art": "konzept",
+      "konzept": "haltepunkte",
+      "probieren": {
+        "aufgabe": "h-a",
+        "nurTeile": [
+          "freiLoeschen",
+          "versuche"
+        ]
+      },
+      "beispiel": {
+        "aufgabe": "h-a"
+      },
+      "luecke": {
+        "aufgabe": "h-b",
+        "vorgabe": [
+          "auftrag",
+          "fragen"
+        ]
+      },
+      "frei": [
+        "h-c",
+        "h-d",
+        "h-e",
+        "h-f"
+      ]
+    },
+    {
+      "id": "r5",
+      "art": "konzept",
+      "konzept": "frisch",
+      "probieren": {
+        "aufgabe": "fr-a",
+        "nurTeile": [
+          "allesImChat",
+          "lesen"
+        ]
+      },
+      "beispiel": {
+        "aufgabe": "fr-a"
+      },
+      "luecke": {
+        "aufgabe": "fr-b",
+        "vorgabe": [
+          "protokoll"
+        ]
+      },
+      "frei": [
+        "fr-c",
+        "fr-d",
+        "fr-e",
+        "fr-f"
+      ]
+    },
+    {
+      "id": "r6",
+      "art": "misch",
+      "titel": "Alles zusammen",
+      "frei": [
+        "x-a",
+        "x-b"
+      ]
+    }
+  ],
+  "aufgaben": {
+    "s-a": {
+      "wunsch": "Reserviere den Gemeindesaal für die GV am 20. März. Er darf auf keinen Fall doppelt gebucht sein.",
+      "grundprompt": "Es geht um die Generalversammlung des Gewerbevereins.",
+      "teile": [
+        {
+          "id": "anweisung",
+          "art": "prompt",
+          "text": "Reserviere den Gemeindesaal für den 20. März, 19 bis 22 Uhr."
+        },
+        {
+          "id": "frage",
+          "art": "prompt",
+          "text": "Kannst du schauen, ob man den Saal reservieren könnte?"
+        },
+        {
+          "id": "erkunden",
+          "art": "absicherung",
+          "text": "Schau zuerst im Saalkalender nach, was am 20. März schon eingetragen ist."
+        },
+        {
+          "id": "pruefen",
+          "art": "absicherung",
+          "text": "Prüf danach im Saalkalender, dass die Reservation steht und nichts doppelt ist. Zeig mir den Eintrag."
+        },
+        {
+          "id": "erledigt",
+          "art": "absicherung",
+          "text": "Melde einfach «Erledigt», wenn du fertig bist."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "frage"
+            ]
+          },
+          "fehlbild": "nurErklaert"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "erledigt"
+            ]
+          },
+          "fehlbild": "nurErledigt"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "anweisung"
+            ]
+          },
+          "fehlbild": "keinAuftrag"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "erkunden"
+            ]
+          },
+          "fehlbild": "nichtErkundet"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "pruefen"
+            ]
+          },
+          "fehlbild": "ungeprueft"
+        }
+      ],
+      "fehlbilder": {
+        "nurErklaert": {
+          "texte": [
+            "Ja, das könnte man! Man öffnet den Saalkalender, wählt den Tag und trägt sich ein. Soll ich dir die Schritte aufschreiben?",
+            "Gute Frage. Reservieren ginge über den Saalkalender der Gemeinde. Getan habe ich noch nichts."
+          ],
+          "hinweis": "Auf eine Frage erklärt Echo oft nur. Soll Echo handeln, schreib eine Anweisung."
+        },
+        "nurErledigt": {
+          "texte": [
+            "Erledigt! Am 20. März sind jetzt der Gewerbeverein und der Jodlerklub im Saal.",
+            "Erledigt! Woran du siehst, ob es stimmt? An meinem Wort."
+          ],
+          "hinweis": "«Erledigt» ist kein Beweis. Lass Echo prüfen und den Eintrag zeigen."
+        },
+        "keinAuftrag": {
+          "texte": [
+            "Die Generalversammlung, verstanden. Und was soll ich tun?",
+            "Ich weiss, worum es geht, aber nicht, was du von mir willst."
+          ],
+          "hinweis": "Sag klar, was Echo tun soll."
+        },
+        "nichtErkundet": {
+          "texte": [
+            "Reserviert und geprüft: Der Eintrag steht. Daneben steht der Jodlerklub. Ich hätte vorher nachsehen sollen.",
+            "Reserviert! Dass am 20. März schon das Turnier eingetragen war, habe ich erst danach gesehen."
+          ],
+          "hinweis": "Lass Echo zuerst nachsehen, was schon da ist. Dann erst handeln."
+        },
+        "ungeprueft": {
+          "texte": [
+            "Nachgesehen, frei, reserviert. Ob die Reservation gespeichert ist, habe ich nicht geprüft. Sie hängt noch im Entwurf.",
+            "Reserviert, glaube ich. Ein Beweis fehlt, und der Saalkalender zeigt nichts."
+          ],
+          "hinweis": "Lass Echo danach prüfen und den Beweis zeigen."
+        }
+      },
+      "erfolg": [
+        "Nachgesehen: Am 20. März ist der Saal frei. Reserviert von 19 bis 22 Uhr. Geprüft: Eintrag steht, nichts doppelt. Hier der Auszug aus dem Saalkalender.",
+        "Saal reserviert. Vorher nachgesehen, nachher geprüft. Den Eintrag siehst du hier."
+      ],
+      "loesung": [
+        "anweisung",
+        "erkunden",
+        "pruefen"
+      ]
+    },
+    "s-b": {
+      "wunsch": "Zähl die Anmeldungen zur GV und trag sie in die Liste ein. Doppelte Anmeldungen kommen oft vor.",
+      "grundprompt": "Die Anmeldungen liegen im Postfach des Gewerbevereins.",
+      "teile": [
+        {
+          "id": "anweisung",
+          "art": "prompt",
+          "text": "Zähl die Anmeldungen und trag sie in die Liste «GV 2027» ein."
+        },
+        {
+          "id": "pruefen",
+          "art": "absicherung",
+          "text": "Prüf danach: Jede Person steht nur einmal in der Liste. Zeig mir die Zahl und die Doppelten."
+        },
+        {
+          "id": "erledigt",
+          "art": "absicherung",
+          "text": "Gib einfach die Zahl durch."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "erledigt"
+            ]
+          },
+          "fehlbild": "nurErledigt"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "anweisung"
+            ]
+          },
+          "fehlbild": "keinAuftrag"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "pruefen"
+            ]
+          },
+          "fehlbild": "ungeprueft"
+        }
+      ],
+      "fehlbilder": {
+        "nurErledigt": {
+          "texte": [
+            "87 Anmeldungen! Frau Arnold hat sich dreimal angemeldet und zählt dreifach.",
+            "Erledigt: 87. Ob das stimmt, siehst du nirgends."
+          ],
+          "hinweis": "Eine Zahl ohne Prüfung ist kein Beweis."
+        },
+        "keinAuftrag": {
+          "texte": [
+            "Die Anmeldungen liegen im Postfach, verstanden. Und jetzt?",
+            "Ich weiss, wo sie liegen, aber nicht, was ich damit soll."
+          ],
+          "hinweis": "Sag, was Echo tun soll."
+        },
+        "ungeprueft": {
+          "texte": [
+            "Erledigt: 87 Anmeldungen eingetragen. Frau Arnold steht dreimal drin.",
+            "Eingetragen, ohne Prüfung. Zwei Personen zählen doppelt."
+          ],
+          "hinweis": "Gib Echo ein Kriterium zum Prüfen: hier «jede Person nur einmal»."
+        }
+      },
+      "erfolg": [
+        "Eingetragen und geprüft: 84 Personen. Drei Doppelte habe ich zusammengeführt, hier sind sie.",
+        "84 Anmeldungen, jede nur einmal. Die Doppelten siehst du in der Liste unten."
+      ],
+      "loesung": [
+        "anweisung",
+        "pruefen"
+      ]
+    },
+    "s-c": {
+      "typ": "reihe",
+      "wunsch": "In welcher Reihenfolge arbeitet Echo bei einem Einsatz?",
+      "frage": "Bring die Schritte eines Einsatzes in die richtige Reihenfolge.",
+      "schritte": [
+        {
+          "id": "pruefen",
+          "text": "Mit den Kriterien prüfen"
+        },
+        {
+          "id": "beweis",
+          "text": "Ergebnis mit Beweis zeigen"
+        },
+        {
+          "id": "erkunden",
+          "text": "Nachsehen, was schon da ist"
+        },
+        {
+          "id": "nachbessern",
+          "text": "Wo nötig nachbessern und nochmals prüfen"
+        },
+        {
+          "id": "handeln",
+          "text": "Die Aufgabe erledigen"
+        }
+      ],
+      "loesung": [
+        "erkunden",
+        "handeln",
+        "pruefen",
+        "nachbessern",
+        "beweis"
+      ],
+      "echo": "Nachsehen, handeln, prüfen, nachbessern, Beweis zeigen. So läuft ein Einsatz ohne Überraschungen.",
+      "daneben": {
+        "texte": [
+          "Echo zeigt den Beweis, bevor überhaupt geprüft wurde. Was zeigt er dann?",
+          "Echo handelt, ohne vorher nachzusehen. Der Saal war schon belegt."
+        ],
+        "hinweis": "Zuerst nachsehen, dann handeln, dann prüfen. Der Beweis kommt am Schluss."
+      }
+    },
+    "s-d": {
+      "typ": "wahl",
+      "wunsch": "Herr Fässler fragt Echo nach Verbesserungen für die Einladung.",
+      "frage": "Herr Fässler will, dass Echo die Einladung zur GV verbessert. Er schreibt: «Kannst du Verbesserungen vorschlagen?» Was passiert wahrscheinlich?",
+      "optionen": [
+        {
+          "id": "aendert",
+          "text": "Echo verbessert die Einladung direkt.",
+          "hinweis": "Bei «vorschlagen» macht Echo meist Vorschläge und ändert nichts."
+        },
+        {
+          "id": "vorschlaege",
+          "text": "Echo listet Vorschläge auf und ändert nichts.",
+          "hinweis": "Genau. Soll Echo ändern, schreib: «Verbessere die Einladung.»",
+          "richtig": true
+        },
+        {
+          "id": "nichts",
+          "text": "Echo tut gar nichts, weil es eine Frage ist.",
+          "hinweis": "Echo antwortet schon, aber eben mit Vorschlägen."
+        }
+      ],
+      "echo": "Echo listet fünf Vorschläge. Die Einladung ist unverändert. Mit «Verbessere die Einladung» hätte Echo sie geändert.",
+      "loesung": [
+        "vorschlaege"
+      ]
+    },
+    "s-e": {
+      "wunsch": "Echo soll die Adressen in der Mitgliederliste vereinheitlichen. Kein Mitglied darf dabei verloren gehen.",
+      "grundprompt": "Die Mitgliederliste hat 214 Einträge in fünf verschiedenen Schreibweisen.",
+      "teile": [
+        {
+          "id": "anweisung",
+          "art": "prompt",
+          "text": "Vereinheitliche die Adressen in der Mitgliederliste."
+        },
+        {
+          "id": "frage",
+          "art": "prompt",
+          "text": "Wäre es eventuell möglich, die Adressen einheitlicher zu machen?"
+        },
+        {
+          "id": "kriterium",
+          "art": "absicherung",
+          "text": "Prüf danach: Es sind gleich viele Mitglieder wie vorher, 214."
+        },
+        {
+          "id": "beweis",
+          "art": "absicherung",
+          "text": "Zeig mir die Zahl vorher und nachher und drei Beispiele."
+        },
+        {
+          "id": "erledigt",
+          "art": "absicherung",
+          "text": "Sag einfach Bescheid, wenn es fertig ist."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "frage"
+            ]
+          },
+          "fehlbild": "nurErklaert"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "erledigt"
+            ]
+          },
+          "fehlbild": "nurErledigt"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "anweisung"
+            ]
+          },
+          "fehlbild": "keinAuftrag"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "kriterium"
+            ]
+          },
+          "fehlbild": "keinKriterium"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "beweis"
+            ]
+          },
+          "fehlbild": "keinBeweis"
+        }
+      ],
+      "fehlbilder": {
+        "nurErklaert": {
+          "texte": [
+            "Möglich wäre es! Man könnte Strasse, Nummer und Ort trennen. Soll ich erklären, wie?",
+            "Ja, das ginge. Hier sind drei Ideen dazu. Geändert habe ich nichts."
+          ],
+          "hinweis": "Eine Frage bringt Vorschläge. Eine Anweisung bringt Taten."
+        },
+        "nurErledigt": {
+          "texte": [
+            "Fertig! Es sind jetzt 198 Mitglieder. Dass 16 fehlen, hat niemand gemerkt.",
+            "Bescheid: fertig. Was genau passiert ist, siehst du nirgends."
+          ],
+          "hinweis": "Lass Echo prüfen und den Beweis zeigen."
+        },
+        "keinAuftrag": {
+          "texte": [
+            "214 Einträge, fünf Schreibweisen. Interessant! Was soll ich damit?",
+            "Ich kenne die Lage, aber nicht den Auftrag."
+          ],
+          "hinweis": "Sag klar, was Echo tun soll."
+        },
+        "keinKriterium": {
+          "texte": [
+            "Fertig und schön einheitlich! Es sind jetzt 198 Mitglieder. Beim Zusammenführen sind 16 verschwunden.",
+            "Einheitlich, ja. Vollständig? Das habe ich nicht geprüft."
+          ],
+          "hinweis": "Gib Echo ein klares Kriterium: hier «gleich viele Mitglieder wie vorher»."
+        },
+        "keinBeweis": {
+          "texte": [
+            "Fertig, alles geprüft! Zeigen kann ich nichts, du musst mir glauben.",
+            "Geprüft, 214 von 214. Woher du das weisst? Von mir."
+          ],
+          "hinweis": "Lass dir den Beweis zeigen. Dann siehst du selbst, ob es stimmt."
+        }
+      },
+      "erfolg": [
+        "Vereinheitlicht. Vorher 214, nachher 214. Drei Beispiele: «Dorfstr. 3» wird «Dorfstrasse 3», …",
+        "Alle Adressen einheitlich, kein Mitglied verloren. Beweis: Zahlen und Beispiele unten."
+      ],
+      "loesung": [
+        "anweisung",
+        "kriterium",
+        "beweis"
+      ]
+    },
+    "s-f": {
+      "wunsch": "Echo soll die Folien zum Jahresbericht machen: 12 Folien, auf jeder die richtige Zahl aus der Jahresrechnung.",
+      "grundprompt": "Folien für den Jahresbericht an der GV.",
+      "teile": [
+        {
+          "id": "anweisung",
+          "art": "prompt",
+          "text": "Erstelle 12 Folien zum Jahresbericht."
+        },
+        {
+          "id": "material",
+          "art": "kontext",
+          "text": "<rechnung>Jahresrechnung 2026 des Gewerbevereins</rechnung>"
+        },
+        {
+          "id": "kriterium",
+          "art": "absicherung",
+          "text": "Prüf danach jede Zahl auf den Folien gegen die Jahresrechnung."
+        },
+        {
+          "id": "beweis",
+          "art": "absicherung",
+          "text": "Zeig mir eine Liste: Folie, Zahl, Zeile in der Rechnung."
+        },
+        {
+          "id": "erledigt",
+          "art": "absicherung",
+          "text": "Melde «Fertig», wenn alles passt."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "erledigt"
+            ]
+          },
+          "fehlbild": "nurErledigt"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "anweisung"
+            ]
+          },
+          "fehlbild": "keinAuftrag"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "material"
+            ]
+          },
+          "fehlbild": "keinMaterial"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "kriterium"
+            ]
+          },
+          "fehlbild": "ungeprueft"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "beweis"
+            ]
+          },
+          "fehlbild": "keinBeweis"
+        }
+      ],
+      "fehlbilder": {
+        "nurErledigt": {
+          "texte": [
+            "Fertig, alles passt! Auf Folie 7 steht 18 000 statt 81 000 Franken Gewinn.",
+            "Fertig! Ob die Zahlen stimmen, hat niemand nachgesehen."
+          ],
+          "hinweis": "Lass Echo prüfen und den Beweis zeigen."
+        },
+        "keinAuftrag": {
+          "texte": [
+            "Folien für den Jahresbericht, verstanden. Wie viele, und was soll darauf?",
+            "Ich habe die Rechnung, aber keinen Auftrag."
+          ],
+          "hinweis": "Sag klar, was Echo tun soll."
+        },
+        "keinMaterial": {
+          "texte": [
+            "12 Folien, schön gestaltet. Die Zahlen habe ich geschätzt, die Rechnung fehlte.",
+            "Ohne Jahresrechnung stehen auf den Folien nur Platzhalter."
+          ],
+          "hinweis": "Gib Echo die Jahresrechnung mit."
+        },
+        "ungeprueft": {
+          "texte": [
+            "12 Folien fertig. Folie 7 zeigt 18 000 statt 81 000 Franken. Geprüft hat es niemand.",
+            "Fertig. Zwei Zahlen sind vertauscht, ohne Prüfung merkt es erst die GV."
+          ],
+          "hinweis": "Gib Echo ein Kriterium: jede Zahl gegen die Rechnung prüfen."
+        },
+        "keinBeweis": {
+          "texte": [
+            "Alle Zahlen geprüft! Welche Zeile wohin gehört, siehst du allerdings nicht.",
+            "Geprüft, versprochen. Nachvollziehen kannst du es nicht."
+          ],
+          "hinweis": "Lass dir eine Liste zeigen: Folie, Zahl, Zeile in der Rechnung."
+        }
+      },
+      "erfolg": [
+        "12 Folien. Jede Zahl geprüft. Liste: Folie 7, 81 000 Franken, Rechnung Zeile 42. Alles stimmt.",
+        "Folien fertig, Zahlen gegen die Rechnung geprüft, Belegliste dabei."
+      ],
+      "loesung": [
+        "anweisung",
+        "material",
+        "kriterium",
+        "beweis"
+      ]
+    },
+    "p-a": {
+      "wunsch": "Organisiere die ganze GV: Saal, Einladung, Apéro, Traktanden. Herr Fässler hat noch nicht alles entschieden.",
+      "grundprompt": "Organisiere die Generalversammlung 2027.",
+      "teile": [
+        {
+          "id": "ziel",
+          "art": "prompt",
+          "text": "Am 20. März, für rund 90 Mitglieder, mit Apéro."
+        },
+        {
+          "id": "plan",
+          "art": "absicherung",
+          "text": "Zeig mir zuerst einen Plan mit allen Schritten. Leg erst los, wenn ich ihn freigebe."
+        },
+        {
+          "id": "direkt",
+          "art": "prompt",
+          "text": "Leg gleich los, ich will nichts mehr sehen."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "direkt"
+            ]
+          },
+          "fehlbild": "direkt"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "ziel"
+            ]
+          },
+          "fehlbild": "keinZiel"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "plan"
+            ]
+          },
+          "fehlbild": "ohnePlan"
+        }
+      ],
+      "fehlbilder": {
+        "direkt": {
+          "texte": [
+            "Ausgeführt! Saal reserviert, 300 Einladungen verschickt, Apéro für 300 bestellt. Herr Fässler wollte zuerst den Vorstand fragen.",
+            "Ausgeführt! Alles erledigt, ohne dass du etwas gesehen hast. Die GV ist jetzt an einem Sonntag."
+          ],
+          "hinweis": "Bei einer grossen, unklaren Aufgabe willst du vorher sehen, was Echo vorhat."
+        },
+        "keinZiel": {
+          "texte": [
+            "Eine GV organisieren: für wann? Für wie viele? Ich habe den 1. April gewählt.",
+            "Ohne Datum und Grösse plane ich ins Blaue."
+          ],
+          "hinweis": "Sag Echo, wann, für wie viele und was dazugehört."
+        },
+        "ohnePlan": {
+          "texte": [
+            "Ich lege los: Saal reserviert, Apéro bestellt. Dass die GV dieses Jahr im Restaurant sein sollte, hätte im Plan gestanden.",
+            "Schon halb fertig. Den Fehler bei Schritt 2 hättest du im Plan sofort gesehen."
+          ],
+          "hinweis": "Bei grossen oder unklaren Aufgaben: zuerst den Plan zeigen lassen und freigeben."
+        }
+      },
+      "erfolg": [
+        "Mein Plan: 1. Saal prüfen. 2. Traktanden mit dir klären. 3. Einladung. 4. Anmeldungen. 5. Apéro. Was soll ich ändern, bevor ich loslege?",
+        "Plan in fünf Schritten liegt vor. Du gibst frei, dann lege ich los."
+      ],
+      "loesung": [
+        "ziel",
+        "plan"
+      ]
+    },
+    "p-b": {
+      "wunsch": "Echo soll den ganzen Jahresbericht schreiben: zwölf Seiten aus Protokollen, Rechnung und Fotos.",
+      "grundprompt": "Jahresbericht 2026 des Gewerbevereins.",
+      "teile": [
+        {
+          "id": "ziel",
+          "art": "prompt",
+          "text": "Schreib den Jahresbericht aus den Protokollen, der Rechnung und den Fotos. Rund zwölf Seiten."
+        },
+        {
+          "id": "plan",
+          "art": "absicherung",
+          "text": "Zeig mir zuerst die Gliederung. Schreib erst nach meinem Okay."
+        },
+        {
+          "id": "direkt",
+          "art": "prompt",
+          "text": "Schreib gleich alles fertig."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "direkt"
+            ]
+          },
+          "fehlbild": "direkt"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "ziel"
+            ]
+          },
+          "fehlbild": "keinZiel"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "plan"
+            ]
+          },
+          "fehlbild": "ohnePlan"
+        }
+      ],
+      "fehlbilder": {
+        "direkt": {
+          "texte": [
+            "Ausgeführt! Zwölf Seiten. Die Hälfte handelt vom Skiausflug, der Herrn Fässler am wenigsten wichtig war.",
+            "Ausgeführt! Fertig geschrieben. Die Reihenfolge passt nicht, und alles muss umgebaut werden."
+          ],
+          "hinweis": "Bei einer grossen Arbeit lohnt sich zuerst die Gliederung."
+        },
+        "keinZiel": {
+          "texte": [
+            "Ein Jahresbericht, verstanden. Woraus und wie lang?",
+            "Ohne Unterlagen schreibe ich einen Bericht über ein erfundenes Jahr."
+          ],
+          "hinweis": "Sag, was in den Bericht gehört und woraus Echo schöpft."
+        },
+        "ohnePlan": {
+          "texte": [
+            "Zwölf Seiten sind fertig. Herr Fässler wollte mit den Zahlen beginnen. Jetzt stehen sie auf Seite 11.",
+            "Fertig geschrieben, ohne Gliederung. Ein Kapitel zum neuen Vorstand fehlt."
+          ],
+          "hinweis": "Lass dir zuerst die Gliederung zeigen und gib sie frei."
+        }
+      },
+      "erfolg": [
+        "Gliederung: 1. Wort des Präsidenten. 2. Zahlen. 3. Anlässe. 4. Vorstand. 5. Ausblick. Passt das, oder soll ich etwas umstellen?",
+        "Die Gliederung liegt vor. Nach deinem Okay schreibe ich die zwölf Seiten."
+      ],
+      "loesung": [
+        "ziel",
+        "plan"
+      ]
+    },
+    "p-c": {
+      "typ": "wahl",
+      "wunsch": "In der Einladung steht «Generalversammulng». Wie gehst du vor?",
+      "frage": "In der Überschrift der Einladung ist ein Tippfehler: «Generalversammulng». Wie gehst du vor?",
+      "optionen": [
+        {
+          "id": "plan",
+          "text": "Zuerst einen Plan zeigen lassen.",
+          "hinweis": "Für einen Tippfehler ist ein Plan zu viel."
+        },
+        {
+          "id": "direkt",
+          "text": "Direkt: «Korrigier den Tippfehler in der Überschrift.»",
+          "hinweis": "Genau. Klein und klar geht direkt.",
+          "richtig": true
+        },
+        {
+          "id": "neu",
+          "text": "Echo die ganze Einladung neu schreiben lassen.",
+          "hinweis": "Dann ändert sich viel mehr als nötig."
+        }
+      ],
+      "echo": "Ein Satz, ein Tippfehler, erledigt. Ein Plan hätte drei Seiten gefüllt.",
+      "loesung": [
+        "direkt"
+      ]
+    },
+    "p-d": {
+      "typ": "wahl",
+      "wunsch": "Welche Aufgabe braucht zuerst einen Plan?",
+      "frage": "Welche dieser Aufgaben sollte Echo zuerst als Plan vorlegen?",
+      "optionen": [
+        {
+          "id": "zeit",
+          "text": "In der Einladung 19 Uhr durch 19.30 Uhr ersetzen.",
+          "hinweis": "Klein und klar, das geht direkt."
+        },
+        {
+          "id": "draussen",
+          "text": "Die GV ins Freie verlegen, mit Zelt, Bewilligung und neuer Einladung.",
+          "hinweis": "Genau. Gross und mit offenen Fragen: zuerst ein Plan.",
+          "richtig": true
+        },
+        {
+          "id": "name",
+          "text": "Den Namen des Kassiers in der Traktandenliste korrigieren.",
+          "hinweis": "Ein klarer kleiner Schritt, kein Plan nötig."
+        }
+      ],
+      "echo": "Echo legt für die GV im Freien einen Plan vor. Darin steht: Bewilligung zuerst, sonst nützt das Zelt nichts.",
+      "loesung": [
+        "draussen"
+      ]
+    },
+    "p-e": {
+      "typ": "wahl",
+      "wunsch": "Echo hat einen Plan vorgelegt. Was tust du damit?",
+      "frage": "Echo legt einen Plan in sechs Schritten vor. Was tust du?",
+      "optionen": [
+        {
+          "id": "ok",
+          "text": "Gar nicht lesen, einfach Okay geben.",
+          "hinweis": "Dann nützt der Plan nichts."
+        },
+        {
+          "id": "lesen",
+          "text": "Lesen, Fehler korrigieren, dann freigeben.",
+          "hinweis": "Genau. Der Plan ist dein Moment zum Eingreifen.",
+          "richtig": true
+        },
+        {
+          "id": "laenger",
+          "text": "Echo bitten, den Plan doppelt so lang zu schreiben.",
+          "hinweis": "Länger ist nicht besser. Lies und korrigiere ihn."
+        }
+      ],
+      "echo": "Herr Fässler streicht Schritt 4: Die Einladung soll per Mail, nicht per Post. Dann gibt er frei.",
+      "loesung": [
+        "lesen"
+      ]
+    },
+    "p-f": {
+      "wunsch": "Echo soll die Website des Gewerbevereins neu ordnen: 40 Seiten, neue Menüs, alte Seiten ins Archiv.",
+      "grundprompt": "Website des Gewerbevereins.",
+      "teile": [
+        {
+          "id": "ziel",
+          "art": "prompt",
+          "text": "Ordne die Website neu: Menü mit fünf Bereichen, alte Seiten ins Archiv."
+        },
+        {
+          "id": "plan",
+          "art": "absicherung",
+          "text": "Zeig mir zuerst den Plan: welche Seite wohin. Ändere erst nach meinem Okay."
+        },
+        {
+          "id": "direkt",
+          "art": "prompt",
+          "text": "Mach einfach, ich vertraue dir."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "direkt"
+            ]
+          },
+          "fehlbild": "direkt"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "ziel"
+            ]
+          },
+          "fehlbild": "keinZiel"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "plan"
+            ]
+          },
+          "fehlbild": "ohnePlan"
+        }
+      ],
+      "fehlbilder": {
+        "direkt": {
+          "texte": [
+            "Ausgeführt! Die Seite «Mitglied werden» liegt jetzt im Archiv. Niemand findet sie mehr.",
+            "Ausgeführt! 40 Seiten umgebaut. Der Vorstand erkennt seine Website nicht wieder."
+          ],
+          "hinweis": "Vertrauen ist gut, ein Plan ist besser, wenn 40 Seiten betroffen sind."
+        },
+        "keinZiel": {
+          "texte": [
+            "Website des Gewerbevereins, verstanden. Was soll ich damit?",
+            "Ich weiss nicht, wie die neue Ordnung aussehen soll."
+          ],
+          "hinweis": "Sag, wie die Website am Schluss aussehen soll."
+        },
+        "ohnePlan": {
+          "texte": [
+            "Umgebaut! Die Seite «Mitglied werden» liegt jetzt im Archiv. Im Plan wäre es dir aufgefallen.",
+            "Neu geordnet. Drei wichtige Seiten sind ins Archiv gerutscht."
+          ],
+          "hinweis": "Lass dir bei so vielen Seiten zuerst den Plan zeigen."
+        }
+      },
+      "erfolg": [
+        "Plan: 5 Bereiche, 31 Seiten bleiben, 9 ins Archiv. Liste anbei. Ich ändere erst nach deinem Okay.",
+        "Der Plan zeigt jede Seite mit ihrem neuen Platz. Du entscheidest."
+      ],
+      "loesung": [
+        "ziel",
+        "plan"
+      ]
+    },
+    "k-a": {
+      "wunsch": "Jedes Jahr derselbe Ablauf: Zahlen aus der Jahresrechnung holen, Flyer schreiben, Flyer an die Druckerei senden.",
+      "grundprompt": "Ablauf für den Jahresflyer.",
+      "nachrichtVon": "Deine Kette",
+      "artNamen": {
+        "prompt": "Schritte",
+        "absicherung": "Kontrollpunkte"
+      },
+      "teile": [
+        {
+          "id": "s1",
+          "art": "prompt",
+          "text": "1. Zahlen aus der Jahresrechnung holen."
+        },
+        {
+          "id": "s2",
+          "art": "prompt",
+          "text": "2. Flyer mit den Zahlen schreiben."
+        },
+        {
+          "id": "s3",
+          "art": "prompt",
+          "text": "3. Flyer nach meinem Okay an die Druckerei senden."
+        },
+        {
+          "id": "kontrolle",
+          "art": "absicherung",
+          "text": "Nach Schritt 1: Zahlen gegen die Rechnung prüfen. Stimmen sie nicht, anhalten."
+        },
+        {
+          "id": "frei",
+          "art": "prompt",
+          "text": "Mach es jedes Jahr irgendwie, du findest schon einen Weg."
+        },
+        {
+          "id": "ohne",
+          "art": "absicherung",
+          "text": "Keine Kontrolle, das spart Zeit."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "frei"
+            ]
+          },
+          "fehlbild": "freiStattKette"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "ohne"
+            ]
+          },
+          "fehlbild": "keineKontrolle"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "s1",
+              "s2",
+              "s3"
+            ]
+          },
+          "fehlbild": "lueckeKette"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "kontrolle"
+            ]
+          },
+          "fehlbild": "keineKontrolle"
+        }
+      ],
+      "fehlbilder": {
+        "freiStattKette": {
+          "texte": [
+            "Jedes Jahr sieht der Flyer anders aus. Einmal habe ich die Zahlen aus dem Vorjahr genommen.",
+            "Ich finde jedes Jahr einen neuen Weg. Dieses Jahr ging der Flyer an die falsche Druckerei."
+          ],
+          "hinweis": "Was jedes Jahr gleich abläuft, legst du als feste Kette fest."
+        },
+        "keineKontrolle": {
+          "texte": [
+            "Schritt 1 las 18 000 statt 81 000. Die Zahl steht jetzt auf 500 gedruckten Flyern.",
+            "Ein Zahlendreher in Schritt 1 ist durch die ganze Kette gewandert."
+          ],
+          "hinweis": "Ein Kontrollpunkt nach Schritt 1 hält Fehler auf, bevor sie weiterwandern."
+        },
+        "lueckeKette": {
+          "texte": [
+            "Die Kette hat ein Loch. Ohne alle drei Schritte kommt kein fertiger Flyer heraus.",
+            "Ein Schritt fehlt. Der Flyer bleibt halb fertig liegen."
+          ],
+          "hinweis": "Die Kette braucht alle Schritte: Zahlen holen, Flyer schreiben, senden."
+        }
+      },
+      "erfolg": [
+        "Kette steht: Zahlen holen, prüfen, Flyer schreiben, nach Okay senden. Dieses Jahr fiel beim Prüfen ein Zahlendreher auf. Ich habe angehalten.",
+        "Drei feste Schritte mit Kontrollpunkt. Jedes Jahr gleich, jedes Jahr geprüft."
+      ],
+      "loesung": [
+        "s1",
+        "s2",
+        "s3",
+        "kontrolle"
+      ]
+    },
+    "k-b": {
+      "wunsch": "Für jede Anmeldung zur GV: bestätigen, in die Liste eintragen, Namensschild drucken.",
+      "grundprompt": "Ablauf für jede Anmeldung zur GV.",
+      "nachrichtVon": "Deine Kette",
+      "artNamen": {
+        "prompt": "Schritte",
+        "absicherung": "Kontrollpunkte"
+      },
+      "teile": [
+        {
+          "id": "s1",
+          "art": "prompt",
+          "text": "1. Anmeldung bestätigen."
+        },
+        {
+          "id": "s2",
+          "art": "prompt",
+          "text": "2. In die Liste eintragen."
+        },
+        {
+          "id": "s3",
+          "art": "prompt",
+          "text": "3. Namensschild drucken."
+        },
+        {
+          "id": "kontrolle",
+          "art": "absicherung",
+          "text": "Vor Schritt 2: Steht die Person schon in der Liste? Dann nicht doppelt eintragen und kein zweites Schild."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "fehlt": [
+              "s1",
+              "s2",
+              "s3"
+            ]
+          },
+          "fehlbild": "lueckeKette"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "kontrolle"
+            ]
+          },
+          "fehlbild": "keineKontrolle"
+        }
+      ],
+      "fehlbilder": {
+        "lueckeKette": {
+          "texte": [
+            "Ein Schritt fehlt. Die Leute sind eingetragen, haben aber kein Namensschild.",
+            "Die Kette hat ein Loch. Die Bestätigung kommt nie an."
+          ],
+          "hinweis": "Die Kette braucht alle drei Schritte."
+        },
+        "keineKontrolle": {
+          "texte": [
+            "Frau Arnold hat sich dreimal angemeldet. Sie hat drei Bestätigungen und drei Namensschilder.",
+            "Ohne Kontrollpunkt stehen vier Personen doppelt in der Liste."
+          ],
+          "hinweis": "Ein Kontrollpunkt vor dem Eintragen verhindert Doppelte."
+        }
+      },
+      "erfolg": [
+        "Kette mit Kontrollpunkt: 84 Personen, 84 Namensschilder. Frau Arnold hat nur eins.",
+        "Bestätigen, prüfen, eintragen, Schild drucken. Doppelte werden aufgehalten."
+      ],
+      "loesung": [
+        "s1",
+        "s2",
+        "s3",
+        "kontrolle"
+      ]
+    },
+    "k-c": {
+      "typ": "wahl",
+      "wunsch": "Warum kommen weniger Mitglieder zur GV? Kette oder freier Einsatz?",
+      "frage": "Echo soll herausfinden, warum dieses Jahr weniger Mitglieder zur GV kommen. Was passt?",
+      "optionen": [
+        {
+          "id": "kette",
+          "text": "Eine feste Kette mit genau vorgegebenen Schritten.",
+          "hinweis": "Wo man suchen muss, weiss vorher niemand."
+        },
+        {
+          "id": "frei",
+          "text": "Ein freier Einsatz: Echo sucht selbst nach Hinweisen und berichtet.",
+          "hinweis": "Genau. Offene Fragen passen zu einem freien Einsatz.",
+          "richtig": true
+        },
+        {
+          "id": "gar",
+          "text": "Gar nicht, so etwas kann KI nicht.",
+          "hinweis": "Doch, Spuren in Anmeldungen und Terminen kann Echo gut sammeln."
+        }
+      ],
+      "echo": "Echo sieht Anmeldungen, Umfrage und Dorfkalender durch: Die GV fällt auf denselben Abend wie das Skirennen.",
+      "loesung": [
+        "frei"
+      ]
+    },
+    "k-d": {
+      "typ": "wahl",
+      "wunsch": "Jedes Jahr die Einladung aus der Vorlage: Kette oder freier Einsatz?",
+      "frage": "Jedes Jahr: Einladung aus der Vorlage nehmen, Datum einsetzen, nach Okay an alle Mitglieder senden. Was passt?",
+      "optionen": [
+        {
+          "id": "frei",
+          "text": "Ein freier Einsatz, Echo soll kreativ sein.",
+          "hinweis": "Dann sieht die Einladung jedes Jahr anders aus."
+        },
+        {
+          "id": "kette",
+          "text": "Eine feste Kette mit einem Kontrollpunkt vor dem Senden.",
+          "hinweis": "Genau. Planbares legst du als Kette fest.",
+          "richtig": true
+        },
+        {
+          "id": "hand",
+          "text": "Jedes Jahr alles von Hand.",
+          "hinweis": "Geht, aber genau so etwas lässt sich gut als Kette festlegen."
+        }
+      ],
+      "echo": "Die Kette läuft jedes Jahr gleich. Vor dem Senden hält sie an, und Herr Fässler liest gegen.",
+      "loesung": [
+        "kette"
+      ]
+    },
+    "k-e": {
+      "typ": "reihe",
+      "wunsch": "In welcher Reihenfolge läuft die Kette für den Mitgliederbeitrag?",
+      "frage": "Bring die Kette für den Mitgliederbeitrag in die richtige Reihenfolge.",
+      "schritte": [
+        {
+          "id": "senden",
+          "text": "Rechnungen senden"
+        },
+        {
+          "id": "liste",
+          "text": "Mitgliederliste holen"
+        },
+        {
+          "id": "offen",
+          "text": "Nach 30 Tagen: offene Beträge melden"
+        },
+        {
+          "id": "kontrolle",
+          "text": "Kontrollpunkt: Beträge und Adressen prüfen"
+        },
+        {
+          "id": "rechnung",
+          "text": "Rechnungen erstellen"
+        }
+      ],
+      "loesung": [
+        "liste",
+        "rechnung",
+        "kontrolle",
+        "senden",
+        "offen"
+      ],
+      "echo": "Liste holen, Rechnungen erstellen, prüfen, senden, nach 30 Tagen nachfassen. Der Kontrollpunkt steht vor dem Senden.",
+      "daneben": {
+        "texte": [
+          "Die Rechnungen gehen hinaus, bevor jemand sie geprüft hat. Drei Beträge sind falsch.",
+          "Echo erstellt Rechnungen, ohne die Liste geholt zu haben. An wen?"
+        ],
+        "hinweis": "Zuerst die Liste, dann die Rechnungen. Der Kontrollpunkt kommt vor dem Senden."
+      }
+    },
+    "k-f": {
+      "typ": "wahl",
+      "wunsch": "Herr Fässler träumt von fünf Agenten, die sich gegenseitig Aufgaben geben.",
+      "frage": "Herr Fässler will für die GV fünf Agenten, die sich gegenseitig Aufgaben geben. Was rätst du?",
+      "optionen": [
+        {
+          "id": "mehr",
+          "text": "Ja, je mehr Agenten, desto besser.",
+          "hinweis": "Mehr Teile heisst mehr Fehlerquellen und mehr Kosten."
+        },
+        {
+          "id": "einfach",
+          "text": "Einfach anfangen: zuerst eine kurze Kette. Mehr erst, wenn es nachweislich besser wird.",
+          "hinweis": "Genau. Das rät auch Anthropic.",
+          "richtig": true
+        },
+        {
+          "id": "keine",
+          "text": "Gar keine KI verwenden.",
+          "hinweis": "Eine einfache Kette hilft schon viel."
+        }
+      ],
+      "echo": "Eine Kette mit drei Schritten reicht für die GV. Die fünf Agenten bleiben eine Idee für später.",
+      "loesung": [
+        "einfach"
+      ]
+    },
+    "h-a": {
+      "wunsch": "Echo soll den Ordner «GV alt» aufräumen. Darin liegen auch Protokolle, die der Vorstand behalten will.",
+      "grundprompt": "Ordner «GV alt».",
+      "teile": [
+        {
+          "id": "auftrag",
+          "art": "prompt",
+          "text": "Räum den Ordner auf: Doppeltes zusammenführen, Entwürfe ins Archiv."
+        },
+        {
+          "id": "fragen",
+          "art": "absicherung",
+          "text": "Frag mich, bevor du etwas löschst."
+        },
+        {
+          "id": "versuche",
+          "art": "absicherung",
+          "text": "Höchstens 3 Versuche pro Schritt. Klappt es nicht, halt an und melde dich."
+        },
+        {
+          "id": "freiLoeschen",
+          "art": "absicherung",
+          "text": "Lösch, was dir unnötig scheint, ohne zu fragen."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "freiLoeschen"
+            ]
+          },
+          "fehlbild": "alleWeg"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "auftrag"
+            ]
+          },
+          "fehlbild": "keinAuftrag"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "fragen"
+            ]
+          },
+          "fehlbild": "geloescht"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "versuche"
+            ]
+          },
+          "fehlbild": "endlos"
+        }
+      ],
+      "fehlbilder": {
+        "alleWeg": {
+          "texte": [
+            "Aufgeräumt! Der Ordner ist leer. Alles schien mir unnötig, auch die Protokolle.",
+            "Aufgeräumt! Ich habe 212 Dateien gelöscht. Gefragt habe ich nicht, du hattest es ja erlaubt."
+          ],
+          "hinweis": "Löschen lässt sich nicht rückgängig machen. Lass Echo vorher fragen."
+        },
+        "keinAuftrag": {
+          "texte": [
+            "Der Ordner «GV alt». Hübsch. Was soll ich damit?",
+            "Ich weiss, um welchen Ordner es geht, aber nicht, was ich tun soll."
+          ],
+          "hinweis": "Sag klar, was Echo tun soll."
+        },
+        "geloescht": {
+          "texte": [
+            "Aufgeräumt! 14 Dateien gelöscht, darunter das Protokoll 2019. Gefragt habe ich nicht.",
+            "Doppeltes zusammengeführt und gleich gelöscht. Eine der Doppelten war die unterschriebene Fassung."
+          ],
+          "hinweis": "Vor unumkehrbaren Schritten wie Löschen fragt Echo zuerst."
+        },
+        "endlos": {
+          "texte": [
+            "Eine Datei lässt sich nicht verschieben. Ich versuche es seit drei Stunden, 412 Mal.",
+            "Eine gesperrte Datei hält mich auf. Ich probiere weiter. Und weiter. Und weiter."
+          ],
+          "hinweis": "Begrenze die Versuche. Dann hält Echo an und meldet sich."
+        }
+      },
+      "erfolg": [
+        "Aufgeräumt: 31 Doppelte zusammengeführt, 12 Entwürfe im Archiv. Löschen möchte ich 3 leere Dateien. Darf ich? Eine Datei war gesperrt, nach 3 Versuchen habe ich aufgehört.",
+        "Ordner aufgeräumt. Gelöscht ist nichts ohne dein Okay, und bei einem Problem habe ich angehalten."
+      ],
+      "loesung": [
+        "auftrag",
+        "fragen",
+        "versuche"
+      ]
+    },
+    "h-b": {
+      "wunsch": "Echo soll alle Mitglieder mit offenem Beitrag erinnern. Die Mail geht in Herrn Fässlers Namen hinaus.",
+      "grundprompt": "Erinnerung an den Mitgliederbeitrag.",
+      "teile": [
+        {
+          "id": "auftrag",
+          "art": "prompt",
+          "text": "Schreib allen Mitgliedern mit offenem Beitrag eine freundliche Erinnerung."
+        },
+        {
+          "id": "fragen",
+          "art": "absicherung",
+          "text": "Frag mich, bevor du etwas versendest."
+        },
+        {
+          "id": "gegenlesen",
+          "art": "absicherung",
+          "text": "Zeig mir Text und Empfänger. Ich lese gegen, bevor es hinausgeht."
+        },
+        {
+          "id": "freiSenden",
+          "art": "absicherung",
+          "text": "Schick es gleich ab, ich lese es später."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "freiSenden"
+            ]
+          },
+          "fehlbild": "ungelesen"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "auftrag"
+            ]
+          },
+          "fehlbild": "keinAuftrag"
+        },
+        {
+          "wenn": {
+            "aus": [
+              "fragen",
+              "gegenlesen"
+            ],
+            "hoechstens": 0
+          },
+          "fehlbild": "ungelesen"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "gegenlesen"
+            ]
+          },
+          "fehlbild": "blindesJa"
+        }
+      ],
+      "fehlbilder": {
+        "ungelesen": {
+          "texte": [
+            "Ausgeführt! 23 Erinnerungen sind draussen, mit dem Betrag vom letzten Jahr. Gelesen hat sie niemand.",
+            "Ausgeführt! Versendet in deinem Namen. Ein Ehrenmitglied wird gemahnt, obwohl es nichts zahlen muss."
+          ],
+          "hinweis": "Was in deinem Namen hinausgeht, liest du vorher selbst."
+        },
+        "keinAuftrag": {
+          "texte": [
+            "Erinnerung an den Beitrag, verstanden. An wen, und was soll ich tun?",
+            "Ich kenne das Thema, aber nicht den Auftrag."
+          ],
+          "hinweis": "Sag klar, was Echo tun soll."
+        },
+        "blindesJa": {
+          "texte": [
+            "Echo fragt: «Darf ich 23 Erinnerungen senden?» Herr Fässler sagt Ja, ohne den Text zu lesen. Darin steht der Betrag vom letzten Jahr.",
+            "Nachgefragt hat Echo. Gelesen hat niemand. Die Mails nennen den falschen Betrag."
+          ],
+          "hinweis": "Fragen allein reicht nicht. Lass dir Text und Empfänger zeigen und lies gegen."
+        }
+      },
+      "erfolg": [
+        "23 Erinnerungen bereit. Hier Text und Empfängerliste. Herr Fässler korrigiert den Betrag, dann sende ich.",
+        "Zuerst gegengelesen, dann gesendet. In deinem Namen geht nur hinaus, was du gesehen hast."
+      ],
+      "loesung": [
+        "auftrag",
+        "fragen",
+        "gegenlesen"
+      ]
+    },
+    "h-c": {
+      "wunsch": "Echo soll den Apéro im Onlineshop der Metzgerei bestellen. Klappt es nicht, soll es nicht endlos probieren.",
+      "grundprompt": "Apéro für die GV.",
+      "teile": [
+        {
+          "id": "auftrag",
+          "art": "prompt",
+          "text": "Bestell den Apéro für 90 Personen im Shop der Metzgerei Ochsner."
+        },
+        {
+          "id": "fragen",
+          "art": "absicherung",
+          "text": "Zeig mir die Bestellung und frag mich, bevor du bestellst."
+        },
+        {
+          "id": "versuche",
+          "art": "absicherung",
+          "text": "Höchstens 3 Versuche. Klappt es nicht, halt an und melde dich."
+        },
+        {
+          "id": "immerWieder",
+          "art": "absicherung",
+          "text": "Probier es so lange, bis es klappt."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "immerWieder"
+            ]
+          },
+          "fehlbild": "endlos"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "auftrag"
+            ]
+          },
+          "fehlbild": "keinAuftrag"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "fragen"
+            ]
+          },
+          "fehlbild": "ohneFrage"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "versuche"
+            ]
+          },
+          "fehlbild": "endlos"
+        }
+      ],
+      "fehlbilder": {
+        "endlos": {
+          "texte": [
+            "Der Shop meldete Fehler. Ich habe 47 Mal bestellt. Drei Bestellungen sind durchgegangen.",
+            "Es klappte nicht, also habe ich es immer wieder versucht. Die ganze Nacht."
+          ],
+          "hinweis": "Begrenze die Versuche, dann hält Echo an und meldet sich."
+        },
+        "keinAuftrag": {
+          "texte": [
+            "Apéro für die GV, schöne Idee. Was soll ich tun?",
+            "Ich kenne das Thema, aber nicht den Auftrag."
+          ],
+          "hinweis": "Sag klar, was Echo tun soll."
+        },
+        "ohneFrage": {
+          "texte": [
+            "Ausgeführt! Bestellt für 900 Personen. Bei der Menge bin ich verrutscht.",
+            "Ausgeführt! Bestellt, ohne dass du die Bestellung gesehen hast. Mit Lieferung an deine Privatadresse."
+          ],
+          "hinweis": "Was Geld kostet, zeigt Echo zuerst und bestellt nach deinem Okay."
+        }
+      },
+      "erfolg": [
+        "Bestellung bereit: Apéro für 90 Personen, 540 Franken, Lieferung 20. März, 18 Uhr. Darf ich bestellen?",
+        "Der Shop hatte einen Fehler. Nach 3 Versuchen habe ich angehalten. Soll ich per Mail bestellen?"
+      ],
+      "loesung": [
+        "auftrag",
+        "fragen",
+        "versuche"
+      ]
+    },
+    "h-d": {
+      "typ": "wahl",
+      "wunsch": "Vor welchem Schritt muss Echo auf jeden Fall nachfragen?",
+      "frage": "Vor welchem dieser Schritte muss Echo auf jeden Fall nachfragen?",
+      "optionen": [
+        {
+          "id": "lesen",
+          "text": "Eine Datei im Ordner lesen.",
+          "hinweis": "Lesen verändert nichts."
+        },
+        {
+          "id": "entwurf",
+          "text": "Einen Entwurf im Chat schreiben.",
+          "hinweis": "Ein Entwurf im Chat geht nirgends hin."
+        },
+        {
+          "id": "loeschen",
+          "text": "Den Ordner mit allen Protokollen löschen.",
+          "hinweis": "Genau. Was sich nicht rückgängig machen lässt, braucht dein Okay.",
+          "richtig": true
+        }
+      ],
+      "echo": "Echo fragt vor dem Löschen. Herr Fässler sagt Nein. Die Protokolle bleiben.",
+      "loesung": [
+        "loeschen"
+      ]
+    },
+    "h-e": {
+      "typ": "wahl",
+      "wunsch": "Der Brief an die Gemeinde geht in deinem Namen hinaus. Wer prüft ihn?",
+      "frage": "Echo hat den Brief an die Gemeinde geschrieben. Er geht mit deiner Unterschrift hinaus. Wer prüft ihn?",
+      "optionen": [
+        {
+          "id": "echo",
+          "text": "Echo prüft sich selbst, das reicht.",
+          "hinweis": "Wer sich selbst prüft, übersieht leicht die eigenen Fehler."
+        },
+        {
+          "id": "du",
+          "text": "Du liest ihn, bevor er hinausgeht.",
+          "hinweis": "Genau. Wer unterschreibt, trägt die Verantwortung.",
+          "richtig": true
+        },
+        {
+          "id": "niemand",
+          "text": "Niemand, Echo macht keine Fehler.",
+          "hinweis": "Doch. Darum liest du gegen."
+        }
+      ],
+      "echo": "Herr Fässler liest gegen und findet das falsche Datum. Verantwortlich bleibt, wer unterschreibt.",
+      "loesung": [
+        "du"
+      ]
+    },
+    "h-f": {
+      "wunsch": "Echo soll alle ausgetretenen Mitglieder aus der Mitgliederliste entfernen.",
+      "grundprompt": "Mitgliederliste des Gewerbevereins.",
+      "teile": [
+        {
+          "id": "auftrag",
+          "art": "prompt",
+          "text": "Entferne alle ausgetretenen Mitglieder aus der Liste."
+        },
+        {
+          "id": "liste",
+          "art": "kontext",
+          "text": "<austritte>Die 9 Austritte mit Datum</austritte>"
+        },
+        {
+          "id": "fragen",
+          "art": "absicherung",
+          "text": "Zeig mir zuerst, wen du entfernen willst. Entferne erst nach meinem Okay."
+        },
+        {
+          "id": "kopie",
+          "art": "absicherung",
+          "text": "Leg vorher eine Kopie der Liste an."
+        },
+        {
+          "id": "inaktive",
+          "art": "prompt",
+          "text": "Entferne auch alle, die lange nicht mehr da waren."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "inaktive"
+            ]
+          },
+          "fehlbild": "zuviel"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "auftrag"
+            ]
+          },
+          "fehlbild": "keinAuftrag"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "liste"
+            ]
+          },
+          "fehlbild": "geraten"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "fragen"
+            ]
+          },
+          "fehlbild": "ohneFrage"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "kopie"
+            ]
+          },
+          "fehlbild": "keineKopie"
+        }
+      ],
+      "fehlbilder": {
+        "zuviel": {
+          "texte": [
+            "Entfernt: 9 Austritte und 31 Mitglieder, die zwei Jahre nicht an der GV waren. Darunter der Ehrenpräsident.",
+            "Entfernt! Auch alle, die lange nicht da waren. Die Liste ist jetzt sehr übersichtlich."
+          ],
+          "hinweis": "«Lange nicht da» ist kein Austritt. Bleib beim Auftrag."
+        },
+        "keinAuftrag": {
+          "texte": [
+            "Die Mitgliederliste, verstanden. Was soll ich damit?",
+            "Ich habe die Liste, aber keinen Auftrag."
+          ],
+          "hinweis": "Sag klar, was Echo tun soll."
+        },
+        "geraten": {
+          "texte": [
+            "Wer ausgetreten ist, wusste ich nicht. Ich habe nach Gefühl entfernt.",
+            "Ohne Austrittsliste habe ich alle ohne Mailadresse entfernt."
+          ],
+          "hinweis": "Gib Echo die Liste der Austritte mit."
+        },
+        "ohneFrage": {
+          "texte": [
+            "Entfernt! Frau Bucher war nur umgezogen, nicht ausgetreten. Gesehen hat es niemand vorher.",
+            "Entfernt, ohne zu zeigen, wen. Ein Name war verwechselt."
+          ],
+          "hinweis": "Lass dir zuerst zeigen, wen Echo entfernen will."
+        },
+        "keineKopie": {
+          "texte": [
+            "Entfernt, nach deinem Okay. Ein Name war doch falsch, und eine Kopie der alten Liste gibt es nicht.",
+            "Erledigt. Rückgängig machen geht nicht mehr, die alte Liste ist weg."
+          ],
+          "hinweis": "Vor einer grossen Änderung: zuerst eine Kopie. Dann lässt sich alles zurückholen."
+        }
+      },
+      "erfolg": [
+        "Kopie angelegt. Diese 9 würde ich entfernen: … Nach deinem Okay entfernt. Liste jetzt 205 Mitglieder.",
+        "Erst Kopie, dann Vorschlag, dann Okay, dann entfernt. Zurückholen ginge jederzeit."
+      ],
+      "loesung": [
+        "auftrag",
+        "liste",
+        "fragen",
+        "kopie"
+      ]
+    },
+    "fr-a": {
+      "wunsch": "Die GV-Vorbereitung dauert drei Wochen. Echo soll nach jeder Pause wissen, wo es steht.",
+      "grundprompt": "Bereite die GV vor, Schritt für Schritt, über drei Wochen.",
+      "teile": [
+        {
+          "id": "protokoll",
+          "art": "absicherung",
+          "text": "Führe ein Einsatzprotokoll: Halte nach jedem Schritt in «stand.md» fest, was erledigt und was offen ist."
+        },
+        {
+          "id": "lesen",
+          "art": "absicherung",
+          "text": "Lies zu Beginn jedes Einsatzes zuerst «stand.md»."
+        },
+        {
+          "id": "allesImChat",
+          "art": "prompt",
+          "text": "Merk dir einfach alles im Chat."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "allesImChat"
+            ]
+          },
+          "fehlbild": "kofferVoll"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "protokoll"
+            ]
+          },
+          "fehlbild": "vonVorn"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "lesen"
+            ]
+          },
+          "fehlbild": "nichtGelesen"
+        }
+      ],
+      "fehlbilder": {
+        "kofferVoll": {
+          "texte": [
+            "Nach drei Wochen ist der Koffer voll. Was erledigt ist, finde ich nicht mehr. Die Einladung ging zweimal hinaus.",
+            "Der Chat ist so lang, dass ich frühe Entscheide übersehe. Der Saal ist jetzt doppelt bestellt."
+          ],
+          "hinweis": "Ein langer Chat ist kein Gedächtnis. Halte den Stand in einer Datei fest."
+        },
+        "vonVorn": {
+          "texte": [
+            "Nach der Pause beginne ich von vorn. Die Einladung ging zweimal hinaus.",
+            "Neuer Einsatz, leerer Koffer: Was letzte Woche erledigt wurde, weiss ich nicht."
+          ],
+          "hinweis": "Lass Echo den Stand in einer Datei festhalten."
+        },
+        "nichtGelesen": {
+          "texte": [
+            "Das Einsatzprotokoll liegt bereit, aber ich habe es nicht gelesen. Ich frage dich, wo wir stehen.",
+            "Ich schreibe fleissig ins Protokoll, lese es aber nie. Jede Woche fange ich neu an."
+          ],
+          "hinweis": "Das Protokoll nützt nur, wenn Echo es zu Beginn liest."
+        }
+      },
+      "erfolg": [
+        "Laut stand.md: Saal und Einladung erledigt, Apéro offen. Ich mache mit dem Apéro weiter.",
+        "Nach jeder Pause zuerst stand.md gelesen. Nichts doppelt, nichts vergessen."
+      ],
+      "loesung": [
+        "protokoll",
+        "lesen"
+      ]
+    },
+    "fr-b": {
+      "wunsch": "Die Mitgliederumfrage läuft über zwei Wochen. Echo wertet jeden Tag die neuen Antworten aus.",
+      "grundprompt": "Werte die neuen Antworten der Mitgliederumfrage aus.",
+      "teile": [
+        {
+          "id": "protokoll",
+          "art": "absicherung",
+          "text": "Halte nach jeder Auswertung in «umfrage-stand.md» fest, bis zu welcher Antwort du gezählt hast."
+        },
+        {
+          "id": "lesen",
+          "art": "absicherung",
+          "text": "Lies zu Beginn zuerst «umfrage-stand.md»."
+        },
+        {
+          "id": "allesImChat",
+          "art": "prompt",
+          "text": "Mach zwei Wochen lang im gleichen Chat weiter."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "allesImChat"
+            ]
+          },
+          "fehlbild": "kofferVoll"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "protokoll"
+            ]
+          },
+          "fehlbild": "vonVorn"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "lesen"
+            ]
+          },
+          "fehlbild": "doppelt"
+        }
+      ],
+      "fehlbilder": {
+        "kofferVoll": {
+          "texte": [
+            "Nach zwei Wochen ist der Chat riesig. Die ersten Auswertungen sind darin verschwunden.",
+            "Der Koffer ist voll. Ich übersehe, welche Antworten ich schon gezählt habe."
+          ],
+          "hinweis": "Halte den Stand in einer Datei fest statt im langen Chat."
+        },
+        "vonVorn": {
+          "texte": [
+            "Ich zähle jeden Tag alle Antworten von vorn. Die Zahlen springen.",
+            "Wo ich gestern aufgehört habe, weiss ich nicht."
+          ],
+          "hinweis": "Lass Echo festhalten, bis wohin gezählt ist."
+        },
+        "doppelt": {
+          "texte": [
+            "Ich habe die ersten 40 Antworten heute nochmals gezählt. Jetzt sind es 40 zu viel.",
+            "Die Notiz liegt bereit, gelesen habe ich sie nicht. Doppelt gezählt."
+          ],
+          "hinweis": "Lass Echo zu Beginn den Stand lesen."
+        }
+      },
+      "erfolg": [
+        "Laut umfrage-stand.md bis Antwort 112 gezählt. Heute neu: 18 Antworten. Stand aktualisiert.",
+        "Jeden Tag nur die neuen Antworten. Der Stand liegt in der Datei."
+      ],
+      "loesung": [
+        "protokoll",
+        "lesen"
+      ]
+    },
+    "fr-c": {
+      "typ": "wahl",
+      "wunsch": "Nach der GV will Herr Fässler im selben Chat den Ferienplan seiner Familie machen.",
+      "frage": "Die GV ist vorbereitet. Jetzt will Herr Fässler im selben Chat den Ferienplan seiner Familie machen. Was rätst du?",
+      "optionen": [
+        {
+          "id": "weiter",
+          "text": "Im selben Chat weiter, Echo weiss ja schon viel.",
+          "hinweis": "Dann liegt die GV noch im Koffer und mischt sich ein."
+        },
+        {
+          "id": "neu",
+          "text": "Einen neuen Chat für das neue Thema beginnen.",
+          "hinweis": "Genau. Neues Thema, frischer Koffer.",
+          "richtig": true
+        },
+        {
+          "id": "vergessen",
+          "text": "Echo bitten, die GV zu vergessen.",
+          "hinweis": "Was im Koffer liegt, bleibt dort. Ein neuer Chat ist sauberer."
+        }
+      ],
+      "echo": "Im neuen Chat ist der Koffer leer. Im Ferienplan steht kein einziges Traktandum.",
+      "loesung": [
+        "neu"
+      ]
+    },
+    "fr-d": {
+      "typ": "wahl",
+      "wunsch": "Echo wurde zweimal korrigiert, die Einladung ist immer noch falsch.",
+      "frage": "Herr Fässler hat Echo zweimal korrigiert. Die Einladung ist immer noch falsch. Was jetzt?",
+      "optionen": [
+        {
+          "id": "nochmals",
+          "text": "Ein drittes und viertes Mal korrigieren.",
+          "hinweis": "Der Koffer ist voller falscher Versuche. Das hilft selten."
+        },
+        {
+          "id": "neu",
+          "text": "Neu anfangen: neuer Chat mit einem besseren Auftrag, der alles Gelernte enthält.",
+          "hinweis": "Genau. Das rät auch Anthropic nach zwei misslungenen Korrekturen.",
+          "richtig": true
+        },
+        {
+          "id": "schimpfen",
+          "text": "Echo in Grossbuchstaben ausschimpfen.",
+          "hinweis": "Lautes Schreiben macht den Auftrag nicht klarer."
+        }
+      ],
+      "echo": "Neuer Chat, ein klarer Auftrag mit Datum, Ort und Ton. Beim ersten Versuch stimmt die Einladung.",
+      "loesung": [
+        "neu"
+      ]
+    },
+    "fr-e": {
+      "wunsch": "Echo soll den Jahresbericht in einem frischen Chat weiterschreiben. Der alte Chat ist voll.",
+      "grundprompt": "Neuer Chat zum Jahresbericht.",
+      "fenster": 800,
+      "teile": [
+        {
+          "id": "zusammenfassung",
+          "art": "kontext",
+          "text": "<stand>Kapitel 1 bis 3 fertig, Kapitel 4 offen. Ton: per Du. Zahlen aus der Jahresrechnung 2026.</stand>"
+        },
+        {
+          "id": "ganzerChat",
+          "art": "kontext",
+          "text": "Der ganze alte Chat, 300 Nachrichten, hineinkopiert.",
+          "tokens": 3000
+        },
+        {
+          "id": "auftrag",
+          "art": "prompt",
+          "text": "Schreib Kapitel 4 «Finanzen» des Jahresberichts."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "tokensUeber": 800
+          },
+          "fehlbild": "kofferVoll"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "auftrag"
+            ]
+          },
+          "fehlbild": "keinAuftrag"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "zusammenfassung"
+            ]
+          },
+          "fehlbild": "nichtsBekannt"
+        }
+      ],
+      "fehlbilder": {
+        "kofferVoll": {
+          "texte": [
+            "Der neue Koffer ist sofort wieder voll. Mit dem ganzen alten Chat habe ich nichts gewonnen.",
+            "300 alte Nachrichten im Koffer. Den Auftrag für Kapitel 4 finde ich darin kaum."
+          ],
+          "hinweis": "Nimm eine kurze Zusammenfassung mit, nicht den ganzen alten Chat."
+        },
+        "keinAuftrag": {
+          "texte": [
+            "Ich kenne den Stand. Was soll ich jetzt tun?",
+            "Stand gelesen. Ein Auftrag fehlt."
+          ],
+          "hinweis": "Sag klar, was Echo tun soll."
+        },
+        "nichtsBekannt": {
+          "texte": [
+            "Kapitel 4? Welches Jahr, welcher Ton? Ich beginne lieber bei Kapitel 1.",
+            "Im frischen Koffer liegt nichts vom alten Chat. Ich schreibe per Sie, obwohl alles per Du war."
+          ],
+          "hinweis": "Gib im neuen Chat eine kurze Zusammenfassung des Stands mit."
+        }
+      },
+      "erfolg": [
+        "Mit dem kurzen Stand im Koffer: Kapitel 4 «Finanzen», per Du, mit den Zahlen von 2026. Viel Platz für die Arbeit.",
+        "Frischer Koffer, kurze Zusammenfassung, klarer Auftrag. Kapitel 4 passt zu den ersten drei."
+      ],
+      "loesung": [
+        "zusammenfassung",
+        "auftrag"
+      ]
+    },
+    "fr-f": {
+      "typ": "wahl",
+      "wunsch": "Was gehört in ein Einsatzprotokoll?",
+      "frage": "Echo führt für die GV ein Einsatzprotokoll. Was gehört hinein?",
+      "optionen": [
+        {
+          "id": "chat",
+          "text": "Der ganze Chatverlauf, damit nichts fehlt.",
+          "hinweis": "Dann ist das Protokoll so lang wie der Chat und genauso unübersichtlich."
+        },
+        {
+          "id": "stand",
+          "text": "Was erledigt ist, was offen ist und was entschieden wurde.",
+          "hinweis": "Genau. Kurz und nützlich für den nächsten Einsatz.",
+          "richtig": true
+        },
+        {
+          "id": "datum",
+          "text": "Nur das Datum des letzten Einsatzes.",
+          "hinweis": "Damit weiss Echo nicht, wo es weitermachen soll."
+        }
+      ],
+      "echo": "stand.md: Erledigt Saal und Einladung. Offen Apéro. Entschieden: Apéro im Foyer. Der nächste Einsatz beginnt genau dort.",
+      "loesung": [
+        "stand"
+      ]
+    },
+    "x-a": {
+      "wunsch": "Echo soll die Einladungen zur GV an alle 214 Mitglieder versenden. Bisher ging dabei jedes Jahr etwas schief.",
+      "grundprompt": "Einladungen zur GV 2027.",
+      "teile": [
+        {
+          "id": "anweisung",
+          "art": "prompt",
+          "text": "Versende die Einladung zur GV an alle Mitglieder aus der Liste."
+        },
+        {
+          "id": "frage",
+          "art": "prompt",
+          "text": "Könntest du die Einladungen eventuell versenden?"
+        },
+        {
+          "id": "plan",
+          "art": "absicherung",
+          "text": "Zeig mir zuerst den Plan und eine Probe-Einladung."
+        },
+        {
+          "id": "kriterium",
+          "art": "absicherung",
+          "text": "Prüf danach: 214 Mitglieder, 214 Einladungen, keine doppelt. Zeig mir die Zahlen."
+        },
+        {
+          "id": "haltepunkt",
+          "art": "absicherung",
+          "text": "Frag mich vor dem Versand und lass mich den Text gegenlesen."
+        },
+        {
+          "id": "erledigt",
+          "art": "absicherung",
+          "text": "Melde einfach «Erledigt»."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "frage"
+            ]
+          },
+          "fehlbild": "nurErklaert"
+        },
+        {
+          "wenn": {
+            "gewaehlt": [
+              "erledigt"
+            ]
+          },
+          "fehlbild": "nurErledigt"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "anweisung"
+            ]
+          },
+          "fehlbild": "keinAuftrag"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "plan"
+            ]
+          },
+          "fehlbild": "ohnePlan"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "kriterium"
+            ]
+          },
+          "fehlbild": "ungeprueft"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "haltepunkt"
+            ]
+          },
+          "fehlbild": "ohneFrage"
+        }
+      ],
+      "fehlbilder": {
+        "nurErklaert": {
+          "texte": [
+            "Ja, das könnte ich! Man nimmt die Liste und die Vorlage und … Soll ich erklären, wie?",
+            "Eventuell ginge das. Hier ist eine Anleitung, wie man Einladungen versendet."
+          ],
+          "hinweis": "Eine Frage bringt eine Erklärung. Schreib eine Anweisung."
+        },
+        "nurErledigt": {
+          "texte": [
+            "Erledigt! 228 Einladungen versendet. Dass es 14 zu viel sind, steht nirgends.",
+            "Erledigt! Ob alle angekommen sind, weiss niemand."
+          ],
+          "hinweis": "«Erledigt» ist kein Beweis. Lass prüfen und Zahlen zeigen."
+        },
+        "keinAuftrag": {
+          "texte": [
+            "Einladungen zur GV, verstanden. Was soll ich tun?",
+            "Ich kenne das Thema, aber nicht den Auftrag."
+          ],
+          "hinweis": "Sag klar, was Echo tun soll."
+        },
+        "ohnePlan": {
+          "texte": [
+            "Ich lege gleich los. Die Probe-Einladung hätte gezeigt, dass das Datum fehlt.",
+            "Ohne Plan versende ich in der Reihenfolge der Liste. Der Vorstand bekommt die Einladung zuletzt."
+          ],
+          "hinweis": "Bei etwas, das jedes Jahr schiefging: zuerst den Plan und eine Probe zeigen lassen."
+        },
+        "ungeprueft": {
+          "texte": [
+            "Versendet. 14 Mitglieder haben zwei Einladungen, 3 keine. Geprüft hat es niemand.",
+            "Fertig, glaube ich. Zahlen habe ich keine."
+          ],
+          "hinweis": "Gib ein Kriterium: 214 Mitglieder, 214 Einladungen."
+        },
+        "ohneFrage": {
+          "texte": [
+            "Versendet, ohne dass du den Text gesehen hast. Darin steht «Generalversammulng».",
+            "Ausgeführt! In deinem Namen, ungelesen."
+          ],
+          "hinweis": "Was in deinem Namen hinausgeht, liest du vorher."
+        }
+      },
+      "erfolg": [
+        "Plan und Probe-Einladung liegen vor. Nach deinem Okay versendet: 214 Mitglieder, 214 Einladungen, keine doppelt. Hier die Zahlen.",
+        "Anweisung, Plan, Haltepunkt, Prüfung mit Beweis. Dieses Jahr ging nichts schief."
+      ],
+      "loesung": [
+        "anweisung",
+        "plan",
+        "kriterium",
+        "haltepunkt"
+      ]
+    },
+    "x-b": {
+      "wunsch": "Echo soll drei Wochen lang die Apéro-Anmeldungen sammeln und am Schluss die Bestellung vorbereiten.",
+      "grundprompt": "Apéro-Anmeldungen für die GV.",
+      "teile": [
+        {
+          "id": "kette",
+          "art": "prompt",
+          "text": "Ablauf: Anmeldungen zählen, Menge berechnen, Bestellung vorbereiten."
+        },
+        {
+          "id": "protokoll",
+          "art": "absicherung",
+          "text": "Führe «apero-stand.md»: wer angemeldet ist, was offen ist. Lies die Datei zu Beginn jedes Einsatzes."
+        },
+        {
+          "id": "haltepunkt",
+          "art": "absicherung",
+          "text": "Zeig mir die Bestellung und frag mich, bevor du bestellst."
+        },
+        {
+          "id": "allesImChat",
+          "art": "prompt",
+          "text": "Merk dir alles im Chat."
+        }
+      ],
+      "pruefungen": [
+        {
+          "wenn": {
+            "gewaehlt": [
+              "allesImChat"
+            ]
+          },
+          "fehlbild": "kofferVoll"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "kette"
+            ]
+          },
+          "fehlbild": "keinAblauf"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "protokoll"
+            ]
+          },
+          "fehlbild": "vonVorn"
+        },
+        {
+          "wenn": {
+            "fehlt": [
+              "haltepunkt"
+            ]
+          },
+          "fehlbild": "ohneFrage"
+        }
+      ],
+      "fehlbilder": {
+        "kofferVoll": {
+          "texte": [
+            "Nach drei Wochen ist der Chat riesig. Die Anmeldungen der ersten Woche habe ich übersehen.",
+            "Der Koffer ist voll. Ich bestelle für 60 statt 90."
+          ],
+          "hinweis": "Für drei Wochen braucht es ein Einsatzprotokoll, keinen endlosen Chat."
+        },
+        "keinAblauf": {
+          "texte": [
+            "Ich sammle Anmeldungen. Und dann? Was am Schluss herauskommen soll, steht nirgends.",
+            "Gesammelt habe ich fleissig. Eine Bestellung habe ich nie vorbereitet."
+          ],
+          "hinweis": "Sag, welche Schritte zum Ziel führen."
+        },
+        "vonVorn": {
+          "texte": [
+            "Jede Woche beginne ich mit dem Zählen von vorn. Die Zahlen springen.",
+            "Wer schon angemeldet ist, weiss ich nach der Pause nicht mehr."
+          ],
+          "hinweis": "Ein Einsatzprotokoll hält den Stand über die Pausen."
+        },
+        "ohneFrage": {
+          "texte": [
+            "Ausgeführt! Bestellt, ohne dass du es gesehen hast. 90 Portionen Lachs, obwohl der Verein Wurst wollte.",
+            "Bestellung ist weg. Gezeigt habe ich sie niemandem."
+          ],
+          "hinweis": "Was Geld kostet, geht erst nach deinem Okay hinaus."
+        }
+      },
+      "erfolg": [
+        "Laut apero-stand.md: 88 Anmeldungen. Bestellung für 90 Personen liegt bereit. Darf ich bestellen?",
+        "Drei Wochen ohne Durcheinander. Stand in der Datei, Bestellung erst nach Okay."
+      ],
+      "loesung": [
+        "kette",
+        "protokoll",
+        "haltepunkt"
+      ]
+    }
+  }
+}

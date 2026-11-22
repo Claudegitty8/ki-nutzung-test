@@ -1,0 +1,682 @@
+/* KI-Studio neu: gemeinsames Aussehen beider Teile, zuerst fürs Handy. Farben pro Teil über data-teil (gestaltung/AUSSEHEN.md). */
+:root {
+  --grund: #f6f4ee;
+  --flaeche: #ffffff;
+  --text: #1d2420;
+  --leise: #5b6660;
+  --linie: #d9d6cc;
+  --rand: #857f72;
+  --akzent: #1f5fbf;
+  --warn: #8a4b00;
+  --warn-flaeche: #fff3dc;
+  --radius: 14px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --grund: #141815;
+    --flaeche: #1e2420;
+    --text: #eef1ec;
+    --leise: #a6b0a9;
+    --linie: #343c36;
+    --rand: #7a837c;
+    --akzent: #8ab4ff;
+    --warn: #ffcf87;
+    --warn-flaeche: #3a2c12;
+  }
+}
+
+/* Farben pro Teil (E-021). Ohne data-teil gelten die Farben des KI-Studios. */
+:root, [data-teil="studio"] {
+  --teil-figur: #6aa52a;
+  --teil-farbe: #3f6a12;
+  --teil-mark: #5b8f22;
+  --gut-flaeche: #e7f4d8;
+}
+[data-teil="buero"] {
+  --teil-figur: #3a9bb0;
+  --teil-farbe: #155e6d;
+  --teil-mark: #2f8597;
+  --gut-flaeche: #dff1f4;
+}
+@media (prefers-color-scheme: dark) {
+  :root, [data-teil="studio"] {
+    --teil-figur: #8cc63f;
+    --teil-farbe: #b9e37a;
+    --teil-mark: #8cc63f;
+    --gut-flaeche: #23331a;
+  }
+  [data-teil="buero"] {
+    --teil-figur: #5cc2d6;
+    --teil-farbe: #9adbe8;
+    --teil-mark: #5cc2d6;
+    --gut-flaeche: #163038;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--grund);
+  color: var(--text);
+}
+
+main {
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 1rem 1rem 3rem;
+  display: grid;
+  /* Die Spalte wird nie breiter als der Bildschirm, lange Wörter brechen um (Befund Barrierefreiheit 1.4.10). */
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+h1, h2, p, ul, ol { margin: 0; }
+h1 { font-size: 1.7rem; }
+h2 { font-size: 1.15rem; }
+
+.kopf p, .klein, .fuss { color: var(--leise); font-size: 0.9rem; }
+
+.karte {
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.etikett {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--leise);
+}
+
+.wunsch { font-size: 1.05rem; }
+
+.prompt {
+  border: 2px dashed var(--linie);
+  border-radius: 10px;
+  padding: 0.7rem;
+  min-height: 3.2rem;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.95rem;
+}
+
+.bausteine { display: grid; gap: 0.5rem; }
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  min-height: 48px;
+  border-radius: 10px;
+}
+
+button:focus-visible { outline: 3px solid var(--akzent); outline-offset: 2px; }
+
+.baustein {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: left;
+  padding: 0.5rem 0.8rem;
+  background: transparent;
+  border: 2px solid var(--rand);
+}
+
+.baustein-zeichen {
+  display: inline-grid;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  font-weight: 700;
+  flex: none;
+}
+
+.baustein[aria-pressed="true"] {
+  border-color: var(--teil-farbe);
+  background: var(--gut-flaeche);
+}
+
+.baustein[aria-pressed="true"] .baustein-zeichen { transform: rotate(45deg); }
+
+.los {
+  border: none;
+  background: var(--teil-farbe);
+  color: var(--grund);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.7rem 1rem;
+}
+
+.los:disabled { opacity: 0.6; }
+
+.figur-zeile {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.8rem;
+  align-items: start;
+}
+
+/* Die Figur: Kiwi (rund) im KI-Studio, Echo (eckiger Kopf mit Antenne) im Agentenbüro */
+.figur {
+  position: relative;
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 46% 54% 50% 50%;
+  background: var(--teil-figur);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex: none;
+}
+
+.auge {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #1d2420;
+}
+
+[data-teil="buero"] .figur {
+  margin-top: 0.9rem;
+  border-radius: 24%;
+}
+[data-teil="buero"] .figur::before {
+  content: '';
+  position: absolute;
+  top: -0.6rem;
+  left: 50%;
+  width: 0.2rem;
+  height: 0.6rem;
+  transform: translateX(-50%);
+  background: var(--teil-farbe);
+}
+[data-teil="buero"] .figur::after {
+  content: '';
+  position: absolute;
+  top: -0.9rem;
+  left: 50%;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background: var(--teil-figur);
+}
+.figur.froh .auge { height: 0.3rem; border-radius: 0.3rem 0.3rem 0 0; }
+
+.sprechblase {
+  background: var(--grund);
+  border: 1px solid var(--linie);
+  border-radius: 4px var(--radius) var(--radius) var(--radius);
+  padding: 0.7rem 0.8rem;
+}
+
+.hinweis:empty { display: none; }
+
+.hinweis {
+  background: var(--warn-flaeche);
+  color: var(--warn);
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.95rem;
+}
+
+.hinweis.gut { background: var(--gut-flaeche); color: var(--teil-farbe); }
+
+.check, .kapitel { padding-left: 1.3rem; display: grid; gap: 0.3rem; }
+.kapitel span { color: var(--leise); }
+
+.fehler { color: var(--warn); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .baustein-zeichen, .auge { transition: transform 0.15s, height 0.15s; }
+}
+
+/* ---------- Ab Version 0.2: Spielablauf ---------- */
+:root[data-schrift="gross"] { font-size: 20px; }
+:root[data-schrift="sehrgross"] { font-size: 23px; }
+
+main:focus { outline: none; }
+[hidden] { display: none !important; }
+
+.knopf, .knopf-zweit, .knopf-leise, .knopf-warn {
+  padding: 0.6rem 1rem;
+  background: transparent;
+  border: 2px solid var(--rand);
+  font-weight: 600;
+}
+.knopf-leise { border-color: transparent; padding-left: 0; color: var(--akzent); }
+.knopf-warn { border-color: var(--warn); color: var(--warn); }
+
+.knopf-reihe { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+/* Links (z. B. in «Über dieses Spiel»): gut lesbar, unterstrichen, nicht nur über Farbe erkennbar. */
+a { color: var(--akzent); overflow-wrap: anywhere; }
+/* Eigene Zeile mit genug Höhe für den Daumen (mindestens 44 Pixel). */
+.link-zeile { display: inline-flex; align-items: center; min-height: 44px; justify-self: start; }
+.knopf-reihe > * { flex: 1 1 9rem; }
+.aktionen { display: grid; gap: 0.6rem; }
+.aktionen:empty { display: none; }
+
+.leiste { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.leiste-titel { color: var(--leise); font-size: 0.9rem; font-weight: 400; margin: 0; }
+
+.schritte {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 0.3rem;
+  font-size: 0.72rem;
+}
+.schritte li {
+  flex: 1;
+  text-align: center;
+  padding: 0.3rem 0.1rem;
+  border-bottom: 3px solid var(--linie);
+  color: var(--leise);
+}
+.schritte li.aktuell { border-color: var(--teil-farbe); color: var(--text); font-weight: 700; }
+
+.punkte { display: inline-flex; gap: 0.3rem; vertical-align: middle; }
+.punkt {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  border: 2px solid var(--teil-farbe);
+}
+.punkt.voll { background: var(--teil-farbe); }
+
+.meister-zeile, .meister-liste li, .eintrag summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.meister-liste { list-style: none; padding: 0; display: grid; gap: 0.5rem; }
+
+.teil-gruppe { display: grid; gap: 0.5rem; }
+.baustein:disabled { opacity: 0.75; cursor: default; }
+.baustein.markiert { border-color: var(--akzent); border-style: dashed; }
+.teil-hinweis, .hilfe-text, .status { font-size: 0.95rem; }
+.teil-hinweis:empty, .hilfe-text:empty, .status:empty { display: none; }
+.teil-hinweis, .hilfe-text { color: var(--akzent); }
+.status { font-weight: 600; }
+
+.aha h2 { font-size: 1.4rem; }
+.merkbild {
+  border-left: 4px solid var(--teil-mark);
+  padding-left: 0.8rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.runden { padding-left: 1.4rem; display: grid; gap: 0.2rem; color: var(--leise); }
+.runden .aktuell { color: var(--text); font-weight: 700; }
+.runden .geschafft { text-decoration: line-through; }
+.runden .geschafft::after { content: " ✓"; }
+
+.feier { justify-items: center; text-align: center; }
+.wand-eintrag { display: grid; gap: 0.2rem; }
+
+.eintrag summary { cursor: pointer; font-weight: 700; min-height: 44px; }
+.rueckfrage { display: grid; gap: 0.6rem; background: var(--warn-flaeche); border-radius: 10px; padding: 0.8rem; }
+.eintrag { display: block; }
+.eintrag > p { margin-top: 0.5rem; }
+.prompt.system { border-style: solid; border-color: var(--teil-mark); }
+
+/* ---------- Ab Version 0.4: Vorhersagen ---------- */
+.frage { font-size: 1.05rem; }
+.baustein.wahl .baustein-zeichen { transform: none; }
+.baustein.wahl[aria-pressed="true"] .baustein-zeichen { background: var(--teil-farbe); border-color: var(--teil-farbe); box-shadow: inset 0 0 0 4px var(--gut-flaeche); }
+.sichtfenster { display: grid; gap: 0.4rem; border-top: 1px solid var(--linie); padding-top: 0.6rem; }
+.anteil { display: grid; grid-template-columns: 7.5rem 1fr 4.5rem; gap: 0.5rem; align-items: center; font-size: 0.9rem; }
+.anteil-bahn { background: var(--grund); border-radius: 6px; height: 0.9rem; overflow: hidden; }
+.anteil-balken { display: block; height: 100%; background: var(--teil-mark); border-radius: 6px; }
+.anteil-stufe { color: var(--leise); }
+.stufe-3 { width: 90%; }
+.stufe-2 { width: 40%; }
+.stufe-1 { width: 8%; }
+
+/* ---------- Ab Version 0.5: Tokens und Kontextfenster ---------- */
+.token-zeile { font-size: 0.9rem; color: var(--leise); }
+.token-zeile.zuviel { color: var(--warn); font-weight: 700; }
+.tisch { display: grid; gap: 0.3rem; border-top: 1px solid var(--linie); padding-top: 0.6rem; }
+.tisch-bahn { display: block; height: 1rem; border-radius: 6px; background: var(--grund); border: 1px solid var(--linie); overflow: hidden; }
+.tisch-fuellung { display: block; height: 100%; background: var(--teil-mark); }
+.tisch[data-zustand="eng"] .tisch-fuellung { background: #9a6a00; } /* 3:1 auf hellem Grund (Befund Barrierefreiheit) */
+.tisch[data-zustand="voll"] .tisch-fuellung { background: #b3261e; }
+.tisch[data-zustand="voll"] .klein, .tisch[data-zustand="eng"] .klein { color: var(--warn); font-weight: 600; }
+.fuell-0 { width: 2%; } .fuell-1 { width: 10%; } .fuell-2 { width: 20%; } .fuell-3 { width: 30%; } .fuell-4 { width: 40%; }
+.fuell-5 { width: 50%; } .fuell-6 { width: 60%; } .fuell-7 { width: 70%; } .fuell-8 { width: 80%; } .fuell-9 { width: 90%; } .fuell-10 { width: 100%; }
+.steine { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+.stein { padding: 0.2rem 0.45rem; border-radius: 6px; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.95rem; border: 1px solid var(--linie); }
+.farbe-0 { background: var(--gut-flaeche); } .farbe-1 { background: var(--warn-flaeche); } .farbe-2 { background: var(--grund); } .farbe-3 { background: transparent; }
+.kosten:empty, .budget-hinweis:empty { display: none; }
+
+/* Schnelltest: Ergebnisliste */
+.ergebnis-liste { padding-left: 1.2rem; display: grid; gap: 0.4rem; }
+
+/* Sortieren: Schritte mit Pfeilen verschieben */
+.reihe { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; counter-reset: platz; }
+.reihe-zeile {
+  counter-increment: platz;
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 0.6rem;
+  padding: 0.5rem 0.6rem; border: 2px solid var(--linie); border-radius: 12px; background: var(--flaeche);
+}
+/* Das Bild eines Schritts in eigener Zeile über die ganze Breite; bei sehr grosser Schrift die Pfeile unter den
+   Text, damit der Text nicht Buchstabe für Buchstabe umbricht (Befund Barrierefreiheit 0.6, WCAG 1.4.4). */
+.reihe-bild { grid-column: 1 / -1; min-width: 0; }
+[data-schrift="sehrgross"] .reihe-knoepfe { grid-column: 2 / -1; }
+/* Ist der Eintrag schmal (320 px oder grosse Schrift), stehen die Pfeile unter dem Text statt daneben
+   (Zweite Nachprüfung Barrierefreiheit 0.6, WCAG 1.4.10). Die Regel darüber bleibt als Rückfall für alte Browser. */
+.reihe { container-type: inline-size; }
+@container (max-width: 16rem) { .reihe-knoepfe { grid-column: 2 / -1; } }
+.reihe-zeile::before { content: counter(platz) "."; font-weight: 700; color: var(--leise); min-width: 1.4rem; }
+.reihe-zeile.markiert { border-color: var(--warn); background: var(--warn-flaeche); }
+.reihe-text { min-width: 0; overflow-wrap: break-word; }
+.reihe-knoepfe { display: flex; gap: 0.35rem; }
+.reihe-knopf {
+  width: 2.75rem; height: 2.75rem; border: 2px solid var(--rand); border-radius: 10px;
+  background: transparent; color: var(--text); font-size: 1rem;
+}
+.reihe-knopf:disabled { opacity: 0.35; }
+
+/* Ampel an den Rechten: Die Farbe ergänzt den Text, sie ersetzt ihn nicht. */
+.ampel { flex: none; width: 0.85rem; height: 0.85rem; border-radius: 50%; border: 2px solid var(--text); }
+.ampel-gruen { background: #3f9b3a; }
+.ampel-gelb { background: #e8b923; }
+.ampel-rot { background: #c93a32; }
+
+/* Stationen einer Schleife im Aha */
+.stationen-bild { display: grid; gap: 0.3rem; }
+.stationen { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
+.stationen li { padding: 0.35rem 0.7rem; border: 2px solid var(--teil-farbe); border-radius: 999px; font-weight: 600; }
+.stationen li + li::before { content: "→"; margin-right: 0.6rem; margin-left: -0.2rem; color: var(--leise); font-weight: 400; }
+
+summary:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid var(--akzent); outline-offset: 2px; }
+
+/* Die Zentrale als kleines Bild: Einrichtung des Kapitels und gekaufte Zierde auf einem Boden */
+.heim-bild { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.5rem; padding: 0.4rem 0.8rem 0.2rem; border-bottom: 4px solid var(--linie); font-size: 1.8rem; line-height: 1.2; }
+
+/* Springen (E-043): Liste der Aufträge in den Einstellungen */
+.sprung-liste { list-style: none; padding: 0; margin: 0.6rem 0 0; display: grid; gap: 0.4rem; }
+.sprung-knopf { width: 100%; text-align: left; }
+.sprung-fertig { display: block; padding: 0.5rem 0.2rem; color: var(--leise, inherit); }
+.sprung-auf > summary::after { content: '▸'; font-size: 1.2em; }
+.sprung-auf[open] > summary::after { content: '▾'; }
+.sprung-liste .rueckfrage, .sprung-zurueck .rueckfrage { margin-top: 0.4rem; }
+.sprung-zurueck { display: grid; gap: 0.4rem; margin-top: 0.6rem; }
+
+/* Einsatzschrank: Vorlage zum Kopieren */
+.schrank-text {
+  display: block;
+  width: 100%;
+  margin: 0.4rem 0 0.8rem;
+  padding: 0.7rem;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--grund);
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  resize: vertical;
+}
+
+/* «In echt»: nachgezeichnete Bildschirme der Claude-App. Schlicht, damit man die Stelle sucht und nicht das Design.
+   Jede antippbare Stelle ist mindestens 44 Pixel hoch. In der Bilderstrecke (klein) ist nichts antippbar. */
+.nur-vorlesen { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.schirm {
+  margin: 0;
+  border: 2px solid var(--text);
+  border-radius: 12px;
+  background: var(--flaeche);
+  overflow: hidden;
+  font-size: 0.9rem;
+  hyphens: auto;
+}
+.schirm:focus { outline: 3px solid var(--akzent); outline-offset: 2px; }
+.schirm:focus:not(:focus-visible) { outline: none; }
+.schirm-fenster {
+  display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;
+  padding: 0.25rem 0.5rem; background: var(--grund); border-bottom: 1px solid var(--linie);
+}
+.schirm-punkte { width: 2.2rem; height: 0.6rem; background: radial-gradient(circle, var(--linie) 0.28rem, transparent 0.3rem) 0 0 / 0.75rem 0.6rem repeat-x; }
+.schirm-name { flex: 1; font-size: 0.8rem; color: var(--leise); }
+.schirm-koerper { display: flex; min-height: 9rem; }
+.schirm-seite {
+  flex: 0 0 auto; width: 8.2rem; padding: 0.35rem; display: grid; align-content: start; gap: 0.1rem;
+  background: var(--grund); border-right: 1px solid var(--linie);
+}
+.schirm-inhalt { flex: 1; min-width: 0; overflow-wrap: anywhere; padding: 0.6rem; display: grid; align-content: start; gap: 0.55rem; }
+.schirm button.stelle, .schirm .still {
+  min-height: 44px; padding: 0.3rem 0.55rem; border-radius: 8px;
+  display: inline-flex; align-items: center; gap: 0.4rem; text-align: left;
+  background: transparent; border: 1px solid transparent; color: var(--text);
+}
+.schirm .still { cursor: default; }
+.schirm button.stelle:hover { background: var(--grund); border-color: var(--linie); }
+.schirm-seite-eintrag { width: 100%; }
+.schirm-seite .stelle, .schirm-seite .still { padding-inline: 0.4rem; }
+.schirm .leise { color: var(--leise); font-style: italic; }
+.schirm .stelle.aktiv, .schirm .still.aktiv { background: var(--linie); font-weight: 600; }
+.schirm-kopf-eintrag { font-size: 0.85rem; }
+.schirm-titel { font-size: 1.15rem; font-weight: 600; font-family: Georgia, "Times New Roman", serif; }
+.schirm-text { font-weight: 600; }
+.schirm-klein { font-size: 0.8rem; color: var(--leise); }
+.schirm-reiter, .schirm-knoepfe { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.schirm-reiter-eintrag.aktiv { border-color: var(--linie); }
+.schirm-knopf { border-color: var(--linie) !important; }
+.schirm-knopf.haupt { border-color: var(--text) !important; font-weight: 600; }
+.schirm-knopf.klein { min-height: 44px; }
+.schirm-menue { display: grid; gap: 0.1rem; padding: 0.3rem; border: 1px solid var(--linie); border-radius: 10px; box-shadow: 0 4px 14px rgb(0 0 0 / 0.12); background: var(--flaeche); }
+.schirm-menue-eintrag, .schirm-zeile-text { flex-direction: column; align-items: flex-start !important; gap: 0 !important; }
+.schirm-menue-eintrag small, .schirm-zeile-text small, .schirm-karte small { color: var(--leise); font-size: 0.8rem; }
+.schirm-liste { display: grid; gap: 0.2rem; }
+.schirm-zeile { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; border-bottom: 1px solid var(--linie); padding-bottom: 0.2rem; }
+.schirm-karten { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr)); gap: 0.4rem; }
+.schirm-karte { display: grid; gap: 0.2rem; padding: 0.45rem; border: 1px solid var(--linie); border-radius: 10px; }
+.schirm-schalter { width: 100%; justify-content: space-between; }
+.schalter-text { display: grid; }
+.schalter-text small { color: var(--leise); font-size: 0.8rem; }
+.schalter { flex: none; width: 2.4rem; height: 1.3rem; border-radius: 999px; background: var(--linie); border: 2px solid var(--rand); position: relative; }
+.schalter::after { content: ""; position: absolute; top: 0.05rem; left: 0.1rem; width: 0.95rem; height: 0.95rem; border-radius: 50%; background: var(--flaeche); box-shadow: 0 0 0 1px var(--rand); }
+.schalter.an { background: var(--teil-farbe); }
+.schalter.an::after { left: 1.05rem; }
+.schirm-feld { width: 100%; flex-direction: column; align-items: stretch !important; border-color: var(--linie) !important; }
+.feld-wert { min-height: 1.2rem; }
+.schirm-chat { display: grid; gap: 0.35rem; }
+.blase { padding: 0.4rem 0.6rem; border-radius: 10px; max-width: 92%; }
+.blase.von-ich { justify-self: end; background: var(--grund); border: 1px solid var(--linie); }
+.blase.von-claude { justify-self: start; }
+.schirm-eingabe-zeile { display: flex; gap: 0.3rem; align-items: stretch; border: 1px solid var(--linie); border-radius: 12px; padding: 0.25rem; }
+.schirm-eingabe { flex: 1; color: var(--leise) !important; }
+.schirm-knopf.rund { border-radius: 999px; min-width: 44px; justify-content: center; }
+.schirm-code { margin: 0; padding: 0.5rem; border-radius: 8px; background: var(--grund); border: 1px solid var(--linie); font-size: 0.8rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+.schirm-dateien { display: grid; gap: 0.1rem; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.85rem; }
+.schirm-datei.ebene-1 { margin-left: 1rem; } .schirm-datei.ebene-2 { margin-left: 2rem; }
+.schirm-frage { display: grid; gap: 0.4rem; padding: 0.5rem; border: 2px solid var(--linie); border-radius: 10px; }
+.schirm-stand { padding: 0.25rem 0.6rem; font-size: 0.75rem; color: var(--leise); border-top: 1px solid var(--linie); }
+
+/* Hervorhebungen: Hilfe und Bilderstrecke zeigen die richtige Stelle, ein Fehltipp bleibt rot umrandet sichtbar. */
+.schirm .markiert { outline: 3px dashed var(--akzent); outline-offset: 1px; background: var(--gut-flaeche) !important; }
+.schirm .getroffen { outline: 3px solid var(--warn); outline-offset: 1px; background: var(--warn-flaeche) !important; }
+@media (prefers-reduced-motion: no-preference) {
+  .schirm:not(.klein) .markiert { animation: zeig-hin 1.2s ease-in-out 2; }
+  @keyframes zeig-hin { 50% { outline-offset: 4px; } }
+}
+
+/* Bilderstrecke: kleine Bilder untereinander, je mit dem Schritt in Worten */
+.schirm.klein { font-size: 0.72rem; border-width: 1px; }
+.schirm.klein .still { min-height: 0; padding: 0.15rem 0.35rem; }
+.schirm.klein .schirm-seite { width: 6rem; }
+.schirm.klein .schirm-koerper { min-height: 0; }
+.strecke { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.9rem; }
+.strecke-schritt { display: grid; gap: 0.35rem; }
+.reihe-text { display: grid; gap: 0.35rem; min-width: 0; }
+.klick-buehne { display: grid; gap: 0.5rem; }
+.klick-bisher:empty, .klick-fortschritt:empty { display: none; }
+
+/* Einstellen im Bild: Optionen wie Knöpfe in einer Zeile, die gewählte ist gefüllt */
+.schirm-einstellungen { display: grid; gap: 0.5rem; }
+.einstell-zeile { display: grid; gap: 0.3rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--linie); }
+.einstell-name { display: grid; }
+.einstell-name small { color: var(--leise); font-size: 0.8rem; }
+.einstell-optionen { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.einstell-option { min-height: 44px; padding: 0.3rem 0.7rem; border: 2px solid var(--rand); background: transparent; border-radius: 999px; }
+.einstell-option[aria-pressed="true"] { background: var(--teil-farbe); border-color: var(--teil-farbe); color: var(--flaeche); font-weight: 600; }
+.einstell-option.markiert { outline: 3px dashed var(--akzent); outline-offset: 2px; }
+.einstell-option:disabled { opacity: 0.75; cursor: default; }
+
+/* Ausschnitt beim Sortieren: nur Fenster und die eine Stelle */
+.schirm.ausschnitt { max-width: 18rem; min-width: 0; }
+.reihe, .reihe-zeile { min-width: 0; }
+.schirm.ausschnitt .schirm-fenster { flex-wrap: wrap; }
+.schirm.ausschnitt .schirm-name { min-width: 3rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.schirm.ausschnitt .schirm-punkte { flex-shrink: 0; }
+.schirm.ausschnitt { hyphens: manual; }
+.schirm.ausschnitt .schirm-koerper { min-height: 0; }
+.schirm.ausschnitt .schirm-stand { padding: 0.15rem 0.5rem; }
+
+/* Schmale Bildschirme: Die Seitenleiste wird schmaler, Texte dürfen umbrechen.
+   Beim Einstellen braucht es die Seitenleiste nicht, dort bekommen die Zeilen den Platz. */
+@media (max-width: 480px) {
+  .einstellen .schirm-seite { display: none; }
+}
+@media (max-width: 420px) {
+  .schirm-seite { width: 6.4rem; }
+  .schirm { font-size: 0.82rem; }
+  .schirm-inhalt { padding: 0.4rem; }
+}
+
+/* Probefahrt im Einsatzschrank: Weg zum Nachlesen und Punkte zum Abhaken */
+.probefahrt { display: grid; gap: 0.5rem; padding-top: 0.6rem; border-top: 1px solid var(--linie); }
+.probefahrt h3 { margin: 0; font-size: 1.05rem; }
+.probefahrt-weg > summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; font-weight: 600; }
+.probefahrt-weg[open] > summary { margin-bottom: 0.5rem; }
+.probefahrt-liste { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.2rem; }
+.probefahrt-liste li { display: flex; align-items: center; gap: 0.6rem; min-height: 44px; }
+.probefahrt-liste input { width: 1.4rem; height: 1.4rem; flex: none; accent-color: var(--teil-farbe); }
+
+/* Anleitungen «So geht es in echt» im Lexikon (E-033) */
+.anleitungen h3 { margin: 0.4rem 0 0; font-size: 1rem; }
+.anleitung-thema { display: grid; gap: 0.3rem; }
+.anleitung > summary { min-height: 44px; display: flex; align-items: center; gap: 0.5rem; cursor: pointer; padding: 0 0.2rem; border-bottom: 1px solid var(--linie); list-style: none; }
+.anleitung > summary::-webkit-details-marker { display: none; }
+.anleitung > summary::before { content: '▸'; color: var(--leise); }
+.anleitung[open] > summary::before { content: '▾'; }
+.anleitung[open] > summary { font-weight: 600; margin-bottom: 0.5rem; }
+.anleitung .werkbank { padding: 0; border: 0; }
+
+/* Wahlhilfe «Was nehme ich wann?» (E-034) */
+.wahlhilfe .anleitung p { margin: 0.2rem 0; }
+.wahlhilfe-beispiele { margin: 0 0 0.5rem; padding-left: 1.2rem; }
+/* Kurze Knöpfe in Listenzeilen (zum Beispiel «Trennen») nicht trennen, die Zeile daneben bricht um. */
+.schirm-zeile .schirm-knopf { white-space: nowrap; hyphens: manual; flex: none; }
+.schirm-zeile { flex-wrap: wrap; }
+.schirm-zeile .schirm-zeile-text { flex: 1 1 5rem; min-width: 0; }
+
+/* ---------- Version 0.18: Bilder, Verbinden, Schleife, Abkürzungen ---------- */
+
+/* Selbst gezeichnete Bilder: Handy, Webseite, Code, Mail */
+.bild { margin: 0; border: 2px solid var(--linie); border-radius: var(--radius); background: var(--grund); overflow: hidden; }
+.bild-art-handy { max-width: 17rem; margin-inline: auto; border-width: 6px; border-radius: 26px; border-color: var(--text); }
+.bild-kopf { display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.7rem; background: var(--flaeche); border-bottom: 1px solid var(--linie); font-size: 0.85rem; }
+.bild-punkte { width: 2.2rem; height: 0.6rem; border-radius: 1rem; background: repeating-linear-gradient(90deg, var(--linie) 0 0.6rem, transparent 0.6rem 0.8rem); flex: none; }
+.bild-art-handy .bild-punkte { width: 3rem; background: var(--text); border-radius: 1rem; height: 0.35rem; }
+.bild-titel { color: var(--leise); overflow-wrap: anywhere; }
+.bild-art-webseite .bild-titel::before { content: '🔒 '; }
+.bild-inhalt { display: grid; gap: 0.4rem; padding: 0.7rem; }
+.bild-zeile { display: flex; align-items: center; gap: 0.5rem; }
+.bild-symbol { font-size: 1.4rem; flex: none; }
+.bild-knopf { justify-content: center; padding: 0.45rem; border-radius: 999px; background: var(--teil-farbe); color: var(--flaeche); font-weight: 700; }
+.bild-fehler { color: var(--warn); font-weight: 700; }
+.bild-gross { font-size: 1.15rem; font-weight: 700; }
+.bild-klein { font-size: 0.72rem; color: var(--leise); }
+.bild-art-code .bild-inhalt { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.85rem; }
+.bild-ort:empty { display: none; }
+.bild-ort { margin-top: 0.4rem; }
+
+/* «Stelle antippen»: Bereiche im Bild sind Knöpfe, sehen aber wie Teile der Seite aus */
+.bild-bereich { border-style: dashed; background: var(--flaeche); min-height: 2.75rem; }
+.bild-bereich.bild-klein { font-size: 0.75rem; }
+.bild-bereich.bild-gross { font-size: 1.1rem; font-weight: 700; }
+
+/* «Verbinden» */
+.zuordnen { display: grid; gap: 0.8rem; }
+.zuordnen-ablage { display: flex; flex-wrap: wrap; gap: 0.5rem; min-height: 2.75rem; padding: 0.5rem; border: 2px dashed var(--linie); border-radius: var(--radius); }
+.zuordnen-ziele { display: grid; gap: 0.6rem; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); }
+.zuordnen-ziel { min-width: 0; display: grid; gap: 0.4rem; align-content: start; padding: 0.5rem; border: 2px solid var(--linie); border-radius: var(--radius); background: var(--grund); }
+.zuordnen-ziel.bereit { border-color: var(--akzent); }
+.zuordnen-ziel-knopf { min-width: 0; max-width: 100%; overflow-wrap: anywhere; display: flex; align-items: center; gap: 0.4rem; min-height: 2.75rem; padding: 0.4rem 0.6rem; background: var(--flaeche); border: 2px solid var(--rand); border-radius: 10px; font-weight: 600; text-align: left; }
+.zuordnen-ziel-knopf:not(:disabled) { border-color: var(--akzent); color: var(--akzent); cursor: pointer; }
+.zuordnen-ziel-symbol { font-size: 1.3rem; }
+.zuordnen-drin { display: flex; flex-wrap: wrap; gap: 0.4rem; min-height: 0.5rem; }
+.zuordnen-teil { display: inline-flex; align-items: center; gap: 0.4rem; min-height: 2.75rem; padding: 0.35rem 0.7rem; border: 2px solid var(--rand); border-radius: 999px; background: var(--flaeche); color: var(--text); cursor: grab; }
+.zuordnen-teil.aktiv { border-color: var(--akzent); outline: 3px solid var(--akzent); outline-offset: 2px; }
+.zuordnen-teil.markiert { border-color: var(--warn); background: var(--warn-flaeche); }
+
+/* «Schleife steuern» */
+.schleife-bahn { position: relative; padding-top: 3.2rem; }
+.schleife-stationen { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.4rem; }
+.schleife-station { display: grid; justify-items: center; gap: 0.2rem; padding: 0.5rem 0.2rem; text-align: center; border: 2px solid var(--linie); border-radius: var(--radius); font-size: 0.9rem; }
+.schleife-station.gut { border-color: var(--teil-farbe); background: var(--gut-flaeche); }
+.schleife-station.stolpert { border-color: var(--warn); background: var(--warn-flaeche); }
+.schleife-station.stolpert::after { content: '⚠'; }
+.schleife-nr { font-weight: 700; color: var(--leise); }
+.schleife-zurueck { text-align: center; margin-top: 0.3rem; }
+.schleife-laeufer { position: absolute; top: 0; left: 0; width: calc(100% / 3); display: flex; justify-content: center; transition: transform 0.4s ease; }
+.schleife-laeufer .figur { width: 2.6rem; height: 2.6rem; }
+.schleife-laeufer.bei-1 { transform: translateX(100%); }
+.schleife-laeufer.bei-2 { transform: translateX(200%); }
+.schleife-fragen { display: grid; gap: 0.8rem; }
+.schleife-frage { border: 2px solid var(--linie); border-radius: var(--radius); padding: 0.6rem; margin: 0; display: grid; gap: 0.5rem; }
+.schleife-frage legend { font-weight: 600; padding: 0 0.3rem; }
+.schleife-frage.markiert { border-color: var(--warn); background: var(--warn-flaeche); }
+
+/* Abkürzungen: antippbares Wort und Erklärung unten */
+.abk { display: inline; padding: 0; margin: 0; border: 0; background: none; color: inherit; font: inherit; text-decoration: underline dashed; text-underline-offset: 0.2em; cursor: help; min-height: 0; }
+.abk-lang { color: var(--leise); }
+.abk-erklaerung { position: fixed; left: 0.6rem; right: 0.6rem; bottom: 0.6rem; z-index: 20; max-width: 34rem; margin: 0 auto; display: grid; gap: 0.5rem; padding: 0.8rem 1rem; background: var(--flaeche); border: 2px solid var(--akzent); border-radius: var(--radius); box-shadow: 0 6px 24px rgb(0 0 0 / 0.25); }
+
+@media (prefers-reduced-motion: reduce) {
+  .schleife-laeufer { transition: none; }
+}
+
+/* ---------- Gemeinsames Programm: Teilwahl ---------- */
+.start-kopf h1 { margin: 0; }
+.teil-karte { border-left: 6px solid var(--teil-mark); display: grid; gap: 0.5rem; }
+.teil-kopf { display: flex; align-items: center; gap: 0.9rem; }
+.teil-kopf h2 { margin: 0; font-size: 1.3rem; color: var(--teil-farbe); }
+.teil-kopf .etikett { margin: 0; }
+.teil-kopf .klein { margin: 0; }
+.teil-karte p { margin: 0; }
+
+/* ---------- Gemeinsames Programm: Übergang ---------- */
+.nachricht { border-left-width: 6px; }
+.uebergang-bild { display: flex; align-items: flex-end; justify-content: center; gap: 0.6rem; }
+.uebergang-weg { flex: 1; max-width: 8rem; border-bottom: 4px dotted var(--rand); margin-bottom: 1.4rem; }
+.uebergang-bild .figur { width: 2.6rem; height: 2.6rem; }
+
+/* Klickflächen in gezeichneten Bildschirmen: mindestens 44 px breit (Befund Barrierefreiheit). */
+.schirm button.stelle { min-width: 44px; }
+.klick-buehne:focus:not(:focus-visible) { outline: none; }
+
+/* Titel der Zwischenbildschirme: Hauptüberschrift im Aussehen einer Zwischenüberschrift (Befund Barrierefreiheit). */
+.wie-h2 { font-size: 1.5rem; margin: 0.4rem 0; }
+.start-inoffiziell summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; }
+.start-inoffiziell p { margin: 0.4rem 0 0; }
+
+/* Ladehinweis beim Nachladen (E-054): Text und «Abbrechen» untereinander. */
+.laden-hinweis { display: grid; gap: 0.75rem; justify-items: start; padding: 1rem 0; }

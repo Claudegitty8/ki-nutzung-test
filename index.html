@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Nur eigene Dateien: keine fremden Server, kein eingeschleuster Code (Befund Sicherheit). -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>KI-Nutzung leicht gemacht</title>
+  <meta name="theme-color" content="#3f6a12">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="bilder/symbol.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="bilder/symbol-180.png">
+  <link rel="stylesheet" href="stil/haupt.css">
+  <!-- Schneller Start auf langsamem Netz (E-055): Die Programmteile des ersten Bildschirms und die ersten Inhalte
+       gleichzeitig holen, statt nacheinander, wie der Browser sie sonst erst beim Lesen entdeckt.
+       Die übrigen Programmteile holt das Spiel danach. Ein Test prüft, dass diese Liste stimmt. -->
+  <link rel="preload" href="inhalte/teile.json" as="fetch" crossorigin>
+  <link rel="preload" href="inhalte/gemeinsam/de/texte.json" as="fetch" crossorigin>
+  <script src="code/vorladen.js"></script>
+  <link rel="modulepreload" href="code/start.js">
+  <link rel="modulepreload" href="code/inhalte/aufbereiten.js">
+  <link rel="modulepreload" href="code/inhalte/lader.js">
+  <link rel="modulepreload" href="code/logik/abkuerzungen.js">
+  <link rel="modulepreload" href="code/logik/ablauf.js">
+  <link rel="modulepreload" href="code/logik/extras.js">
+  <link rel="modulepreload" href="code/logik/gesamt.js">
+  <link rel="modulepreload" href="code/logik/meisterschaft.js">
+  <link rel="modulepreload" href="code/logik/nachladen.js">
+  <link rel="modulepreload" href="code/logik/schrank.js">
+  <link rel="modulepreload" href="code/logik/uebernahme.js">
+  <link rel="modulepreload" href="code/oberflaeche/abkuerzungen.js">
+  <link rel="modulepreload" href="code/oberflaeche/bausteine.js">
+  <link rel="modulepreload" href="code/oberflaeche/heim.js">
+  <link rel="modulepreload" href="code/oberflaeche/karten.js">
+  <link rel="modulepreload" href="code/oberflaeche/schrift.js">
+  <link rel="modulepreload" href="code/oberflaeche/teilwahl.js">
+  <link rel="modulepreload" href="code/oberflaeche/uebergang.js">
+  <link rel="modulepreload" href="code/oberflaeche/uebernahme.js">
+  <link rel="modulepreload" href="code/speicher/speicher.js">
+</head>
+<body>
+  <main id="app" tabindex="-1">
+    <p class="laden">KI-Nutzung leicht gemacht wird geladen …</p>
+  </main>
+  <p id="ansage" class="nur-vorlesen" role="status"></p>
+  <script type="module" src="code/start.js"></script>
+</body>
+</html>

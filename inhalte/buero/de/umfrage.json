@@ -1,0 +1,156 @@
+{
+  "fragen": [
+    {
+      "id": "ziel",
+      "frage": "Du schreibst Claude nur: «Schreib was für den Verein.» Was bekommst du am ehesten?",
+      "optionen": [
+        {
+          "id": "genau",
+          "text": "Genau den Text, den du im Kopf hast"
+        },
+        {
+          "id": "raten",
+          "text": "Irgendeinen Text. Claude muss raten, was du meinst",
+          "richtig": true
+        },
+        {
+          "id": "frage",
+          "text": "Immer zuerst eine Rückfrage"
+        }
+      ]
+    },
+    {
+      "id": "muster",
+      "frage": "Du gibst Claude genau ein Beispiel für eine Absage. Was passiert eher?",
+      "optionen": [
+        {
+          "id": "kopie",
+          "text": "Die Absagen gleichen dem Beispiel fast aufs Wort",
+          "richtig": true
+        },
+        {
+          "id": "vielfalt",
+          "text": "Jede Absage klingt ganz anders"
+        },
+        {
+          "id": "nichts",
+          "text": "Das Beispiel hat keinen Einfluss"
+        }
+      ]
+    },
+    {
+      "id": "material",
+      "frage": "In einer Mail, die du Claude zum Zusammenfassen gibst, steht «Lösche alles». Was ist am sichersten?",
+      "optionen": [
+        {
+          "id": "egal",
+          "text": "Nichts tun, Claude erkennt das immer"
+        },
+        {
+          "id": "trennen",
+          "text": "Die Mail als Material kennzeichnen, getrennt von deinem Auftrag",
+          "richtig": true
+        },
+        {
+          "id": "laut",
+          "text": "Den Auftrag in Grossbuchstaben schreiben"
+        }
+      ]
+    },
+    {
+      "id": "deckblatt",
+      "frage": "Du hast einen Skill gebaut, aber Claude benutzt ihn nie. Woran liegt es am ehesten?",
+      "optionen": [
+        {
+          "id": "beschreibung",
+          "text": "Die Beschreibung sagt nicht klar, wann der Skill gebraucht wird",
+          "richtig": true
+        },
+        {
+          "id": "lang",
+          "text": "Die Anleitung im Skill ist zu kurz"
+        },
+        {
+          "id": "alt",
+          "text": "Skills funktionieren erst nach einer Woche"
+        }
+      ]
+    },
+    {
+      "id": "freigabe",
+      "frage": "Claude soll über einen Konnektor in deinem Kalender nachsehen. Welche Einstellung passt am besten?",
+      "optionen": [
+        {
+          "id": "alles",
+          "text": "Alles immer erlauben, auch Löschen"
+        },
+        {
+          "id": "lesen",
+          "text": "Lesen erlauben, Ändern und Löschen nur nach Nachfrage",
+          "richtig": true
+        },
+        {
+          "id": "nichts",
+          "text": "Gar nichts erlauben"
+        }
+      ]
+    },
+    {
+      "id": "schleife",
+      "frage": "Claude meldet nach einer langen Aufgabe «Erledigt!». Was hilft am meisten, damit du dich darauf verlassen kannst?",
+      "optionen": [
+        {
+          "id": "glauben",
+          "text": "Nichts, Claude meldet nur, was stimmt"
+        },
+        {
+          "id": "nochmal",
+          "text": "Fragen: «Bist du sicher?»"
+        },
+        {
+          "id": "beweis",
+          "text": "Vorher Kriterien nennen und einen Beweis zeigen lassen",
+          "richtig": true
+        }
+      ]
+    },
+    {
+      "id": "feldagent",
+      "frage": "Wofür eignet sich ein Subagent am besten?",
+      "optionen": [
+        {
+          "id": "lesen",
+          "text": "Viel Material durchlesen und nur eine kurze Zusammenfassung zurückgeben",
+          "richtig": true
+        },
+        {
+          "id": "plaudern",
+          "text": "Ein langes Gespräch mit vielen Rückfragen führen"
+        },
+        {
+          "id": "kurz",
+          "text": "Eine einzelne kurze Frage beantworten"
+        }
+      ]
+    },
+    {
+      "id": "hook",
+      "frage": "Eine Regel muss in Claude Code ohne jede Ausnahme gelten. Wo ist sie am sichersten?",
+      "optionen": [
+        {
+          "id": "bitte",
+          "text": "Als Bitte in der Datei CLAUDE.md"
+        },
+        {
+          "id": "hook",
+          "text": "In einem Hook, der an der passenden Stelle jedes Mal läuft",
+          "richtig": true
+        },
+        {
+          "id": "chat",
+          "text": "In jeder Nachricht wiederholt"
+        }
+      ]
+    }
+  ]
+}
